@@ -14,7 +14,9 @@ namespace PaxApocalytica
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            PaxApocalyticaGame game = new PaxApocalyticaGame();
+            game.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
