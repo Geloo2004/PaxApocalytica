@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             splitterVertical = new SplitContainer();
+            vScrollBar2 = new VScrollBar();
             hScrollBar2 = new HScrollBar();
             vScrollBar1 = new VScrollBar();
             hScrollBar1 = new HScrollBar();
-            map = new PictureBox();
+            mapBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitterVertical).BeginInit();
             splitterVertical.Panel1.SuspendLayout();
             splitterVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)map).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)mapBox).BeginInit();
             SuspendLayout();
             // 
             // splitterVertical
@@ -48,14 +49,22 @@
             // 
             // splitterVertical.Panel1
             // 
+            splitterVertical.Panel1.Controls.Add(vScrollBar2);
             splitterVertical.Panel1.Controls.Add(hScrollBar2);
             splitterVertical.Panel1.Controls.Add(vScrollBar1);
             splitterVertical.Panel1.Controls.Add(hScrollBar1);
-            splitterVertical.Panel1.Controls.Add(map);
+            splitterVertical.Panel1.Controls.Add(mapBox);
             splitterVertical.Size = new Size(1264, 681);
             splitterVertical.SplitterDistance = 900;
             splitterVertical.TabIndex = 0;
             splitterVertical.SplitterMoved += splitterVertical_SplitterMoved;
+            // 
+            // vScrollBar2
+            // 
+            vScrollBar2.Location = new Point(883, 17);
+            vScrollBar2.Name = "vScrollBar2";
+            vScrollBar2.Size = new Size(17, 644);
+            vScrollBar2.TabIndex = 4;
             // 
             // hScrollBar2
             // 
@@ -78,15 +87,15 @@
             hScrollBar1.Size = new Size(900, 17);
             hScrollBar1.TabIndex = 1;
             // 
-            // map
+            // mapBox
             // 
-            map.Location = new Point(3, 3);
-            map.Name = "map";
-            map.Size = new Size(8192, 4096);
-            map.SizeMode = PictureBoxSizeMode.Zoom;
-            map.TabIndex = 0;
-            map.TabStop = false;
-            map.Click += map_Click;
+            mapBox.Location = new Point(3, 3);
+            mapBox.Name = "mapBox";
+            mapBox.Size = new Size(8192, 4096);
+            mapBox.SizeMode = PictureBoxSizeMode.Zoom;
+            mapBox.TabIndex = 0;
+            mapBox.TabStop = false;
+            mapBox.Click += map_Click;
             // 
             // PaxApocalyticaGame
             // 
@@ -99,16 +108,17 @@
             splitterVertical.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitterVertical).EndInit();
             splitterVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)map).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mapBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private SplitContainer splitterVertical;
-        private PictureBox map;
+        private PictureBox mapBox;
         private HScrollBar hScrollBar1;
         private VScrollBar vScrollBar1;
         private HScrollBar hScrollBar2;
+        private VScrollBar vScrollBar2;
     }
 }
