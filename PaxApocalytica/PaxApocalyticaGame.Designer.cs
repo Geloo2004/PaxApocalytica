@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             splitterVertical = new SplitContainer();
+            hScrollBar1 = new HScrollBar();
             vScrollBar2 = new VScrollBar();
             hScrollBar2 = new HScrollBar();
             vScrollBar1 = new VScrollBar();
-            hScrollBar1 = new HScrollBar();
             mapBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitterVertical).BeginInit();
             splitterVertical.Panel1.SuspendLayout();
@@ -49,15 +49,23 @@
             // 
             // splitterVertical.Panel1
             // 
+            splitterVertical.Panel1.Controls.Add(hScrollBar1);
             splitterVertical.Panel1.Controls.Add(vScrollBar2);
             splitterVertical.Panel1.Controls.Add(hScrollBar2);
             splitterVertical.Panel1.Controls.Add(vScrollBar1);
-            splitterVertical.Panel1.Controls.Add(hScrollBar1);
             splitterVertical.Panel1.Controls.Add(mapBox);
             splitterVertical.Size = new Size(1264, 681);
             splitterVertical.SplitterDistance = 900;
             splitterVertical.TabIndex = 0;
             splitterVertical.SplitterMoved += splitterVertical_SplitterMoved;
+            // 
+            // hScrollBar1
+            // 
+            hScrollBar1.Location = new Point(0, 3);
+            hScrollBar1.Name = "hScrollBar1";
+            hScrollBar1.Size = new Size(900, 17);
+            hScrollBar1.TabIndex = 5;
+            hScrollBar1.Scroll += hScrollBar1_Scroll;
             // 
             // vScrollBar2
             // 
@@ -65,6 +73,7 @@
             vScrollBar2.Name = "vScrollBar2";
             vScrollBar2.Size = new Size(17, 644);
             vScrollBar2.TabIndex = 4;
+            vScrollBar2.Scroll += vScrollBar2_Scroll;
             // 
             // hScrollBar2
             // 
@@ -72,6 +81,7 @@
             hScrollBar2.Name = "hScrollBar2";
             hScrollBar2.Size = new Size(900, 17);
             hScrollBar2.TabIndex = 3;
+            hScrollBar2.Scroll += hScrollBar2_Scroll;
             // 
             // vScrollBar1
             // 
@@ -79,13 +89,7 @@
             vScrollBar1.Name = "vScrollBar1";
             vScrollBar1.Size = new Size(17, 644);
             vScrollBar1.TabIndex = 2;
-            // 
-            // hScrollBar1
-            // 
-            hScrollBar1.Location = new Point(0, 0);
-            hScrollBar1.Name = "hScrollBar1";
-            hScrollBar1.Size = new Size(900, 17);
-            hScrollBar1.TabIndex = 1;
+            vScrollBar1.Scroll += vScrollBar1_Scroll;
             // 
             // mapBox
             // 
@@ -116,9 +120,9 @@
 
         private SplitContainer splitterVertical;
         private PictureBox mapBox;
-        private HScrollBar hScrollBar1;
         private VScrollBar vScrollBar1;
         private HScrollBar hScrollBar2;
         private VScrollBar vScrollBar2;
+        private HScrollBar hScrollBar1;
     }
 }
