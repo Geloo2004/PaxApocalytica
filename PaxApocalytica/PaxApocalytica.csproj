@@ -24,7 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\Countries.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CountriesLib\CountriesLib.csproj" />
   </ItemGroup>
 
 </Project>

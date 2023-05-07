@@ -9,29 +9,31 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CountriesLib;
+using PaxApocalytica.Politics;
 
 namespace PaxApocalytica
 {
     public partial class PaxApocalyticaGame : Form
     {
-        Bitmap baseBitmapIndexed = PaxApocalytica.Properties.Resources.baseMap; //bmp мало памяти
+        Bitmap baseBitmapIndexed = PaxApocalytica.Properties.Resources.baseMapBmp; //bmp мало памяти
         Bitmap baseBitmap;      //png много памяти
-
-        Bitmap copyBitmapIndexed = PaxApocalytica.Properties.Resources.baseMap;
-
-        static int hMovementMultiplier;
-        static int vMovementMultiplier;
-
-        static Rectangle rect = new Rectangle(0, 0, 1, 1);
         Bitmap map;
+        Bitmap copyBitmapIndexed = PaxApocalytica.Properties.Resources.baseMapBmp;
+
+        static int hOffset = 0;
+        static int vOffset = 0;
+        static float hMovementMultiplier = 100;
+        static float vMovementMultiplier = 100;
+
+        static Rectangle rect  = new Rectangle(0, 0, 1, 1);
         public PaxApocalyticaGame()
         {
             baseBitmap = CreateNonIndexedBitmap(baseBitmapIndexed);
             baseBitmapIndexed.Dispose();
 
             InitializeComponent();
-            //DoubleBuffered = true;
-            Color a = copyBitmapIndexed.GetPixel(1, 1);
+            splitterVertical.IsSplitterFixed = true;
 
             mapBox.Image = baseBitmap;
             mapBox.SizeMode = PictureBoxSizeMode.Normal;
@@ -45,21 +47,57 @@ namespace PaxApocalytica
 
             map = baseBitmap.Clone(rect, 0);
             mapBox.Image = map;
+
+            var cc = Country.GetCC("Russia");
+            var aads = new Dictionary<string, CountryCharacteristics>();
+            for(int i = 0; i< 200; i++) 
+            {
+                aads.Add("Russia"+Convert.ToString(i),Country.GetCC("Russia" + Convert.ToString(i)));
+            }
         }
 
+        private Bitmap UniteBitmaps(Bitmap oldBmp) 
+        {
+            Bitmap newBmp = new Bitmap(rect.Width, rect.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            int width = 8186 - rect.X; //до прав края левой бмп
+
+            
+            using(Graphics gfx = Graphics.FromImage(newBmp)) 
+            {
+                PointF pt = new PointF((float)rect.X, (float)rect.Y);
+                SizeF sz = new SizeF((float)width, (float)rect.Height);
+                RectangleF rf = new RectangleF(pt, sz);
+                gfx.DrawImage(oldBmp, 0, 0, rf, GraphicsUnit.Pixel);                
+            }
+            using(Graphics gfx = Graphics.FromImage(newBmp))
+            {
+                PointF pt = new PointF(0f, (float)rect.Y);
+                SizeF sz = new SizeF((float)(rect.X - width), (float)rect.Height);
+                RectangleF rf = new RectangleF(pt, sz);
+                gfx.DrawImage(oldBmp, (float)width, 0, rf, GraphicsUnit.Pixel);
+            }
+            return newBmp;
+        }
         private void UpdateMap()
         {
             if (map != null)
             {
                 map.Dispose();
             }
-            mapBox.Width = splitterVertical.Panel1.Width;
-            mapBox.Height = splitterVertical.Panel1.Height;
 
-            rect.Width = mapBox.Width;
-            rect.Height = mapBox.Height;
+            if ((rect.Y + rect.Height) >= baseBitmap.Height)
+            {
+                rect.Y = baseBitmap.Height - rect.Height - 1;
+            }
 
-            map = baseBitmap.Clone(rect, 0);
+            if (rect.X + rect.Width >= baseBitmap.Width)
+            {
+                map = UniteBitmaps(baseBitmap);
+            }
+            else
+            {
+                map = baseBitmap.Clone(rect, 0);
+            }
             mapBox.Image = map;
         }
         protected override void OnResize(EventArgs e)
@@ -81,35 +119,30 @@ namespace PaxApocalytica
 
         private void ResizeRectangle()
         {
-            rect.Width = splitterVertical.Panel1.Width;
-            rect.Height = splitterVertical.Panel1.Height;
+            rect.Width = mapBox.Width;
+            rect.Height = mapBox.Height;            
         }
         private void ResizeMapBox()
         {
             mapBox.Width = splitterVertical.Panel1.Width;
-            hMovementMultiplier =(int)(splitterVertical.Panel1.Width / 100);
             mapBox.Height = splitterVertical.Panel1.Height;
-            vMovementMultiplier = (int)(splitterVertical.Panel1.Height / 100);
         }
         private void ResizeSplitter()
         {
-            if (this.Width >= 640)
-            {
-                splitterVertical.Width = this.Width - 16;
-            }
-            else
+            splitterVertical.Width = this.Width;
+            if (this.Width < 640)
             {
                 this.Width = 640;
             }
-            if (this.Height >= 480)
-            {
-                splitterVertical.Height = this.Height - 39;
-            }
-            else
+            if(this.Height < 480)
             {
                 this.Height = 480;
             }
-            splitterVertical.SplitterDistance = (this.Width - 360);
+
+            if (!this.Visible)
+            {
+                splitterVertical.SplitterDistance = (this.Width - 360);
+            }
         }
         private void ResizeHorizontalScrollbar()
         {
@@ -131,6 +164,10 @@ namespace PaxApocalytica
             MouseEventArgs mea = (MouseEventArgs)e;
             int x = mea.X + rect.X;
             int y = mea.Y + rect.Y;
+            while (x >= 8192) 
+            {
+                x -= 8192;
+            }
             FloodFill(baseBitmap, new Point(x, y), baseBitmap.GetPixel(x, y), Color.Red);
         }
 
@@ -200,27 +237,27 @@ namespace PaxApocalytica
         //двигалки
         private void vScrollBar2_Scroll(object sender, ScrollEventArgs e)
         {
-            rect.Y = vMovementMultiplier * vScrollBar2.Value;
+            rect.Y = (int)(vMovementMultiplier * vScrollBar2.Value);
             vScrollBar1.Value = vScrollBar2.Value;
             UpdateMap();
         }
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            rect.Y = vMovementMultiplier * vScrollBar1.Value;
+            rect.Y = (int)(vMovementMultiplier * vScrollBar1.Value);
             vScrollBar2.Value = vScrollBar1.Value;
             UpdateMap();
         }
 
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            rect.X = 70 * hScrollBar1.Value;
+            rect.X = (int)(hMovementMultiplier * hScrollBar1.Value);
             hScrollBar2.Value = hScrollBar1.Value;
             UpdateMap();
         }
 
         private void hScrollBar2_Scroll(object sender, ScrollEventArgs e)
         {
-            rect.X = 70 * hScrollBar2.Value;
+            rect.X = (int)(hMovementMultiplier * hScrollBar2.Value);
             hScrollBar1.Value = hScrollBar2.Value;
             UpdateMap();
         }

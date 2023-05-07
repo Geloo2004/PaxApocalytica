@@ -63,9 +63,9 @@ namespace PaxApocalytica.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap baseMap {
+        internal static System.Drawing.Bitmap baseMapBmp {
             get {
-                object obj = ResourceManager.GetObject("baseMap", resourceCulture);
+                object obj = ResourceManager.GetObject("baseMapBmp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
