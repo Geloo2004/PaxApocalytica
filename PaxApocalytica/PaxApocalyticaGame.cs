@@ -21,16 +21,21 @@ namespace PaxApocalytica
         Bitmap map;
         Bitmap copyBitmapIndexed = PaxApocalytica.Properties.Resources.baseMapBmp;
 
-        static int hOffset = 0;
-        static int vOffset = 0;
+        static Color water;
+        static Color fakeBlack;
+        static Color borderGray;
         static float hMovementMultiplier = 100;
         static float vMovementMultiplier = 100;
 
-        static Rectangle rect  = new Rectangle(0, 0, 1, 1);
+        static Rectangle rect = new Rectangle(0, 0, 1, 1);
         public PaxApocalyticaGame()
         {
             baseBitmap = CreateNonIndexedBitmap(baseBitmapIndexed);
             baseBitmapIndexed.Dispose();
+
+            water = baseBitmap.GetPixel(1, 1);
+            fakeBlack = baseBitmap.GetPixel(0, 420);
+            borderGray = baseBitmap.GetPixel(887,468);
 
             InitializeComponent();
             splitterVertical.IsSplitterFixed = true;
@@ -48,28 +53,28 @@ namespace PaxApocalytica
             map = baseBitmap.Clone(rect, 0);
             mapBox.Image = map;
 
-            var cc = Country.GetCC("Russia");
-            var aads = new Dictionary<string, CountryCharacteristics>();
-            for(int i = 0; i< 200; i++) 
-            {
-                aads.Add("Russia"+Convert.ToString(i),Country.GetCC("Russia" + Convert.ToString(i)));
-            }
+            button1.Location = mapBox.Location;
+            button2.Location = new Point(mapBox.Location.X, mapBox.Location.Y + mapBox.Height - button2.Height);
+            button3.Location = button1.Location;
+            button4.Location = new Point(mapBox.Location.X + mapBox.Width - button4.Width-15, mapBox.Location.Y);
+
+            var startCC = CountriesLib.Country.GetAllCC();
         }
 
-        private Bitmap UniteBitmaps(Bitmap oldBmp) 
+        private Bitmap UniteBitmaps(Bitmap oldBmp)
         {
             Bitmap newBmp = new Bitmap(rect.Width, rect.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             int width = 8186 - rect.X; //до прав края левой бмп
 
-            
-            using(Graphics gfx = Graphics.FromImage(newBmp)) 
+
+            using (Graphics gfx = Graphics.FromImage(newBmp))
             {
                 PointF pt = new PointF((float)rect.X, (float)rect.Y);
                 SizeF sz = new SizeF((float)width, (float)rect.Height);
                 RectangleF rf = new RectangleF(pt, sz);
-                gfx.DrawImage(oldBmp, 0, 0, rf, GraphicsUnit.Pixel);                
+                gfx.DrawImage(oldBmp, 0, 0, rf, GraphicsUnit.Pixel);
             }
-            using(Graphics gfx = Graphics.FromImage(newBmp))
+            using (Graphics gfx = Graphics.FromImage(newBmp))
             {
                 PointF pt = new PointF(0f, (float)rect.Y);
                 SizeF sz = new SizeF((float)(rect.X - width), (float)rect.Height);
@@ -103,10 +108,9 @@ namespace PaxApocalytica
         protected override void OnResize(EventArgs e)
         {
             ResizeSplitter();
-            ResizeHorizontalScrollbar();
-            ResizeVerticalScrollbar();
             ResizeMapBox();
             ResizeRectangle();
+            ResizeButtons();
             UpdateMap();
         }
 
@@ -120,7 +124,7 @@ namespace PaxApocalytica
         private void ResizeRectangle()
         {
             rect.Width = mapBox.Width;
-            rect.Height = mapBox.Height;            
+            rect.Height = mapBox.Height;
         }
         private void ResizeMapBox()
         {
@@ -134,7 +138,7 @@ namespace PaxApocalytica
             {
                 this.Width = 640;
             }
-            if(this.Height < 480)
+            if (this.Height < 480)
             {
                 this.Height = 480;
             }
@@ -144,17 +148,17 @@ namespace PaxApocalytica
                 splitterVertical.SplitterDistance = (this.Width - 360);
             }
         }
-        private void ResizeHorizontalScrollbar()
+        private void ResizeButtons()
         {
-            hScrollBar1.Width = splitterVertical.Panel1.Width;
-            hScrollBar2.Width = splitterVertical.Panel1.Width;
-            hScrollBar2.Location = new Point(0, splitterVertical.Height - 17);
-        }
-        private void ResizeVerticalScrollbar()
-        {
-            vScrollBar1.Height = splitterVertical.Height - 34;
-            vScrollBar2.Height = splitterVertical.Height - 34;
-            vScrollBar2.Location = new Point(splitterVertical.Panel1.Width - 14, 17);
+            button1.Location = mapBox.Location;
+            button2.Location = new Point(mapBox.Location.X, mapBox.Location.Y + mapBox.Height - button2.Height);
+            button3.Location = button1.Location;
+            button4.Location = new Point(mapBox.Location.X + mapBox.Width - button4.Width-2, mapBox.Location.Y);
+
+            button1.Width = splitterVertical.Panel1.Width;
+            button2.Width = splitterVertical.Panel1.Width;
+            button3.Height = splitterVertical.Height;
+            button4.Height = splitterVertical.Height;
         }
 
 
@@ -164,11 +168,19 @@ namespace PaxApocalytica
             MouseEventArgs mea = (MouseEventArgs)e;
             int x = mea.X + rect.X;
             int y = mea.Y + rect.Y;
-            while (x >= 8192) 
+            while (x >= 8192)
             {
                 x -= 8192;
             }
-            FloodFill(baseBitmap, new Point(x, y), baseBitmap.GetPixel(x, y), Color.Red);
+            while(x< 0) 
+            {
+                x += 8192;
+            }
+
+            if (GetProvinceId(x,y) != 0)
+            {
+                FloodFill(baseBitmap, new Point(x, y), baseBitmap.GetPixel(x, y), Color.Red);
+            }
         }
 
         private void FloodFill(Bitmap bmp, Point pt, Color targetColor, Color replacementColor)
@@ -228,38 +240,23 @@ namespace PaxApocalytica
             //https://stackoverflow.com/questions/25984458/why-im-getting-exception-when-using-setpixel-setpixel-is-not-supported-for-ima
 
             Bitmap newBmp = new Bitmap(oldBmp.Width, oldBmp.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            using(Graphics gfx = Graphics.FromImage(newBmp)) 
+            using (Graphics gfx = Graphics.FromImage(newBmp))
             {
                 gfx.DrawImage(oldBmp, 0, 0);
             }
             return newBmp;
         }
         //двигалки
-        private void vScrollBar2_Scroll(object sender, ScrollEventArgs e)
-        {
-            rect.Y = (int)(vMovementMultiplier * vScrollBar2.Value);
-            vScrollBar1.Value = vScrollBar2.Value;
-            UpdateMap();
-        }
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            rect.Y = (int)(vMovementMultiplier * vScrollBar1.Value);
-            vScrollBar2.Value = vScrollBar1.Value;
-            UpdateMap();
-        }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private int GetProvinceId(int x, int y) 
         {
-            rect.X = (int)(hMovementMultiplier * hScrollBar1.Value);
-            hScrollBar2.Value = hScrollBar1.Value;
-            UpdateMap();
-        }
-
-        private void hScrollBar2_Scroll(object sender, ScrollEventArgs e)
-        {
-            rect.X = (int)(hMovementMultiplier * hScrollBar2.Value);
-            hScrollBar1.Value = hScrollBar2.Value;
-            UpdateMap();
+            if (baseBitmap.GetPixel(x, y)    == water 
+                || baseBitmap.GetPixel(x,y)  == fakeBlack 
+                || baseBitmap.GetPixel(x, y) == borderGray)
+            {
+                return 0;
+            }
+            return 1;
         }
     }
 }
