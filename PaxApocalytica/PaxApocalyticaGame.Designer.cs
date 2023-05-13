@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             splitterVertical = new SplitContainer();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
             mapBox = new PictureBox();
-            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitterVertical).BeginInit();
             splitterVertical.Panel1.SuspendLayout();
             splitterVertical.SuspendLayout();
@@ -49,42 +45,11 @@
             // 
             // splitterVertical.Panel1
             // 
-            splitterVertical.Panel1.Controls.Add(button4);
-            splitterVertical.Panel1.Controls.Add(button3);
-            splitterVertical.Panel1.Controls.Add(button2);
-            splitterVertical.Panel1.Controls.Add(button1);
             splitterVertical.Panel1.Controls.Add(mapBox);
             splitterVertical.Size = new Size(1264, 681);
             splitterVertical.SplitterDistance = 900;
             splitterVertical.TabIndex = 0;
             splitterVertical.SplitterMoved += splitterVertical_SplitterMoved;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(0, 0);
-            button3.Name = "button3";
-            button3.Size = new Size(23, 681);
-            button3.TabIndex = 3;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(0, 658);
-            button2.Name = "button2";
-            button2.Size = new Size(904, 23);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(904, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // mapBox
             // 
@@ -95,15 +60,7 @@
             mapBox.TabIndex = 0;
             mapBox.TabStop = false;
             mapBox.Click += map_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(881, 0);
-            button4.Name = "button4";
-            button4.Size = new Size(23, 681);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            mapBox.MouseClick += mapBox_MouseClick;
             // 
             // PaxApocalyticaGame
             // 
@@ -124,9 +81,5 @@
 
         private SplitContainer splitterVertical;
         private PictureBox mapBox;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
     }
 }

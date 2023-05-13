@@ -9,8 +9,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CountriesLib;
 using PaxApocalytica.Politics;
+using System.Threading;
 
 namespace PaxApocalytica
 {
@@ -21,12 +21,22 @@ namespace PaxApocalytica
         Bitmap map;
         Bitmap copyBitmapIndexed = PaxApocalytica.Properties.Resources.baseMapBmp;
 
+
+        /*
+        static bool switch_bgwR = false;
+        static bool switch_bgwL = false;
+        static bool switch_bgwU = false;
+        static bool switch_bgwD = false;
+        */
         static Color water;
         static Color fakeBlack;
         static Color borderGray;
-        static float hMovementMultiplier = 100;
-        static float vMovementMultiplier = 100;
+        static Color black = Color.Black;
 
+        /*
+        Dictionary<Color, ProvincesName.Name> color_nameDict;
+        Dictionary<ProvincesName.Name, Province> name_provinceDict;
+        */
         static Rectangle rect = new Rectangle(0, 0, 1, 1);
         public PaxApocalyticaGame()
         {
@@ -35,7 +45,7 @@ namespace PaxApocalytica
 
             water = baseBitmap.GetPixel(1, 1);
             fakeBlack = baseBitmap.GetPixel(0, 420);
-            borderGray = baseBitmap.GetPixel(887,468);
+            borderGray = baseBitmap.GetPixel(887, 468);
 
             InitializeComponent();
             splitterVertical.IsSplitterFixed = true;
@@ -53,12 +63,11 @@ namespace PaxApocalytica
             map = baseBitmap.Clone(rect, 0);
             mapBox.Image = map;
 
-            button1.Location = mapBox.Location;
-            button2.Location = new Point(mapBox.Location.X, mapBox.Location.Y + mapBox.Height - button2.Height);
-            button3.Location = button1.Location;
-            button4.Location = new Point(mapBox.Location.X + mapBox.Width - button4.Width-15, mapBox.Location.Y);
 
-            var startCC = CountriesLib.Country.GetAllCC();
+
+            /*
+            color_nameDict = new Dictionary<Color, ProvincesName.Name>(StartGenerator.color_name);
+            name_provinceDict = new Dictionary<ProvincesName.Name, Province>(StartGenerator.name_province);*/
         }
 
         private Bitmap UniteBitmaps(Bitmap oldBmp)
@@ -110,7 +119,6 @@ namespace PaxApocalytica
             ResizeSplitter();
             ResizeMapBox();
             ResizeRectangle();
-            ResizeButtons();
             UpdateMap();
         }
 
@@ -148,39 +156,20 @@ namespace PaxApocalytica
                 splitterVertical.SplitterDistance = (this.Width - 360);
             }
         }
-        private void ResizeButtons()
-        {
-            button1.Location = mapBox.Location;
-            button2.Location = new Point(mapBox.Location.X, mapBox.Location.Y + mapBox.Height - button2.Height);
-            button3.Location = button1.Location;
-            button4.Location = new Point(mapBox.Location.X + mapBox.Width - button4.Width-2, mapBox.Location.Y);
-
-            button1.Width = splitterVertical.Panel1.Width;
-            button2.Width = splitterVertical.Panel1.Width;
-            button3.Height = splitterVertical.Height;
-            button4.Height = splitterVertical.Height;
-        }
 
 
 
         private void map_Click(object sender, EventArgs e)      //покрас
         {
-            MouseEventArgs mea = (MouseEventArgs)e;
-            int x = mea.X + rect.X;
-            int y = mea.Y + rect.Y;
-            while (x >= 8192)
-            {
-                x -= 8192;
-            }
-            while(x< 0) 
-            {
-                x += 8192;
-            }
+            
 
-            if (GetProvinceId(x,y) != 0)
+
+            /*
+            Province clickedProvince = GetProvinceId(x, y);
+            if (clickedProvince != null)
             {
-                FloodFill(baseBitmap, new Point(x, y), baseBitmap.GetPixel(x, y), Color.Red);
-            }
+                
+            }*/
         }
 
         private void FloodFill(Bitmap bmp, Point pt, Color targetColor, Color replacementColor)
@@ -245,18 +234,71 @@ namespace PaxApocalytica
                 gfx.DrawImage(oldBmp, 0, 0);
             }
             return newBmp;
-        }
-        //двигалки
+        }        //двигалки
 
-        private int GetProvinceId(int x, int y) 
+        private void MouseMoveMap()
         {
-            if (baseBitmap.GetPixel(x, y)    == water 
-                || baseBitmap.GetPixel(x,y)  == fakeBlack 
-                || baseBitmap.GetPixel(x, y) == borderGray)
+
+        }
+
+
+        private Province GetProvinceId(int x, int y)
+        {
+            if (baseBitmap.GetPixel(x, y) == water
+                || baseBitmap.GetPixel(x, y) == fakeBlack
+                || baseBitmap.GetPixel(x, y) == borderGray
+                || baseBitmap.GetPixel(x, y) == black)
             {
-                return 0;
+                return null;
             }
-            return 1;
+            return null;//color_nameDict[baseBitmap.GetPixel(x, y)];
+        }
+
+        private void mapBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            int x = e.X + rect.X;
+            int y = e.Y + rect.Y;
+            while (x >= 8192)
+            {
+                x -= 8192;
+            }
+            while (x < 0)
+            {
+                x += 8192;
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                int offsetX = (int)(rect.Width/2 - e.X);
+                rect.X -= offsetX;
+
+                while (rect.X < 0) 
+                {
+                    rect.X += 8192;
+                }
+                while (rect.X >= 8192)
+                {
+                    rect.X -= 8192;
+                }
+
+                int offsetY =(int)(rect.Height/2 - e.Y);
+                rect.Y -= offsetY;
+                
+                if (rect.Y + rect.Width < map.Height)
+                {
+                    rect.Y = map.Height - rect.Height;
+                }
+                if (rect.Y < 0) 
+                {
+                    rect.Y = 0;
+                }
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+
+
+                //рисовашки
+            }
+            UpdateMap();
         }
     }
 }

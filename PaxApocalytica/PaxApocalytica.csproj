@@ -27,4 +27,8 @@
     <None Include="Resources\Countries.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="gasbdgfs\" />
+  </ItemGroup>
+
 </Project>
