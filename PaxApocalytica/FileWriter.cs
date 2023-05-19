@@ -15,12 +15,51 @@ namespace PaxApocalytica
             FileReader.ReadFile_CountrynameCharacterstics();    //меняется  +
             FileReader.ReadFile_CountrynameMilResources();      //меняется  +
             FileReader.ReadFile_CountrynameSimpleResources();   //меняется  +           
-            FileReader.ReadFile_NameAirfield();                 //меняется (колво самолетов)
+            FileReader.ReadFile_NameAirfield();                 //меняется
             FileReader.ReadFile_NameSimpleFactory();            //меняется  +
             FileReader.ReadFile_NameMilitaryFactory();          //меняется  +
         army                                                    //меняется
         */
 
+        public static void SaveEverything(string basePath) //almost everything
+        {
+            WriteFile_CountrynameCharacterstics(basePath); 
+            WriteFile_CountrynameSimpleResources(basePath);
+            WriteFile_CountrynameMilresources(basePath);
+            WriteFile_NameOwner(basePath);
+            WriteFile_NameOccupant(basePath);
+            WriteFile_NameSimpleFactory(basePath);
+            WriteFile_NameMilitaryFactory(basePath); 
+            WriteFile_NameAirfield(basePath);
+        }
+
+        public static void WriteFile_NameAirfield(string basePath) 
+        {
+            string path = basePath + "Name_Airfield.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var airfield in PaxApocalyticaGame.Dictionary_NameAirfield.Keys)
+                {
+                    outputFile.Write(airfield + ";" + PaxApocalyticaGame.Dictionary_NameAirfield[airfield].Planes.Length);
+                    foreach (var plane in PaxApocalyticaGame.Dictionary_NameAirfield[airfield].Planes) 
+                    {
+                        if (plane == null) { outputFile.Write(";"); }
+                        else 
+                        {
+                            if(plane.Name == Military.UnitName.Name.fighterA) { outputFile.Write(";fighterA"); }
+                            else if (plane.Name == Military.UnitName.Name.fighterG) { outputFile.Write(";fighterG"); }
+                            else if (plane.Name == Military.UnitName.Name.fighterR) { outputFile.Write(";fighterR"); }
+                            else if (plane.Name == Military.UnitName.Name.strikeAircraftA) { outputFile.Write(";strikeAircraftA"); }
+                            else if (plane.Name == Military.UnitName.Name.strikeAircraftG) { outputFile.Write(";strikeAircraftG"); }
+                            else if(plane.Name == Military.UnitName.Name.strikeAircraftR) { outputFile.Write(";strikeAircraftR"); }    
+                            else { throw new ArgumentException(); }
+                        }                        
+                    }
+                    outputFile.WriteLine();
+                }
+            }
+        }
         public static void WriteFile_CountrynameCharacterstics(string basePath) 
         {
             string path = basePath + "Countryname_Characterstics.txt";
@@ -35,9 +74,9 @@ namespace PaxApocalytica
                     int cash = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].Cash;
                     int dipka = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].DiploPoints;
                     byte leaders = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].MaxLeaders;
-                    if (type == MilitaryFactoryType.Type.Soviet) { outputFile.WriteLine(country + ";" + "Soviet" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
-                    else if (type == MilitaryFactoryType.Type.NATO) { outputFile.WriteLine(country + ";" + "NATO" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
-                    else if (type == MilitaryFactoryType.Type.Generic) { outputFile.WriteLine(country + ";" + "Generic" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
+                    if (type == MilitaryFactoryType.Type.Soviet) { outputFile.WriteLine(country + ";"+color.R+","+color.G+","+color.B+";" + "Soviet" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
+                    else if (type == MilitaryFactoryType.Type.NATO) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "NATO" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
+                    else if (type == MilitaryFactoryType.Type.Generic) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "Generic" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
                     else throw new ArgumentException();
                 }
             }
@@ -60,7 +99,7 @@ namespace PaxApocalytica
                     int Gas = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][7];
                     int Aluminium = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][8];
                     int Gold = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][9];
-                    outputFile.WriteLine(Oil + ";" + Steel + ";" + Copper + ";" + Uranium + ";" + Coal + ";" +
+                    outputFile.WriteLine(country+";"+Oil + ";" + Steel + ";" + Copper + ";" + Uranium + ";" + Coal + ";" +
                         Grain + ";" + Livestock + ";" + Gas + ";" + Aluminium + ";" + Gold );
                 }
             }
@@ -100,14 +139,13 @@ namespace PaxApocalytica
                     int BMP23 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][24];
                     int FighterG = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][25];
                     int StrikeAircraftG = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][26];
-                    outputFile.WriteLine(Weaponry + ";" + T72B + ";" +T90A + ";" +T90M + ";" +T14 + ";" + BMP2 + ";"
+                    outputFile.WriteLine(country + ";"+Weaponry + ";" + T72B + ";" +T90A + ";" +T90M + ";" +T14 + ";" + BMP2 + ";"
                         + BMP3 + ";" + BMD1 + ";" + BMD2 + ";" +FighterR + ";" +StrikeAircraftR + ";" + M1 + ";" +
                         M1A1 + ";" + M1A2 + ";" + M1A2C + ";" + M3A1 + ";" + M3A3 + ";" + FighterA + ";" + StrikeAircraftA + ";" +
                         T55 + ";" + T55M + ";" + T72A + ";" + T72M + ";" + BMP1 + ";" + BMP23 + ";" + FighterG + ";" + StrikeAircraftG);
                 }
             }
         }
-
         public static void WriteFile_NameOwner(string basePath) 
         {
             string path = basePath + "Name_Owner.txt";
@@ -134,16 +172,15 @@ namespace PaxApocalytica
         }
         public static void WriteFile_NameSimpleFactory(string basePath)
         {
-            string path = basePath + "Name_MilitaryFactory.txt";
+            string path = basePath + "Name_SimpleFactory.txt";
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
                 foreach (var province in PaxApocalyticaGame.Dictionary_NameSFactory.Keys)
                 {
-                    outputFile.WriteLine(province + ";" +
-                        ConvertSResourceToString(PaxApocalyticaGame.Dictionary_NameSFactory[province].ProducedRecourceName) + ";" +
-                        PaxApocalyticaGame.Dictionary_NameMFactory[province].TechnologyLevel + ";" +
-                        PaxApocalyticaGame.Dictionary_NameMFactory[province].ExtensionLevel);
+                    outputFile.WriteLine(province + ";" + PaxApocalyticaGame.Dictionary_NameSFactory[province].ProducedRecourceName + ";" +
+                        PaxApocalyticaGame.Dictionary_NameSFactory[province].TechnologyLevel + ";" +
+                        PaxApocalyticaGame.Dictionary_NameSFactory[province].ExtensionLevel);
                 }
             }
         }
@@ -158,7 +195,7 @@ namespace PaxApocalytica
                     if (PaxApocalyticaGame.Dictionary_NameMFactory[province]==null) { outputFile.WriteLine(province + ";"); }
                     else 
                     {
-                        outputFile.WriteLine(province + ";" +
+                        outputFile.WriteLine(province.ToString() + ";" +
                             ConvertMResourceToString(PaxApocalyticaGame.Dictionary_NameMFactory[province].ProducedResourceName) + ";" +
                             PaxApocalyticaGame.Dictionary_NameMFactory[province].TechnologyLevel + ";" +
                             PaxApocalyticaGame.Dictionary_NameMFactory[province].ExtensionLevel); 
@@ -193,7 +230,7 @@ namespace PaxApocalytica
             if (resourceName == MilitaryResources.Names.BMD2) { return "BMD2"; }
             if (resourceName == MilitaryResources.Names.FighterR) { return "FighterR"; }
             if (resourceName == MilitaryResources.Names.StrikeAircraftR) { return "StrikeAircraftR"; }
-            if (resourceName == MilitaryResources.Names.M1) { return "GoM1ld"; }
+            if (resourceName == MilitaryResources.Names.M1) { return "M1"; }
             if (resourceName == MilitaryResources.Names.M1A1) { return "M1A1"; }
             if (resourceName == MilitaryResources.Names.M1A2) { return "M1A2"; }
             if (resourceName == MilitaryResources.Names.M1A2C) { return "M1A2C"; }

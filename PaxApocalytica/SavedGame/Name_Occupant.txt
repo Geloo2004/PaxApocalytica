@@ -1,0 +1,460 @@
+Alaska;USA
+Hawaii;USA
+Burkina-Faso;Burkina-Faso
+Northern Territories;Canada
+West Coast Pacific;Canada
+Prairie Provinces;Canada
+Central Canada;Canada
+Atlantic Region;Canada
+Pacific;USA
+Mountain;USA
+West North Central;USA
+West South Central;USA
+East North Central;USA
+East South Central;USA
+New England;USA
+Mid-Atlantic;USA
+South Atlantic;USA
+Noroeste;Mexico
+Noreste;Mexico
+Occidente;Mexico
+Oriente;Mexico
+Centronorte;Mexico
+Centrosur;Mexico
+Sureste;Mexico
+Suroeste;Mexico
+Guatemala;Guatemala
+Belize;Belize
+Gonduras;Gonduras
+Salvador;Salvador
+Nicaragua;Nicaragua
+Costa Rica;Costa Rica
+Panama;Panama
+Jamaica;Jamaica
+West Cuba;Cuba
+Central Cuba;Cuba
+East Cuba;Cuba
+Bahamas;Bahamas
+Puerto Rico;Puerto Rico
+British Territories In the North Atlantic Ocean;UK
+Haiti;Haiti
+Dominican Republic;Dominican Republic
+Saint Kitts and Nevis;Saint Kitts and Nevis
+Antigua and Barbuda;Antigua and Barbuda
+Guadeloupe and Martinique;France
+Dominica;Dominica
+Saint Lucia;Saint Lucia
+Saint Vincent and the Grenadines;Saint Vincent and the Grenadines
+Barbados;Barbados
+Grenada;Grenada
+Trinidad and Tobago;Trinidad and Tobago
+East Venezuela;Venezuela
+Caracas;Venezuela
+West Venezuela;Venezuela
+Region Caribe;Colombia
+Region Pacifica;Colombia
+Region Andina;Colombia
+Region Llanos Orientales;Colombia
+Region Amazonia;Colombia
+Ecuador Costa;Ecuador
+Ecuador Sierra;Ecuador
+Ecuador Oriente;Ecuador
+Galapagos Islands;Ecuador
+Peru Coast;Peru
+Peru Andes;Peru
+Peru Amazonia;Peru
+Bolivia;Bolivia
+North Chile;Chile
+Central Chile;Chile
+South Chile;Chile
+Patagonia;Argentina
+Pampas;Argentina
+Mesopotamia;Argentina
+Cuyo;Argentina
+Andean Northwest;Argentina
+Paraguay;Paraguay
+Uruguay;Uruguay
+South Brazil;Brazil
+Southeast Brazil;Brazil
+Central-West Brazil;Brazil
+Northeast Brazil;Brazil
+North Brazil;Brazil
+French guiana;France
+Suriname;Suriname
+Guyana;Guyana
+Cabo Verde;Cabo Verde
+West Sakhara;West Sakhara
+Mavritaniya;Mavritaniya
+Senegal;Senegal
+Gambia;Gambia
+Guinea-Bissau;Guinea-Bissau
+Guinea;Guinea
+Sierra Leone;Sierra Leone
+Liberia;Liberia
+Cote d'Ivoire;Cote d'Ivoire
+Gana;Gana
+Togo;Togo
+Benin;Benin
+South West Nigeria;Nigeria
+South Nigeria;Nigeria
+South East Nigeria;Nigeria
+North Central Nigeria;Nigeria
+North West Nigeria;Nigeria
+North East Nigeria;Nigeria
+North Cameroon;Cameroon
+Central Cameroon;Cameroon
+West Cameroon;Cameroon
+South Cameroon;Cameroon
+Gabon;Gabon
+Equatorial Guinea;Equatorial Guinea
+Sao Tome;Sao Tome
+Congo;Congo
+Democratic Republic of the Congo;Democratic Republic of the Congo
+Angola;Angola
+Luanda;Angola
+Namibia;Namibia
+Transvaal;South African Republic
+Cape;South African Republic
+Free State;South African Republic
+KwaZulu Natal;South African Republic
+Lesotho;Lesotho
+Eswatini;Eswatini
+Botswana;Botswana
+Zimbabwe;Zimbabwe
+Mozambique;Mozambique
+Malawi;Malawi
+Zambia;Zambia
+Tanzania;Tanzania
+Burundi;Burundi
+Rwanda;Rwanda
+Uganda;Uganda
+Kenya;Kenya
+Somalia;Somalia
+Somali;Ethiopia
+Oromiya;Ethiopia
+South Ethiopia;Ethiopia
+North Ethiopia;Ethiopia
+Djibouti;Djibouti
+Eritrea;Eritrea
+Northern Sudan;Sudan
+Eastern Sudan;Sudan
+Central Sudan;Sudan
+Kurdufan;Sudan
+Darfur;Sudan
+South Sudan;Sudan
+Central African Republic;Central African Republic
+Chad;Chad
+Niger;Niger
+Mali;Mali
+Algeria;Algeria
+Marocco;Marocco
+Tunisia;Tunisia
+Lybia;Lybia
+Lower Egypt;Egypt
+Western Desert;Egypt
+Middle Egypt;Egypt
+Upper Egypt;Egypt
+Red Sea Coast;Egypt
+Sinai;Egypt
+Israel;Israel
+Palestine;Palestine
+Jordan;Jordan
+North Saudi Arabia;Saudi Arabia
+West Saudi Arabia;Saudi Arabia
+South Saudi Arabia;Saudi Arabia
+Central Saudi Arabia;Saudi Arabia
+East Saudi Arabia;Saudi Arabia
+Yemen;Yemen
+Oman;Oman
+United Arab Emirates;United Arab Emirates
+Qatar;Qatar
+Bahrain;Bahrain
+Kuwait;Kuwait
+Southern Iraq;Iraq
+Middle Euphartes;Iraq
+Central Iraq;Iraq
+Nothern Iraq;Iraq
+East Syria;Syria
+Aleppo;Syria
+South Syria;Syria
+Coastal Syria;Syria
+Lebanon;Lebanon
+Cyprus;Cyprus
+Mediterranean Region;Turkey
+Southeast Anatolia Region;Turkey
+Central East Anatolia Region;Turkey
+Northeast Anatolia Region;Turkey
+East Black Sea Region;Turkey
+Central Anatolia Region;Turkey
+West Black Sea Region;Turkey
+West Anatolia Region;Turkey
+Aegean Region;Turkey
+East Marmara Region;Turkey
+West Marmara Region;Turkey
+Istanbul Region;Turkey
+Aegean Isles;Greece
+Kentriki Ellada;Greece
+Attica;Greece
+Voreia Ellada;Greece
+Albania;Albania
+North Macedonia;North Macedonia
+Kosovo;Yugoslavia
+Montenegro;Yugoslavia
+Bosnia;Yugoslavia
+Serbia;Yugoslavia
+Vojvodina;Yugoslavia
+Croatia;Croatia
+Slovenia;Slovenia
+Northeast Italy;Italy
+San-Marino;San-Marino
+Central Italy;Italy
+Vatican;Vatican
+South Italy;Italy
+Sardinia and Sicily;Italy
+Northwest Italy;Italy
+Switzerland;Switzerland
+Monaco;Monaco
+Auvergne-Rhone-Alpes;France
+Provence-Alpes-Cote d'Azur;France
+Corsica;France
+Occitanie;France
+Nouvelle-Aquitaine;France
+Pays de la Loire;France
+Centre-Val de Loire;France
+Bourgogne-Franche-Comte;France
+Grand-Est;France
+Hauts-de-France;France
+Ile-de-France;France
+Normandy;France
+Brittany;France
+Andorra;Andorra
+Northwest Spain;Spain
+Northeast Spain;Spain
+East Spain;Spain
+Central Spain;Spain
+Madrid;Spain
+South Spain;Spain
+Canary Islands;Spain
+Gibraltar;UK
+Ceuta;Spain
+Continental Portugal;Portugal
+Azores;Portugal
+Madeira;Portugal
+Ireland;Ireland
+North Ireland;UK
+Scotland;UK
+Northeast England;UK
+Yorkshire;UK
+Northwest England;UK
+Wales;UK
+Southwest England;UK
+West Midlands of England;UK
+East Midlands of England;UK
+East of England;UK
+Southeast England;UK
+London;UK
+Iceland;Iceland
+Greenland;Denmark
+Foroe Islands;Denmark
+Denmark;Denmark
+Norway;Norway
+North Sweden;Sweden
+South Sweden;Sweden
+East Sweden;Sweden
+Aland;Finland
+Mainland Finland;Finland
+Estonia;Estonia
+Latvia;Latvia
+Lithuania;Lithuania
+Warmia-Mazuria;Poland
+Podlaskie;Poland
+Lesser Poland;Poland
+Mazovia;Poland
+Silezia;Poland
+Greater Poland;Poland
+Pomerania;Poland
+Mecklenburg-Vorpommern;Germany
+Schleswig-Holstein;Germany
+Hamburg;Germany
+Niedersachsen;Germany
+Nordhein-Westfalen;Germany
+Hessen;Germany
+Thuringen;Germany
+Sachsen-Anhalt;Germany
+Brandenburg;Germany
+Berlin;Germany
+Sachsen;Germany
+Bayern;Germany
+Baden-Wurttemberg;Germany
+Rheinland-Pfalz;Germany
+Saarland;Germany
+Luxemburg;Luxemburg
+Wallonia;Belgium
+Flanders;Belgium
+Brussels;Belgium
+West Netherlands;Netherlands
+South Netherlands;Netherlands
+East Netherlands;Netherlands
+North Netherlands;Netherlands
+West Austria;Austria
+South Austria;Austria
+East Austria;Austria
+Bohemia;Czechoslovakia
+Moravia;Czechoslovakia
+Slovakia;Czechoslovakia
+Transdanubia;Hungary
+Central Hungary;Hungary
+Great Plain and North;Hungary
+Northwest Romania;Romania
+Southwest Romania;Romania
+South Romania;Romania
+East Romania;Romania
+Nothern and Eastern Bulgaria;Bulgaria
+Southern and Western Bulgaria;Bulgaria
+Moldavia;Moldavia
+Transnistria;Transnistria
+Southern Ukraine;Ukraine
+Crimea;Ukraine
+Eastern Ukraine;Ukraine
+Central Ukraine;Ukraine
+Kiev;Ukraine
+Western Ukraine;Ukraine
+Belarus;Belarus
+Minsk;Belarus
+Kaliningrad;Russia
+Northwest Russia;Russia
+North Russia;Russia
+Central Russia;Russia
+Moscow;Russia
+Central Black-Earth;Russia
+North Caucasus;Russia
+Volga;Russia
+Volga-Vyatka;Russia
+Ural;Russia
+West Siberia;Russia
+East Siberia;Russia
+Far East;Russia
+Manchuria;China
+Outer Mongolia;China
+Hebei;China
+Beijing;China
+Shanxi;China
+Shaanxi;China
+Ningxia;China
+Gansu;China
+Xinjiang;China
+Qinghai;China
+Tibet;China
+Sichuan;China
+Yunnan;China
+Guizhou;China
+Chongqing;China
+Hubei;China
+Henan;China
+Shandong;China
+Jiangsu;China
+Anhui;China
+Jiangxi;China
+Zhejiang;China
+Fujian;China
+Guang dong;China
+Hong Kong;UK
+Hainan;China
+Guangxi;China
+Hunan;China
+Taiwan;Taiwan
+North Vietnam;Vietnam
+Central Vietnam;Vietnam
+South Vietnam;Vietnam
+Cambodia;Cambodia
+Laos;Laos
+Isan;Thailand
+East Thailand;Thailand
+Central Thailand;Thailand
+South Thailand;Thailand
+North Thailand;Thailand
+Burma;Burma
+Bangladesh;Bangladesh
+North Eastern India;India
+Eastern India;India
+Central India;India
+Northern India;India
+Western India;India
+South India;India
+Sri Lanka;Sri Lanka
+Nepal;Nepal
+Bhutan;Bhutan
+Sindh;Pakistan
+Balochistan;Pakistan
+Punjab;Pakistan
+North Pakistan;Pakistan
+Afghanistan;Afghanistan
+Tajikistan;Tajikistan
+Kyrgyzstan;Kyrgyzstan
+Kazakh Desert;Kazakh ASSR
+Tyan Shan;Kazakh ASSR
+Central Highlands;Kazakh ASSR
+North Kazakhstan;Kazakh ASSR
+Mugodzhar Hills;Kazakh ASSR
+Turanian Lowlands;Kazakh ASSR
+Uzbekistan;Uzbekistan
+Turkmenistan;Turkmenistan
+Mashhad;Iran
+Isfahan;Iran
+Tehran;Iran
+Kermanshah;Iran
+Tabriz;Iran
+Azerbaijan;Azerbaijan
+Armenia;Armenia
+Georgia;Georgia
+Northern Malaysia;Malaysia
+Malaysian East Coast;Malaysia
+Central Malaysia;Malaysia
+Southern Malaysia;Malaysia
+East Malaysia;Malaysia
+Singapore;Singapore
+Brunei;Indonesia
+Sumatra;Indonesia
+Java;Indonesia
+Kalimantan;Indonesia
+Bali;Indonesia
+Sulawesi;Indonesia
+Nusa Tenggara;Indonesia
+Maluku;Indonesia
+Papua;Indonesia
+Papua New Guinea;Papua New Guinea
+Southern Philippines;Philippines
+Central Philippines;Philippines
+Northern Philippines;Philippines
+Pyongan;North Korea
+Baekdu Mountains;North Korea
+Donghae Coast;North Korea
+Hwanghae;North Korea
+Gyeonggi;South Korea
+Gangwon;South Korea
+Gyeongsang;South Korea
+Jeolla;South Korea
+Chungcheong;South Korea
+Hokkaido;Japan
+Tohoku;Japan
+Kanto;Japan
+Chubu;Japan
+Kansai;Japan
+Chuhoku;Japan
+Shikoku;Japan
+Kyushu;Japan
+Solomon Islands;Solomon Islands
+New Caledonia;France
+New Zealand;New Zealand
+Fiji;Fiji
+Victoria;Australia
+New South Wales;Australia
+Queensland;Australia
+Northern Territory;Australia
+Western Australia;Australia
+South Australia;Australia
+East Timor;East Timor
+Madagascar;Madagascar
+Falklands;UK
+Mongolia;Mongolia
+Malta;Malta

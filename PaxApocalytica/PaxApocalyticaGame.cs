@@ -37,11 +37,13 @@ namespace PaxApocalytica
 
         public static Dictionary<string, List<Point>> Dictionary_NamesPoints;
         public static Dictionary<Color, string> Dictionary_ColorName;
+        public static Dictionary<string, string[]> Dictionary_NameNeighbours;
+        public static Dictionary<string, int> Dictionary_NamePort;
+
+
         public static Dictionary<string, string> Dictionary_NameOwner;
         public static Dictionary<string, string> Dictionary_NameOccupant;
         public static Dictionary<string, CountryCharacteristics> Dictionary_CountrynameCharacteristics;
-        public static Dictionary<string, string[]> Dictionary_NameNeighbours;
-        public static Dictionary<string, int> Dictionary_NamePort;
         public static Dictionary<string, int[]> Dictionary_CountrynameSimpleResources;
         public static Dictionary<string, int[]> Dictionary_CountrynameMilitaryResources;
         public static Dictionary<string, Airfield> Dictionary_NameAirfield;
@@ -84,27 +86,23 @@ namespace PaxApocalytica
 
 
 
-            if (PaxApocalytica.Form1.path != null)
-            {
-                //load from folder}
-            }
-            else
-            {
-                FileReader_FromResources.ReadFile_NameOwner();
-                FileReader_FromResources.ReadFile_NameOccupant();
-                FileReader_FromResources.ReadFile_CountrynameCharacterstics();
-                FileReader_FromResources.ReadFile_CountrynameMilResources();
-                FileReader_FromResources.ReadFile_CountrynameSimpleResources();
-                FileReader_FromResources.ReadFile_NameAirfield();
-                FileReader_FromResources.ReadFile_NameSimpleFactory();
-                FileReader_FromResources.ReadFile_NameMilitaryFactory();
-            }
+            FileReader.ReadFile_NameOwner();
+            FileReader.ReadFile_NameOccupant();
+            FileReader.ReadFile_CountrynameCharacterstics();
+            FileReader.ReadFile_CountrynameMilResources();
+            FileReader.ReadFile_CountrynameSimpleResources();
+            FileReader.ReadFile_NameAirfield();
+            FileReader.ReadFile_NameSimpleFactory();
+            FileReader.ReadFile_NameMilitaryFactory();
 
             //не меняются
-            FileReader_FromResources.ReadFile_ColorName();
-            FileReader_FromResources.ReadFile_NamePort();
-            FileReader_FromResources.ReadFile_NameNeighbours();
-            FileReader_FromResources.ReadFile_NamesPoints();
+            FileReader.ReadFile_ColorName();
+            FileReader.ReadFile_NamePort();
+            FileReader.ReadFile_NameNeighbours();
+            FileReader.ReadFile_NamesPoints();
+
+            DrawStartMap();
+            UpdateMap();
         }
         /* 
  public bool ColorsRepeat()
@@ -379,27 +377,27 @@ namespace PaxApocalytica
                             plane0.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[0].Name);
                         }
 
-                        plane1.Show(); 
+                        plane1.Show();
                         if (Dictionary_NameAirfield[provinceName.Text].Planes[1] != null)
                         {
                             plane1.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[1].Name);
                         }
 
-                        if (Dictionary_NameAirfield[provinceName.Text].Planes.Length == 5) 
+                        if (Dictionary_NameAirfield[provinceName.Text].Planes.Length == 5)
                         {
-                            plane2.Show(); 
+                            plane2.Show();
                             if (Dictionary_NameAirfield[provinceName.Text].Planes[2] != null)
                             {
                                 plane2.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[2].Name);
                             }
 
-                            plane3.Show(); 
+                            plane3.Show();
                             if (Dictionary_NameAirfield[provinceName.Text].Planes[3] != null)
                             {
                                 plane3.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[3].Name);
                             }
 
-                            plane4.Show(); 
+                            plane4.Show();
                             if (Dictionary_NameAirfield[provinceName.Text].Planes[4] != null)
                             {
                                 plane4.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[4].Name);
@@ -496,7 +494,7 @@ namespace PaxApocalytica
             }
         }
 
-        public string ConvertUnitNameToString(UnitName.Name name) 
+        public string ConvertUnitNameToString(UnitName.Name name)
         {
             if (name == UnitName.Name.fighterG) { return "Generic fighter"; }
             if (name == UnitName.Name.fighterA) { return "Western fighter"; }
@@ -506,6 +504,31 @@ namespace PaxApocalytica
             if (name == UnitName.Name.strikeAircraftG) { return "Generic strike aircraft"; }
 
             throw new ArgumentException();
+        }
+
+        private void PaxApocalyticaGame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+            string savePath = folderBrowserDialog1.SelectedPath + "\\"; 
+            if (folderBrowserDialog1.SelectedPath != "")
+            {
+                FileWriter.SaveEverything(savePath);
+            }
+        }
+
+        private void DrawStartMap() 
+        {
+            foreach(var province in Dictionary_NameOwner.Keys) 
+            {
+                foreach(var point in Dictionary_NamesPoints[province]) 
+                {
+                    if (baseBitmap.GetPixel(point.X, point.Y) == Dictionary_CountrynameCharacteristics[Dictionary_NameOwner[province]].Color) { break; }
+                    else
+                    {
+                        FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Dictionary_CountrynameCharacteristics[Dictionary_NameOwner[province]].Color);
+                    }
+                }
+            }
         }
     }
 }

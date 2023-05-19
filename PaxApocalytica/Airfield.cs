@@ -18,6 +18,10 @@ namespace PaxApocalytica
         public Airfield(byte size) 
         {
             this.Planes = new Unit[size];
+            for(int i=0; i< size;i++) 
+            {
+                Planes[i] = null;
+            }
         }
 
         public bool HasBombers() 
@@ -46,6 +50,20 @@ namespace PaxApocalytica
         }
 
         public void SendFighter(int id)
+        {
+            
+        }
+
+        public bool AllSlotsFilled() 
+        { 
+            foreach(var plane in Planes) 
+            {
+                if (plane == null) { return false; }
+            }
+            return true;
+        }
+
+        public void AddPlanesDivision(Unit unit) 
         {
             
         }

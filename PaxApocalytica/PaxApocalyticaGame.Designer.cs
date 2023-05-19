@@ -42,6 +42,11 @@
             diplomacyTab = new TabPage();
             armiesTab = new TabPage();
             airfieldTab = new TabPage();
+            planeLabel4 = new Label();
+            planeLabel3 = new Label();
+            planeLabel2 = new Label();
+            planeLabel1 = new Label();
+            planeLabel0 = new Label();
             plane4 = new Button();
             plane3 = new Button();
             plane2 = new Button();
@@ -53,11 +58,7 @@
             producedMilitaryResource = new Label();
             producedResource = new Label();
             provinceName = new Label();
-            planeLabel0 = new Label();
-            planeLabel1 = new Label();
-            planeLabel2 = new Label();
-            planeLabel3 = new Label();
-            planeLabel4 = new Label();
+            folderBrowserDialog1 = new FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)splitterVertical).BeginInit();
             splitterVertical.Panel1.SuspendLayout();
             splitterVertical.Panel2.SuspendLayout();
@@ -226,6 +227,56 @@
             airfieldTab.Text = "Airfield";
             airfieldTab.UseVisualStyleBackColor = true;
             // 
+            // planeLabel4
+            // 
+            planeLabel4.AutoSize = true;
+            planeLabel4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            planeLabel4.Location = new Point(136, 188);
+            planeLabel4.Name = "planeLabel4";
+            planeLabel4.Size = new Size(45, 19);
+            planeLabel4.TabIndex = 9;
+            planeLabel4.Text = "label2";
+            // 
+            // planeLabel3
+            // 
+            planeLabel3.AutoSize = true;
+            planeLabel3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            planeLabel3.Location = new Point(136, 146);
+            planeLabel3.Name = "planeLabel3";
+            planeLabel3.Size = new Size(45, 19);
+            planeLabel3.TabIndex = 8;
+            planeLabel3.Text = "label2";
+            // 
+            // planeLabel2
+            // 
+            planeLabel2.AutoSize = true;
+            planeLabel2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            planeLabel2.Location = new Point(136, 104);
+            planeLabel2.Name = "planeLabel2";
+            planeLabel2.Size = new Size(45, 19);
+            planeLabel2.TabIndex = 7;
+            planeLabel2.Text = "label2";
+            // 
+            // planeLabel1
+            // 
+            planeLabel1.AutoSize = true;
+            planeLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            planeLabel1.Location = new Point(136, 62);
+            planeLabel1.Name = "planeLabel1";
+            planeLabel1.Size = new Size(45, 19);
+            planeLabel1.TabIndex = 6;
+            planeLabel1.Text = "label2";
+            // 
+            // planeLabel0
+            // 
+            planeLabel0.AutoSize = true;
+            planeLabel0.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            planeLabel0.Location = new Point(136, 20);
+            planeLabel0.Name = "planeLabel0";
+            planeLabel0.Size = new Size(45, 19);
+            planeLabel0.TabIndex = 5;
+            planeLabel0.Text = "label1";
+            // 
             // plane4
             // 
             plane4.Location = new Point(13, 171);
@@ -331,56 +382,6 @@
             provinceName.TabIndex = 0;
             provinceName.Text = "provinceName";
             // 
-            // planeLabel0
-            // 
-            planeLabel0.AutoSize = true;
-            planeLabel0.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            planeLabel0.Location = new Point(136, 20);
-            planeLabel0.Name = "planeLabel0";
-            planeLabel0.Size = new Size(45, 19);
-            planeLabel0.TabIndex = 5;
-            planeLabel0.Text = "label1";
-            // 
-            // planeLabel1
-            // 
-            planeLabel1.AutoSize = true;
-            planeLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            planeLabel1.Location = new Point(136, 62);
-            planeLabel1.Name = "planeLabel1";
-            planeLabel1.Size = new Size(45, 19);
-            planeLabel1.TabIndex = 6;
-            planeLabel1.Text = "label2";
-            // 
-            // planeLabel2
-            // 
-            planeLabel2.AutoSize = true;
-            planeLabel2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            planeLabel2.Location = new Point(136, 104);
-            planeLabel2.Name = "planeLabel2";
-            planeLabel2.Size = new Size(45, 19);
-            planeLabel2.TabIndex = 7;
-            planeLabel2.Text = "label2";
-            // 
-            // planeLabel3
-            // 
-            planeLabel3.AutoSize = true;
-            planeLabel3.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            planeLabel3.Location = new Point(136, 146);
-            planeLabel3.Name = "planeLabel3";
-            planeLabel3.Size = new Size(45, 19);
-            planeLabel3.TabIndex = 8;
-            planeLabel3.Text = "label2";
-            // 
-            // planeLabel4
-            // 
-            planeLabel4.AutoSize = true;
-            planeLabel4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            planeLabel4.Location = new Point(136, 188);
-            planeLabel4.Name = "planeLabel4";
-            planeLabel4.Size = new Size(45, 19);
-            planeLabel4.TabIndex = 9;
-            planeLabel4.Text = "label2";
-            // 
             // PaxApocalyticaGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -389,6 +390,7 @@
             Controls.Add(splitterVertical);
             Name = "PaxApocalyticaGame";
             Text = "PaxApocalyticaGame";
+            FormClosing += PaxApocalyticaGame_FormClosing;
             splitterVertical.Panel1.ResumeLayout(false);
             splitterVertical.Panel2.ResumeLayout(false);
             splitterVertical.Panel2.PerformLayout();
@@ -441,5 +443,6 @@
         private Label planeLabel2;
         private Label planeLabel1;
         private Label planeLabel0;
+        private FolderBrowserDialog folderBrowserDialog1;
     }
 }
