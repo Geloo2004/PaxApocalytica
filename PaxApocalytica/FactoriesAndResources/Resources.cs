@@ -10,17 +10,16 @@ namespace PaxApocalytica.FactoriesAndResources
     {
         public enum Names : byte
         {
-            Oil,
-            Steel,
-            Copper,
-            Uranium,
-            Coal,   //
-            Grain,  //
-            Livestock,  //
-            Gas,    //
-            Aluminium,
-            Wood,   //
-            Gold    //
+            Oil,        //im 180        ex 60
+            Steel,      //im 120        ex 40
+            Copper,     //im 150        ex 50
+            Uranium,    //im 1000       ex 100
+            Coal,   //  //im 120        ex 40
+            Grain,  //  //im 60         ex 20
+            Livestock,  //im 75         ex 25
+            Gas,    //  //im 150        ex 50
+            Aluminium,  //im 120        ex 40
+            Gold    //  //im 180        ex 60
         }
     }
 
@@ -29,17 +28,16 @@ namespace PaxApocalytica.FactoriesAndResources
         public enum Names : byte
         {
             Weaponry,   //Союз нерушимый республик свободных...
-            T1R,
-            T2R,
-            T3R,
-            T4R,
+            T72B,
+            T90A,
+            T90M,
+            T14,
             BMP2,
             BMP3,
             BMD1,
             BMD2,
             FighterR,
-            StrikeAircraftR,
-            //USA! USA! USA!
+            StrikeAircraftR,         //USA! USA! USA!
             M1,
             M1A1,
             M1A2,
@@ -47,7 +45,15 @@ namespace PaxApocalytica.FactoriesAndResources
             M3A1,
             M3A3,
             FighterA,
-            StrikeAircraftA,//Ching cheng hanji?
+            StrikeAircraftA,            //Generic
+            T55,
+            T55M,
+            T72A,
+            T72M,
+            BMP1,
+            BMP23,
+            FighterG,
+            StrikeAircraftG,
         }
     }
 
@@ -57,7 +63,7 @@ namespace PaxApocalytica.FactoriesAndResources
         {
             Soviet,
             NATO,
-            none
+            Generic
         }
     }
 }

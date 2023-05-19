@@ -13,64 +13,28 @@ namespace PaxApocalytica.FactoriesAndResources
             get { return 10000; }
         }
 
+        public float Production 
+        {
+            get;
+            set;
+        }
+
         public byte MinEducation
         {
-            get { return MinEducation; }
-            private set
-            {
-                if (value >= 70 && value <= 100)
-                {
-                    MinEducation = value;
-                }
-                else if (value < 70)
-                {
-                    MinEducation = 70;
-                }
-                else
-                {
-                    MinEducation = 100;
-                }
-            }
+            get;
+            private set;
         }
 
         public byte ExtensionLevel
         {
-            get { return ExtensionLevel; }
-            private set
-            {
-                if (value > 0 && value <= 10)
-                {
-                    ExtensionLevel = value;
-                }
-                else if (value <= 0)
-                {
-                    ExtensionLevel = 1;
-                }
-                else
-                {
-                    ExtensionLevel = 10;
-                }
-            }
+            get;
+            private set;
         }
 
         public byte TechnologyLevel
         {
-            get { return TechnologyLevel; }
-            private set
-            {
-                if (value > 0 && value <= 10)
-                {
-                    TechnologyLevel = value;
-                }
-                else if (value <= 0)
-                {
-                    TechnologyLevel = 1;
-                }
-                else
-                {
-                    TechnologyLevel = 10;
-                }
-            }
+            get;
+            private set;
         }
 
         public MilitaryResources.Names ProducedResourceName
@@ -85,17 +49,30 @@ namespace PaxApocalytica.FactoriesAndResources
             private set;
         }
 
-        public MilitaryFactory(MilitaryResources.Names name, byte extensionLevel, byte intensionLevel, MilitaryFactoryType.Type factoryType)
+        public MilitaryFactory(MilitaryResources.Names name, byte technologyLevel, byte extensionLevel, MilitaryFactoryType.Type factoryType)
         {
-            ExtensionLevel = extensionLevel;
-            TechnologyLevel = intensionLevel;
+            if (extensionLevel <= 0) { ExtensionLevel = 1; }
+            else if (extensionLevel > 10) { ExtensionLevel = 10; }
+            else { ExtensionLevel = extensionLevel; }
+
+            if (technologyLevel <= 0) { TechnologyLevel = 1; }
+            else if (technologyLevel > 10) { TechnologyLevel = 10; }
+            else { TechnologyLevel = technologyLevel; }
+
             ProducedResourceName = name;
             MinEducation = (byte)(90 - 5 * (10 - TechnologyLevel));
+            if (MinEducation < 70) { MinEducation = 70; }
             FactoryType = factoryType;
         }
 
-        public bool IsProduceable(MilitaryResources.Names name)
+        public void ChangeProducedResource(MilitaryResources.Names newName) 
         {
+            this.ProducedResourceName = newName;
+        }
+
+        public bool IsProduceable(MilitaryResources.Names name, MilitaryFactoryType.Type ownerFactoryType)
+        {
+            if(ownerFactoryType != FactoryType) { return false; }//нельзя производить на оккупированных территориях
             if (FactoryType == MilitaryFactoryType.Type.Soviet)
             {
                 return IsProduceableR(name);
@@ -104,7 +81,10 @@ namespace PaxApocalytica.FactoriesAndResources
             {
                 return IsProduceableA(name);
             }
-            return false;
+            else 
+            {
+                return IsProduceableG(name);
+            }
         }
 
         public bool IsProduceableR(MilitaryResources.Names name)
@@ -117,15 +97,46 @@ namespace PaxApocalytica.FactoriesAndResources
             {
                 return true;
             }
-            if (TechnologyLevel >= 2 && (name == MilitaryResources.Names.T1R || name == MilitaryResources.Names.BMP2 || name == MilitaryResources.Names.BMD1))
+            if (TechnologyLevel >= 2 && (name == MilitaryResources.Names.T72B || name == MilitaryResources.Names.BMP2 || name == MilitaryResources.Names.BMD1))
             {
                 return true;
             }
-            if (TechnologyLevel >= 4 && (name == MilitaryResources.Names.T2R || name == MilitaryResources.Names.BMP3 || name == MilitaryResources.Names.BMD2))
+            if (TechnologyLevel >= 4 && (name == MilitaryResources.Names.T90A || 
+                name == MilitaryResources.Names.BMP3 || 
+                name == MilitaryResources.Names.BMD2||
+                name == MilitaryResources.Names.FighterR ||
+                name == MilitaryResources.Names.StrikeAircraftR))
             {
                 return true;
             }
-            if (TechnologyLevel >= 6 && name == MilitaryResources.Names.T3R)
+            if (TechnologyLevel >= 6 && name == MilitaryResources.Names.T90M)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool IsProduceableG(MilitaryResources.Names name)
+        {
+            if (name == MilitaryResources.Names.Weaponry)
+            {
+                return true;
+            }
+            if (TechnologyLevel >= 8)
+            {
+                return true;
+            }
+            if (TechnologyLevel >= 2 && (name == MilitaryResources.Names.T55 || name == MilitaryResources.Names.BMP1))
+            {
+                return true;
+            }
+            if (TechnologyLevel >= 4 && (name == MilitaryResources.Names.T55M || 
+                name == MilitaryResources.Names.BMP23 || 
+                name==MilitaryResources.Names.FighterG || 
+                name == MilitaryResources.Names.StrikeAircraftG))
+            {
+                return true;
+            }
+            if (TechnologyLevel >= 6 && name == MilitaryResources.Names.T72A)
             {
                 return true;
             }
@@ -146,7 +157,10 @@ namespace PaxApocalytica.FactoriesAndResources
             {
                 return true;
             }
-            if (TechnologyLevel >= 4 && (name == MilitaryResources.Names.M1A1 || name == MilitaryResources.Names.M3A3))
+            if (TechnologyLevel >= 4 && (name == MilitaryResources.Names.M1A1 || 
+                name == MilitaryResources.Names.M3A3 ||
+                name == MilitaryResources.Names.FighterA ||
+                name == MilitaryResources.Names.StrikeAircraftA))
             {
                 return true;
             }
@@ -157,7 +171,7 @@ namespace PaxApocalytica.FactoriesAndResources
             return false;
         }
 
-        public bool IsEUpgradePossible(byte educationLevel)
+        public bool IsEUpgradePossible()
         {
             if (ExtensionLevel != 10)
             {
@@ -165,7 +179,7 @@ namespace PaxApocalytica.FactoriesAndResources
             }
             return true;
         }
-        public bool IsEDegradePossible(byte educationLevel)
+        public bool IsEDegradePossible()
         {
             if (ExtensionLevel > 0)
             {
@@ -224,11 +238,13 @@ namespace PaxApocalytica.FactoriesAndResources
         {
             TechnologyLevel++;
             MinEducation = (byte)(90 - 5 * (10 - TechnologyLevel));
+            if (MinEducation < 70) { MinEducation = 70; }
         }
         public void TDegrade(ref CountryCharacteristics occupantCountryCharacteristics)
         {
             TechnologyLevel--;
             MinEducation = (byte)(90 - 5 * (10 - TechnologyLevel));
+            if (MinEducation < 70) { MinEducation = 70; }
             occupantCountryCharacteristics.Cash += 1000;
         }
 
@@ -243,14 +259,18 @@ namespace PaxApocalytica.FactoriesAndResources
                 }
                 else { noResources = true; }
             }
-            else if (ProducedResourceName == MilitaryResources.Names.T1R        //tanks
-                || ProducedResourceName == MilitaryResources.Names.T2R
-                || ProducedResourceName == MilitaryResources.Names.T3R
-                || ProducedResourceName == MilitaryResources.Names.T4R
+            else if (ProducedResourceName == MilitaryResources.Names.T72B        //tanks
+                || ProducedResourceName == MilitaryResources.Names.T90A
+                || ProducedResourceName == MilitaryResources.Names.T90M
+                || ProducedResourceName == MilitaryResources.Names.T14
                 || ProducedResourceName == MilitaryResources.Names.M1
                 || ProducedResourceName == MilitaryResources.Names.M1A1
                 || ProducedResourceName == MilitaryResources.Names.M1A2
-                || ProducedResourceName == MilitaryResources.Names.M1A2C)
+                || ProducedResourceName == MilitaryResources.Names.M1A2C
+                || ProducedResourceName == MilitaryResources.Names.T55
+                || ProducedResourceName == MilitaryResources.Names.T55M
+                || ProducedResourceName == MilitaryResources.Names.T72A
+                || ProducedResourceName == MilitaryResources.Names.T72M)
             {
                 if (sr[SimpleResources.Names.Steel] >= ExtensionLevel * 3
                     && sr[SimpleResources.Names.Copper] >= ExtensionLevel)
@@ -264,7 +284,9 @@ namespace PaxApocalytica.FactoriesAndResources
             else if (ProducedResourceName == MilitaryResources.Names.BMP2    //lavs
                 || ProducedResourceName == MilitaryResources.Names.BMP3
                 || ProducedResourceName == MilitaryResources.Names.M3A1
-                || ProducedResourceName == MilitaryResources.Names.M3A3)
+                || ProducedResourceName == MilitaryResources.Names.M3A3
+                || ProducedResourceName == MilitaryResources.Names.BMP1
+                || ProducedResourceName == MilitaryResources.Names.BMP23)
             {
                 if (sr[SimpleResources.Names.Steel] >= ExtensionLevel * 2
                     && sr[SimpleResources.Names.Copper] >= ExtensionLevel
@@ -290,11 +312,23 @@ namespace PaxApocalytica.FactoriesAndResources
                 else { noResources = true; }
             }
             else if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftA
-                || ProducedResourceName == MilitaryResources.Names.StrikeAircraftR)
+                || ProducedResourceName == MilitaryResources.Names.StrikeAircraftR
+                || ProducedResourceName == MilitaryResources.Names.StrikeAircraftG)
             {
                 if (sr[SimpleResources.Names.Aluminium] >= ExtensionLevel * 4)
                 {
                     sr[SimpleResources.Names.Aluminium] -= ExtensionLevel * 4;
+                    mr[ProducedResourceName] += CalculateProduction();
+                }
+                else { noResources = true; }
+            }
+            else if (ProducedResourceName == MilitaryResources.Names.FighterA
+                || ProducedResourceName == MilitaryResources.Names.FighterG
+                || ProducedResourceName == MilitaryResources.Names.FighterR)
+            {
+                if (sr[SimpleResources.Names.Aluminium] >= ExtensionLevel * 3)
+                {
+                    sr[SimpleResources.Names.Aluminium] -= ExtensionLevel * 3;
                     mr[ProducedResourceName] += CalculateProduction();
                 }
                 else { noResources = true; }

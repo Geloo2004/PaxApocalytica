@@ -30,6 +30,9 @@
         {
             button1 = new Button();
             button2 = new Button();
+            button3 = new Button();
+            folderBrowserDialog1 = new FolderBrowserDialog();
+            saveFileDialog1 = new SaveFileDialog();
             SuspendLayout();
             // 
             // button1
@@ -48,15 +51,26 @@
             button2.Name = "button2";
             button2.Size = new Size(301, 58);
             button2.TabIndex = 1;
-            button2.Text = "Quit";
+            button2.Text = "Load Game";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 140);
+            button3.Name = "button3";
+            button3.Size = new Size(301, 58);
+            button3.TabIndex = 2;
+            button3.Text = "Quit";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(325, 141);
+            ClientSize = new Size(325, 207);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Form1";
@@ -69,5 +83,8 @@
 
         private Button button1;
         private Button button2;
+        private Button button3;
+        private FolderBrowserDialog folderBrowserDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }

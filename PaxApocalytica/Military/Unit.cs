@@ -19,11 +19,17 @@ namespace PaxApocalytica.Military
             get;
             private set;
         }
+        public int MaxHP
+        {
+            get;
+            private set;
+        }
 
         public Unit(UnitName.Name name)
         {
             Name = name;
             HP = Units.unitsCharacteristics[name].HP;
+            MaxHP = (int)HP;
         }
 
         public float GetDamage()
@@ -84,7 +90,7 @@ namespace PaxApocalytica.Military
 
 
 
-
+            
             {
                 UnitName.Name.infantry1a,
                 new UnitCharacteristics(10,100)
@@ -114,6 +120,66 @@ namespace PaxApocalytica.Military
                 UnitName.Name.tank4a,
                 new UnitCharacteristics(40,400)
             },
+
+
+            {
+                UnitName.Name.infantry1g,
+                new UnitCharacteristics(10,80)
+            },
+
+            {
+                UnitName.Name.infantry2g,
+                new UnitCharacteristics(15,100)
+            },
+
+            {
+                UnitName.Name.tank1g,
+                new UnitCharacteristics(25,120)
+            },
+
+            {
+                UnitName.Name.tank2g,
+                new UnitCharacteristics(25,150)
+            },
+
+            {
+                UnitName.Name.tank3g,
+                new UnitCharacteristics(30,180)
+            },
+
+            {
+                UnitName.Name.tank4g,
+                new UnitCharacteristics(30,220)
+            },
+
+            {
+                UnitName.Name.fighterA,
+                new UnitCharacteristics(10,100)
+            },
+
+            {
+                UnitName.Name.fighterR,
+                new UnitCharacteristics(10,100)
+            },
+
+            {
+                UnitName.Name.fighterG,
+                new UnitCharacteristics(8,80)
+            },
+            {
+                UnitName.Name.strikeAircraftA,
+                new UnitCharacteristics(25,120)
+            },
+
+            {
+                UnitName.Name.strikeAircraftR,
+                new UnitCharacteristics(20,120)
+            },
+
+            {
+                UnitName.Name.strikeAircraftG,
+                new UnitCharacteristics(20,100)
+            }
         };
 
     }
@@ -136,6 +202,18 @@ namespace PaxApocalytica.Military
             tank2a,
             tank3a,
             tank4a,
+            infantry1g,
+            infantry2g,
+            tank1g,
+            tank2g,
+            tank3g,
+            tank4g,
+            fighterA, 
+            fighterR, 
+            fighterG,
+            strikeAircraftA,
+            strikeAircraftR,
+            strikeAircraftG
         }
     }
 

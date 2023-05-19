@@ -2,6 +2,8 @@ namespace PaxApocalytica
 {
     public partial class Form1 : Form
     {
+        public static string path = null;
+        public static string savePath = null;
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +22,13 @@ namespace PaxApocalytica
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog(this);
+            path = folderBrowserDialog1.SelectedPath;
+            button1.Text = "Continue";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
         }

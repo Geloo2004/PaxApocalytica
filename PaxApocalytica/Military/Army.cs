@@ -8,7 +8,7 @@ namespace PaxApocalytica.Military
 {
     public class Army
     {
-        public Country.Name Owner
+        public string Owner
         {
             get;
             private set;
@@ -20,7 +20,7 @@ namespace PaxApocalytica.Military
             private set;
         }
 
-        public Army(Country.Name name)
+        public Army(string name)
         {
             Owner = name;
         }

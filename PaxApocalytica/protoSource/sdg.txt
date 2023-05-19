@@ -1,0 +1,460 @@
+Alaska
+Hawaii
+Burkina-Faso
+Northern Territories
+West Coast Pacific
+Prairie Provinces
+Central Canada
+Atlantic Region
+Pacific
+Mountain
+West North Central
+West South Central
+East North Central
+East South Central
+New England
+Mid-Atlantic
+South Atlantic
+Noroeste
+Noreste
+Occidente
+Oriente
+Centronorte
+Centrosur
+Sureste
+Suroeste
+Guatemala
+Belize
+Gonduras
+Salvador
+Nicaragua
+Costa Rica
+Panama
+Jamaica
+West Cuba
+Central Cuba
+East Cuba
+Bahamas
+Puerto Rico
+British Territories In the North Atlantic Ocean
+Haiti
+Dominican Republic
+Saint Kitts And  Nevis
+Antigua And Barbuda
+Guadeloupe and Martinique
+Dominica
+Saint Lucia
+Saint Vincent and the Grenadines
+Barbados
+Grenada
+Trinidad and Tobago
+East Venezuela
+Caracas
+West Venezuela
+Region Caribe
+Region Pacifica
+Region Andina
+Region Llanos Orientales
+Region Amazonia
+Ecuador Costa
+Ecuador Sierra
+Ecuador Oriente
+Galapagos Islands
+Peru Coast
+Peru Andes
+Peru Amazonia
+Bolivia
+North Chile
+Central Chile
+South Chile
+Patagonia
+Pampas
+Mesopotamia
+Cuyo
+Andean Northwest
+Paraguay
+Uruguay
+South Brazil
+Southeast Brazil
+Central-West Brazil
+Northeast Brazil
+North Brazil
+French guiana
+Suriname
+Guyana
+Cabo Verde
+West Sakhara
+Mavritaniya
+Senegal
+Gambia
+Guinea-Bissau
+Guinea
+Sierra Leone
+Liberia
+Cote d'Ivoire
+Gana
+Togo
+Benin
+South West Nigeria
+South Nigeria
+South East Nigeria
+North Central Nigeria
+North West Nigeria
+North East Nigeria
+North Cameroon
+Central Cameroon
+West Cameroon
+South Cameroon
+Gabon
+Equatorial Guinea
+Sao Tome
+Congo
+Democratic Republic of the Congo
+Angola
+Luanda
+Namibia
+Transvaal
+Cape
+Free State
+KwaZulu Natal
+Lesotho
+Eswatini
+Botswana
+Zimbabwe
+Mozambique
+Malawi
+Zambia
+Tanzania
+Burundi
+Rwanda
+Uganda
+Kenya
+Somalia
+Somali
+Oromiya
+South Ethiopia
+North Ethiopia
+Djibouti
+Eritrea
+Northern Sudan
+Eastern Sudan
+Central Sudan
+Kurdufan
+Darfur
+South Sudan
+Central African Republic
+Chad
+Niger
+Mali
+Algeria
+Marocco
+Tunisia
+Lybia
+Lower Egypt
+Western Desert
+Middle Egypt
+Upper Egypt
+Red Seas Coast
+Sinai
+Israel
+Palestine
+Jordan
+North Saudi Arabia
+West Saudi Arabia
+South Saudi Arabia
+Central Saudi Arabia
+East Saudi Arabia
+Yemen
+Oman
+United Arab Emirates
+Qatar
+Bahrain
+Kuwait
+Southern Iraq
+Middle Euphartes
+Central Iraq
+Nothern Iraq
+East Syria
+Aleppo
+South Syria
+Coastal Syria
+Lebanon
+Cyprus
+Mediterranean Region
+Southeast Anatolia Region
+Central East Anatolia Region
+Northeast Anatolia Region
+East Black Sea Region
+Central Anatolia Region
+West Black Sea Region
+West Anatolia Region
+Aegean Region
+East Marmara Region
+West Marmara Region
+Istanbul Region
+Aegean Isles
+Kentriki Ellada
+Attica
+Voreia Ellada
+Albania
+North Macedonia
+Kosovo
+Montenegro
+Bosnia
+Serbia
+Vojvodina
+Croatia
+Slovenia
+Northeast Italy
+San-Marino
+Central Italy
+Vatican
+South Italy
+Sardinia and Sicily
+Northwest Italy
+Switzerland
+Monaco
+Auvergne-Rhone-Alpes
+Provence-Alpes-Cote d'Azur
+Corsica
+Occitanie
+Nouvelle-Aquitaine
+Pays de la Loire
+Centre-Val de Loire
+Bourgogne-Franche-Comte
+Grand-Est
+Hauts-de-France
+Ile-de-France
+Normandy
+Brittany
+Andorra
+Northwest Spain
+Northeast Spain
+East Spain
+Central Spain
+Madrid
+South Spain
+Canary Islands
+Gibraltar
+Ceuta
+Continental Portugal
+Azores
+Madeira
+Ireland
+North Ireland
+Scotland
+Northeast England
+Yorkshire
+Northwest England
+Wales
+Southwest England
+West Midlands of England
+East Midlands of England
+East of England
+SoutheastEngland
+London
+Iceland
+Greenland
+Foroe Islands
+Denmark
+Norway
+North Sweden
+South Sweden
+East Sweden
+Aland
+Mainland Finland
+Estonia
+Latvia
+Lithuania
+Warmia-Mazuria
+Podlaskie
+Lesser Poland
+Mazovia
+Silezia
+Greater Poland
+Pomerania
+Mecklenburg-Vorpommern
+Schleswig-Holstein
+Hamburg
+Niedersachsen
+Nordhein-Westfalen
+Hessen
+Thuringen
+Sachsen-Anhalt
+Brandenburg
+Berlin
+Sachsen
+Bayern
+Baden-Wurttemberg
+Rheinland-Pfalz
+Saarland
+Luxemburg
+Wallonia
+Flanders
+Brussels
+West Netherlands
+South Netherlands
+East Netherlands
+North Netherlands
+West Austria
+South Austria
+East Austria
+Bohemia
+Moravia
+Slovakia
+Transdanubia
+Central Hungary
+Great Plain and North
+Northwest Romania
+Southwest Romania
+South Romania
+East Romania
+Nothern and Eastern Bulgaria
+Southern and Western Bulgaria
+Moldavia
+Transnistria
+Southern Ukraine
+Crimea
+Eastern Ukraine
+Central Ukraine
+Kiev
+Western Ukraine
+Belarus
+Minsk
+Kaliningrad
+Northwest Russia
+North Russia
+Central Russia
+Moscow
+Central Black-Earth
+North Caucasus
+Volga
+Volga-Vyatka
+Ural
+West Siberia
+East Siberia
+Far East
+Manchuria
+Outer Mongolia
+Hebei
+Beijing
+Shanxi
+Shaanxi
+Ningxia
+Gansu
+Xinjiang
+Qinghai
+Tibet
+Sichuan
+Yunnan
+Guizhou
+Chongqing
+Hubei
+Henan
+Shandong
+Jiangsu
+Anhui
+Jiangxi
+Zhejiang
+Fujian
+Guang dong
+Hong Kong
+Hainan
+Guangxi
+Hunan
+Taiwan
+North Vietnam
+Central Vietnam
+South Vietnam
+Cambodia
+Laos
+Isan
+East Thailand
+Central Thailand
+South Thailand
+North Thailand
+Burma
+Bangladesh
+North Eastern India
+Eastern India
+Central India
+Northern India
+Western India
+South India
+Sri Lanka
+Nepal
+Bhutan
+Sindh
+Balochistan
+Punjab
+North Pakistan
+Afghanistan
+Tajikistan
+Kyrgyzstan
+Kazakh Desert
+Tyan Shan
+Central Highlands
+North Kazakhstan
+Mugodzhar Hills
+Turanian Lowlands
+Uzbekistan
+Turkmenistan
+Mashhad
+Isfahan
+Tehran
+Kermanshah
+Tabriz
+Azerbaijan
+Armenia
+Georgia
+Northern Malaysia
+Malaysian East Coast
+Central Malaysia
+Southern Malaysia
+East Malaysia
+Singapore
+Brunei
+Sumatra
+Java
+Kalimantan
+Bali
+Sulawesi
+Nusa Tenggara
+Maluku
+Papua
+Papua New Guinea
+Southern Philippines
+Central Philippines
+Northern Philippines
+Pyongan
+Baekdu Mountains
+Donghae Coast
+Hwanghae
+Gyeonggi
+Gangwon
+Gyeongsang
+Jeolla
+Chungcheong
+Hokkaido
+Tohoku
+Kanto
+Chubu
+Kansai
+Chuhoku
+Shikoku
+Kyushu
+Solomon Islands
+New Caledonia
+New Zealand
+Fiji
+Victoria
+New South Wales
+Queensland
+Northern Territory
+Western Australia
+South Australia
+East Timor
+Madagascar
+Falklands
+Mongolia
+Malta

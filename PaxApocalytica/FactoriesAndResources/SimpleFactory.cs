@@ -10,47 +10,32 @@ namespace PaxApocalytica.FactoriesAndResources
     {
         public int BaseCost
         {
-            get { return 4000; }
+            get 
+            {
+                if (ProducedRecourceName == SimpleResources.Names.Gas) { return 8000; }
+                if (ProducedRecourceName == SimpleResources.Names.Oil) { return 8000; }
+                if (ProducedRecourceName == SimpleResources.Names.Gold) { return 6000; }
+                if (ProducedRecourceName == SimpleResources.Names.Grain) { return 2000; }
+                if (ProducedRecourceName == SimpleResources.Names.Livestock) { return 2000; }
+                if (ProducedRecourceName == SimpleResources.Names.Steel) { return 5000; }
+                if (ProducedRecourceName == SimpleResources.Names.Coal) { return 4000; }
+                if (ProducedRecourceName == SimpleResources.Names.Uranium) { return 10000; }
+                if (ProducedRecourceName == SimpleResources.Names.Aluminium) { return 4000; }
+                if (ProducedRecourceName == SimpleResources.Names.Copper) { return 4000; }
+                return 0;
+            }
         }
 
         public byte ExtensionLevel
         {
-            get { return ExtensionLevel; }
-            private set
-            {
-                if (value > 0 && value <= 10)
-                {
-                    ExtensionLevel = value;
-                }
-                else if (value <= 0)
-                {
-                    ExtensionLevel = 1;
-                }
-                else
-                {
-                    ExtensionLevel = 10;
-                }
-            }
+            get;
+            private set;
         }
 
         public byte TechnologyLevel
         {
-            get { return TechnologyLevel; }
-            private set
-            {
-                if (value > 0 && value <= 10)
-                {
-                    TechnologyLevel = value;
-                }
-                else if (value <= 0)
-                {
-                    TechnologyLevel = 1;
-                }
-                else
-                {
-                    TechnologyLevel = 10;
-                }
-            }
+            get;
+            private set;
         }
 
         public SimpleResources.Names ProducedRecourceName
@@ -59,10 +44,16 @@ namespace PaxApocalytica.FactoriesAndResources
             private set;
         }
 
-        public SimpleFactory(SimpleResources.Names name, byte extensionLevel, byte intensionLevel)
+        public SimpleFactory(SimpleResources.Names name, byte technologyLevel, byte extensionLevel)
         {
-            ExtensionLevel = extensionLevel;
-            TechnologyLevel = intensionLevel;
+            if (extensionLevel <= 0) { ExtensionLevel = 1; }
+            else if (extensionLevel > 10) { ExtensionLevel = 10; }
+            else { ExtensionLevel = extensionLevel; }
+
+            if (technologyLevel <= 0) { TechnologyLevel = 1; }
+            else if (technologyLevel > 10) { TechnologyLevel = 10; }
+            else { TechnologyLevel = technologyLevel; }
+
             ProducedRecourceName = name;
         }
 

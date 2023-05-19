@@ -22,7 +22,7 @@ namespace PaxApocalytica.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace PaxApocalytica.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PaxApocalytica.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace PaxApocalytica.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        public static string Army_Name {
+            get {
+                return ResourceManager.GetString("Army_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap baseMapBmp {
+        public static System.Drawing.Bitmap baseMapBmp {
             get {
                 object obj = ResourceManager.GetObject("baseMapBmp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,17 +82,696 @@ namespace PaxApocalytica.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap baseMapBmpRegions {
+        public static System.Drawing.Bitmap bitmapRegions {
             get {
-                object obj = ResourceManager.GetObject("baseMapBmpRegions", resourceCulture);
+                object obj = ResourceManager.GetObject("bitmapRegions", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на 0,0,10;Alaska
+        ///0,0,20;Hawaii
+        ///0,0,30;Burkina-Faso
+        ///0,0,40;Northern Territories
+        ///0,0,50;West Coast Pacific
+        ///0,0,60;Prairie Provinces
+        ///0,0,70;Central Canada
+        ///0,0,80;Atlantic Region
+        ///0,0,90;Pacific
+        ///0,0,100;Mountain
+        ///0,0,110;West North Central
+        ///0,0,120;West South Central
+        ///0,0,130;East North Central
+        ///0,0,140;East South Central
+        ///0,0,150;New England
+        ///0,0,160;Mid-Atlantic
+        ///0,0,170;South Atlantic
+        ///0,0,180;Noroeste
+        ///0,0,190;Noreste
+        ///0,0,200;Occidente
+        ///0,0,210;Oriente
+        ///0,0,220;Centronorte
+        ///0,0,230;Centrosur
+        ///0,0,240; [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Color_Name {
+            get {
+                return ResourceManager.GetString("Color_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada
+        ///USA
+        ///Singapore
+        ///Burkina-Faso
+        ///Mexico
+        ///Guatemala
+        ///Belize
+        ///Gonduras
+        ///Salvador
+        ///Nicaragua
+        ///Costa Rica
+        ///Panama
+        ///Jamaica
+        ///Cuba
+        ///Bahamas
+        ///Puerto Rico
+        ///UK
+        ///Haiti
+        ///Dominican Republic
+        ///Saint Kitts and Nevis
+        ///Antigua and Barbuda
+        ///France
+        ///Dominica
+        ///Saint Lucia
+        ///Saint Vincent and the Grenadines
+        ///Barbados
+        ///Grenada
+        ///Trinidad and Tobago
+        ///Venezuela
+        ///Colombia
+        ///Ecuador
+        ///Peru
+        ///Bolivia
+        ///Chile
+        ///Argentina
+        ///Paraguay
+        ///Uruguay
+        ///Brazil
+        ///Suriname
+        ///Guyana
+        ///Cabo Verde
+        ///West Sakhara
+        ///Mavritaniya
+        ///Senegal
+        ///Gambia
+        ///Guinea-Bissau
+        /// [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_Allies {
+            get {
+                return ResourceManager.GetString("CountryName_Allies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada;0,106,9;NATO;0;0;0;2
+        ///USA;153,217,234;NATO;0;0;0;4
+        ///Singapore;128,255,0;NATO;0;0;0;2
+        ///Burkina-Faso;245,238,205;Generic;0;0;0;2
+        ///Mexico;255,210,94;Generic;0;0;0;3
+        ///Guatemala;90,117,11;Generic;0;0;0;2
+        ///Belize;203,221,222;Generic;0;0;0;2
+        ///Gonduras;160,126,194;Generic;0;0;0;2
+        ///Salvador;90,90,37;Generic;0;0;0;2
+        ///Nicaragua;149,108,100;Generic;0;0;0;2
+        ///Costa Rica;151,156,255;Generic;0;0;0;2
+        ///Panama;55,105,22;Generic;0;0;0;2
+        ///Jamaica;0,29,128;Generic;0;0;0;2
+        ///Cuba;64,128,128;Generic;0;0;0;2
+        ///Bahamas;74,230,0 [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_Characteristics {
+            get {
+                return ResourceManager.GetString("CountryName_Characteristics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///USA;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Singapore;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Burkina-Faso;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Mexico;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Guatemala;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Belize;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Gonduras;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Salva [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_MilitaryResources {
+            get {
+                return ResourceManager.GetString("CountryName_MilitaryResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada
+        ///USA
+        ///Singapore
+        ///Burkina-Faso
+        ///Mexico
+        ///Guatemala
+        ///Belize
+        ///Gonduras
+        ///Salvador
+        ///Nicaragua
+        ///Costa Rica
+        ///Panama
+        ///Jamaica
+        ///Cuba
+        ///Bahamas
+        ///Puerto Rico
+        ///UK
+        ///Haiti
+        ///Dominican Republic
+        ///Saint Kitts and Nevis
+        ///Antigua and Barbuda
+        ///France
+        ///Dominica
+        ///Saint Lucia
+        ///Saint Vincent and the Grenadines
+        ///Barbados
+        ///Grenada
+        ///Trinidad and Tobago
+        ///Venezuela
+        ///Colombia
+        ///Ecuador
+        ///Peru
+        ///Bolivia
+        ///Chile
+        ///Argentina
+        ///Paraguay
+        ///Uruguay
+        ///Brazil
+        ///Suriname
+        ///Guyana
+        ///Cabo Verde
+        ///West Sakhara
+        ///Mavritaniya
+        ///Senegal
+        ///Gambia
+        ///Guinea-Bissau
+        /// [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_NukesCount {
+            get {
+                return ResourceManager.GetString("CountryName_NukesCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada
+        ///USA
+        ///Singapore
+        ///Burkina-Faso
+        ///Mexico
+        ///Guatemala
+        ///Belize
+        ///Gonduras
+        ///Salvador
+        ///Nicaragua
+        ///Costa Rica
+        ///Panama
+        ///Jamaica
+        ///Cuba
+        ///Bahamas
+        ///Puerto Rico
+        ///UK
+        ///Haiti
+        ///Dominican Republic
+        ///Saint Kitts and Nevis
+        ///Antigua and Barbuda
+        ///France
+        ///Dominica
+        ///Saint Lucia
+        ///Saint Vincent and the Grenadines
+        ///Barbados
+        ///Grenada
+        ///Trinidad and Tobago
+        ///Venezuela
+        ///Colombia
+        ///Ecuador
+        ///Peru
+        ///Bolivia
+        ///Chile
+        ///Argentina
+        ///Paraguay
+        ///Uruguay
+        ///Brazil
+        ///Suriname
+        ///Guyana
+        ///Cabo Verde
+        ///West Sakhara
+        ///Mavritaniya
+        ///Senegal
+        ///Gambia
+        ///Guinea-Bissau
+        /// [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_Rivals {
+            get {
+                return ResourceManager.GetString("CountryName_Rivals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada;0;0;0;0;0;0;0;0;0;0;0
+        ///USA;0;0;0;0;0;0;0;0;0;0;0
+        ///Singapore;0;0;0;0;0;0;0;0;0;0;0
+        ///Burkina-Faso;0;0;0;0;0;0;0;0;0;0;0
+        ///Mexico;0;0;0;0;0;0;0;0;0;0;0
+        ///Guatemala;0;0;0;0;0;0;0;0;0;0;0
+        ///Belize;0;0;0;0;0;0;0;0;0;0;0
+        ///Gonduras;0;0;0;0;0;0;0;0;0;0;0
+        ///Salvador;0;0;0;0;0;0;0;0;0;0;0
+        ///Nicaragua;0;0;0;0;0;0;0;0;0;0;0
+        ///Costa Rica;0;0;0;0;0;0;0;0;0;0;0
+        ///Panama;0;0;0;0;0;0;0;0;0;0;0
+        ///Jamaica;0;0;0;0;0;0;0;0;0;0;0
+        ///Cuba;0;0;0;0;0;0;0;0;0;0;0
+        ///Bahamas;0;0;0;0;0;0;0;0;0;0;0
+        ///Puerto Rico;0;0;0;0;0;0;0;0;0;0;0
+        ///UK;0;0; [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_SimpleResources {
+            get {
+                return ResourceManager.GetString("CountryName_SimpleResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada
+        ///USA
+        ///Singapore
+        ///Burkina-Faso
+        ///Mexico
+        ///Guatemala
+        ///Belize
+        ///Gonduras
+        ///Salvador
+        ///Nicaragua
+        ///Costa Rica
+        ///Panama
+        ///Jamaica
+        ///Cuba
+        ///Bahamas
+        ///Puerto Rico
+        ///UK
+        ///Haiti
+        ///Dominican Republic
+        ///Saint Kitts and Nevis
+        ///Antigua and Barbuda
+        ///France
+        ///Dominica
+        ///Saint Lucia
+        ///Saint Vincent and the Grenadines
+        ///Barbados
+        ///Grenada
+        ///Trinidad and Tobago
+        ///Venezuela
+        ///Colombia
+        ///Ecuador
+        ///Peru
+        ///Bolivia
+        ///Chile
+        ///Argentina
+        ///Paraguay
+        ///Uruguay
+        ///Brazil
+        ///Suriname
+        ///Guyana
+        ///Cabo Verde
+        ///West Sakhara
+        ///Mavritaniya
+        ///Senegal
+        ///Gambia
+        ///Guinea-Bissau
+        /// [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_WarEnemies {
+            get {
+                return ResourceManager.GetString("CountryName_WarEnemies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Hawaii;2;;
+        ///Pacific;5;;;;;
+        ///New England;5;;;;;
+        ///Mid-Atlantic;5;;;;;
+        ///South Atlantic;5;;;;;
+        ///Centrosur;2;;
+        ///West Cuba;2;;
+        ///Caracas;2;;
+        ///Pampas;2;;
+        ///Central-West Brazil;2;;
+        ///South West Nigeria;2;;
+        ///South Nigeria;2;;
+        ///Luanda;2;;
+        ///Cape;2;;
+        ///Kenya;5;;;;;
+        ///Marocco;2;;
+        ///Lower Egypt;5;;;;;
+        ///Israel;2;;
+        ///Central Saudi Arabia;2;;
+        ///United Arab Emirates;5;;;;;
+        ///Aleppo;2;;
+        ///West Anatolia Region;5;;;;;
+        ///Istanbul Region;5;;;;;
+        ///Attica;2;;
+        ///Serbia;2;;
+        ///Central Italy;2;;
+        ///Provence-Alpes-Cote d&apos;Azur;2;;
+        ///Ile-de-France;2;;
+        ///Ma [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_Airfield {
+            get {
+                return ResourceManager.GetString("Name_Airfield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на manpower, education.
+        /// </summary>
+        public static string Name_Characteristics {
+            get {
+                return ResourceManager.GetString("Name_Characteristics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska;
+        ///Hawaii;
+        ///Burkina-Faso;
+        ///Northern Territories;
+        ///West Coast Pacific;
+        ///Prairie Provinces;
+        ///Central Canada;
+        ///Atlantic Region;
+        ///Pacific;
+        ///Mountain;
+        ///West North Central;Weaponry;2;3
+        ///West South Central;M3A1;4;4
+        ///East North Central;StrikeAircraftA;6;3
+        ///East South Central;
+        ///New England;M1A1;5;5
+        ///Mid-Atlantic;Weaponry;5;5
+        ///South Atlantic;M1A1;5;5
+        ///Noroeste;
+        ///Noreste;Weaponry;4;3
+        ///Occidente;Weaponry;4;3
+        ///Oriente;
+        ///Centronorte;
+        ///Centrosur;BMP1;4;3
+        ///Sureste;
+        ///Suroeste;
+        ///Guatemala;
+        ///Belize;
+        ///Gonduras;
+        ///Salvador [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_MilitaryFactory {
+            get {
+                return ResourceManager.GetString("Name_MilitaryFactory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska;Northern Territories,West Coast Pacific
+        ///Hawaii;
+        ///Burkina-Faso;Mali,Cote d&apos;Ivoire,Gana,Togo,Benin,Niger
+        ///Northern Territories;Alaska,West Coast Pacific,Prairie Provinces
+        ///West Coast Pacific;Alaska,Northern Territories,Prairie Provinces,Pacific,Mountain
+        ///Prairie Provinces;Northern Territories,West Coast Pacific,Mountain,Central Canada,West North Central
+        ///Central Canada;Prairie Provinces,West North Central,East North Central,Mid-Atlantic,New England,Atlantic Region
+        ///Atlantic Region;Central Canada,New E [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_Neighbours {
+            get {
+                return ResourceManager.GetString("Name_Neighbours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska;USA
+        ///Hawaii;USA
+        ///Burkina-Faso;Burkina-Faso
+        ///Northern Territories;Canada
+        ///West Coast Pacific;Canada
+        ///Prairie Provinces;Canada
+        ///Central Canada;Canada
+        ///Atlantic Region;Canada
+        ///Pacific;USA
+        ///Mountain;USA
+        ///West North Central;USA
+        ///West South Central;USA
+        ///East North Central;USA
+        ///East South Central;USA
+        ///New England;USA
+        ///Mid-Atlantic;USA
+        ///South Atlantic;USA
+        ///Noroeste;Mexico
+        ///Noreste;Mexico
+        ///Occidente;Mexico
+        ///Oriente;Mexico
+        ///Centronorte;Mexico
+        ///Centrosur;Mexico
+        ///Sureste;Mexico
+        ///Suroeste;Mexico
+        ///Guatemala;Guatem [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_Occupant {
+            get {
+                return ResourceManager.GetString("Name_Occupant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska;USA
+        ///Hawaii;USA
+        ///Burkina-Faso;Burkina-Faso
+        ///Northern Territories;Canada
+        ///West Coast Pacific;Canada
+        ///Prairie Provinces;Canada
+        ///Central Canada;Canada
+        ///Atlantic Region;Canada
+        ///Pacific;USA
+        ///Mountain;USA
+        ///West North Central;USA
+        ///West South Central;USA
+        ///East North Central;USA
+        ///East South Central;USA
+        ///New England;USA
+        ///Mid-Atlantic;USA
+        ///South Atlantic;USA
+        ///Noroeste;Mexico
+        ///Noreste;Mexico
+        ///Occidente;Mexico
+        ///Oriente;Mexico
+        ///Centronorte;Mexico
+        ///Centrosur;Mexico
+        ///Sureste;Mexico
+        ///Suroeste;Mexico
+        ///Guatemala;Guatem [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_Owner {
+            get {
+                return ResourceManager.GetString("Name_Owner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska
+        ///527 494
+        ///220 606
+        ///313 679
+        ///604 737
+        ///609 728
+        ///1066 781
+        ///1061 791
+        ///1075 799
+        ///1058 787
+        ///1055 787
+        ///1060 785
+        ///1056 778
+        ///1055 784
+        ///Hawaii
+        ///460 1547
+        ///497 1559
+        ///532 1571
+        ///560 1603
+        ///Burkina-Faso
+        ///4046 1746
+        ///Northern Territories
+        ///1194 618
+        ///1517 415
+        ///1379 374
+        ///1398 300
+        ///1401 325
+        ///1531 324
+        ///1697 372
+        ///1835 317
+        ///1850 411
+        ///1879 470
+        ///1892 385
+        ///1892 390
+        ///1853 364
+        ///1733 306
+        ///1740 315
+        ///1725 334
+        ///1708 289
+        ///1765 256
+        ///1784 278
+        ///1841 226
+        ///1882 258
+        ///1934 300
+        ///1946 278
+        ///1946 347
+        ///2040 284
+        ///2045 251
+        ///2206 424
+        ///2301 380
+        ///2369 [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_Points {
+            get {
+                return ResourceManager.GetString("Name_Points", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska;1
+        ///Hawaii;1
+        ///Northern Territories;1
+        ///West Coast Pacific;1
+        ///Prairie Provinces;1
+        ///Central Canada;1
+        ///Atlantic Region;1
+        ///Georgia;1
+        ///Pacific;10
+        ///West South Central;1
+        ///East South Central;1
+        ///New England;1
+        ///Mid-Atlantic;10
+        ///South Atlantic;10
+        ///Noroeste;1
+        ///Noreste;1
+        ///Occidente;1
+        ///Oriente;1
+        ///Sureste;1
+        ///Suroeste;1
+        ///Guatemala;1
+        ///Belize;1
+        ///Gonduras;1
+        ///Salvador;1
+        ///Nicaragua;1
+        ///Costa Rica;1
+        ///Panama;10
+        ///Jamaica;1
+        ///West Cuba;1
+        ///Central Cuba;1
+        ///East Cuba;1
+        ///Bahamas;1
+        ///Puerto Rico;1
+        ///British Territories In the North Atl [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_Port {
+            get {
+                return ResourceManager.GetString("Name_Port", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska;Gold;2;4
+        ///Hawaii;Random
+        ///Burkina-Faso;Random
+        ///Northern Territories;Uranium;2;3
+        ///West Coast Pacific;Random
+        ///Prairie Provinces;Random
+        ///Central Canada;Copper;3;3
+        ///Atlantic Region;Uranium;3;3
+        ///Pacific;Gold;6;4
+        ///Mountain;Uranium;3;4
+        ///West North Central;Gas;5;3
+        ///West South Central;Gas;4;5
+        ///East North Central;Random
+        ///East South Central;Random
+        ///New England;Random
+        ///Mid-Atlantic;Coal;4;3
+        ///South Atlantic;Steel;4;5
+        ///Noroeste;Oil;3;3
+        ///Noreste;Coal;2;4
+        ///Occidente;Random
+        ///Oriente;Random
+        ///Centronorte;Uranium;3;2
+        ///Ce [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_SimpleFactory {
+            get {
+                return ResourceManager.GetString("Name_SimpleFactory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на NATO;Germany,UK,USA,Canada,Spain,Portugal,Denmark,France,Greece,Turkey,Iceland,Italy,Luxemburg,Norway
+        ///CSTO;
+        ///FPDA;Australia,UK,Malaysia,New Zealand,Singapore
+        ///TIAR;Argentina,Bahamas,Brazil,Guatemala,Gonduras,Colombia,Costa Rica,Dominican Republic,Panama,Paraguay,Peru,Salvador
+        ///Einheitspakt;
+        ///East Asia Co-Prosperity Sphere;
+        ///African Confederation;
+        ///.
+        /// </summary>
+        public static string Pact_Countryname {
+            get {
+                return ResourceManager.GetString("Pact_Countryname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska
+        ///Hawaii
+        ///Burkina-Faso
+        ///Northern Territories
+        ///West Coast Pacific
+        ///Prairie Provinces
+        ///Central Canada
+        ///Atlantic Region
+        ///Pacific
+        ///Mountain
+        ///West North Central
+        ///West South Central
+        ///East North Central
+        ///East South Central
+        ///New England
+        ///Mid-Atlantic
+        ///South Atlantic
+        ///Noroeste
+        ///Noreste
+        ///Occidente
+        ///Oriente
+        ///Centronorte
+        ///Centrosur
+        ///Sureste
+        ///Suroeste
+        ///Guatemala
+        ///Belize
+        ///Gonduras
+        ///Salvador
+        ///Nicaragua
+        ///Costa Rica
+        ///Panama
+        ///Jamaica
+        ///West Cuba
+        ///Central Cuba
+        ///East Cuba
+        ///Bahamas
+        ///Puerto Rico
+        ///British Territories In the  [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string provincesNames {
+            get {
+                return ResourceManager.GetString("provincesNames", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
-        internal static string String1 {
+        public static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
             }

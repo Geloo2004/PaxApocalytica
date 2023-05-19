@@ -118,11 +118,71 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Army_Name" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Army_Name.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="baseMapBmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\baseMapBmp.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="baseMapBmpRegions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\baseMapBmpRegions.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bitmapRegions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bitmapRegions.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Color_Name" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Color_Name.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_Allies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CountryName_Allies.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_Characteristics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CountryName_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_MilitaryResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CountryName_MilitaryResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_NukesCount" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CountryName_NukesCount.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_Rivals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CountryName_Rivals.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_SimpleResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CountryName_SimpleResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_WarEnemies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CountryName_WarEnemies.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_Airfield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_Airfield.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_Characteristics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_MilitaryFactory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_MilitaryFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_Neighbours" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_Neighbours.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_Occupant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_Occupant.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_Owner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_Owner.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_Points" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_Points.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_Port" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_Port.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_SimpleFactory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_SimpleFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Pact_Countryname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pact_Countryname.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="provincesNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\protoSource\provincesNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="String1" xml:space="preserve">
     <value />
