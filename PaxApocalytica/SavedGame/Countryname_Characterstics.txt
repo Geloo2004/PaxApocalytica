@@ -1,213 +1,221 @@
-Canada;0,106,9;NATO;0;0;0;2
-USA;153,217,234;NATO;0;0;0;4
-Singapore;128,255,0;NATO;0;0;0;2
-Burkina-Faso;245,238,205;Generic;0;0;0;2
-Mexico;255,210,94;Generic;0;0;0;3
-Guatemala;90,117,11;Generic;0;0;0;2
-Belize;203,221,222;Generic;0;0;0;2
-Gonduras;160,126,194;Generic;0;0;0;2
-Salvador;90,90,37;Generic;0;0;0;2
-Nicaragua;149,108,100;Generic;0;0;0;2
-Costa Rica;151,156,255;Generic;0;0;0;2
-Panama;55,105,22;Generic;0;0;0;2
-Jamaica;0,29,128;Generic;0;0;0;2
-Cuba;64,128,128;Generic;0;0;0;2
-Bahamas;74,230,0;Generic;0;0;0;2
-Puerto Rico;151,236,189;Generic;0;0;0;2
-UK;196,0,5;Generic;0;0;0;4
-Haiti;255,111,183;Generic;0;0;0;2
-Dominican Republic;232,116,0;Generic;0;0;0;2
-Saint Kitts and Nevis;198,198,140;Generic;0;0;0;2
-Antigua and Barbuda;128,255,255;Generic;0;0;0;2
-France;63,72,204;NATO;0;0;0;4
-Dominica;255,53,53;Generic;0;0;0;2
-Saint Lucia;155,24,211;Generic;0;0;0;2
-Saint Vincent and the Grenadines;236,153,0;Generic;0;0;0;2
-Barbados;52,184,108;Generic;0;0;0;2
-Grenada;255,237,111;Generic;0;0;0;2
-Trinidad and Tobago;207,148,207;Generic;0;0;0;2
-Venezuela;0,153,236;Generic;0;0;0;2
-Colombia;186,213,0;Generic;0;0;0;3
-Ecuador;255,121,124;Generic;0;0;0;2
-Peru;227,255,145;Generic;0;0;0;2
-Bolivia;255,255,62;Generic;0;0;0;2
-Chile;214,194,158;Generic;0;0;0;2
-Argentina;227,185,185;Generic;0;0;0;3
-Paraguay;101,168,0;Generic;0;0;0;2
-Uruguay;216,220,194;Generic;0;0;0;2
-Brazil;0,191,111;Generic;0;0;0;3
-Suriname;174,227,232;Generic;0;0;0;2
-Guyana;6,185,176;Generic;0;0;0;2
-Cabo Verde;0,64,64;Generic;0;0;0;2
-West Sakhara;255,219,174;Generic;0;0;0;2
-Mavritaniya;0,191,96;Generic;0;0;0;2
-Senegal;203,118,124;Generic;0;0;0;2
-Gambia;239,196,255;Generic;0;0;0;2
-Guinea-Bissau;189,173,132;Generic;0;0;0;2
-Guinea;0,91,91;Generic;0;0;0;2
-Sierra Leone;113,79,79;Generic;0;0;0;2
-Liberia;119,206,227;Generic;0;0;0;2
-Cote d'Ivoire;216,84,84;Generic;0;0;0;2
-Gana;218,255,196;Generic;0;0;0;2
-Togo;135,159,186;Generic;0;0;0;2
-Benin;185,136,136;Generic;0;0;0;2
-Nigeria;126,90,61;Generic;0;0;0;2
-Cameroon;113,29,0;Generic;0;0;0;2
-Gabon;177,203,205;Generic;0;0;0;2
-Equatorial Guinea;255,204,28;Generic;0;0;0;2
-Sao Tome;61,0,128;Generic;0;0;0;2
-Congo;198,156,13;Generic;0;0;0;2
-Democratic Republic of the Congo;245,232,103;Generic;0;0;0;2
-Angola;210,63,0;Generic;0;0;0;2
-Namibia;222,163,114;Generic;0;0;0;2
-South African Republic;255,128,192;Generic;0;0;0;3
-Lesotho;0,191,158;Generic;0;0;0;2
-Eswatini;245,191,148;Generic;0;0;0;2
-Botswana;234,234,0;Generic;0;0;0;2
-Zimbabwe;119,125,2;Generic;0;0;0;2
-Mozambique;0,128,192;Generic;0;0;0;2
-Malawi;185,0,92;Generic;0;0;0;2
-Zambia;45,140,100;Generic;0;0;0;2
-Tanzania;117,213,151;Generic;0;0;0;2
-Burundi;68,70,0;Generic;0;0;0;2
-Rwanda;0,117,94;Generic;0;0;0;2
-Uganda;136,50,231;Generic;0;0;0;2
-Kenya;6,125,102;Generic;0;0;0;2
-Somalia;0,32,70;Generic;0;0;0;2
-Ethiopia;106,133,255;Generic;0;0;0;2
-Djibouti;0,99,113;Generic;0;0;0;2
-Eritrea;0,174,9;Generic;0;0;0;2
-Sudan;255,210,128;Generic;0;0;0;2
-Central African Republic;149,74,0;Generic;0;0;0;2
-Chad;148,148,148;Generic;0;0;0;2
-Niger;54,80,84;Generic;0;0;0;2
-Mali;255,203,45;Generic;0;0;0;2
-Algeria;140,208,172;Generic;0;0;0;2
-Marocco;255,166,94;Generic;0;0;0;2
-Tunisia;132,99,0;Generic;0;0;0;2
-Lybia;0,164,164;Generic;0;0;0;2
-Egypt;244,255,51;Soviet;0;0;0;3
-Israel;13,0,164;NATO;0;0;0;4
-Palestine;164,13,0;Generic;0;0;0;2
-Jordan;180,197,214;Generic;0;0;0;2
-Saudi Arabia;128,128,64;NATO;0;0;0;3
-Yemen;168,34,0;Generic;0;0;0;2
-Oman;213,214,240;Generic;0;0;0;2
-United Arab Emirates;29,29,29;NATO;0;0;0;2
-Qatar;255,255,100;Generic;0;0;0;2
-Bahrain;32,85,0;Generic;0;0;0;2
-Kuwait;163,224,198;Generic;0;0;0;2
-Iraq;255,179,64;Generic;0;0;0;2
-Syria;188,138,255;Generic;0;0;0;2
-Lebanon;255,128,0;Generic;0;0;0;2
-Cyprus;116,179,184;NATO;0;0;0;2
-Turkey;179,243,114;NATO;0;0;0;3
-Greece;0,64,128;NATO;0;0;0;2
-Albania;102,0,0;Soviet;0;0;0;2
-North Macedonia;0,117,117;Soviet;0;0;0;2
-Yugoslavia;204,36,0;Soviet;0;0;0;3
-Croatia;0,162,232;Soviet;0;0;0;2
-Slovenia;239,228,176;Soviet;0;0;0;2
-Italy;17,225,0;NATO;0;0;0;2
-San-Marino;255,174,201;NATO;0;0;0;2
-Vatican;255,242,0;NATO;0;0;0;2
-Switzerland;185,122,87;NATO;0;0;0;2
-Monaco;255,255,151;NATO;0;0;0;2
-Andorra;255,127,39;NATO;0;0;0;2
-Spain;255,201,14;NATO;0;0;0;3
-Portugal;109,192,172;NATO;0;0;0;2
-Ireland;54,168,0;NATO;0;0;0;2
-Iceland;53,58,255;NATO;0;0;0;2
-Denmark;136,199,255;NATO;0;0;0;2
-Norway;204,244,255;NATO;0;0;0;2
-Sweden;29,63,165;NATO;0;0;0;3
-Finland;234,175,0;Soviet;0;0;0;3
-Estonia;18,0,234;Soviet;0;0;0;2
-Latvia;205,65,65;Soviet;0;0;0;2
-Lithuania;27,175,68;Soviet;0;0;0;2
-Poland;255,132,135;Soviet;0;0;0;4
-Germany;127,127,127;NATO;0;0;0;5
-Luxemburg;128,0,128;NATO;0;0;0;2
-Belgium;237,28,36;NATO;0;0;0;2
-Netherlands;255,127,39;NATO;0;0;0;2
-Austria;230,230,230;NATO;0;0;0;2
-Czechoslovakia;128,64,64;Soviet;0;0;0;3
-Hungary;128,0,0;Soviet;0;0;0;2
-Romania;255,255,128;Soviet;0;0;0;2
-Bulgaria;90,145,0;Soviet;0;0;0;2
-Moldavia;239,228,176;Soviet;0;0;0;2
-Transnistria;204,0,0;Soviet;0;0;0;2
-Ukraine;0,128,255;Soviet;0;0;0;3
-Belarus;145,108,0;Soviet;0;0;0;2
-Russia;0,128,51;Soviet;0;0;0;4
-China;251,188,0;Soviet;0;0;0;5
-Taiwan;113,166,255;NATO;0;0;0;2
-Vietnam;191,139,0;Generic;0;0;0;2
-Cambodia;181,230,29;Generic;0;0;0;2
-Laos;162,168,206;Generic;0;0;0;2
-Thailand;255,28,141;NATO;0;0;0;2
-Burma;255,226,113;Generic;0;0;0;2
-Bangladesh;122,43,255;Soviet;0;0;0;2
-India;213,140,173;Soviet;0;0;0;2
-Sri Lanka;184,138,215;Generic;0;0;0;2
-Nepal;0,94,149;Generic;0;0;0;2
-Bhutan;157,255,221;Generic;0;0;0;2
-Pakistan;166,83,0;Soviet;0;0;0;2
-Afghanistan;155,81,90;Generic;0;0;0;2
-Tajikistan;253,243,130;Soviet;0;0;0;2
-Kyrgyzstan;151,206,164;Soviet;0;0;0;2
-Kazakh ASSR;198,24,0;Soviet;0;0;0;3
-Uzbekistan;154,167,203;Soviet;0;0;0;2
-Turkmenistan;118,99,61;Soviet;0;0;0;2
-Iran;49,115,17;Generic;0;0;0;3
-Azerbaijan;196,147,0;Soviet;0;0;0;2
-Armenia;152,58,115;Soviet;0;0;0;2
-Georgia;136,0,21;Soviet;0;0;0;2
-Malaysia;137,128,255;NATO;0;0;0;2
-Indonesia;12,87,156;NATO;0;0;0;2
-Papua New Guinea;226,237,131;Generic;0;0;0;2
-Philippines;255,198,170;Generic;0;0;0;2
-North Korea;91,75,154;Soviet;0;0;0;3
-South Korea;255,138,208;NATO;0;0;0;3
-Japan;230,62,62;NATO;0;0;0;3
-Solomon Islands;235,223,188;Generic;0;0;0;2
-New Zealand;164,227,191;NATO;0;0;0;2
-Fiji;251,227,247;Generic;0;0;0;2
-Australia;194,184,124;NATO;0;0;0;2
-East Timor;96,219,123;Generic;0;0;0;2
-Madagascar;137,80,80;Generic;0;0;0;2
-Mongolia;154,193,17;Soviet;0;0;0;2
-Malta;0,83,33;NATO;0;0;0;2
-Slovakia;141,182,80;Soviet;0;0;0;2
-Czechia;11,142,149;Soviet;0;0;0;2
-USSR;217,0,0;Soviet;0;0;0;6
-Zapadoslavia;193,167,13;Soviet;0;0;0;5
-Byzantium;128,0,124;NATO;0;0;0;5
-Sparta;43,0,130;NATO;0;0;0;5
-Great Macedonia;72,205,249;Soviet;0;0;0;4
-Transcaucasia;136,0,62;Soviet;0;0;0;4
-United Arab Republic;232,197,0;Soviet;0;0;0;6
-Gran Colombia;25,241,72;Generic;0;0;0;5
-Turkic Union;220,213,148;Soviet;0;0;0;4
-Scandinavia;146,193,237;NATO;0;0;0;6
-Intermarium;255,51,56;Soviet;0;0;0;6
-Sich;119,249,255;Soviet;0;0;0;6
-Roman Empire;174,0,240;Soviet;0;0;0;8
-Great Germania;85,67,158;NATO;0;0;0;8
-Prussia;222,222,222;NATO;0;0;0;6
-Great Moravia;34,200,255;Soviet;0;0;0;4
-Mongol Empire;5,101,11;Soviet;0;0;0;8
-Korea;180,141,203;Soviet;0;0;0;5
-Abyssinia;101,43,255;Generic;0;0;0;4
-Holy Roman Empire;121,149,168;NATO;0;0;0;6
-The Papal State;255,247,79;NATO;0;0;0;4
-Francia;49,60,185;NATO;0;0;0;8
-Great Britain;151,0,4;NATO;0;0;0;6
-Iberia;255,205,74;NATO;0;0;0;6
-Baltia;46,169,148;Soviet;0;0;0;4
-Polish-Lithuanian Commonwealth;141,153,101;Soviet;0;0;0;6
-Union of Socialist Balkan Republics;255,111,111;Soviet;0;0;0;5
-Ruthenia;0,255,172;Soviet;0;0;0;2
-Cossackia;29,79,4;Soviet;0;0;0;2
-Bosnia;204,235,99;Soviet;0;0;0;2
-Serbia;181,218,143;Soviet;0;0;0;2
+Canada;0,106,9;NATO;5964;0;2
+USA;153,217,234;NATO;46868;0;4
+Singapore;128,255,0;NATO;1332;0;2
+Burkina-Faso;245,238,205;Generic;1532;0;2
+Mexico;255,210,94;Generic;17184;0;3
+Guatemala;90,117,11;Generic;1710;0;2
+Belize;203,221,222;Generic;40;0;2
+Gonduras;160,126,194;Generic;852;0;2
+Salvador;90,90,37;Generic;1110;0;2
+Nicaragua;149,108,100;Generic;954;0;2
+Costa Rica;151,156,255;Generic;524;0;2
+Panama;55,105,22;Generic;594;0;2
+Jamaica;0,29,128;Generic;504;0;2
+Cuba;64,128,128;Generic;2132;0;2
+Bahamas;74,230,0;Generic;52;0;2
+Puerto Rico;151,236,189;Generic;632;0;2
+UK;196,0,5;Generic;12702;0;4
+Haiti;255,111,183;Generic;1260;0;2
+Dominican Republic;232,116,0;Generic;1576;0;2
+Saint Kitts and Nevis;198,198,140;Generic;6;0;2
+Antigua and Barbuda;128,255,255;Generic;10;0;2
+France;63,72,204;NATO;11050;0;4
+Dominica;255,53,53;Generic;12;0;2
+Saint Lucia;155,24,211;Generic;30;0;2
+Saint Vincent and the Grenadines;236,153,0;Generic;18;0;2
+Barbados;52,184,108;Generic;42;0;2
+Grenada;255,237,111;Generic;14;0;2
+Trinidad and Tobago;207,148,207;Generic;248;0;2
+Venezuela;0,153,236;Generic;3462;0;2
+Colombia;186,213,0;Generic;6480;0;3
+Ecuador;255,121,124;Generic;1920;0;2
+Peru;227,255,145;Generic;4768;0;2
+Bolivia;255,255,62;Generic;1584;0;2
+Chile;214,194,158;Generic;2518;0;2
+Argentina;227,185,185;Generic;6772;0;3
+Paraguay;101,168,0;Generic;830;0;2
+Uruguay;216,220,194;Generic;508;0;2
+Brazil;0,191,111;Generic;30292;0;3
+Suriname;174,227,232;Generic;84;0;2
+Guyana;6,185,176;Generic;120;0;2
+Cabo Verde;0,64,64;Generic;80;0;2
+West Sakhara;255,219,174;Generic;38;0;2
+Mavritaniya;0,191,96;Generic;468;0;2
+Senegal;203,118,124;Generic;1800;0;2
+Gambia;239,196,255;Generic;192;0;2
+Guinea-Bissau;189,173,132;Generic;204;0;2
+Guinea;0,91,91;Generic;1320;0;2
+Sierra Leone;113,79,79;Generic;774;0;2
+Liberia;119,206,227;Generic;476;0;2
+Cote d'Ivoire;216,84,84;Generic;1992;0;2
+Gana;218,255,196;Generic;2780;0;2
+Togo;135,159,186;Generic;768;0;2
+Benin;185,136,136;Generic;964;0;2
+Nigeria;126,90,61;Generic;20602;0;2
+Cameroon;113,29,0;Generic;2314;0;2
+Gabon;177,203,205;Generic;190;0;2
+Equatorial Guinea;255,204,28;Generic;108;0;2
+Sao Tome;61,0,128;Generic;24;0;2
+Congo;198,156,13;Generic;494;0;2
+Democratic Republic of the Congo;245,232,103;Generic;8066;0;2
+Angola;210,63,0;Generic;2252;0;2
+Namibia;222,163,114;Generic;298;0;2
+South African Republic;255,128,192;Generic;8074;0;3
+Lesotho;0,191,158;Generic;424;0;2
+Eswatini;245,191,148;Generic;184;0;2
+Botswana;234,234,0;Generic;252;0;2
+Zimbabwe;119,125,2;Generic;2016;0;2
+Mozambique;0,128,192;Generic;2430;0;2
+Malawi;185,0,92;Generic;1960;0;2
+Zambia;45,140,100;Generic;1864;0;2
+Tanzania;117,213,151;Generic;6186;0;2
+Burundi;68,70,0;Generic;1096;0;2
+Rwanda;0,117,94;Generic;1484;0;2
+Uganda;136,50,231;Generic;4248;0;2
+Kenya;6,125,102;Generic;4704;0;2
+Somalia;0,32,70;Generic;1192;0;2
+Ethiopia;106,133,255;Generic;10398;0;2
+Djibouti;0,99,113;Generic;146;0;2
+Eritrea;0,174,9;Generic;440;0;2
+Sudan;255,210,128;Generic;4920;0;2
+Central African Republic;149,74,0;Generic;602;0;2
+Chad;148,148,148;Generic;1284;0;2
+Niger;54,80,84;Generic;1392;0;2
+Mali;255,203,45;Generic;1582;0;2
+Algeria;140,208,172;Generic;552;0;2
+Marocco;255,166,94;Generic;5400;0;2
+Tunisia;132,99,0;Generic;1908;0;2
+Lybia;0,164,164;Generic;1016;0;2
+Egypt;244,255,51;Soviet;11424;0;3
+Israel;13,0,164;NATO;1108;0;4
+Palestine;164,13,0;Generic;448;0;2
+Jordan;180,197,214;Generic;736;0;2
+Saudi Arabia;128,128,64;NATO;3318;0;3
+Yemen;168,34,0;Generic;3112;0;2
+Oman;213,214,240;Generic;348;0;2
+United Arab Emirates;29,29,29;NATO;332;0;2
+Qatar;255,255,100;Generic;96;0;2
+Bahrain;32,85,0;Generic;96;0;2
+Kuwait;163,224,198;Generic;262;0;2
+Iraq;255,179,64;Generic;3272;0;2
+Syria;188,138,255;Generic;2462;0;2
+Lebanon;255,128,0;Generic;802;0;2
+Cyprus;116,179,184;NATO;136;0;2
+Turkey;179,243,114;NATO;10504;0;3
+Greece;0,64,128;NATO;2014;0;2
+Albania;102,0,0;Soviet;660;0;2
+North Macedonia;0,117,117;Soviet;340;0;2
+Yugoslavia;204,36,0;Soviet;3196;0;3
+Croatia;0,162,232;Soviet;882;0;2
+Slovenia;239,228,176;Soviet;384;0;2
+Italy;17,225,0;NATO;10538;0;2
+San-Marino;255,174,201;NATO;6;0;2
+Vatican;255,242,0;NATO;0;0;2
+Switzerland;185,122,87;NATO;1224;0;2
+Monaco;255,255,151;NATO;8;0;2
+Andorra;255,127,39;NATO;16;0;2
+Spain;255,201,14;NATO;7520;0;3
+Portugal;109,192,172;NATO;2342;0;2
+Ireland;54,168,0;NATO;580;0;2
+Iceland;53,58,255;NATO;42;0;2
+Denmark;136,199,255;NATO;1222;0;2
+Norway;204,244,255;NATO;942;0;2
+Sweden;29,63,165;NATO;1632;0;3
+Finland;234,175,0;Soviet;1046;0;3
+Estonia;18,0,234;Soviet;252;0;2
+Latvia;205,65,65;Soviet;594;0;2
+Lithuania;27,175,68;Soviet;80;0;2
+Poland;255,132,135;Soviet;7464;0;4
+Germany;127,127,127;NATO;16100;0;5
+Luxemburg;128,0,128;NATO;88;0;2
+Belgium;237,28,36;NATO;1930;0;2
+Netherlands;255,127,39;NATO;2854;0;2
+Austria;230,230,230;NATO;1350;0;2
+Czechoslovakia;128,64,64;Soviet;3392;0;3
+Hungary;128,0,0;Soviet;1800;0;2
+Romania;255,255,128;Soviet;4424;0;2
+Bulgaria;90,145,0;Soviet;1934;0;2
+Moldavia;239,228,176;Soviet;570;0;2
+Transnistria;204,0,0;Soviet;102;0;2
+Ukraine;0,128,255;Soviet;10370;0;3
+Belarus;145,108,0;Soviet;2284;0;2
+Russia;0,128,51;Soviet;25224;0;4
+China;251,188,0;Soviet;227176;0;5
+Taiwan;113,166,255;NATO;3564;0;2
+Vietnam;191,139,0;Generic;14766;0;2
+Cambodia;181,230,29;Generic;1638;0;2
+Laos;162,168,206;Generic;896;0;2
+Thailand;255,28,141;NATO;10814;0;2
+Burma;255,226,113;Generic;9200;0;2
+Bangladesh;122,43,255;Soviet;20460;0;2
+India;213,140,173;Soviet;179700;0;2
+Sri Lanka;184,138,215;Generic;3468;0;2
+Nepal;0,94,149;Generic;456;0;2
+Bhutan;157,255,221;Generic;106;0;2
+Pakistan;166,83,0;Soviet;22200;0;2
+Afghanistan;155,81,90;Generic;2320;0;2
+Tajikistan;253,243,130;Soviet;1220;0;2
+Kyrgyzstan;151,206,164;Soviet;9630;0;2
+Kazakh ASSR;198,24,0;Soviet;3350;0;3
+Uzbekistan;154,167,203;Soviet;3528;0;2
+Turkmenistan;118,99,61;Soviet;824;0;2
+Iran;49,115,17;Generic;11852;0;3
+Azerbaijan;196,147,0;Soviet;1530;0;2
+Armenia;152,58,115;Soviet;594;0;2
+Georgia;136,0,21;Soviet;970;0;2
+Malaysia;137,128,255;NATO;3660;0;2
+Indonesia;12,87,156;NATO;36590;0;2
+Papua New Guinea;226,237,131;Generic;744;0;2
+Philippines;255,198,170;Generic;12726;0;2
+North Korea;91,75,154;Soviet;4080;0;3
+South Korea;255,138,208;NATO;9824;0;3
+Japan;230,62,62;NATO;26688;0;3
+Solomon Islands;235,223,188;Generic;68;0;2
+New Zealand;164,227,191;NATO;650;0;2
+Fiji;251,227,247;Generic;182;0;2
+Australia;194,184,124;NATO;3398;0;2
+East Timor;96,219,123;Generic;136;0;2
+Madagascar;137,80,80;Generic;2146;0;2
+Mongolia;154,193,17;Soviet;466;0;2
+Malta;0,83,33;NATO;86;0;2
+Slovakia;141,182,80;Soviet;0;0;2
+Czechia;11,142,149;Soviet;0;0;2
+USSR;217,0,0;Soviet;0;0;6
+Zapadoslavia;193,167,13;Soviet;0;0;5
+Byzantium;128,0,124;NATO;0;0;5
+Sparta;43,0,130;NATO;0;0;5
+Great Macedonia;72,205,249;Soviet;0;0;4
+Transcaucasia;136,0,62;Soviet;0;0;4
+United Arab Republic;232,197,0;Soviet;0;0;6
+Gran Colombia;25,241,72;Generic;0;0;5
+Turkic Union;220,213,148;Soviet;0;0;4
+Scandinavia;146,193,237;NATO;0;0;6
+Intermarium;255,51,56;Soviet;0;0;6
+Sich;119,249,255;Soviet;0;0;6
+Roman Empire;174,0,240;Soviet;0;0;8
+Great Germania;85,67,158;NATO;0;0;8
+Prussia;222,222,222;NATO;0;0;6
+Great Moravia;34,200,255;Soviet;0;0;4
+Mongol Empire;5,101,11;Soviet;0;0;8
+Korea;180,141,203;Soviet;0;0;5
+Abyssinia;101,43,255;Generic;0;0;4
+Holy Roman Empire;121,149,168;NATO;0;0;6
+The Papal State;255,247,79;NATO;0;0;4
+Francia;49,60,185;NATO;0;0;8
+Great Britain;151,0,4;NATO;0;0;6
+Iberia;255,205,74;NATO;0;0;6
+Baltia;46,169,148;Soviet;0;0;4
+Polish-Lithuanian Commonwealth;141,153,101;Soviet;0;0;6
+Union of Socialist Balkan Republics;255,111,111;Soviet;0;0;5
+Ruthenia;0,255,172;Soviet;0;0;2
+Cossackia;29,79,4;Soviet;0;0;2
+Bosnia;204,235,99;Soviet;0;0;2
+Serbia;181,218,143;Soviet;0;0;2
+Turkestan;184,173,146;Soviet;0;0;2
+Tatarstan;69,112,54;Soviet;0;0;2
+Far Eastern Autonomy;245,207,207;Soviet;0;0;2
+Ural;52,126,101;Soviet;0;0;3
+Novgorod;117,185,91;Soviet;0;0;2
+State of Siberia;87,107,130;Soviet;0;0;2
+Tsaritsyn;14,133,82;Soviet;0;0;3
+Kazakhstan;214,216,139;Soviet;0;0;2

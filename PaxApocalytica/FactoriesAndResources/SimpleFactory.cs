@@ -8,6 +8,7 @@ namespace PaxApocalytica.FactoriesAndResources
 {
     public class SimpleFactory
     {
+        public bool IsFunctioning { get; set; }
         public int BaseCost
         {
             get 
@@ -25,7 +26,7 @@ namespace PaxApocalytica.FactoriesAndResources
                 return 0;
             }
         }
-
+        public float Production { get; set; }
         public byte ExtensionLevel
         {
             get;
@@ -55,6 +56,8 @@ namespace PaxApocalytica.FactoriesAndResources
             else { TechnologyLevel = technologyLevel; }
 
             ProducedRecourceName = name;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel); 
+            IsFunctioning=true;
         }
 
         public bool IsEUpgradePossible(byte educationLevel)
@@ -67,7 +70,7 @@ namespace PaxApocalytica.FactoriesAndResources
         }
         public bool IsEDegradePossible(byte educationLevel)
         {
-            if (ExtensionLevel > 0)
+            if (ExtensionLevel > 1)
             {
                 return true;
             }
@@ -76,7 +79,7 @@ namespace PaxApocalytica.FactoriesAndResources
 
         public bool IsTUpgradePossible(byte educationLevel)
         {
-            if (ExtensionLevel < 10)
+            if (TechnologyLevel < 10)
             {
                 return true;
             }
@@ -84,7 +87,7 @@ namespace PaxApocalytica.FactoriesAndResources
         }
         public bool IsTDegradePossible(byte educationLevel)
         {
-            if (ExtensionLevel > 0)
+            if (TechnologyLevel > 1)
             {
                 return true;
             }
@@ -108,24 +111,40 @@ namespace PaxApocalytica.FactoriesAndResources
         public void EUpgrade()
         {
             ExtensionLevel++;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
         public void EDegrade()
         {
             ExtensionLevel--;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
 
         public void TUpgrade()
         {
             TechnologyLevel++;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
         public void TDegrade()
         {
             TechnologyLevel--;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
-
-        public void Produce(ref Dictionary<SimpleResources.Names, float> resources)
+        public void Produce(string owner)
         {
-            resources[ProducedRecourceName] += CalculateProduction();
+            if (IsFunctioning)
+            {
+                if (ProducedRecourceName == SimpleResources.Names.Oil) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][0] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Steel) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Copper) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Uranium) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][3] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Coal) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][4] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Grain) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][5] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Livestock) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][6] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Gas) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][7] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Aluminium) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Gold) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][9] += (int)Production; }
+                else throw new ArgumentException();
+            }
         }
     }
 }

@@ -334,34 +334,34 @@ Ural;Russia
 West Siberia;Russia
 East Siberia;Russia
 Far East;Russia
-Manchuria;USSR
-Outer Mongolia;USSR
-Hebei;USSR
-Beijing;USSR
-Shanxi;USSR
-Shaanxi;USSR
-Ningxia;USSR
-Gansu;USSR
-Xinjiang;USSR
-Qinghai;USSR
-Tibet;USSR
-Sichuan;USSR
-Yunnan;USSR
-Guizhou;USSR
-Chongqing;USSR
-Hubei;USSR
-Henan;USSR
-Shandong;USSR
-Jiangsu;USSR
-Anhui;USSR
-Jiangxi;USSR
-Zhejiang;USSR
-Fujian;USSR
-Guang dong;USSR
+Manchuria;China
+Outer Mongolia;China
+Hebei;China
+Beijing;China
+Shanxi;China
+Shaanxi;China
+Ningxia;China
+Gansu;China
+Xinjiang;China
+Qinghai;China
+Tibet;China
+Sichuan;China
+Yunnan;China
+Guizhou;China
+Chongqing;China
+Hubei;China
+Henan;China
+Shandong;China
+Jiangsu;China
+Anhui;China
+Jiangxi;China
+Zhejiang;China
+Fujian;China
+Guang dong;China
 Hong Kong;UK
-Hainan;USSR
-Guangxi;USSR
-Hunan;USSR
+Hainan;China
+Guangxi;China
+Hunan;China
 Taiwan;Taiwan
 North Vietnam;Vietnam
 Central Vietnam;Vietnam

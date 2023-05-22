@@ -8,19 +8,19 @@ namespace PaxApocalytica
     {
         public Color Color { get; set; }
         public MilitaryFactoryType.Type TechGroup { get; private set; }
-        public uint Manpower { get; set; }
+        public ulong Manpower { get; set; }
         public int Cash { get; set; }
         public byte MaxLeaders {get; private set;}
-
+        public int MaxImport { get; set; }
         public int DiploPoints { get; private set; }
-        public CountryCharacteristics(Color color, MilitaryFactoryType.Type techGroup,uint manpower, int cash, int diploPoints, byte leaders)
+        public CountryCharacteristics(Color color, MilitaryFactoryType.Type techGroup, int cash, int diploPoints, byte leaders)
         {
             this.Color = color;
             this.TechGroup = techGroup;
-            this.Manpower = manpower;
             this.Cash = cash;
             this.MaxLeaders = leaders;
             this.DiploPoints = diploPoints;
+            this.MaxImport = 2;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace PaxApocalytica.Military
             private set;
         }
 
-        public List<Unit> Units
+        public Unit[] Units
         {
             get;
             private set;
@@ -23,16 +23,18 @@ namespace PaxApocalytica.Military
         public Army(string name)
         {
             Owner = name;
+            Units = new Unit[16];
         }
 
-        public void AddUnit(Unit unit)
+        public void AddUnit(Unit unit,int index)
         {
-            Units.Add(unit);
+            this.Units[index] = unit;
         }
 
-        public void DeleteUnit(Unit unit)
+        public void DeleteUnit(int index)
         {
-            Units.Remove(unit);
+            //this.Units[index].
+            this.Units[index] = null;
         }
     }
 }

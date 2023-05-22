@@ -122,76 +122,22 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Canada
-        ///USA
-        ///Singapore
-        ///Burkina-Faso
-        ///Mexico
-        ///Guatemala
-        ///Belize
-        ///Gonduras
-        ///Salvador
-        ///Nicaragua
-        ///Costa Rica
-        ///Panama
-        ///Jamaica
-        ///Cuba
-        ///Bahamas
-        ///Puerto Rico
-        ///UK
-        ///Haiti
-        ///Dominican Republic
-        ///Saint Kitts and Nevis
-        ///Antigua and Barbuda
-        ///France
-        ///Dominica
-        ///Saint Lucia
-        ///Saint Vincent and the Grenadines
-        ///Barbados
-        ///Grenada
-        ///Trinidad and Tobago
-        ///Venezuela
-        ///Colombia
-        ///Ecuador
-        ///Peru
-        ///Bolivia
-        ///Chile
-        ///Argentina
-        ///Paraguay
-        ///Uruguay
-        ///Brazil
-        ///Suriname
-        ///Guyana
-        ///Cabo Verde
-        ///West Sakhara
-        ///Mavritaniya
-        ///Senegal
-        ///Gambia
-        ///Guinea-Bissau
-        /// [остаток строки не уместился]&quot;;.
-        /// </summary>
-        public static string CountryName_Allies {
-            get {
-                return ResourceManager.GetString("CountryName_Allies", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Canada;0,106,9;NATO;0;0;0;2
-        ///USA;153,217,234;NATO;0;0;0;4
-        ///Singapore;128,255,0;NATO;0;0;0;2
-        ///Burkina-Faso;245,238,205;Generic;0;0;0;2
-        ///Mexico;255,210,94;Generic;0;0;0;3
-        ///Guatemala;90,117,11;Generic;0;0;0;2
-        ///Belize;203,221,222;Generic;0;0;0;2
-        ///Gonduras;160,126,194;Generic;0;0;0;2
-        ///Salvador;90,90,37;Generic;0;0;0;2
-        ///Nicaragua;149,108,100;Generic;0;0;0;2
-        ///Costa Rica;151,156,255;Generic;0;0;0;2
-        ///Panama;55,105,22;Generic;0;0;0;2
-        ///Jamaica;0,29,128;Generic;0;0;0;2
-        ///Cuba;64,128,128;Generic;0;0;0;2
-        ///Bahamas;74,230,0 [остаток строки не уместился]&quot;;.
+        ///   Ищет локализованную строку, похожую на Canada;0,106,9;NATO;0;0;2
+        ///USA;153,217,234;NATO;0;0;4
+        ///Singapore;128,255,0;NATO;0;0;2
+        ///Burkina-Faso;245,238,205;Generic;0;0;2
+        ///Mexico;255,210,94;Generic;0;0;3
+        ///Guatemala;90,117,11;Generic;0;0;2
+        ///Belize;203,221,222;Generic;0;0;2
+        ///Gonduras;160,126,194;Generic;0;0;2
+        ///Salvador;90,90,37;Generic;0;0;2
+        ///Nicaragua;149,108,100;Generic;0;0;2
+        ///Costa Rica;151,156,255;Generic;0;0;2
+        ///Panama;55,105,22;Generic;0;0;2
+        ///Jamaica;0,29,128;Generic;0;0;2
+        ///Cuba;64,128,128;Generic;0;0;2
+        ///Bahamas;74,230,0;Generic;0;0;2
+        ///Puerto Rico; [остаток строки не уместился]&quot;;.
         /// </summary>
         public static string CountryName_Characteristics {
             get {
@@ -200,15 +146,14 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Canada;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///USA;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///Singapore;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///Burkina-Faso;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///Mexico;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///Guatemala;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///Belize;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///Gonduras;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
-        ///Salva [остаток строки не уместился]&quot;;.
+        ///   Ищет локализованную строку, похожую на Canada;100;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///USA;750;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Singapore;30;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Burkina-Faso;30;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Mexico;100;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Guatemala;30;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Belize;30;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+        ///Gonduras;30;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0 [остаток строки не уместился]&quot;;.
         /// </summary>
         public static string CountryName_MilitaryResources {
             get {
@@ -217,192 +162,28 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Canada
-        ///USA
-        ///Singapore
-        ///Burkina-Faso
-        ///Mexico
-        ///Guatemala
-        ///Belize
-        ///Gonduras
-        ///Salvador
-        ///Nicaragua
-        ///Costa Rica
-        ///Panama
-        ///Jamaica
-        ///Cuba
-        ///Bahamas
-        ///Puerto Rico
-        ///UK
-        ///Haiti
-        ///Dominican Republic
-        ///Saint Kitts and Nevis
-        ///Antigua and Barbuda
-        ///France
-        ///Dominica
-        ///Saint Lucia
-        ///Saint Vincent and the Grenadines
-        ///Barbados
-        ///Grenada
-        ///Trinidad and Tobago
-        ///Venezuela
-        ///Colombia
-        ///Ecuador
-        ///Peru
-        ///Bolivia
-        ///Chile
-        ///Argentina
-        ///Paraguay
-        ///Uruguay
-        ///Brazil
-        ///Suriname
-        ///Guyana
-        ///Cabo Verde
-        ///West Sakhara
-        ///Mavritaniya
-        ///Senegal
-        ///Gambia
-        ///Guinea-Bissau
-        /// [остаток строки не уместился]&quot;;.
-        /// </summary>
-        public static string CountryName_NukesCount {
-            get {
-                return ResourceManager.GetString("CountryName_NukesCount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Canada
-        ///USA
-        ///Singapore
-        ///Burkina-Faso
-        ///Mexico
-        ///Guatemala
-        ///Belize
-        ///Gonduras
-        ///Salvador
-        ///Nicaragua
-        ///Costa Rica
-        ///Panama
-        ///Jamaica
-        ///Cuba
-        ///Bahamas
-        ///Puerto Rico
-        ///UK
-        ///Haiti
-        ///Dominican Republic
-        ///Saint Kitts and Nevis
-        ///Antigua and Barbuda
-        ///France
-        ///Dominica
-        ///Saint Lucia
-        ///Saint Vincent and the Grenadines
-        ///Barbados
-        ///Grenada
-        ///Trinidad and Tobago
-        ///Venezuela
-        ///Colombia
-        ///Ecuador
-        ///Peru
-        ///Bolivia
-        ///Chile
-        ///Argentina
-        ///Paraguay
-        ///Uruguay
-        ///Brazil
-        ///Suriname
-        ///Guyana
-        ///Cabo Verde
-        ///West Sakhara
-        ///Mavritaniya
-        ///Senegal
-        ///Gambia
-        ///Guinea-Bissau
-        /// [остаток строки не уместился]&quot;;.
-        /// </summary>
-        public static string CountryName_Rivals {
-            get {
-                return ResourceManager.GetString("CountryName_Rivals", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Canada;0;0;0;0;0;0;0;0;0;0;0
-        ///USA;0;0;0;0;0;0;0;0;0;0;0
-        ///Singapore;0;0;0;0;0;0;0;0;0;0;0
-        ///Burkina-Faso;0;0;0;0;0;0;0;0;0;0;0
-        ///Mexico;0;0;0;0;0;0;0;0;0;0;0
-        ///Guatemala;0;0;0;0;0;0;0;0;0;0;0
-        ///Belize;0;0;0;0;0;0;0;0;0;0;0
-        ///Gonduras;0;0;0;0;0;0;0;0;0;0;0
-        ///Salvador;0;0;0;0;0;0;0;0;0;0;0
-        ///Nicaragua;0;0;0;0;0;0;0;0;0;0;0
-        ///Costa Rica;0;0;0;0;0;0;0;0;0;0;0
-        ///Panama;0;0;0;0;0;0;0;0;0;0;0
-        ///Jamaica;0;0;0;0;0;0;0;0;0;0;0
-        ///Cuba;0;0;0;0;0;0;0;0;0;0;0
-        ///Bahamas;0;0;0;0;0;0;0;0;0;0;0
-        ///Puerto Rico;0;0;0;0;0;0;0;0;0;0;0
-        ///UK;0;0; [остаток строки не уместился]&quot;;.
+        ///   Ищет локализованную строку, похожую на Canada;0;0;0;0;0;0;0;0;0;0
+        ///USA;0;0;0;0;0;0;0;0;0;0
+        ///Singapore;0;0;0;0;0;0;0;0;0;0
+        ///Burkina-Faso;0;0;0;0;0;0;0;0;0;0
+        ///Mexico;0;0;0;0;0;0;0;0;0;0
+        ///Guatemala;0;0;0;0;0;0;0;0;0;0
+        ///Belize;0;0;0;0;0;0;0;0;0;0
+        ///Gonduras;0;0;0;0;0;0;0;0;0;0
+        ///Salvador;0;0;0;0;0;0;0;0;0;0
+        ///Nicaragua;0;0;0;0;0;0;0;0;0;0
+        ///Costa Rica;0;0;0;0;0;0;0;0;0;0
+        ///Panama;0;0;0;0;0;0;0;0;0;0
+        ///Jamaica;0;0;0;0;0;0;0;0;0;0
+        ///Cuba;0;0;0;0;0;0;0;0;0;0
+        ///Bahamas;0;0;0;0;0;0;0;0;0;0
+        ///Puerto Rico;0;0;0;0;0;0;0;0;0;0
+        ///UK;0;0;0;0;0;0;0;0;0;0
+        ///Haiti;0;0;0;0;0 [остаток строки не уместился]&quot;;.
         /// </summary>
         public static string CountryName_SimpleResources {
             get {
                 return ResourceManager.GetString("CountryName_SimpleResources", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Canada
-        ///USA
-        ///Singapore
-        ///Burkina-Faso
-        ///Mexico
-        ///Guatemala
-        ///Belize
-        ///Gonduras
-        ///Salvador
-        ///Nicaragua
-        ///Costa Rica
-        ///Panama
-        ///Jamaica
-        ///Cuba
-        ///Bahamas
-        ///Puerto Rico
-        ///UK
-        ///Haiti
-        ///Dominican Republic
-        ///Saint Kitts and Nevis
-        ///Antigua and Barbuda
-        ///France
-        ///Dominica
-        ///Saint Lucia
-        ///Saint Vincent and the Grenadines
-        ///Barbados
-        ///Grenada
-        ///Trinidad and Tobago
-        ///Venezuela
-        ///Colombia
-        ///Ecuador
-        ///Peru
-        ///Bolivia
-        ///Chile
-        ///Argentina
-        ///Paraguay
-        ///Uruguay
-        ///Brazil
-        ///Suriname
-        ///Guyana
-        ///Cabo Verde
-        ///West Sakhara
-        ///Mavritaniya
-        ///Senegal
-        ///Gambia
-        ///Guinea-Bissau
-        /// [остаток строки не уместился]&quot;;.
-        /// </summary>
-        public static string CountryName_WarEnemies {
-            get {
-                return ResourceManager.GetString("CountryName_WarEnemies", resourceCulture);
             }
         }
         
@@ -444,7 +225,21 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на manpower, education.
+        ///   Ищет локализованную строку, похожую на Alaska;12575000;90;628750
+        ///Hawaii;12575000;90;628750
+        ///Burkina-Faso;9350000;10;467500
+        ///Northern Territories;5600000;90;280000
+        ///West Coast Pacific;5600000;90;280000
+        ///Prairie Provinces;5600000;90;280000
+        ///Central Canada;5600000;90;280000
+        ///Atlantic Region;5600000;90;280000
+        ///Pacific;25150000;90;1257500
+        ///Mountain;25150000;90;1257500
+        ///West North Central;25150000;90;1257500
+        ///West South Central;25150000;90;1257500
+        ///East North Central;25150000;90;1257500
+        ///East South Central;25150000;90;1257500
+        ///New England;25150000;90 [остаток строки не уместился]&quot;;.
         /// </summary>
         public static string Name_Characteristics {
             get {
@@ -718,53 +513,6 @@ namespace PaxApocalytica.Properties {
         public static string Pact_Countryname {
             get {
                 return ResourceManager.GetString("Pact_Countryname", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Alaska
-        ///Hawaii
-        ///Burkina-Faso
-        ///Northern Territories
-        ///West Coast Pacific
-        ///Prairie Provinces
-        ///Central Canada
-        ///Atlantic Region
-        ///Pacific
-        ///Mountain
-        ///West North Central
-        ///West South Central
-        ///East North Central
-        ///East South Central
-        ///New England
-        ///Mid-Atlantic
-        ///South Atlantic
-        ///Noroeste
-        ///Noreste
-        ///Occidente
-        ///Oriente
-        ///Centronorte
-        ///Centrosur
-        ///Sureste
-        ///Suroeste
-        ///Guatemala
-        ///Belize
-        ///Gonduras
-        ///Salvador
-        ///Nicaragua
-        ///Costa Rica
-        ///Panama
-        ///Jamaica
-        ///West Cuba
-        ///Central Cuba
-        ///East Cuba
-        ///Bahamas
-        ///Puerto Rico
-        ///British Territories In the  [остаток строки не уместился]&quot;;.
-        /// </summary>
-        public static string provincesNames {
-            get {
-                return ResourceManager.GetString("provincesNames", resourceCulture);
             }
         }
         

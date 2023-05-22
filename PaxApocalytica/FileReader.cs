@@ -84,9 +84,9 @@ namespace PaxApocalytica
                 if (line == "") { break; }
                 string[] sublines = line.Split(";");
                 PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources.Add(sublines[0], new int[27]);
-                for (int i = 1; i < sublines.Length - 1; i++)
+                for (int i = 1; i < sublines.Length; i++)
                 {
-                    PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[sublines[0]][i] = Convert.ToInt32(sublines[i]);
+                    PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[sublines[0]][i-1] = Convert.ToInt32(sublines[i]);
                 }
             }
         }
@@ -107,10 +107,10 @@ namespace PaxApocalytica
             {
                 if (line == "") { break; }
                 string[] sublines = line.Split(";");
-                PaxApocalyticaGame.Dictionary_CountrynameSimpleResources.Add(sublines[0], new int[11]);
-                for (int i = 1; i < sublines.Length - 1; i++)
+                PaxApocalyticaGame.Dictionary_CountrynameSimpleResources.Add(sublines[0], new int[10]);
+                for (int i = 0; i < sublines.Length-1; i++)
                 {
-                    PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[sublines[0]][i] = Convert.ToInt32(sublines[i]);
+                    PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[sublines[0]][i] = Convert.ToInt32(sublines[i+1]);
                 }
             }
         }
@@ -187,10 +187,9 @@ namespace PaxApocalytica
                     (
                         countryColor,
                         type,
-                        Convert.ToUInt32(sublines[3]),
+                        Convert.ToInt32(sublines[3]),
                         Convert.ToInt32(sublines[4]),
-                        Convert.ToInt32(sublines[5]),
-                        Convert.ToByte(sublines[6])
+                        Convert.ToByte(sublines[5])
                     )
                 );
             }
@@ -473,6 +472,53 @@ namespace PaxApocalytica
                     }
                     else { throw new ArgumentException(); }
 
+                }
+            }
+        }
+        public static void ReadFile_NameCharacteristics()
+        {
+            Random random = new Random(); ;
+            bool pathNull = false;
+            PaxApocalyticaGame.Dictionary_NameCharacteristics = new Dictionary<string, ProvinceCharacteristics>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "Name_Characteristics.txt");
+            }
+            else
+            {
+                pathNull = true;
+                lines = Resources.Name_Characteristics.Split("\r\n");
+            }
+
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                if (pathNull)
+                {
+                    ulong populMult = (ulong)random.Next(80, 120);
+                    byte edMult = (byte)random.Next(-2, 4);
+                    uint mpMult = (uint)random.Next(60, 90);
+                    PaxApocalyticaGame.Dictionary_NameCharacteristics.Add(sublines[0],
+                        new ProvinceCharacteristics
+                        (
+                            (ulong)(Convert.ToUInt64(sublines[1])*populMult/100),
+                            (byte)(Convert.ToByte(sublines[2]) + edMult),
+                            (uint)(Convert.ToUInt32(sublines[3]) * mpMult/1000),
+                            (byte)(Convert.ToByte(sublines[2])))
+                        );
+                }
+                else 
+                {
+                    PaxApocalyticaGame.Dictionary_NameCharacteristics.Add(sublines[0],
+                        new ProvinceCharacteristics
+                        (
+                            Convert.ToUInt64(sublines[1]),
+                            Convert.ToByte(sublines[2]),
+                            Convert.ToUInt32(sublines[3]),
+                            Convert.ToByte(sublines[4]))
+                        );
                 }
             }
         }

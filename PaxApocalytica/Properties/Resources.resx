@@ -130,26 +130,14 @@
   <data name="Color_Name" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Color_Name.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
-  <data name="CountryName_Allies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CountryName_Allies.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
   <data name="CountryName_Characteristics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CountryName_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="CountryName_MilitaryResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CountryName_MilitaryResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
-  <data name="CountryName_NukesCount" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CountryName_NukesCount.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
-  <data name="CountryName_Rivals" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CountryName_Rivals.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
   <data name="CountryName_SimpleResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CountryName_SimpleResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
-  <data name="CountryName_WarEnemies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CountryName_WarEnemies.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Airfield" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Name_Airfield.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
@@ -180,9 +168,6 @@
   </data>
   <data name="Pact_Countryname" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pact_Countryname.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
-  <data name="provincesNames" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\protoSource\provincesNames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="String1" xml:space="preserve">
     <value />

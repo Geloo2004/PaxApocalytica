@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PaxApocalytica.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace PaxApocalytica.FactoriesAndResources
 {
     public class MilitaryFactory
     {
+        public bool IsFunctioning { get; set; }
         public int BaseCost
         {
             get { return 10000; }
@@ -63,6 +65,8 @@ namespace PaxApocalytica.FactoriesAndResources
             MinEducation = (byte)(90 - 5 * (10 - TechnologyLevel));
             if (MinEducation < 70) { MinEducation = 70; }
             FactoryType = factoryType;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
+            IsFunctioning = true;
         }
 
         public void ChangeProducedResource(MilitaryResources.Names newName) 
@@ -72,7 +76,7 @@ namespace PaxApocalytica.FactoriesAndResources
 
         public bool IsProduceable(MilitaryResources.Names name, MilitaryFactoryType.Type ownerFactoryType)
         {
-            if(ownerFactoryType != FactoryType) { return false; }//нельзя производить на оккупированных территориях
+            if(ownerFactoryType != FactoryType) { return false; } //нельзя производить на оккупированных территориях
             if (FactoryType == MilitaryFactoryType.Type.Soviet)
             {
                 return IsProduceableR(name);
@@ -190,7 +194,7 @@ namespace PaxApocalytica.FactoriesAndResources
 
         public bool IsTUpgradePossible(byte educationLevel)
         {
-            if (ExtensionLevel < 10)
+            if (TechnologyLevel < 10)
             {
                 if (educationLevel >= 90 - 5 * (10 - TechnologyLevel + 1))
                 {
@@ -204,7 +208,7 @@ namespace PaxApocalytica.FactoriesAndResources
 
         public bool IsTDegradePossible(byte educationLevel) //edLev - ур образования в провинции
         {
-            if (ExtensionLevel > 0)
+            if (TechnologyLevel > 1)
             {
                 return true;
             }
@@ -220,18 +224,15 @@ namespace PaxApocalytica.FactoriesAndResources
             return BaseCost * ExtensionLevel * TechnologyLevel / 100 / educationLevel;
         }
 
-        private float CalculateProduction()
-        {
-            return ExtensionLevel * (float)Math.Log(TechnologyLevel);
-        }
-
         public void EUpgrade()
         {
             ExtensionLevel++;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
         public void EDegrade()
         {
             ExtensionLevel--;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
 
         public void TUpgrade()
@@ -239,25 +240,135 @@ namespace PaxApocalytica.FactoriesAndResources
             TechnologyLevel++;
             MinEducation = (byte)(90 - 5 * (10 - TechnologyLevel));
             if (MinEducation < 70) { MinEducation = 70; }
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
-        public void TDegrade(ref CountryCharacteristics occupantCountryCharacteristics)
+        public void TDegrade()
         {
             TechnologyLevel--;
             MinEducation = (byte)(90 - 5 * (10 - TechnologyLevel));
             if (MinEducation < 70) { MinEducation = 70; }
-            occupantCountryCharacteristics.Cash += 1000;
+            Production = ExtensionLevel * (float)Math.Log(TechnologyLevel);
         }
 
-        public void Produce(ref Dictionary<SimpleResources.Names, float> sr, ref Dictionary<MilitaryResources.Names, float> mr, ref bool noResources)
+        public void Produce(string owner)
         {
-            if (ProducedResourceName == MilitaryResources.Names.Weaponry)    //infantry weaponry
+            if (IsFunctioning)
             {
-                if (sr[SimpleResources.Names.Steel] >= ExtensionLevel)
+                if (ProducedResourceName == MilitaryResources.Names.Weaponry)
                 {
-                    sr[SimpleResources.Names.Steel] -= ExtensionLevel;
-                    mr[ProducedResourceName] += CalculateProduction();
+                    if (PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] >= ExtensionLevel)
+                    {
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] -= ExtensionLevel;
+                        PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)Production;
+                    }
+                    else { throw new Exception(); }
                 }
-                else { noResources = true; }
+                else if (ProducedResourceName == MilitaryResources.Names.T72B        //tanks
+                    || ProducedResourceName == MilitaryResources.Names.T90A
+                    || ProducedResourceName == MilitaryResources.Names.T90M
+                    || ProducedResourceName == MilitaryResources.Names.T14
+                    || ProducedResourceName == MilitaryResources.Names.M1
+                    || ProducedResourceName == MilitaryResources.Names.M1A1
+                    || ProducedResourceName == MilitaryResources.Names.M1A2
+                    || ProducedResourceName == MilitaryResources.Names.M1A2C
+                    || ProducedResourceName == MilitaryResources.Names.T55
+                    || ProducedResourceName == MilitaryResources.Names.T55M
+                    || ProducedResourceName == MilitaryResources.Names.T72A
+                    || ProducedResourceName == MilitaryResources.Names.T72M)
+                {
+                    if (PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] >= ExtensionLevel * 3
+                        && PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] >= ExtensionLevel)
+                    {
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] -= ExtensionLevel * 3;
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] -= ExtensionLevel;
+                        if (ProducedResourceName == MilitaryResources.Names.T72B) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][1] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.T90A) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][2] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.T90M) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][3] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.T14) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][4] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.M1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][11] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.M1A1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][12] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.M1A2) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][13] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.M1A2C) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][14] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.T55) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][19] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.T55M) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][20] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.T72A) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][21] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.T72M) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][22] += (int)Production; }
+                    }
+                    else { throw new Exception(); }
+                }
+                else if (ProducedResourceName == MilitaryResources.Names.BMP2    //lavs
+                    || ProducedResourceName == MilitaryResources.Names.BMP3
+                    || ProducedResourceName == MilitaryResources.Names.M3A1
+                    || ProducedResourceName == MilitaryResources.Names.M3A3
+                    || ProducedResourceName == MilitaryResources.Names.BMP1
+                    || ProducedResourceName == MilitaryResources.Names.BMP23)
+                {
+                    if (PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] >= ExtensionLevel * 2
+                            && PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] >= ExtensionLevel
+                            && PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] >= ExtensionLevel)
+                    {
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] -= ExtensionLevel * 2;
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] -= ExtensionLevel;
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] -= ExtensionLevel;
+                        if (ProducedResourceName == MilitaryResources.Names.BMP2) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][5] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.BMP3) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][6] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.M3A1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][15] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.M3A3) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][16] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.BMP1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][23] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.BMP23) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][24] += (int)Production; }
+                    }
+                    else { throw new Exception(); }
+                }
+                else if (ProducedResourceName == MilitaryResources.Names.BMD1
+                    || ProducedResourceName == MilitaryResources.Names.BMD2)
+                {
+                    if (PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] >= ExtensionLevel
+                        && PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] >= ExtensionLevel * 2)
+                    {
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] -= ExtensionLevel * 2;
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] -= ExtensionLevel;
+                        if (ProducedResourceName == MilitaryResources.Names.BMD1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][7] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.BMD2) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][8] += (int)Production; }
+                    }
+                    else { throw new Exception(); }
+                }
+                else if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftA
+                    || ProducedResourceName == MilitaryResources.Names.StrikeAircraftR
+                    || ProducedResourceName == MilitaryResources.Names.StrikeAircraftG)
+                {
+                    if (PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] >= ExtensionLevel * 4)
+                    {
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] -= ExtensionLevel * 4;
+                        if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftA) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][10] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftR) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][18] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftG) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][26] += (int)Production; }
+                    }
+                    else { throw new Exception(); }
+                }
+                else if (ProducedResourceName == MilitaryResources.Names.FighterA
+                    || ProducedResourceName == MilitaryResources.Names.FighterR
+                    || ProducedResourceName == MilitaryResources.Names.FighterG)
+                {
+                    if (PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] >= ExtensionLevel * 3)
+                    {
+                        PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] -= ExtensionLevel * 3;
+                        if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftA) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][9] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftR) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][17] += (int)Production; }
+                        if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftG) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][25] += (int)Production; }
+                    }
+                    else { throw new Exception(); }
+                }
+                else
+                {
+                    throw new Exception("WTF");
+                }
+            }
+        }
+        public void Produce_Start(string owner)
+        {
+            if (ProducedResourceName == MilitaryResources.Names.Weaponry)
+            {
+                    PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)Production;
             }
             else if (ProducedResourceName == MilitaryResources.Names.T72B        //tanks
                 || ProducedResourceName == MilitaryResources.Names.T90A
@@ -272,14 +383,19 @@ namespace PaxApocalytica.FactoriesAndResources
                 || ProducedResourceName == MilitaryResources.Names.T72A
                 || ProducedResourceName == MilitaryResources.Names.T72M)
             {
-                if (sr[SimpleResources.Names.Steel] >= ExtensionLevel * 3
-                    && sr[SimpleResources.Names.Copper] >= ExtensionLevel)
-                {
-                    sr[SimpleResources.Names.Steel] -= ExtensionLevel * 3;
-                    sr[SimpleResources.Names.Copper] -= ExtensionLevel;
-                    mr[ProducedResourceName] += CalculateProduction();
-                }
-                else { noResources = true; }
+                
+                    if (ProducedResourceName == MilitaryResources.Names.T72B) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][1] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.T90A) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][2] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.T90M) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][3] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.T14) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][4] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.M1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][11] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.M1A1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][12] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.M1A2) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][13] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.M1A2C) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][14] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.T55) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][19] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.T55M) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][20] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.T72A) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][21] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.T72M) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][22] += (int)Production; }
             }
             else if (ProducedResourceName == MilitaryResources.Names.BMP2    //lavs
                 || ProducedResourceName == MilitaryResources.Names.BMP3
@@ -288,55 +404,39 @@ namespace PaxApocalytica.FactoriesAndResources
                 || ProducedResourceName == MilitaryResources.Names.BMP1
                 || ProducedResourceName == MilitaryResources.Names.BMP23)
             {
-                if (sr[SimpleResources.Names.Steel] >= ExtensionLevel * 2
-                    && sr[SimpleResources.Names.Copper] >= ExtensionLevel
-                    && sr[SimpleResources.Names.Aluminium] >= ExtensionLevel)
-                {
-                    sr[SimpleResources.Names.Steel] -= ExtensionLevel * 2;
-                    sr[SimpleResources.Names.Aluminium] -= ExtensionLevel;
-                    sr[SimpleResources.Names.Copper] -= ExtensionLevel;
-                    mr[ProducedResourceName] += CalculateProduction();
-                }
-                else { noResources = true; }
+                    if (ProducedResourceName == MilitaryResources.Names.BMP2) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][5] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.BMP3) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][6] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.M3A1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][15] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.M3A3) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][16] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.BMP1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][23] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.BMP23) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][24] += (int)Production; }
             }
             else if (ProducedResourceName == MilitaryResources.Names.BMD1
                 || ProducedResourceName == MilitaryResources.Names.BMD2)
             {
-                if (sr[SimpleResources.Names.Copper] >= ExtensionLevel
-                    && sr[SimpleResources.Names.Aluminium] >= ExtensionLevel * 2)
-                {
-                    sr[SimpleResources.Names.Aluminium] -= ExtensionLevel * 2;
-                    sr[SimpleResources.Names.Copper] -= ExtensionLevel;
-                    mr[ProducedResourceName] += CalculateProduction();
-                }
-                else { noResources = true; }
+                    if (ProducedResourceName == MilitaryResources.Names.BMD1) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][7] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.BMD2) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][8] += (int)Production; }
             }
             else if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftA
                 || ProducedResourceName == MilitaryResources.Names.StrikeAircraftR
                 || ProducedResourceName == MilitaryResources.Names.StrikeAircraftG)
             {
-                if (sr[SimpleResources.Names.Aluminium] >= ExtensionLevel * 4)
-                {
-                    sr[SimpleResources.Names.Aluminium] -= ExtensionLevel * 4;
-                    mr[ProducedResourceName] += CalculateProduction();
-                }
-                else { noResources = true; }
+                    if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftA) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][10] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftR) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][18] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftG) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][26] += (int)Production; }
             }
             else if (ProducedResourceName == MilitaryResources.Names.FighterA
-                || ProducedResourceName == MilitaryResources.Names.FighterG
-                || ProducedResourceName == MilitaryResources.Names.FighterR)
+                || ProducedResourceName == MilitaryResources.Names.FighterR
+                || ProducedResourceName == MilitaryResources.Names.FighterG)
             {
-                if (sr[SimpleResources.Names.Aluminium] >= ExtensionLevel * 3)
-                {
-                    sr[SimpleResources.Names.Aluminium] -= ExtensionLevel * 3;
-                    mr[ProducedResourceName] += CalculateProduction();
-                }
-                else { noResources = true; }
+                    if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftA) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][9] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftR) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][17] += (int)Production; }
+                    if (ProducedResourceName == MilitaryResources.Names.StrikeAircraftG) { PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][25] += (int)Production; }
             }
             else
             {
                 throw new Exception("WTF");
             }
-        }
+        }        
     }
 }

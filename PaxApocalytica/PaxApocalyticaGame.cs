@@ -20,6 +20,10 @@ namespace PaxApocalytica
 {
     public partial class PaxApocalyticaGame : Form
     {
+        static byte month = 12;
+        static int year = 1991;
+        static bool countryIsChosen = false;
+
         Bitmap baseBitmapIndexed = PaxApocalytica.Properties.Resources.baseMapBmp; //bmp мало памяти
         Bitmap baseBitmap;      //png много памяти
         Bitmap map;
@@ -40,6 +44,13 @@ namespace PaxApocalytica
         public static Dictionary<string, string[]> Dictionary_NameNeighbours;
         public static Dictionary<string, int> Dictionary_NamePort;
 
+        /*  allies
+         *  rivals
+         *  enemies
+         *  nukesCount
+         *  player/ai
+         */
+        public static Dictionary<string,ProvinceCharacteristics> Dictionary_NameCharacteristics;
 
         public static Dictionary<string, string> Dictionary_NameOwner;
         public static Dictionary<string, string> Dictionary_NameOccupant;
@@ -50,8 +61,9 @@ namespace PaxApocalytica
         public static Dictionary<string, SimpleFactory> Dictionary_NameSFactory;
         public static Dictionary<string, MilitaryFactory> Dictionary_NameMFactory;
 
+        public static Dictionary<string, bool[]> Dictionary_CanBuildUnit;
+
         //Dictionary<string, string> Dictionary_NameController;     //  ai/player
-        string playerCountry = null;
 
         public PaxApocalyticaGame()
         {
@@ -78,12 +90,12 @@ namespace PaxApocalytica
             mapBox.Image = map;
 
             provinceName.Hide();
-            ownerCountry.Hide();
-            occupantCountry.Hide();
-            producedResource.Hide();
-            producedMilitaryResource.Hide();
 
-
+            playerCountry.Text = "Choose your country";
+            cash.Hide();
+            manpower.Hide();
+            provinceName.Hide();
+            date.Hide();
 
 
             FileReader.ReadFile_NameOwner();
@@ -94,55 +106,33 @@ namespace PaxApocalytica
             FileReader.ReadFile_NameAirfield();
             FileReader.ReadFile_NameSimpleFactory();
             FileReader.ReadFile_NameMilitaryFactory();
-
+            FileReader.ReadFile_NameCharacteristics();
             //не меняются
             FileReader.ReadFile_ColorName();
             FileReader.ReadFile_NamePort();
             FileReader.ReadFile_NameNeighbours();
             FileReader.ReadFile_NamesPoints();
 
+            foreach(var country in Dictionary_CountrynameCharacteristics.Keys) 
+            {
+                Dictionary_CanBuildUnit.Add(country, new bool[27]);
+            }
+
+            if(Form1.path == null)
+            {
+                StartCalcualtor.CalculateStartSResources();
+                StartCalcualtor.CalculateStartMResources();
+                StartCalcualtor.CalculateStartManpower();
+                StartCalcualtor.CalculateStartCash();
+            }
+            Calculator.RecalculateMaxImport();
+            Calculator.RecalcualteManpower(); 
+            Calculator.RecalcualteCash();
+            Calculator.RecalculateIsFunctioning();
+            Calculator.RecalculateCanBuildUnit();
             DrawStartMap();
             UpdateMap();
         }
-        /* 
- public bool ColorsRepeat()
- {
-     List<Color> colors = new List<Color>();
-     foreach (var country in Dictionary_CountrynameCharacteristics)
-     {
-         if (colors.Contains(country.Value.Color))
-         {
-             return true;
-         }
-     }
-     return false;
- }
-
- public void PaintRegionsMap()
- {
-     int a = 0;
-     int g = 0;
-     int b = 10;
-     foreach (var province in Dictionary_NamesPoints)
-     {
-         foreach (var point in province.Value)
-         {
-             FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Color.FromArgb(a, g, b));
-         }
-         b += 10;
-         if (b >= 256)
-         {
-             b -= 256;
-             g += 10;
-         }
-         if (g >= 256)
-         {
-             g -= 256;
-             a += 10;
-         }
-     }
-     baseBitmap.Save("bitmap.bmp");
- }*/
         private Bitmap UniteBitmaps(Bitmap oldBmp)
         {
             Bitmap newBmp = new Bitmap(rect.Width, rect.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
@@ -193,7 +183,7 @@ namespace PaxApocalytica
             ResizeMapBox();
             ResizeRectangle();
             ResizeLabelsAndButtons();
-            ResizeTabControl();
+            saveChoice.Width = splitterVertical.Panel2.Width - 14;
             UpdateMap();
         }
 
@@ -203,19 +193,9 @@ namespace PaxApocalytica
         } //ничего не делает
 
         //resizы
-        private void ResizeTabControl()
-        {
-            tabControl1.Width = splitterVertical.Panel2.Width;
-            tabControl1.Height = splitterVertical.Panel2.Height - tabControl1.Location.Y;
-        }
-
         private void ResizeLabelsAndButtons()
         {
-            provinceName.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 9);
-            ownerCountry.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 49);
-            occupantCountry.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 79);
-            producedResource.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 119);
-            producedMilitaryResource.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 149);
+            provinceName.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 189);
         }
 
         private void ResizeRectangle()
@@ -357,67 +337,31 @@ namespace PaxApocalytica
                     baseBitmap.GetPixel(x, y) != borderGray &&
                     baseBitmap.GetPixel(x, y) != otherBorderGray)
                 {
-                    provinceName.Show();
-                    ownerCountry.Show();
-                    provinceName.Text = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
-                    ownerCountry.Text = "Owner: " + Dictionary_NameOwner[provinceName.Text];
+                    if (countryIsChosen)
+                    {
+                        provinceName.Show();
+                        provinceName.Text = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
+                    }
 
-
-                    int importBonus = 0;
                     if (Dictionary_NamePort.Keys.Contains(provinceName.Text))
                     {
-                        importBonus += Dictionary_NamePort[provinceName.Text];
                     }
-                    if (Dictionary_NameAirfield.Keys.Contains(provinceName.Text))
+
+                    if (!countryIsChosen)
                     {
-                        importBonus += Dictionary_NameAirfield[provinceName.Text].Planes.Length;
-                        plane0.Show();
-                        if (Dictionary_NameAirfield[provinceName.Text].Planes[0] != null)
-                        {
-                            plane0.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[0].Name);
-                        }
-
-                        plane1.Show();
-                        if (Dictionary_NameAirfield[provinceName.Text].Planes[1] != null)
-                        {
-                            plane1.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[1].Name);
-                        }
-
-                        if (Dictionary_NameAirfield[provinceName.Text].Planes.Length == 5)
-                        {
-                            plane2.Show();
-                            if (Dictionary_NameAirfield[provinceName.Text].Planes[2] != null)
-                            {
-                                plane2.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[2].Name);
-                            }
-
-                            plane3.Show();
-                            if (Dictionary_NameAirfield[provinceName.Text].Planes[3] != null)
-                            {
-                                plane3.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[3].Name);
-                            }
-
-                            plane4.Show();
-                            if (Dictionary_NameAirfield[provinceName.Text].Planes[4] != null)
-                            {
-                                plane4.Text = ConvertUnitNameToString(Dictionary_NameAirfield[provinceName.Text].Planes[4].Name);
-                            }
-                        }
-
-                    }
-                    if (importBonus > 0)
-                    {
-
-                    }
-                    else
-                    {
-
+                        playerCountry.Show();
+                        playerCountry.Text = Dictionary_NameOwner[Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)]];
+                        saveChoice.Text = "I want to play as this country";
                     }
                 }
                 else
                 {
                     provinceName.Hide();
-                    ownerCountry.Hide();
+                    if (!countryIsChosen)
+                    {
+                        playerCountry.Hide();
+                        saveChoice.Text = "I want to play as ...";
+                    }
                 }
 
             }/*
@@ -493,7 +437,7 @@ namespace PaxApocalytica
                 }
             }
         }
-
+        /*
         public string ConvertUnitNameToString(UnitName.Name name)
         {
             if (name == UnitName.Name.fighterG) { return "Generic fighter"; }
@@ -505,22 +449,22 @@ namespace PaxApocalytica
 
             throw new ArgumentException();
         }
-
+        */
         private void PaxApocalyticaGame_FormClosing(object sender, FormClosingEventArgs e)
         {
             folderBrowserDialog1.ShowDialog();
-            string savePath = folderBrowserDialog1.SelectedPath + "\\"; 
+            string savePath = folderBrowserDialog1.SelectedPath + "\\";
             if (folderBrowserDialog1.SelectedPath != "")
             {
                 FileWriter.SaveEverything(savePath);
             }
         }
 
-        private void DrawStartMap() 
+        private void DrawStartMap()
         {
-            foreach(var province in Dictionary_NameOwner.Keys) 
+            foreach (var province in Dictionary_NameOwner.Keys)
             {
-                foreach(var point in Dictionary_NamesPoints[province]) 
+                foreach (var point in Dictionary_NamesPoints[province])
                 {
                     if (baseBitmap.GetPixel(point.X, point.Y) == Dictionary_CountrynameCharacteristics[Dictionary_NameOwner[province]].Color) { break; }
                     else
@@ -529,6 +473,35 @@ namespace PaxApocalytica
                     }
                 }
             }
+        }
+
+        private void saveChoice_Click(object sender, EventArgs e)
+        {
+            countryIsChosen = true;
+            saveChoice.Hide();
+            saveChoice.Dispose();
+            cash.Show();
+            manpower.Show();
+            date.Show();
+            UpdatePlayerData();
+        }
+
+        private void UpdatePlayerData()
+        {
+            manpower.Text = "Manpower: " + Dictionary_CountrynameCharacteristics[playerCountry.Text].Manpower;
+            cash.Text = "Cash: " + Dictionary_CountrynameCharacteristics[playerCountry.Text].Cash;
+            if (month == 12) { date.Text = "December " + year; }
+            if (month == 1) { date.Text = "January " + year; }
+            if (month == 2) { date.Text = "February " + year; }
+            if (month == 3) { date.Text = "March " + year; }
+            if (month == 4) { date.Text = "April " + year; }
+            if (month == 5) { date.Text = "May " + year; }
+            if (month == 6) { date.Text = "June " + year; }
+            if (month == 7) { date.Text = "July " + year; }
+            if (month == 8) { date.Text = "August " + year; }
+            if (month == 9) { date.Text = "September " + year; }
+            if (month == 10) { date.Text = "October " + year; }
+            if (month == 11) { date.Text = "November " + year; }
         }
     }
 }

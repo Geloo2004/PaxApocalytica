@@ -15,7 +15,7 @@ namespace PaxApocalytica
             FileReader.ReadFile_CountrynameCharacterstics();    //меняется  +
             FileReader.ReadFile_CountrynameMilResources();      //меняется  +
             FileReader.ReadFile_CountrynameSimpleResources();   //меняется  +           
-            FileReader.ReadFile_NameAirfield();                 //меняется
+            FileReader.ReadFile_NameAirfield();                 //меняется  +
             FileReader.ReadFile_NameSimpleFactory();            //меняется  +
             FileReader.ReadFile_NameMilitaryFactory();          //меняется  +
         army                                                    //меняется
@@ -30,7 +30,9 @@ namespace PaxApocalytica
             WriteFile_NameOccupant(basePath);
             WriteFile_NameSimpleFactory(basePath);
             WriteFile_NameMilitaryFactory(basePath); 
-            WriteFile_NameAirfield(basePath);
+            WriteFile_NameAirfield(basePath); 
+            
+            WriteFile_NameCharacteristics(basePath);
         }
 
         public static void WriteFile_NameAirfield(string basePath) 
@@ -70,13 +72,12 @@ namespace PaxApocalytica
                 {
                     Color color = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].Color;
                     MilitaryFactoryType.Type type = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].TechGroup;
-                    uint mp = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].Manpower;
                     int cash = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].Cash;
                     int dipka = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].DiploPoints;
                     byte leaders = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].MaxLeaders;
-                    if (type == MilitaryFactoryType.Type.Soviet) { outputFile.WriteLine(country + ";"+color.R+","+color.G+","+color.B+";" + "Soviet" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
-                    else if (type == MilitaryFactoryType.Type.NATO) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "NATO" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
-                    else if (type == MilitaryFactoryType.Type.Generic) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "Generic" + ";" + mp + ";" + cash + ";" + dipka + ";" + leaders); }
+                    if (type == MilitaryFactoryType.Type.Soviet) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "Soviet" + ";" + cash + ";" + dipka + ";" + leaders); }
+                    else if (type == MilitaryFactoryType.Type.NATO) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "NATO" + ";" + cash + ";" + dipka + ";" + leaders); }
+                    else if (type == MilitaryFactoryType.Type.Generic) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "Generic" + ";" + cash + ";" + dipka + ";" + leaders); }
                     else throw new ArgumentException();
                 }
             }
@@ -167,6 +168,22 @@ namespace PaxApocalytica
                 foreach (var province in PaxApocalyticaGame.Dictionary_NameOccupant.Keys)
                 {
                     outputFile.WriteLine(province + ";" + PaxApocalyticaGame.Dictionary_NameOccupant[province]);
+                }
+            }
+        }
+
+        public static void WriteFile_NameCharacteristics(string basePath)
+        {
+            string path = basePath + "Name_Characteristics.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var province in PaxApocalyticaGame.Dictionary_NameCharacteristics.Keys)
+                {
+                    outputFile.WriteLine(province + ";" + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].Population+";"
+                        + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].Eductaion +";"
+                        + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].Manpower+";"
+                        + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].EductaionEffort);
                 }
             }
         }
