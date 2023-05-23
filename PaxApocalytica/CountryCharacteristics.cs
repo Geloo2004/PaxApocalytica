@@ -11,7 +11,7 @@ namespace PaxApocalytica
         public ulong Manpower { get; set; }
         public int Cash { get; set; }
         public byte MaxLeaders {get; private set;}
-        public int MaxImport { get; set; }
+        public int MaxTradeSlots { get; set; }
         public int DiploPoints { get; private set; }
         public CountryCharacteristics(Color color, MilitaryFactoryType.Type techGroup, int cash, int diploPoints, byte leaders)
         {
@@ -20,7 +20,7 @@ namespace PaxApocalytica
             this.Cash = cash;
             this.MaxLeaders = leaders;
             this.DiploPoints = diploPoints;
-            this.MaxImport = 2;
+            this.MaxTradeSlots = 5;
         }
     }
 }

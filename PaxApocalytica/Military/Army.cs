@@ -8,6 +8,11 @@ namespace PaxApocalytica.Military
 {
     public class Army
     {
+        public bool IsMoved 
+        {
+            get;
+            set;
+        }
         public string Owner
         {
             get;
@@ -20,10 +25,11 @@ namespace PaxApocalytica.Military
             private set;
         }
 
-        public Army(string name)
+        public Army(string owner, bool isMoved)
         {
-            Owner = name;
+            this.Owner = owner;
             Units = new Unit[16];
+            this.IsMoved = isMoved;
         }
 
         public void AddUnit(Unit unit,int index)
@@ -33,8 +39,19 @@ namespace PaxApocalytica.Military
 
         public void DeleteUnit(int index)
         {
-            //this.Units[index].
             this.Units[index] = null;
+        }
+
+        public bool CheckAllDead() 
+        {
+            foreach(var unit in Units) 
+            {
+                if (unit != null) 
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PaxApocalytica.FactoriesAndResources
             Oil,        //im 180        ex 60   0
             Steel,      //im 120        ex 40   1
             Copper,     //im 150        ex 50   2
-            Uranium,    //im 1000       ex 100  3
+            Uranium,    //im 300        ex 100  3
             Coal,   //  //im 120        ex 40   4
             Grain,  //  //im 60         ex 20   5
             Livestock,  //im 75         ex 25   6

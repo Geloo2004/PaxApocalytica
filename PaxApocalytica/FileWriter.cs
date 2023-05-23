@@ -1,7 +1,10 @@
 ﻿using PaxApocalytica.FactoriesAndResources;
+using PaxApocalytica.Military;
+using PaxApocalytica.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +21,7 @@ namespace PaxApocalytica
             FileReader.ReadFile_NameAirfield();                 //меняется  +
             FileReader.ReadFile_NameSimpleFactory();            //меняется  +
             FileReader.ReadFile_NameMilitaryFactory();          //меняется  +
-        army                                                    //меняется
+        army                                                    //меняется  +
         */
 
         public static void SaveEverything(string basePath) //almost everything
@@ -30,21 +33,63 @@ namespace PaxApocalytica
             WriteFile_NameOccupant(basePath);
             WriteFile_NameSimpleFactory(basePath);
             WriteFile_NameMilitaryFactory(basePath); 
-            WriteFile_NameAirfield(basePath); 
-            
-            WriteFile_NameCharacteristics(basePath);
+            WriteFile_NameAirfield(basePath);
+            WriteFile_NameArmyname(basePath);
+            WriteFile_ArmynameArmycharacteristics(basePath);
+            WriteFile_NameCharacteristics(basePath); 
+            WriteFile_CountrynameSimpleResources_Trade(basePath);
         }
 
+        public static void WriteFile_ArmynameArmycharacteristics(string basePath)
+        {
+            string path = basePath + "ArmyName_ArmyCharacteristics.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var name in PaxApocalypticaGame.Dictionary_ArmynameArmycharacteristics.Keys)
+                {
+                    outputFile.Write(PaxApocalypticaGame.Dictionary_ArmynameArmycharacteristics[name].Owner + ";" + name);
+                    for(int i = 0; i < 16; i++) 
+                    {
+                        Unit unit = PaxApocalypticaGame.Dictionary_ArmynameArmycharacteristics[name].Units[i];
+                        if (unit != null) { outputFile.Write(";" + unit.Name +","+unit.HP); }
+                        else { outputFile.Write(";"); }
+                    }
+                    outputFile.WriteLine(";"+ PaxApocalypticaGame.Dictionary_ArmynameArmycharacteristics[name].IsMoved);                        
+                }
+            }
+        }
+        public static void WriteFile_NameArmyname(string basePath)
+        {
+            string path = basePath + "Name_ArmyName.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var name in PaxApocalypticaGame.Dictionary_NameArmynames.Keys)
+                {
+                    outputFile.Write(name);
+                    if (PaxApocalypticaGame.Dictionary_NameArmynames[name].Count == 0) { outputFile.Write(";"); }
+                    else
+                    {
+                        foreach (var army in PaxApocalypticaGame.Dictionary_NameArmynames[name])
+                        {
+                            outputFile.Write(";" + army);
+                        }
+                    }
+                    outputFile.WriteLine();
+                }
+            }
+        }
         public static void WriteFile_NameAirfield(string basePath) 
         {
             string path = basePath + "Name_Airfield.txt";
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var airfield in PaxApocalyticaGame.Dictionary_NameAirfield.Keys)
+                foreach (var airfield in PaxApocalypticaGame.Dictionary_NameAirfield.Keys)
                 {
-                    outputFile.Write(airfield + ";" + PaxApocalyticaGame.Dictionary_NameAirfield[airfield].Planes.Length);
-                    foreach (var plane in PaxApocalyticaGame.Dictionary_NameAirfield[airfield].Planes) 
+                    outputFile.Write(airfield + ";" + PaxApocalypticaGame.Dictionary_NameAirfield[airfield].Planes.Length);
+                    foreach (var plane in PaxApocalypticaGame.Dictionary_NameAirfield[airfield].Planes) 
                     {
                         if (plane == null) { outputFile.Write(";"); }
                         else 
@@ -68,13 +113,13 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var country in PaxApocalyticaGame.Dictionary_CountrynameCharacteristics.Keys)
+                foreach (var country in PaxApocalypticaGame.Dictionary_CountrynameCharacteristics.Keys)
                 {
-                    Color color = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].Color;
-                    MilitaryFactoryType.Type type = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].TechGroup;
-                    int cash = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].Cash;
-                    int dipka = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].DiploPoints;
-                    byte leaders = PaxApocalyticaGame.Dictionary_CountrynameCharacteristics[country].MaxLeaders;
+                    Color color = PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[country].Color;
+                    MilitaryFactoryType.Type type = PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[country].TechGroup;
+                    int cash = PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[country].Cash;
+                    int dipka = PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[country].DiploPoints;
+                    byte leaders = PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[country].MaxLeaders;
                     if (type == MilitaryFactoryType.Type.Soviet) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "Soviet" + ";" + cash + ";" + dipka + ";" + leaders); }
                     else if (type == MilitaryFactoryType.Type.NATO) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "NATO" + ";" + cash + ";" + dipka + ";" + leaders); }
                     else if (type == MilitaryFactoryType.Type.Generic) { outputFile.WriteLine(country + ";" + color.R + "," + color.G + "," + color.B + ";" + "Generic" + ";" + cash + ";" + dipka + ";" + leaders); }
@@ -88,20 +133,43 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var country in PaxApocalyticaGame.Dictionary_CountrynameSimpleResources.Keys)
+                foreach (var country in PaxApocalypticaGame.Dictionary_CountrynameSimpleResources.Keys)
                 {
-                    int Oil = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][0];
-                    int Steel = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][1];
-                    int Copper = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][2];
-                    int Uranium = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][3];
-                    int Coal = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][4];
-                    int Grain = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][5];
-                    int Livestock = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][6];
-                    int Gas = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][7];
-                    int Aluminium = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][8];
-                    int Gold = PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[country][9];
+                    int Oil = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][0];
+                    int Steel = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][1];
+                    int Copper = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][2];
+                    int Uranium = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][3];
+                    int Coal = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][4];
+                    int Grain = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][5];
+                    int Livestock = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][6];
+                    int Gas = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][7];
+                    int Aluminium = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][8];
+                    int Gold = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][9];
                     outputFile.WriteLine(country+";"+Oil + ";" + Steel + ";" + Copper + ";" + Uranium + ";" + Coal + ";" +
                         Grain + ";" + Livestock + ";" + Gas + ";" + Aluminium + ";" + Gold );
+                }
+            }
+        }
+        public static void WriteFile_CountrynameSimpleResources_Trade(string basePath)
+        {
+            string path = basePath + "CountryName_SimpleResources_Trade.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var country in PaxApocalypticaGame.Dictionary_CountrynameSimpleResources.Keys)
+                {
+                    int Oil = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][0];
+                    int Steel = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][1];
+                    int Copper = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][2];
+                    int Uranium = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][3];
+                    int Coal = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][4];
+                    int Grain = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][5];
+                    int Livestock = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][6];
+                    int Gas = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][7];
+                    int Aluminium = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][8];
+                    int Gold = PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade[country][9];
+                    outputFile.WriteLine(country + ";" + Oil + ";" + Steel + ";" + Copper + ";" + Uranium + ";" + Coal + ";" +
+                        Grain + ";" + Livestock + ";" + Gas + ";" + Aluminium + ";" + Gold);
                 }
             }
         }
@@ -111,35 +179,35 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var country in PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources.Keys)
+                foreach (var country in PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources.Keys)
                 {
-                    int Weaponry = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][0];
-                    int T72B = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][1];
-                    int T90A = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][2];
-                    int T90M = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][3];
-                    int T14 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][4];
-                    int BMP2 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][5];
-                    int BMP3 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][6];
-                    int BMD1 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][7];
-                    int BMD2 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][8];
-                    int FighterR = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][9];
-                    int StrikeAircraftR = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][10];
-                    int M1 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][11];
-                    int M1A1 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][12];
-                    int M1A2 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][13];
-                    int M1A2C = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][14];
-                    int M3A1 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][15];
-                    int M3A3 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][16];
-                    int FighterA = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][17];
-                    int StrikeAircraftA = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][18];
-                    int T55 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][19];
-                    int T55M = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][20];
-                    int T72A = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][21];
-                    int T72M = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][22];
-                    int BMP1 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][23];
-                    int BMP23 = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][24];
-                    int FighterG = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][25];
-                    int StrikeAircraftG = PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[country][26];
+                    int Weaponry = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][0];
+                    int T72B = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][1];
+                    int T90A = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][2];
+                    int T90M = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][3];
+                    int T14 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][4];
+                    int BMP2 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][5];
+                    int BMP3 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][6];
+                    int BMD1 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][7];
+                    int BMD2 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][8];
+                    int FighterR = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][9];
+                    int StrikeAircraftR = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][10];
+                    int M1 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][11];
+                    int M1A1 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][12];
+                    int M1A2 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][13];
+                    int M1A2C = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][14];
+                    int M3A1 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][15];
+                    int M3A3 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][16];
+                    int FighterA = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][17];
+                    int StrikeAircraftA = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][18];
+                    int T55 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][19];
+                    int T55M = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][20];
+                    int T72A = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][21];
+                    int T72M = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][22];
+                    int BMP1 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][23];
+                    int BMP23 = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][24];
+                    int FighterG = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][25];
+                    int StrikeAircraftG = PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][26];
                     outputFile.WriteLine(country + ";"+Weaponry + ";" + T72B + ";" +T90A + ";" +T90M + ";" +T14 + ";" + BMP2 + ";"
                         + BMP3 + ";" + BMD1 + ";" + BMD2 + ";" +FighterR + ";" +StrikeAircraftR + ";" + M1 + ";" +
                         M1A1 + ";" + M1A2 + ";" + M1A2C + ";" + M3A1 + ";" + M3A3 + ";" + FighterA + ";" + StrikeAircraftA + ";" +
@@ -153,9 +221,9 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var province in PaxApocalyticaGame.Dictionary_NameOwner.Keys)
+                foreach (var province in PaxApocalypticaGame.Dictionary_NameOwner.Keys)
                 {
-                    outputFile.WriteLine(province+";"+ PaxApocalyticaGame.Dictionary_NameOwner[province]);
+                    outputFile.WriteLine(province+";"+ PaxApocalypticaGame.Dictionary_NameOwner[province]);
                 }
             }
         }
@@ -165,9 +233,9 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var province in PaxApocalyticaGame.Dictionary_NameOccupant.Keys)
+                foreach (var province in PaxApocalypticaGame.Dictionary_NameOccupant.Keys)
                 {
-                    outputFile.WriteLine(province + ";" + PaxApocalyticaGame.Dictionary_NameOccupant[province]);
+                    outputFile.WriteLine(province + ";" + PaxApocalypticaGame.Dictionary_NameOccupant[province]);
                 }
             }
         }
@@ -178,12 +246,12 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var province in PaxApocalyticaGame.Dictionary_NameCharacteristics.Keys)
+                foreach (var province in PaxApocalypticaGame.Dictionary_NameCharacteristics.Keys)
                 {
-                    outputFile.WriteLine(province + ";" + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].Population+";"
-                        + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].Eductaion +";"
-                        + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].Manpower+";"
-                        + PaxApocalyticaGame.Dictionary_NameCharacteristics[province].EductaionEffort);
+                    outputFile.WriteLine(province + ";" + PaxApocalypticaGame.Dictionary_NameCharacteristics[province].Population+";"
+                        + PaxApocalypticaGame.Dictionary_NameCharacteristics[province].Eductaion +";"
+                        + PaxApocalypticaGame.Dictionary_NameCharacteristics[province].Manpower+";"
+                        + PaxApocalypticaGame.Dictionary_NameCharacteristics[province].EductaionEffort);
                 }
             }
         }
@@ -193,11 +261,11 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var province in PaxApocalyticaGame.Dictionary_NameSFactory.Keys)
+                foreach (var province in PaxApocalypticaGame.Dictionary_NameSFactory.Keys)
                 {
-                    outputFile.WriteLine(province + ";" + PaxApocalyticaGame.Dictionary_NameSFactory[province].ProducedRecourceName + ";" +
-                        PaxApocalyticaGame.Dictionary_NameSFactory[province].TechnologyLevel + ";" +
-                        PaxApocalyticaGame.Dictionary_NameSFactory[province].ExtensionLevel);
+                    outputFile.WriteLine(province + ";" + PaxApocalypticaGame.Dictionary_NameSFactory[province].ProducedRecourceName + ";" +
+                        PaxApocalypticaGame.Dictionary_NameSFactory[province].TechnologyLevel + ";" +
+                        PaxApocalypticaGame.Dictionary_NameSFactory[province].ExtensionLevel);
                 }
             }
         }
@@ -207,15 +275,15 @@ namespace PaxApocalytica
 
             using (StreamWriter outputFile = new StreamWriter(path))
             {
-                foreach (var province in PaxApocalyticaGame.Dictionary_NameMFactory.Keys)
+                foreach (var province in PaxApocalypticaGame.Dictionary_NameMFactory.Keys)
                 {
-                    if (PaxApocalyticaGame.Dictionary_NameMFactory[province]==null) { outputFile.WriteLine(province + ";"); }
+                    if (PaxApocalypticaGame.Dictionary_NameMFactory[province]==null) { outputFile.WriteLine(province + ";"); }
                     else 
                     {
                         outputFile.WriteLine(province.ToString() + ";" +
-                            ConvertMResourceToString(PaxApocalyticaGame.Dictionary_NameMFactory[province].ProducedResourceName) + ";" +
-                            PaxApocalyticaGame.Dictionary_NameMFactory[province].TechnologyLevel + ";" +
-                            PaxApocalyticaGame.Dictionary_NameMFactory[province].ExtensionLevel); 
+                            ConvertMResourceToString(PaxApocalypticaGame.Dictionary_NameMFactory[province].ProducedResourceName) + ";" +
+                            PaxApocalypticaGame.Dictionary_NameMFactory[province].TechnologyLevel + ";" +
+                            PaxApocalypticaGame.Dictionary_NameMFactory[province].ExtensionLevel); 
                     }
                 }
             }

@@ -1,0 +1,1121 @@
+Alaska
+527 494
+220 606
+313 679
+604 737
+609 728
+1066 781
+1061 791
+1075 799
+1058 787
+1055 787
+1060 785
+1056 778
+1055 784
+Hawaii
+460 1547
+497 1559
+532 1571
+560 1603
+Burkina-Faso
+4046 1746
+Northern Territories
+1194 618
+1517 415
+1379 374
+1398 300
+1401 325
+1531 324
+1697 372
+1835 317
+1850 411
+1879 470
+1892 385
+1892 390
+1853 364
+1733 306
+1740 315
+1725 334
+1708 289
+1765 256
+1784 278
+1841 226
+1882 258
+1934 300
+1946 278
+1946 347
+2040 284
+2045 251
+2206 424
+2301 380
+2369 511
+2385 489
+2292 319
+2175 586
+1533 643
+2213 623
+West Coast Pacific
+1334 787
+1087 822
+Prairie Provinces
+1462 810
+Central Canada
+2074 787
+Atlantic Region
+2685 851
+2663 920
+2600 990
+2773 954
+2666 996
+Pacific
+1390 1036
+Mountain
+1649 1157
+West North Central
+1853 1147
+West South Central
+1817 1305
+East North Central
+2075 1082
+East South Central
+2093 1291
+New England
+2454 1104
+Mid-Atlantic
+2317 1131
+2404 1148
+South Atlantic
+2255 1256
+Noroeste
+1617 1388
+Noreste
+1769 1430
+Occidente
+1727 1571
+Oriente
+1859 1574
+Centronorte
+1814 1552
+Centrosur
+1824 1613
+Sureste
+2062 1622
+Suroeste
+1897 1671
+Guatemala
+2039 1691
+Belize
+2082 1658
+Gonduras
+2094 1700
+Salvador
+2081 1740
+Nicaragua
+2157 1753
+Costa Rica
+2186 1834
+Panama
+2249 1853
+Jamaica
+2338 1632
+West Cuba
+2253 1526
+2212 1557
+Central Cuba
+2292 1545
+East Cuba
+2356 1583
+Bahamas
+2322 1485
+2329 1500
+2308 1440
+2337 1455
+2340 1448
+2428 1568
+Puerto Rico
+2582 1634
+British Territories In the North Atlantic Ocean
+2466 1553
+Haiti
+2450 1605
+2435 1620
+Dominican Republic
+2503 1618
+Saint Kitts and Nevis
+2666 1652
+2671 1657
+Antigua and Barbuda
+2689 1659
+Guadeloupe and Martinique
+2691 1676
+2707 1715
+Dominica
+2700 1697
+Saint Lucia
+2709 1729
+Saint Vincent and the Grenadines
+2702 1745
+Barbados
+2740 1748
+Grenada
+2692 1771
+Trinidad and Tobago
+2700 1808
+2716 1791
+East Venezuela
+2585 1863
+Caracas
+2576 1811
+West Venezuela
+2513 1818
+Region Caribe
+2419 1818
+Region Pacifica
+2363 1894
+Region Andina
+2422 1910
+Region Llanos Orientales
+2455 1965
+Region Amazonia
+2402 2026
+Ecuador Costa
+2278 2060
+Ecuador Sierra
+2306 2054
+Ecuador Oriente
+2337 2072
+Galapagos Islands
+2023 2067
+2031 2053
+2041 2062
+2061 2065
+Peru Coast
+2301 2194
+Peru Andes
+2332 2184
+Peru Amazonia
+2373 2139
+2490 2264
+Bolivia
+2566 2324
+North Chile
+2511 2632
+Central Chile
+2459 2870
+South Chile
+2442 2937
+2416 3068
+2386 3156
+2383 3154
+2402 3199
+2401 3209
+2398 3214
+2401 3211
+Patagonia
+2546 2996
+2547 3274
+Pampas
+2719 2882
+Mesopotamia
+2758 2752
+Cuyo
+2566 2808
+Andean Northwest
+2640 2645
+Paraguay
+2752 2554
+Uruguay
+2822 2764
+South Brazil
+2926 2649
+Southeast Brazil
+3102 2474
+Central-West Brazil
+2907 2419
+Northeast Brazil
+3120 2215
+North Brazil
+2919 2212
+French guiana
+2885 1972
+Suriname
+2825 1974
+Guyana
+2760 1963
+Cabo Verde
+3522 1660
+3528 1663
+3540 1707
+3541 1670
+3559 1703
+3568 1703
+3575 1683
+West Sakhara
+3796 1496
+Mavritaniya
+3834 1617
+Senegal
+3761 1691
+Gambia
+3729 1745
+Guinea-Bissau
+3763 1770
+Guinea
+3813 1795
+Sierra Leone
+3831 1848
+Liberia
+3883 1899
+Cote d'Ivoire
+3954 1846
+Gana
+4056 1825
+Togo
+4122 1838
+Benin
+4151 1822
+South West Nigeria
+4187 1879
+South Nigeria
+4240 1925
+South East Nigeria
+4270 1908
+North Central Nigeria
+4253 1858
+North West Nigeria
+4233 1774
+North East Nigeria
+4338 1801
+North Cameroon
+4403 1862
+Central Cameroon
+4368 1935
+West Cameroon
+4316 1938
+South Cameroon
+4414 1979
+Gabon
+4373 2051
+4295 2065
+Equatorial Guinea
+4327 2011
+4290 1969
+Sao Tome
+4245 2044
+4263 2012
+Congo
+4446 2108
+Democratic Republic of the Congo
+4619 2173
+Angola
+4477 2359
+4377 2167
+Luanda
+4398 2251
+Namibia
+4503 2628
+Transvaal
+4741 2633
+Cape
+4623 2699
+Free State
+4704 2702
+KwaZulu Natal
+4790 2709
+Lesotho
+4737 2714
+Eswatini
+4813 2650
+Botswana
+4646 2555
+Zimbabwe
+4750 2470
+Mozambique
+4875 2481
+Malawi
+4862 2341
+Zambia
+4804 2361
+Tanzania
+4854 2181
+Burundi
+4775 2128
+Rwanda
+4771 2091
+Uganda
+4805 2042
+Kenya
+4956 2055
+Somalia
+5097 1986
+Somali
+5079 1905
+Oromiya
+5012 1887
+South Ethiopia
+4911 1902
+North Ethiopia
+4974 1785
+Djibouti
+5059 1775
+Eritrea
+4961 1678
+Northern Sudan
+4773 1602
+Eastern Sudan
+4897 1728
+Central Sudan
+4847 1710
+Kurdufan
+4765 1770
+Darfur
+4676 1752
+South Sudan
+4688 1883
+Central African Republic
+4555 1885
+Chad
+4525 1718
+Niger
+4314 1671
+Mali
+4053 1583
+Algeria
+4144 1403
+Marocco
+3994 1321
+Tunisia
+4308 1269
+Lybia
+4447 1401
+Lower Egypt
+4806 1341
+Western Desert
+4759 1432
+Middle Egypt
+4802 1396
+Upper Egypt
+4844 1493
+Red Sea Coast
+4836 1423
+Sinai
+4862 1378
+Israel
+4889 1350
+Palestine
+4900 1321
+4877 1334
+Jordan
+4918 1360
+North Saudi Arabia
+4951 1400
+West Saudi Arabia
+5010 1508
+South Saudi Arabia
+5084 1620
+Central Saudi Arabia
+5130 1534
+East Saudi Arabia
+5262 1561
+Yemen
+5184 1692
+Oman
+5340 1626
+5432 1586
+5371 1649
+5377 1459
+United Arab Emirates
+5331 1516
+Qatar
+5264 1474
+Bahrain
+5246 1458
+Kuwait
+5174 1380
+Southern Iraq
+5156 1336
+Middle Euphartes
+5124 1354
+Central Iraq
+5046 1316
+Nothern Iraq
+5096 1222
+East Syria
+5004 1241
+Aleppo
+4946 1226
+South Syria
+4953 1271
+Coastal Syria
+4921 1242
+Lebanon
+4915 1273
+Cyprus
+4841 1252
+Mediterranean Region
+4916 1198
+Southeast Anatolia Region
+5017 1197
+Central East Anatolia Region
+5008 1161
+Northeast Anatolia Region
+5038 1130
+East Black Sea Region
+4985 1131
+Central Anatolia Region
+4903 1167
+West Black Sea Region
+4870 1107
+West Anatolia Region
+4832 1148
+Aegean Region
+4769 1164
+East Marmara Region
+4792 1137
+West Marmara Region
+4730 1143
+4724 1102
+Istanbul Region
+4746 1112
+4762 1113
+Aegean Isles
+4665 1244
+Kentriki Ellada
+4601 1196
+Attica
+4641 1182
+Voreia Ellada
+4599 1138
+4633 1139
+4647 1132
+Albania
+4549 1127
+North Macedonia
+4595 1102
+Kosovo
+4571 1079
+Montenegro
+4532 1070
+Bosnia
+4516 1041
+Serbia
+4561 1054
+Vojvodina
+4554 1011
+Croatia
+4480 1001
+4487 1069
+4508 1077
+4513 1080
+Slovenia
+4431 1004
+Northeast Italy
+4376 1007
+San-Marino
+4379 1048
+Central Italy
+4379 1050
+Vatican
+4379 1094
+South Italy
+4449 1119
+Sardinia and Sicily
+4424 1194
+4304 1132
+Northwest Italy
+4295 1025
+Switzerland
+4274 986
+Monaco
+4264 1052
+Auvergne-Rhone-Alpes
+4191 1017
+Provence-Alpes-Cote d'Azur
+4235 1049
+Corsica
+4306 1091
+Occitanie
+4145 1046
+Nouvelle-Aquitaine
+4114 1009
+Pays de la Loire
+4074 968
+Centre-Val de Loire
+4128 966
+Bourgogne-Franche-Comte
+4187 966
+Grand-Est
+4196 940
+Hauts-de-France
+4165 909
+Ile-de-France
+4156 938
+Normandy
+4121 928
+Brittany
+4027 953
+Andorra
+4131 1080
+Northwest Spain
+3933 1067
+Northeast Spain
+4071 1089
+East Spain
+4128 1097
+4129 1161
+4167 1146
+4192 1139
+4128 1167
+Central Spain
+4003 1160
+Madrid
+4014 1123
+South Spain
+3992 1182
+Canary Islands
+3739 1412
+3721 1402
+3704 1409
+3687 1395
+3776 1405
+3787 1388
+Gibraltar
+3974 1224
+Ceuta
+3973 1231
+Continental Portugal
+3911 1170
+Azores
+3450 1173
+3442 1169
+3457 1169
+3474 1167
+3517 1189
+Madeira
+3707 1304
+Ireland
+3906 850
+North Ireland
+3957 809
+Scotland
+3999 764
+3942 724
+3930 739
+3957 779
+3959 775
+4024 705
+4069 676
+Northeast England
+4054 797
+Yorkshire
+4062 815
+Northwest England
+4036 808
+Wales
+4009 851
+Southwest England
+4029 888
+West Midlands of England
+4040 853
+East Midlands of England
+4073 839
+East of England
+4104 848
+Southeast England
+4082 881
+London
+4094 875
+Iceland
+3710 575
+Greenland
+3390 447
+2886 459
+2946 458
+Foroe Islands
+3939 631
+3947 631
+3942 649
+3938 639
+3952 629
+Denmark
+4314 767
+4367 785
+Norway
+4311 680
+4497 468
+North Sweden
+4470 583
+South Sweden
+4400 745
+East Sweden
+4469 705
+Aland
+4549 678
+Mainland Finland
+4682 587
+Estonia
+4677 711
+4612 715
+4612 708
+Latvia
+4663 753
+Lithuania
+4632 788
+Warmia-Mazuria
+4565 823
+Podlaskie
+4614 836
+Lesser Poland
+4612 897
+Mazovia
+4575 863
+Silezia
+4526 898
+Greater Poland
+4478 847
+Pomerania
+4485 817
+Mecklenburg-Vorpommern
+4389 820
+Schleswig-Holstein
+4328 817
+Hamburg
+4323 828
+Niedersachsen
+4322 846
+Nordhein-Westfalen
+4272 875
+Hessen
+4303 892
+Thuringen
+4342 889
+Sachsen-Anhalt
+4362 864
+Brandenburg
+4381 844
+Berlin
+4403 854
+Sachsen
+4391 883
+Bayern
+4365 919
+Baden-Wurttemberg
+4303 944
+Rheinland-Pfalz
+4265 914
+Saarland
+4254 925
+Luxemburg
+4234 917
+Wallonia
+4222 908
+Flanders
+4206 884
+Brussels
+4195 890
+4195 890
+4195 891
+West Netherlands
+4201 863
+South Netherlands
+4220 876
+East Netherlands
+4236 856
+North Netherlands
+4241 841
+West Austria
+4374 969
+South Austria
+4439 973
+East Austria
+4450 951
+Bohemia
+4420 910
+Moravia
+4497 923
+Slovakia
+4527 939
+Transdanubia
+4494 968
+Central Hungary
+4537 969
+Great Plain and North
+4573 967
+Northwest Romania
+4620 974
+Southwest Romania
+4615 1019
+South Romania
+4683 1034
+East Romania
+4717 1017
+Nothern and Eastern Bulgaria
+4691 1065
+Southern and Western Bulgaria
+4640 1085
+Moldavia
+4744 981
+Transnistria
+4766 974
+Southern Ukraine
+4773 1006
+Crimea
+4872 1022
+Eastern Ukraine
+4932 956
+Central Ukraine
+4761 922
+Kiev
+4791 900
+Western Ukraine
+4660 913
+Belarus
+4719 855
+Minsk
+4725 821
+Kaliningrad
+4586 800
+Northwest Russia
+4866 697
+North Russia
+5030 657
+5220 474
+5332 401
+Central Russia
+4903 777
+Moscow
+4950 780
+Central Black-Earth
+4999 879
+North Caucasus
+5024 1016
+Volga
+5104 904
+Volga-Vyatka
+5131 781
+Ural
+5378 786
+West Siberia
+5709 564
+5706 379
+5791 387
+East Siberia
+6212 682
+5897 390
+6280 206
+6297 234
+6212 227
+6422 258
+Far East
+8182 430
+6726 613
+7332 378
+7288 337
+7300 358
+7189 326
+7192 363
+7484 344
+7422 405
+7417 400
+7347 871
+7227 799
+7214 795
+7879 793
+7828 705
+22 426
+35 510
+Manchuria
+6980 1038
+Outer Mongolia
+6671 1078
+Hebei
+6739 1171
+Beijing
+6747 1140
+Shanxi
+6645 1204
+Shaanxi
+6587 1238
+Ningxia
+6513 1194
+Gansu
+6482 1247
+Xinjiang
+6143 1128
+Qinghai
+6224 1270
+Tibet
+6194 1373
+Sichuan
+6414 1357
+Yunnan
+6393 1475
+Guizhou
+6504 1433
+Chongqing
+6552 1372
+Hubei
+6621 1340
+Henan
+6667 1271
+Shandong
+6783 1229
+Jiangsu
+6805 1274
+Anhui
+6769 1295
+Jiangxi
+6727 1427
+Zhejiang
+6818 1397
+Fujian
+6787 1449
+Guang dong
+6686 1507
+Hong Kong
+6693 1538
+Hainan
+6593 1606
+Guangxi
+6579 1517
+Hunan
+6628 1420
+Taiwan
+6848 1508
+North Vietnam
+6492 1563
+Central Vietnam
+6574 1765
+South Vietnam
+6518 1807
+Cambodia
+6491 1773
+6461 1814
+6433 1772
+Laos
+6508 1676
+Isan
+6449 1687
+East Thailand
+6412 1744
+Central Thailand
+6376 1728
+South Thailand
+6362 1871
+North Thailand
+6345 1651
+Burma
+6282 1587
+Bangladesh
+6127 1536
+6149 1549
+6155 1540
+6168 1541
+6177 1535
+6148 1498
+North Eastern India
+6219 1459
+Eastern India
+6059 1534
+Central India
+5905 1495
+Northern India
+5803 1420
+Western India
+5771 1572
+South India
+5887 1780
+Sri Lanka
+5930 1884
+Nepal
+6017 1413
+Bhutan
+6160 1422
+Sindh
+5666 1463
+Balochistan
+5603 1420
+Punjab
+5767 1338
+North Pakistan
+5760 1236
+Afghanistan
+5622 1279
+Tajikistan
+5698 1162
+Kyrgyzstan
+5779 1113
+Kazakh Desert
+5691 1055
+Tyan Shan
+5839 1038
+Central Highlands
+5734 961
+North Kazakhstan
+5606 881
+Mugodzhar Hills
+5442 943
+Turanian Lowlands
+5311 957
+Uzbekistan
+5406 1056
+Turkmenistan
+5391 1135
+Mashhad
+5404 1284
+Isfahan
+5271 1293
+Tehran
+5302 1249
+Kermanshah
+5200 1267
+Tabriz
+5210 1202
+Azerbaijan
+5195 1124
+5138 1153
+Armenia
+5105 1123
+Georgia
+5093 1092
+Northern Malaysia
+6397 1926
+Malaysian East Coast
+6428 1969
+Central Malaysia
+6404 1972
+Southern Malaysia
+6439 1995
+East Malaysia
+6651 1992
+Singapore
+6457 2018
+Brunei
+6703 1946
+6718 1942
+Sumatra
+6415 2081
+6346 2081
+6505 2094
+6549 2110
+Java
+6567 2207
+Kalimantan
+6680 2069
+Bali
+6716 2235
+Sulawesi
+6817 2096
+6896 2143
+Nusa Tenggara
+6746 2239
+6767 2252
+6837 2240
+6826 2270
+6923 2274
+Maluku
+6934 2086
+6977 2122
+7025 2118
+7011 2029
+7019 1993
+7154 2197
+Papua
+7213 2122
+Papua New Guinea
+7344 2164
+7484 2176
+7574 2146
+Southern Philippines
+6932 1885
+Central Philippines
+6882 1793
+6894 1816
+6928 1823
+6936 1800
+6946 1777
+6914 1774
+6805 1813
+Northern Philippines
+6855 1757
+6855 1707
+Pyongan
+6966 1146
+Baekdu Mountains
+6983 1115
+Donghae Coast
+7023 1125
+Hwanghae
+6967 1175
+Gyeonggi
+6984 1196
+Gangwon
+7018 1189
+Gyeongsang
+7030 1230
+Jeolla
+6985 1246
+Chungcheong
+6993 1215
+Hokkaido
+7325 1065
+Tohoku
+7307 1155
+Kanto
+7264 1219
+Chubu
+7233 1227
+Kansai
+7181 1254
+Chuhoku
+7119 1254
+Shikoku
+7128 1281
+Kyushu
+7088 1304
+Solomon Islands
+7638 2201
+7666 2206
+7679 2232
+7725 2233
+7742 2264
+7757 2253
+7775 2284
+New Caledonia
+7849 2527
+New Zealand
+7998 3035
+8111 2963
+Fiji
+8152 2454
+8165 2430
+Victoria
+7414 2889
+New South Wales
+7403 2811
+7415 2996
+Queensland
+7314 2608
+Northern Territory
+7152 2556
+Western Australia
+6960 2629
+South Australia
+7169 2701
+East Timor
+6963 2252
+6926 2258
+Madagascar
+5181 2489
+Falklands
+2733 3224
+2757 3222
+2718 3218
+2708 3228
+2723 3224
+2719 3229
+2719 3231
+Mongolia
+6400 1000
+Malta
+4425 1231

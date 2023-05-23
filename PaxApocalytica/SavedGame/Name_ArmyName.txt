@@ -1,0 +1,460 @@
+Alaska;USA Army 1
+Hawaii;
+Burkina-Faso;
+Northern Territories;
+West Coast Pacific;
+Prairie Provinces;
+Central Canada;Canada Army 1
+Atlantic Region;
+Pacific;USA Army 2
+Mountain;
+West North Central;
+West South Central;
+East North Central;
+East South Central;
+New England;USA Army 3
+Mid-Atlantic;
+South Atlantic;USA Army 4
+Noroeste;Mexico Army 2
+Noreste;
+Occidente;
+Oriente;
+Centronorte;
+Centrosur;Mexico Army 1
+Sureste;
+Suroeste;
+Guatemala;
+Belize;
+Gonduras;
+Salvador;
+Nicaragua;
+Costa Rica;
+Panama;Panama Army 1
+Jamaica;Jamaica Army 1
+West Cuba;
+Central Cuba;Cuba Army 1
+East Cuba;
+Bahamas;
+Puerto Rico;
+British Territories In the North Atlantic Ocean;
+Haiti;Haiti Army 1
+Dominican Republic;Dominican Republic Army 1
+Saint Kitts and Nevis;
+Antigua and Barbuda;
+Guadeloupe and Martinique;
+Dominica;
+Saint Lucia;
+Saint Vincent and the Grenadines;
+Barbados;Barbados Army 1
+Grenada;
+Trinidad and Tobago;Trinidad and Tobago Army 1
+East Venezuela;
+Caracas;Venezuela Army 1
+West Venezuela;
+Region Caribe;Colombia Army 1
+Region Pacifica;
+Region Andina;
+Region Llanos Orientales;
+Region Amazonia;
+Ecuador Costa;Ecuador Army 1
+Ecuador Sierra;
+Ecuador Oriente;
+Galapagos Islands;
+Peru Coast;Peru Army 1
+Peru Andes;
+Peru Amazonia;
+Bolivia;Bolivia Army 1
+North Chile;Chile Army 1
+Central Chile;
+South Chile;
+Patagonia;Argentina Army 1
+Pampas;
+Mesopotamia;
+Cuyo;
+Andean Northwest;
+Paraguay;Paraguay Army 1
+Uruguay;Uruguay Army 1
+South Brazil;
+Southeast Brazil;
+Central-West Brazil;Brazil Army 1
+Northeast Brazil;
+North Brazil;
+French guiana;
+Suriname;Suriname Army 1
+Guyana;Guyana Army 1
+Cabo Verde;Cabo Verde Army 1
+West Sakhara;West Sakhara Army 1
+Mavritaniya;Mavritaniya Army 1
+Senegal;Senegal Army 1
+Gambia;Gambia Army 1
+Guinea-Bissau;Guinea-Bissau Army 1
+Guinea;Guinea Army 1
+Sierra Leone;Sierra Leone Army 1
+Liberia;Liberia Army 1
+Cote d'Ivoire;Cote d'Ivoire Army 1
+Gana;Gana Army 1
+Togo;Togo Army 1
+Benin;Benin Army 1
+South West Nigeria;
+South Nigeria;
+South East Nigeria;Nigeria Army 1
+North Central Nigeria;
+North West Nigeria;
+North East Nigeria;
+North Cameroon;
+Central Cameroon;Cameroon Army 1
+West Cameroon;
+South Cameroon;
+Gabon;Gabon Army 1
+Equatorial Guinea;Equatorial Guinea Army 1
+Sao Tome;Sao Tome Army 1
+Congo;Congo Army 1
+Democratic Republic of the Congo;Democratic Republic of the Congo Army 1
+Angola;Angola Army 1
+Luanda;
+Namibia;Namibia Army 1
+Transvaal;
+Cape;South African Republic Army 1
+Free State;
+KwaZulu Natal;
+Lesotho;Lesotho Army 1
+Eswatini;Eswatini Army 1
+Botswana;Botswana Army 1
+Zimbabwe;Zimbabwe Army 1
+Mozambique;Mozambique Army 1
+Malawi;Malawi Army 1
+Zambia;Zambia Army 1
+Tanzania;Tanzania Army 1
+Burundi;Burundi Army 1
+Rwanda;Rwanda Army 1
+Uganda;Uganda Army 1
+Kenya;Kenya Army 1
+Somalia;Somalia Army 1
+Somali;
+Oromiya;Ethiopia Army 1
+South Ethiopia;
+North Ethiopia;
+Djibouti;Djibouti Army 1
+Eritrea;Eritrea Army 1
+Northern Sudan;
+Eastern Sudan;
+Central Sudan;Sudan Army 1
+Kurdufan;
+Darfur;
+South Sudan;
+Central African Republic;Central African Republic Army 1
+Chad;Chad Army 1
+Niger;Niger Army 1
+Mali;Mali Army 1
+Algeria;Algeria Army 1
+Marocco;Marocco Army 1
+Tunisia;Tunisia Army 1
+Lybia;Lybia Army 1
+Lower Egypt;Egypt Army 1
+Western Desert;
+Middle Egypt;
+Upper Egypt;
+Red Sea Coast;
+Sinai;
+Israel;Israel Army 1
+Palestine;Palestine Army 1
+Jordan;Jordan Army 1
+North Saudi Arabia;
+West Saudi Arabia;Saudi Arabia Army 1
+South Saudi Arabia;
+Central Saudi Arabia;
+East Saudi Arabia;
+Yemen;Yemen Army 1
+Oman;Oman Army 1
+United Arab Emirates;United Arab Emirates Army 1
+Qatar;Qatar Army 1
+Bahrain;Bahrain Army 1
+Kuwait;Kuwait Army 1
+Southern Iraq;Iraq Army 1
+Middle Euphartes;
+Central Iraq;
+Nothern Iraq;
+East Syria;
+Aleppo;Syria Army 1
+South Syria;
+Coastal Syria;
+Lebanon;Lebanon Army 1
+Cyprus;Cyprus Army 1
+Mediterranean Region;Turkey Army 1
+Southeast Anatolia Region;
+Central East Anatolia Region;
+Northeast Anatolia Region;
+East Black Sea Region;
+Central Anatolia Region;
+West Black Sea Region;
+West Anatolia Region;
+Aegean Region;
+East Marmara Region;
+West Marmara Region;
+Istanbul Region;Turkey Army 2
+Aegean Isles;
+Kentriki Ellada;
+Attica;Greece Army 1
+Voreia Ellada;
+Albania;Albania Army 1
+North Macedonia;North Macedonia Army 1
+Kosovo;
+Montenegro;
+Bosnia;
+Serbia;Yugoslavia Army 1
+Vojvodina;
+Croatia;Croatia Army 1
+Slovenia;Slovenia Army 1
+Northeast Italy;Italy Army 1
+San-Marino;
+Central Italy;
+Vatican;
+South Italy;Italy Army 2
+Sardinia and Sicily;
+Northwest Italy;
+Switzerland;Switzerland Army 1
+Monaco;
+Auvergne-Rhone-Alpes;
+Provence-Alpes-Cote d'Azur;
+Corsica;
+Occitanie;
+Nouvelle-Aquitaine;
+Pays de la Loire;
+Centre-Val de Loire;
+Bourgogne-Franche-Comte;
+Grand-Est;France Army 3
+Hauts-de-France;
+Ile-de-France;France Army 1
+Normandy;France Army 2
+Brittany;
+Andorra;
+Northwest Spain;
+Northeast Spain;
+East Spain;Spain Army 1
+Central Spain;
+Madrid;Spain Army 2
+South Spain;
+Canary Islands;
+Gibraltar;
+Ceuta;
+Continental Portugal;Portugal Army 1
+Azores;
+Madeira;
+Ireland;Ireland Army 1
+North Ireland;
+Scotland;UK Army 3
+Northeast England;
+Yorkshire;
+Northwest England;
+Wales;UK Army 2
+Southwest England;
+West Midlands of England;
+East Midlands of England;
+East of England;
+Southeast England;
+London;UK Army 1
+Iceland;
+Greenland;
+Foroe Islands;
+Denmark;Denmark Army 1
+Norway;Norway Army 1
+North Sweden;
+South Sweden;
+East Sweden;Sweden Army 1
+Aland;
+Mainland Finland;Finland Army 1
+Estonia;Estonia Army 1
+Latvia;Latvia Army 1
+Lithuania;Lithuania Army 1
+Warmia-Mazuria;
+Podlaskie;
+Lesser Poland;
+Mazovia;
+Silezia;
+Greater Poland;Poland Army 1
+Pomerania;
+Mecklenburg-Vorpommern;
+Schleswig-Holstein;
+Hamburg;
+Niedersachsen;Germany Army 2
+Nordhein-Westfalen;
+Hessen;
+Thuringen;
+Sachsen-Anhalt;
+Brandenburg;
+Berlin;Germany Army 1
+Sachsen;
+Bayern;Germany Army 3
+Baden-Wurttemberg;
+Rheinland-Pfalz;
+Saarland;
+Luxemburg;Luxemburg Army 1
+Wallonia;
+Flanders;
+Brussels;Belgium Army 1
+West Netherlands;
+South Netherlands;
+East Netherlands;Netherlands Army 1
+North Netherlands;
+West Austria;
+South Austria;
+East Austria;Austria Army 1
+Bohemia;Czechoslovakia Army 1
+Moravia;
+Slovakia;
+Transdanubia;
+Central Hungary;Hungary Army 1
+Great Plain and North;
+Northwest Romania;
+Southwest Romania;
+South Romania;Romania Army 1
+East Romania;
+Nothern and Eastern Bulgaria;
+Southern and Western Bulgaria;Bulgaria Army 1
+Moldavia;Moldavia Army 1
+Transnistria;Transnistria Army 1
+Southern Ukraine;
+Crimea;Ukraine Army 1
+Eastern Ukraine;
+Central Ukraine;
+Kiev;
+Western Ukraine;Ukraine Army 2
+Belarus;
+Minsk;Belarus Army 1
+Kaliningrad;
+Northwest Russia;Russia Army 1
+North Russia;
+Central Russia;
+Moscow;Russia Army 2
+Central Black-Earth;
+North Caucasus;
+Volga;
+Volga-Vyatka;
+Ural;
+West Siberia;
+East Siberia;
+Far East;
+Manchuria;
+Outer Mongolia;
+Hebei;
+Beijing;China Army 1
+Shanxi;
+Shaanxi;
+Ningxia;
+Gansu;
+Xinjiang;
+Qinghai;
+Tibet;China Army 2
+Sichuan;
+Yunnan;
+Guizhou;
+Chongqing;
+Hubei;
+Henan;
+Shandong;
+Jiangsu;
+Anhui;
+Jiangxi;
+Zhejiang;
+Fujian;
+Guang dong;China Army 3
+Hong Kong;
+Hainan;
+Guangxi;
+Hunan;
+Taiwan;Taiwan Army 1
+North Vietnam;Vietnam Army 1
+Central Vietnam;
+South Vietnam;
+Cambodia;Cambodia Army 1
+Laos;Laos Army 1
+Isan;
+East Thailand;
+Central Thailand;Thailand Army 1
+South Thailand;
+North Thailand;
+Burma;Burma Army 1
+Bangladesh;Bangladesh Army 1
+North Eastern India;
+Eastern India;
+Central India;India Army 1
+Northern India;India Army 2
+Western India;
+South India;
+Sri Lanka;Sri Lanka Army 1
+Nepal;Nepal Army 1
+Bhutan;Bhutan Army 1
+Sindh;Pakistan Army 1
+Balochistan;
+Punjab;
+North Pakistan;
+Afghanistan;Afghanistan Army 1
+Tajikistan;Tajikistan Army 1
+Kyrgyzstan;Kyrgyzstan Army 1
+Kazakh Desert;
+Tyan Shan;
+Central Highlands;
+North Kazakhstan;Kazakh ASSR Army 1
+Mugodzhar Hills;
+Turanian Lowlands;Kazakh ASSR Army 2
+Uzbekistan;Uzbekistan Army 1
+Turkmenistan;Turkmenistan Army 1
+Mashhad;
+Isfahan;
+Tehran;Iran Army 1
+Kermanshah;
+Tabriz;
+Azerbaijan;Azerbaijan Army 1
+Armenia;Armenia Army 1
+Georgia;Georgia Army 1
+Northern Malaysia;
+Malaysian East Coast;
+Central Malaysia;Malaysia Army 1
+Southern Malaysia;
+East Malaysia;
+Singapore;
+Brunei;
+Sumatra;Indonesia Army 1
+Java;
+Kalimantan;
+Bali;
+Sulawesi;Indonesia Army 2
+Nusa Tenggara;
+Maluku;
+Papua;
+Papua New Guinea;Papua New Guinea Army 1
+Southern Philippines;
+Central Philippines;Philippines Army 1
+Northern Philippines;
+Pyongan;
+Baekdu Mountains;North Korea Army 2
+Donghae Coast;
+Hwanghae;North Korea Army 1
+Gyeonggi;
+Gangwon;
+Gyeongsang;
+Jeolla;South Korea Army 1
+Chungcheong;South Korea Army 2
+Hokkaido;
+Tohoku;
+Kanto;Japan Army 1
+Chubu;
+Kansai;
+Chuhoku;
+Shikoku;
+Kyushu;
+Solomon Islands;Solomon Islands Army 1
+New Caledonia;
+New Zealand;New Zealand Army 1
+Fiji;Fiji Army 1
+Victoria;Australia Army 1
+New South Wales;
+Queensland;
+Northern Territory;
+Western Australia;
+South Australia;
+East Timor;East Timor Army 1
+Madagascar;Madagascar Army 1
+Falklands;
+Mongolia;Mongolia Army 1
+Malta;Malta Army 1

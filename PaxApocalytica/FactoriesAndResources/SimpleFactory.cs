@@ -103,9 +103,13 @@ namespace PaxApocalytica.FactoriesAndResources
             return BaseCost * ExtensionLevel * TechnologyLevel / 100 / educationLevel;
         }
 
-        private float CalculateProduction()
+        private float CalculateProfitT()
         {
-            return ExtensionLevel * (float)Math.Log(TechnologyLevel);
+            return ExtensionLevel * (float)Math.Log(TechnologyLevel+1);
+        }
+        private float CalculateProfitE()
+        {
+            return (ExtensionLevel+1) * (float)Math.Log(TechnologyLevel);
         }
 
         public void EUpgrade()
@@ -133,16 +137,16 @@ namespace PaxApocalytica.FactoriesAndResources
         {
             if (IsFunctioning)
             {
-                if (ProducedRecourceName == SimpleResources.Names.Oil) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][0] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Steel) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][1] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Copper) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][2] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Uranium) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][3] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Coal) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][4] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Grain) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][5] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Livestock) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][6] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Gas) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][7] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Aluminium) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][8] += (int)Production; }
-                else if (ProducedRecourceName == SimpleResources.Names.Gold) { PaxApocalyticaGame.Dictionary_CountrynameSimpleResources[owner][9] += (int)Production; }
+                if (ProducedRecourceName == SimpleResources.Names.Oil) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][0] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Steel) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][1] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Copper) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][2] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Uranium) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][3] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Coal) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][4] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Grain) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][5] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Livestock) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][6] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Gas) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][7] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Aluminium) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][8] += (int)Production; }
+                else if (ProducedRecourceName == SimpleResources.Names.Gold) { PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[owner][9] += (int)Production; }
                 else throw new ArgumentException();
             }
         }

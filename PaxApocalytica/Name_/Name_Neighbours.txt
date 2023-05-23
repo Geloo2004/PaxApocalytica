@@ -1,0 +1,460 @@
+Alaska;Northern Territories,West Coast Pacific
+Hawaii;
+Burkina-Faso;Mali,Cote d'Ivoire,Gana,Togo,Benin,Niger
+Northern Territories;Alaska,West Coast Pacific,Prairie Provinces
+West Coast Pacific;Alaska,Northern Territories,Prairie Provinces,Pacific,Mountain
+Prairie Provinces;Northern Territories,West Coast Pacific,Mountain,Central Canada,West North Central
+Central Canada;Prairie Provinces,West North Central,East North Central,Mid-Atlantic,New England,Atlantic Region
+Atlantic Region;Central Canada,New England
+Pacific;West Coast Pacific,Mountain,Noroeste
+Mountain;Pacific,West Coast Pacific,Prairie Provinces,West North Central,West South Central,Noroeste
+West North Central;Mountain,Prairie Provinces,Central Canada,East North Central,East South Central,West South Central
+West South Central;Mountain,West North Central,East South Central,Noroeste,Noreste
+East North Central;West North Central,Central Canada,Mid-Atlantic,South Atlantic,East South Central
+East South Central;West South Central,West North Central,East North Central,South Atlantic
+New England;Central Canada,Mid-Atlantic,Atlantic Region
+Mid-Atlantic;East North Central,South Atlantic,Central Canada,New England
+South Atlantic;East North Central,East South Central,Mid-Atlantic
+Noroeste;Pacific,Mountain,West South Central,Noreste,Centronorte,Occidente
+Noreste;Noroeste,West South Central,Centronorte,Oriente
+Occidente;Noroeste,Centronorte,Centrosur,Suroeste
+Oriente;Noreste,Centronorte,Centrosur,Suroeste,Sureste
+Centronorte;Occidente,Noroeste,Noreste,Oriente,Centrosur
+Centrosur;Centronorte,Occidente,Oriente,Suroeste
+Sureste;Belize,Guatemala,Suroeste,Oriente
+Suroeste;Centrosur,Occidente,Oriente,Sureste,Guatemala
+Guatemala;Suroeste,Sureste,Belize,Nicaragua,Salvador,Gonduras
+Belize;Sureste,Guatemala
+Gonduras;Guatemala,Salvador,Nicaragua
+Salvador;Guatemala,Gonduras,Nicaragua
+Nicaragua;Gonduras,Costa Rica
+Costa Rica;Nicaragua,Panama
+Panama;Region Pacifica,Costa Rica
+Jamaica;
+West Cuba;Central Cuba
+Central Cuba;West Cuba,East Cuba
+East Cuba;Central Cuba
+Bahamas;
+Puerto Rico;
+British Territories In the North Atlantic Ocean;
+Haiti;Dominican Republic
+Dominican Republic;Haiti
+Saint Kitts and Nevis;
+Antigua and Barbuda;
+Guadeloupe and Martinique;
+Dominica;
+Saint Lucia;
+Saint Vincent and the Grenadines;
+Barbados;
+Grenada;
+Trinidad and Tobago;
+East Venezuela;West Venezuela,Caracas,Region Llanos Orientales,Region Andina,North Brazil,Guyana
+Caracas;East Venezuela
+West Venezuela;East Venezuela,Region Andina,Region Caribe
+Region Caribe;Region Pacifica,Region Andina,West Venezuela
+Region Pacifica;Panama,Region Caribe,Region Andina,Region Amazonia,Ecuador Sierra,Ecuador Oriente,Ecuador Costa,Region Llanos Orientales
+Region Andina;Region Pacifica,Region Caribe,West Venezuela,East Venezuela,Region Llanos Orientales,Region Amazonia
+Region Llanos Orientales;Region Andina,Region Pacifica,Region Amazonia,East Venezuela,West Venezuela,North Brazil
+Region Amazonia;Ecuador Oriente,Region Pacifica,Region Llanos Orientales,Peru Amazonia,North Brazil
+Ecuador Costa;Ecuador Sierra,Peru Coast,Region Pacifica
+Ecuador Sierra;Ecuador Costa,Ecuador Oriente,Region Pacifica,Peru Coast
+Ecuador Oriente;Ecuador Sierra,Peru Coast,Peru Andes,Peru Amazonia,Region Amazonia,Region Pacifica
+Galapagos Islands;
+Peru Coast;Bolivia,Peru Andes,North Chile,Ecuador Sierra,Ecuador Costa,Ecuador Oriente
+Peru Andes;Peru Coast,Ecuador Oriente,Peru Amazonia,Bolivia
+Peru Amazonia;Peru Andes,Ecuador Oriente,Region Amazonia,North Brazil,Bolivia
+Bolivia;Peru Andes,Peru Coast,Peru Amazonia,North Brazil,Central-West Brazil,Paraguay,Andean Northwest,North Chile
+North Chile;Peru Coast,Bolivia,Andean Northwest,Cuyo,Central Chile
+Central Chile;South Chile,Patagonia,Cuyo,North Chile
+South Chile;Central Chile,Patagonia
+Patagonia;Central Chile,South Chile,Cuyo,Pampas
+Pampas;Cuyo,Patagonia,Andean Northwest,Mesopotamia,Uruguay
+Mesopotamia;Paraguay,Andean Northwest,Pampas,Uruguay,South Brazil
+Cuyo;Central Chile,North Chile,Pampas,Patagonia,Andean Northwest
+Andean Northwest;North Chile,Bolivia,Paraguay,Pampas,Mesopotamia,Cuyo
+Paraguay;Bolivia,Andean Northwest,Mesopotamia,Central-West Brazil,South Brazil
+Uruguay;Mesopotamia,South Brazil,Pampas
+South Brazil;Mesopotamia,Paraguay,Uruguay,Central-West Brazil,Southeast Brazil
+Southeast Brazil;Central-West Brazil,South Brazil,Northeast Brazil
+Central-West Brazil;Bolivia,Paraguay,South Brazil,Southeast Brazil,Northeast Brazil,North Brazil
+Northeast Brazil;North Brazil,Central-West Brazil,Southeast Brazil
+North Brazil;Peru Amazonia,Bolivia,Region Amazonia,Region Llanos Orientales,East Venezuela,Guyana,Suriname,French guiana,Central-West Brazil,Northeast Brazil
+French guiana;North Brazil,Suriname
+Suriname;Guyana,French guiana,North Brazil
+Guyana;East Venezuela,Suriname,North Brazil
+Cabo Verde;
+West Sakhara;Marocco,Algeria,Mavritaniya
+Mavritaniya;West Sakhara,Algeria,Mali,Senegal
+Senegal;Gambia,Mavritaniya,Mali,Guinea,Guinea-Bissau
+Gambia;Senegal
+Guinea-Bissau;Guinea,Senegal
+Guinea;Sierra Leone,Liberia,Cote d'Ivoire,Mali,Senegal,Guinea-Bissau
+Sierra Leone;Guinea,Liberia
+Liberia;Sierra Leone,Guinea,Cote d'Ivoire
+Cote d'Ivoire;Liberia,Guinea,Mali,Burkina-Faso,Gana
+Gana;Cote d'Ivoire,Burkina-Faso,Togo
+Togo;Gana,Burkina-Faso,Benin
+Benin;Togo,Burkina-Faso,Niger,North West Nigeria,North Central Nigeria,South West Nigeria
+South West Nigeria;Benin,North Central Nigeria,South Nigeria
+South Nigeria;South East Nigeria,South West Nigeria,North Central Nigeria
+South East Nigeria;South Nigeria,North Central Nigeria
+North Central Nigeria;Benin,North West Nigeria,South West Nigeria,South Nigeria,South East Nigeria,North East Nigeria
+North West Nigeria;North East Nigeria,Niger,North Central Nigeria,Benin
+North East Nigeria;North West Nigeria,North Central Nigeria,Niger,Chad,North Cameroon,West Cameroon
+North Cameroon;North East Nigeria,Chad,West Cameroon,Central Cameroon,South Cameroon,Central African Republic
+Central Cameroon;West Cameroon,North Cameroon,South Cameroon
+West Cameroon;South Nigeria,North East Nigeria,North Central Nigeria,Central Cameroon,North Cameroon,South Cameroon
+South Cameroon;Central Cameroon,North Cameroon,Central African Republic,Congo,Gabon,Equatorial Guinea,West Cameroon
+Gabon;Equatorial Guinea,South Cameroon,Congo
+Equatorial Guinea;South Cameroon,Gabon
+Sao Tome;
+Congo;Gabon,South Cameroon,Angola,Democratic Republic of the Congo,Central African Republic
+Democratic Republic of the Congo;Congo,Angola,Zambia,Burundi,Rwanda,Uganda,South Sudan,Central African Republic
+Angola;Democratic Republic of the Congo,Luanda,Zambia,Namibia
+Luanda;Angola
+Namibia;Angola,Zambia,Botswana,Cape
+Transvaal;Cape,Botswana,Free State,KwaZulu Natal,Eswatini,Mozambique,Zimbabwe
+Cape;Namibia,Botswana,Transvaal,Free State,Lesotho,KwaZulu Natal
+Free State;Cape,Transvaal,Lesotho,KwaZulu Natal
+KwaZulu Natal;Cape,Lesotho,Free State,Transvaal,Eswatini,Mozambique
+Lesotho;Cape,Free State,KwaZulu Natal
+Eswatini;Transvaal,KwaZulu Natal,Mozambique
+Botswana;Namibia,Cape,Zimbabwe,Zambia,Transvaal
+Zimbabwe;Botswana,Zambia,Mozambique,Transvaal
+Mozambique;Zambia,Zimbabwe,Transvaal,Eswatini,KwaZulu Natal,Malawi,Tanzania
+Malawi;Zambia,Tanzania,Mozambique
+Zambia;Zimbabwe,Namibia,Botswana,Angola,Democratic Republic of the Congo,Tanzania,Malawi,Mozambique
+Tanzania;Malawi,Zambia,Mozambique,Burundi,Rwanda,Uganda,Kenya
+Burundi;Democratic Republic of the Congo,Tanzania,Rwanda
+Rwanda;Burundi,Democratic Republic of the Congo,Uganda,Tanzania
+Uganda;Democratic Republic of the Congo,Rwanda,Tanzania,South Sudan,Kenya
+Kenya;Somalia,Somali,Oromiya,South Ethiopia,South Sudan,Uganda,Tanzania
+Somalia;Somali,Kenya,Djibouti
+Somali;Oromiya,North Ethiopia,Djibouti,Somalia,Kenya
+Oromiya;South Ethiopia,North Ethiopia,Somali,Kenya,South Sudan
+South Ethiopia;South Sudan,Oromiya,Kenya
+North Ethiopia;Eastern Sudan,Eritrea,Djibouti,Somali,Oromiya,South Sudan
+Djibouti;Eritrea,North Ethiopia,Somali,Somalia
+Eritrea;Eastern Sudan,Northern Sudan,North Ethiopia,Djibouti
+Northern Sudan;Western Desert,Upper Egypt,Red Sea Coast,Eritrea,Eastern Sudan,Central Sudan,Kurdufan,Darfur,Lybia
+Eastern Sudan;Eritrea,Northern Sudan,Central Sudan,South Sudan,North Ethiopia
+Central Sudan;Northern Sudan,Kurdufan,Eastern Sudan,South Sudan
+Kurdufan;Darfur,Northern Sudan,Central Sudan,South Sudan
+Darfur;Chad,Lybia,Northern Sudan,Kurdufan,South Sudan,Central African Republic
+South Sudan;Democratic Republic of the Congo,Uganda,Kenya,South Ethiopia,Oromiya,North Ethiopia,Eastern Sudan,Central Sudan,Kurdufan,Darfur,Central African Republic
+Central African Republic;South Cameroon,North Cameroon,Chad,Congo,Democratic Republic of the Congo,South Sudan,Darfur
+Chad;Niger,Lybia,North East Nigeria,North Cameroon,Central African Republic,Darfur
+Niger;Burkina-Faso,Mali,Algeria,Lybia,Chad,North East Nigeria,North West Nigeria,Benin
+Mali;Niger,Burkina-Faso,Cote d'Ivoire,Guinea,Senegal,Mavritaniya,Algeria
+Algeria;Marocco,West Sakhara,Mavritaniya,Mali,Niger,Lybia,Tunisia
+Marocco;West Sakhara,Algeria,Ceuta
+Tunisia;Algeria,Lybia
+Lybia;Tunisia,Algeria,Niger,Chad,Western Desert,Lower Egypt,Northern Sudan,Darfur
+Lower Egypt;Western Desert,Lybia,Middle Egypt,Red Sea Coast,Sinai
+Western Desert;Lybia,Northern Sudan,Upper Egypt,Middle Egypt,Lower Egypt
+Middle Egypt;Western Desert,Lower Egypt,Red Sea Coast,Upper Egypt
+Upper Egypt;Western Desert,Northern Sudan,Red Sea Coast,Middle Egypt
+Red Sea Coast;Middle Egypt,Lower Egypt,Sinai,Upper Egypt
+Sinai;Lower Egypt,Red Sea Coast,Israel,Palestine
+Israel;Palestine,Sinai,Jordan,Lebanon,South Syria
+Palestine;Israel,Sinai,Jordan
+Jordan;Palestine,Israel,South Syria,Central Iraq,North Saudi Arabia
+North Saudi Arabia;Jordan,West Saudi Arabia,Central Saudi Arabia,Middle Euphartes,Central Iraq,East Saudi Arabia
+West Saudi Arabia;North Saudi Arabia,Central Saudi Arabia,South Saudi Arabia
+South Saudi Arabia;West Saudi Arabia,Central Saudi Arabia,Yemen,East Saudi Arabia
+Central Saudi Arabia;West Saudi Arabia,North Saudi Arabia,East Saudi Arabia,South Saudi Arabia
+East Saudi Arabia;South Saudi Arabia,Central Saudi Arabia,North Saudi Arabia,Middle Euphartes,Kuwait,Qatar,United Arab Emirates,Oman,Yemen
+Yemen;South Saudi Arabia,East Saudi Arabia,Oman
+Oman;Yemen,East Saudi Arabia,United Arab Emirates
+United Arab Emirates;East Saudi Arabia,Oman
+Qatar;East Saudi Arabia
+Bahrain;
+Kuwait;Southern Iraq,East Saudi Arabia
+Southern Iraq;Middle Euphartes,Central Iraq,Kermanshah,Kuwait
+Middle Euphartes;Central Iraq,North Saudi Arabia,Southern Iraq,East Saudi Arabia
+Central Iraq;Nothern Iraq,East Syria,South Syria,Jordan,North Saudi Arabia,Middle Euphartes,Southern Iraq,Kermanshah
+Nothern Iraq;Southeast Anatolia Region,Central East Anatolia Region,Tabriz,Kermanshah,Central Iraq,East Syria
+East Syria;Aleppo,Southeast Anatolia Region,Nothern Iraq,Central Iraq,South Syria,Coastal Syria
+Aleppo;Mediterranean Region,Southeast Anatolia Region,Coastal Syria,East Syria
+South Syria;Coastal Syria,East Syria,Central Iraq,Jordan,Israel,Lebanon
+Coastal Syria;Mediterranean Region,Aleppo,South Syria,Lebanon
+Lebanon;Israel,South Syria,Coastal Syria
+Cyprus;
+Mediterranean Region;Aegean Region,West Anatolia Region,Central Anatolia Region,Central East Anatolia Region,Southeast Anatolia Region,Coastal Syria,Aleppo
+Southeast Anatolia Region;Mediterranean Region,Central East Anatolia Region,Aleppo,East Syria,Nothern Iraq
+Central East Anatolia Region;Mediterranean Region,Central Anatolia Region,Northeast Anatolia Region,Southeast Anatolia Region,Nothern Iraq,Tabriz
+Northeast Anatolia Region;East Black Sea Region,Central Anatolia Region,Central East Anatolia Region,Tabriz,Armenia,Georgia
+East Black Sea Region;West Black Sea Region,Central Anatolia Region,Northeast Anatolia Region,Georgia
+Central Anatolia Region;West Black Sea Region,West Anatolia Region,Mediterranean Region,Central East Anatolia Region,Northeast Anatolia Region,East Black Sea Region
+West Black Sea Region;East Marmara Region,West Anatolia Region,Central Anatolia Region,East Black Sea Region
+West Anatolia Region;East Marmara Region,Aegean Region,Mediterranean Region,Central Anatolia Region,West Black Sea Region
+Aegean Region;West Marmara Region,East Marmara Region,West Anatolia Region,Mediterranean Region
+East Marmara Region;Istanbul Region,West Marmara Region,Aegean Region,West Anatolia Region,West Black Sea Region
+West Marmara Region;Voreia Ellada,Southern and Western Bulgaria,Nothern and Eastern Bulgaria,Aegean Region,East Marmara Region,Istanbul Region
+Istanbul Region;West Marmara Region,East Marmara Region
+Aegean Isles;
+Kentriki Ellada;Albania,Voreia Ellada,Attica
+Attica;Kentriki Ellada
+Voreia Ellada;Southern and Western Bulgaria,North Macedonia,Albania,Kentriki Ellada,West Marmara Region
+Albania;Kentriki Ellada,Voreia Ellada,North Macedonia,Kosovo,Montenegro
+North Macedonia;Albania,Kosovo,Serbia,Voreia Ellada,Southern and Western Bulgaria
+Kosovo;Montenegro,Albania,Serbia,North Macedonia
+Montenegro;Bosnia,Serbia,Albania,Kosovo,Croatia
+Bosnia;Croatia,Montenegro,Serbia,Vojvodina
+Serbia;Vojvodina,Southwest Romania,Nothern and Eastern Bulgaria,Southern and Western Bulgaria,North Macedonia,Kosovo,Montenegro,Bosnia
+Vojvodina;Croatia,Great Plain and North,Southwest Romania,Serbia,Bosnia
+Croatia;Slovenia,Transdanubia,Bosnia,Vojvodina,Montenegro
+Slovenia;Northeast Italy,South Austria,Croatia,Transdanubia
+Northeast Italy;Northwest Italy,West Austria,Switzerland,South Austria,Slovenia,Central Italy,San-Marino
+San-Marino;Northeast Italy,Central Italy
+Central Italy;Northeast Italy,Northwest Italy,South Italy,Vatican
+Vatican;Central Italy
+South Italy;Central Italy
+Sardinia and Sicily;
+Northwest Italy;Provence-Alpes-Cote d'Azur,Auvergne-Rhone-Alpes,Switzerland,Northeast Italy,Central Italy
+Switzerland;Auvergne-Rhone-Alpes,Bourgogne-Franche-Comte,Northwest Italy,Northeast Italy,West Austria,Baden-Wurttemberg,Grand-Est
+Monaco;Provence-Alpes-Cote d'Azur
+Auvergne-Rhone-Alpes;Provence-Alpes-Cote d'Azur,Occitanie,Nouvelle-Aquitaine,Bourgogne-Franche-Comte,Centre-Val de Loire,Switzerland,Northwest Italy
+Provence-Alpes-Cote d'Azur;Monaco,Northwest Italy,Auvergne-Rhone-Alpes,Occitanie
+Corsica;
+Occitanie;Nouvelle-Aquitaine,Auvergne-Rhone-Alpes,East Spain,Northeast Spain,Andorra,Provence-Alpes-Cote d'Azur
+Nouvelle-Aquitaine;Pays de la Loire,Centre-Val de Loire,Auvergne-Rhone-Alpes,Occitanie,Northeast Spain
+Pays de la Loire;Brittany,Normandy,Centre-Val de Loire,Nouvelle-Aquitaine
+Centre-Val de Loire;Pays de la Loire,Nouvelle-Aquitaine,Normandy,Ile-de-France,Bourgogne-Franche-Comte,Auvergne-Rhone-Alpes
+Bourgogne-Franche-Comte;Centre-Val de Loire,Auvergne-Rhone-Alpes,Ile-de-France,Grand-Est,Switzerland
+Grand-Est;Hauts-de-France,Ile-de-France,Bourgogne-Franche-Comte,Wallonia,Luxemburg,Saarland,Rheinland-Pfalz,Baden-Wurttemberg
+Hauts-de-France;Southeast England,Normandy,Ile-de-France,Grand-Est,Wallonia,Flanders
+Ile-de-France;Normandy,Centre-Val de Loire,Bourgogne-Franche-Comte,Grand-Est,Hauts-de-France
+Normandy;Brittany,Pays de la Loire,Centre-Val de Loire,Ile-de-France,Hauts-de-France
+Brittany;Normandy,Pays de la Loire
+Andorra;Occitanie,East Spain
+Northwest Spain;Continental Portugal,Central Spain
+Northeast Spain;Nouvelle-Aquitaine,East Spain,Central Spain,Northwest Spain
+East Spain;Northeast Spain,Central Spain,South Spain,Occitanie,Andorra
+Central Spain;Northwest Spain,Continental Portugal,Madrid,South Spain,East Spain,Northeast Spain
+Madrid;Central Spain
+South Spain;Central Spain,East Spain,Continental Portugal,Gibraltar
+Canary Islands;
+Gibraltar;South Spain
+Ceuta;Marocco
+Continental Portugal;Northwest Spain,Central Spain,South Spain
+Azores;
+Madeira;
+Ireland;North Ireland
+North Ireland;Ireland
+Scotland;Northeast England,Northwest England
+Northeast England;Scotland,Northwest England,Yorkshire
+Yorkshire;Northwest England,East Midlands of England,Northeast England
+Northwest England;Scotland,Northeast England,Yorkshire,West Midlands of England,Wales,East Midlands of England
+Wales;Northwest England,West Midlands of England,Southwest England
+Southwest England;Southeast England,West Midlands of England,Wales
+West Midlands of England;Southwest England,Wales,Northwest England,East Midlands of England,Southeast England
+East Midlands of England;West Midlands of England,Southeast England,East of England,Yorkshire,Northwest England
+East of England;East Midlands of England,Southeast England,London
+Southeast England;Southwest England,London,East of England,East Midlands of England,West Midlands of England,Hauts-de-France
+London;Southeast England,East of England
+Iceland;
+Greenland;
+Foroe Islands;
+Denmark;Schleswig-Holstein
+Norway;South Sweden,North Sweden,Mainland Finland,North Russia
+North Sweden;Norway,South Sweden,East Sweden,Mainland Finland
+South Sweden;East Sweden,North Sweden,Norway
+East Sweden;South Sweden,North Sweden
+Aland;
+Mainland Finland;North Sweden,Norway,North Russia,Northwest Russia
+Estonia;Latvia,Northwest Russia
+Latvia;Lithuania,Estonia,Belarus,Northwest Russia
+Lithuania;Kaliningrad,Podlaskie,Belarus,Latvia
+Warmia-Mazuria;Pomerania,Mazovia,Podlaskie,Kaliningrad
+Podlaskie;Mazovia,Warmia-Mazuria,Kaliningrad,Lithuania,Belarus,Lesser Poland
+Lesser Poland;Silezia,Slovakia,Mazovia,Podlaskie,Belarus,Western Ukraine
+Mazovia;Pomerania,Greater Poland,Silezia,Lesser Poland,Podlaskie,Warmia-Mazuria
+Silezia;Bohemia,Sachsen,Greater Poland,Mazovia,Lesser Poland,Moravia,Slovakia
+Greater Poland;Brandenburg,Sachsen,Silezia,Pomerania,Mazovia
+Pomerania;Mecklenburg-Vorpommern,Greater Poland,Brandenburg,Warmia-Mazuria,Mazovia,Kaliningrad
+Mecklenburg-Vorpommern;Pomerania,Schleswig-Holstein,Niedersachsen,Brandenburg
+Schleswig-Holstein;Hamburg,Niedersachsen,Mecklenburg-Vorpommern
+Hamburg;Niedersachsen,Schleswig-Holstein
+Niedersachsen;North Netherlands,East Netherlands,Nordhein-Westfalen,Hessen,Thuringen,Sachsen-Anhalt,Mecklenburg-Vorpommern,Schleswig-Holstein,Hamburg
+Nordhein-Westfalen;South Netherlands,Wallonia,East Netherlands,Niedersachsen,Rheinland-Pfalz,Hessen
+Hessen;Rheinland-Pfalz,Baden-Wurttemberg,Bayern,Thuringen,Niedersachsen,Nordhein-Westfalen
+Thuringen;Hessen,Bayern,Sachsen,Sachsen-Anhalt,Niedersachsen
+Sachsen-Anhalt;
+Brandenburg;Berlin,Sachsen-Anhalt,Niedersachsen,Mecklenburg-Vorpommern,Pomerania,Greater Poland,Sachsen
+Berlin;Brandenburg
+Sachsen;Sachsen-Anhalt,Thuringen,Bayern,Bohemia,Silezia,Greater Poland,Brandenburg
+Bayern;Baden-Wurttemberg,West Austria,Bohemia,Sachsen,Thuringen,Hessen
+Baden-Wurttemberg;Grand-Est,Switzerland,West Austria,Bayern,Rheinland-Pfalz,Hessen
+Rheinland-Pfalz;Luxemburg,Saarland,Grand-Est,Wallonia,Nordhein-Westfalen,Hessen,Baden-Wurttemberg
+Saarland;Luxemburg,Grand-Est,Rheinland-Pfalz
+Luxemburg;Grand-Est,Wallonia,Rheinland-Pfalz,Saarland
+Wallonia;Hauts-de-France,Brussels,Flanders,Grand-Est,Luxemburg,Rheinland-Pfalz,Nordhein-Westfalen,South Netherlands
+Flanders;Brussels,Wallonia,Hauts-de-France,South Netherlands,West Netherlands
+Brussels;Flanders,Wallonia
+West Netherlands;Flanders,South Netherlands,East Netherlands,North Netherlands
+South Netherlands;Flanders,Wallonia,Nordhein-Westfalen,East Netherlands,West Netherlands
+East Netherlands;West Netherlands,South Netherlands,North Netherlands,Niedersachsen,Nordhein-Westfalen
+North Netherlands;West Netherlands,East Netherlands,Niedersachsen
+West Austria;Bayern,Switzerland,Baden-Wurttemberg,Northeast Italy,South Austria,East Austria,Bohemia
+South Austria;Northeast Italy,Slovenia,West Austria,East Austria,Transdanubia
+East Austria;West Austria,Bohemia,Moravia,South Austria,Slovakia,Transdanubia
+Bohemia;Bayern,Sachsen,Silezia,Moravia,East Austria,West Austria
+Moravia;Bohemia,Silezia,Slovakia,East Austria
+Slovakia;Moravia,East Austria,Transdanubia,Great Plain and North,Central Hungary,Lesser Poland,Silezia,Western Ukraine
+Transdanubia;East Austria,South Austria,Slovenia,Croatia,Vojvodina,Great Plain and North,Central Hungary,Slovakia
+Central Hungary;Transdanubia,Great Plain and North,Slovakia
+Great Plain and North;Western Ukraine,Slovakia,Central Hungary,Transdanubia,Southwest Romania,Northwest Romania,Vojvodina
+Northwest Romania;Great Plain and North,Southwest Romania,South Romania,East Romania,Western Ukraine
+Southwest Romania;Great Plain and North,Vojvodina,Serbia,Nothern and Eastern Bulgaria,South Romania,Northwest Romania
+South Romania;Nothern and Eastern Bulgaria,Southwest Romania,Northwest Romania,East Romania
+East Romania;Northwest Romania,South Romania,Nothern and Eastern Bulgaria,Moldavia,Southern Ukraine,Western Ukraine
+Nothern and Eastern Bulgaria;Southwest Romania,South Romania,East Romania,West Marmara Region,Southern and Western Bulgaria,Serbia
+Southern and Western Bulgaria;North Macedonia,Serbia,Voreia Ellada,West Marmara Region,Nothern and Eastern Bulgaria
+Moldavia;Transnistria,Central Ukraine,Southern Ukraine,Western Ukraine,East Romania
+Transnistria;Moldavia,Southern Ukraine,Central Ukraine
+Southern Ukraine;Transnistria,Moldavia,Central Ukraine,Eastern Ukraine,Crimea
+Crimea;North Caucasus,Southern Ukraine
+Eastern Ukraine;Central Ukraine,Southern Ukraine,North Caucasus,Central Black-Earth
+Central Ukraine;Kiev,Western Ukraine,Belarus,Moldavia,Transnistria,Southern Ukraine,Eastern Ukraine,Central Russia,Central Black-Earth
+Kiev;Central Ukraine
+Western Ukraine;Lesser Poland,Slovakia,Great Plain and North,Northwest Romania,East Romania,Moldavia,Central Ukraine,Belarus
+Belarus;Minsk,Western Ukraine,Central Ukraine,Central Russia,Northwest Russia,Latvia,Lithuania,Podlaskie,Lesser Poland
+Minsk;Belarus
+Kaliningrad;Warmia-Mazuria,Pomerania,Podlaskie,Lithuania
+Northwest Russia;Mainland Finland,Estonia,Latvia,Belarus,Central Russia,North Russia
+North Russia;Mainland Finland,Norway,Northwest Russia,Central Russia,Volga-Vyatka,Ural,West Siberia
+Central Russia;Moscow,Central Black-Earth,Central Ukraine,Belarus,Northwest Russia,North Russia,Volga-Vyatka,Volga
+Moscow;Central Russia
+Central Black-Earth;Central Russia,Volga,North Caucasus,Eastern Ukraine,Central Ukraine
+North Caucasus;Crimea,Georgia,Azerbaijan,Volga,Central Black-Earth,Eastern Ukraine
+Volga;Turanian Lowlands,North Caucasus,Central Black-Earth,Volga-Vyatka,Central Russia,Ural
+Volga-Vyatka;Central Russia,North Russia,Ural,Volga
+Ural;Volga,Volga-Vyatka,North Russia,West Siberia,Turanian Lowlands,Mugodzhar Hills,North Kazakhstan
+West Siberia;North Russia,Ural,North Kazakhstan,Central Highlands,East Siberia,Xinjiang,Mongolia
+East Siberia;West Siberia,Mongolia,Far East,Outer Mongolia,Manchuria
+Far East;East Siberia,Manchuria,Donghae Coast
+Manchuria;Far East,East Siberia,Outer Mongolia,Pyongan,Baekdu Mountains,Donghae Coast,Hebei
+Outer Mongolia;Manchuria,East Siberia,Mongolia,Hebei,Shanxi,Shaanxi,Ningxia,Gansu
+Hebei;Beijing,Manchuria,Outer Mongolia,Shanxi,Henan,Shandong
+Beijing;Hebei
+Shanxi;Shaanxi,Henan,Hebei,Outer Mongolia
+Shaanxi;Gansu,Ningxia,Shanxi,Outer Mongolia,Sichuan,Chongqing,Hubei,Henan
+Ningxia;Gansu,Shaanxi,Outer Mongolia
+Gansu;Qinghai,Xinjiang,Mongolia,Outer Mongolia,Sichuan,Shaanxi,Ningxia
+Xinjiang;Central Highlands,Tyan Shan,Kyrgyzstan,Tajikistan,Afghanistan,North Pakistan,Northern India,Tibet,Qinghai,West Siberia,Mongolia,Gansu
+Qinghai;Tibet,Xinjiang,Gansu,Sichuan
+Tibet;Central India,Northern India,Xinjiang,Qinghai,Nepal,Bhutan,Eastern India,North Eastern India,Burma,Yunnan,Sichuan
+Sichuan;Gansu,Qinghai,Tibet,Yunnan,Guizhou,Chongqing,Shaanxi
+Yunnan;Tibet,Sichuan,Guizhou,Guangxi,North Vietnam,Laos,Burma
+Guizhou;Yunnan,Sichuan,Chongqing,Guangxi,Hunan
+Chongqing;Guizhou,Sichuan,Hunan,Hubei,Shaanxi
+Hubei;Shaanxi,Chongqing,Hunan,Jiangxi,Anhui,Henan
+Henan;Shaanxi,Hubei,Shanxi,Hebei,Shandong,Anhui,Jiangsu
+Shandong;Henan,Jiangsu,Anhui,Hebei
+Jiangsu;Anhui,Zhejiang,Shandong
+Anhui;Henan,Hubei,Jiangxi,Zhejiang,Jiangsu,Shandong
+Jiangxi;Hunan,Guang dong,Fujian,Zhejiang,Anhui,Hubei
+Zhejiang;Fujian,Jiangxi,Anhui,Jiangsu
+Fujian;Guang dong,Jiangxi,Zhejiang
+Guang dong;Hong Kong,Guangxi,Hunan,Jiangxi,Fujian
+Hong Kong;Guang dong
+Hainan;
+Guangxi;Guang dong,Hunan,Guizhou,Yunnan,North Vietnam
+Hunan;Guizhou,Hubei,Chongqing,Jiangxi,Guang dong,Guangxi
+Taiwan;
+North Vietnam;Laos,Central Vietnam,Guangxi,Yunnan
+Central Vietnam;Laos,Cambodia,South Vietnam,North Vietnam
+South Vietnam;Cambodia,Central Vietnam
+Cambodia;East Thailand,Isan,South Vietnam,Central Vietnam,Laos
+Laos;Yunnan,Burma,North Thailand,Isan,Cambodia,Central Vietnam,North Vietnam
+Isan;East Thailand,Central Thailand,North Thailand,Laos,Cambodia
+East Thailand;Central Thailand,Isan,Cambodia
+Central Thailand;Burma,North Thailand,East Thailand,Isan,South Thailand
+South Thailand;Burma,Central Thailand,Northern Malaysia,Malaysian East Coast
+North Thailand;Burma,Laos,Isan,Central Thailand
+Burma;Bangladesh,North Eastern India,Tibet,Yunnan,Laos,North Thailand,Central Thailand,South Thailand
+Bangladesh;Eastern India,North Eastern India
+North Eastern India;Bangladesh,Bhutan,Eastern India,Tibet,Burma
+Eastern India;South India,Central India,Bangladesh,Nepal,Tibet,Bhutan,North Eastern India
+Central India;Western India,South India,Eastern India,Nepal,Tibet,Northern India
+Northern India;Sindh,Punjab,North Pakistan,Xinjiang,Tibet,Central India,Western India
+Western India;South India,Central India,Northern India,Sindh
+South India;Western India,Central India,Eastern India
+Sri Lanka;
+Nepal;Central India,Eastern India,Tibet
+Bhutan;North Eastern India,Eastern India,Tibet
+Sindh;Balochistan,Punjab,Northern India,Western India
+Balochistan;Mashhad,Afghanistan,Sindh,Punjab,North Pakistan
+Punjab;Northern India,Sindh,Balochistan,North Pakistan
+North Pakistan;Afghanistan,Balochistan,Punjab,Xinjiang,Northern India
+Afghanistan;Mashhad,Turkmenistan,Uzbekistan,Tajikistan,Balochistan,North Pakistan,Xinjiang
+Tajikistan;Afghanistan,Uzbekistan,Kyrgyzstan,Xinjiang
+Kyrgyzstan;Kazakh Desert,Uzbekistan,Tajikistan,Xinjiang,Tyan Shan
+Kazakh Desert;Tyan Shan,Central Highlands,Kyrgyzstan,Uzbekistan,Mugodzhar Hills
+Tyan Shan;Central Highlands,Kazakh Desert,Kyrgyzstan,Xinjiang
+Central Highlands;North Kazakhstan,Mugodzhar Hills,Kazakh Desert,Tyan Shan,West Siberia,Xinjiang
+North Kazakhstan;Ural,Mugodzhar Hills,Central Highlands,West Siberia
+Mugodzhar Hills;Ural,North Kazakhstan,Central Highlands,Kazakh Desert,Ural,Turanian Lowlands,Uzbekistan
+Turanian Lowlands;Volga,Ural,Mugodzhar Hills,Uzbekistan,Turkmenistan
+Uzbekistan;Turanian Lowlands,Mugodzhar Hills,Turkmenistan,Kazakh Desert,Tajikistan,Kyrgyzstan,Afghanistan
+Turkmenistan;Turanian Lowlands,Uzbekistan,Tehran,Mashhad,Afghanistan
+Mashhad;Tehran,Isfahan,Turkmenistan,Afghanistan,Balochistan
+Isfahan;Kermanshah,Tehran,Mashhad
+Tehran;Tabriz,Kermanshah,Isfahan,Mashhad,Turkmenistan
+Kermanshah;Southern Iraq,Central Iraq,Nothern Iraq,Tabriz,Tehran,Isfahan
+Tabriz;Nothern Iraq,Kermanshah,Tehran,Central East Anatolia Region,Northeast Anatolia Region,Azerbaijan,Armenia
+Azerbaijan;Armenia,Tabriz,North Caucasus,Georgia
+Armenia;Azerbaijan,Tabriz,Northeast Anatolia Region,Georgia
+Georgia;North Caucasus,Azerbaijan,Armenia,Northeast Anatolia Region,East Black Sea Region
+Northern Malaysia;South Thailand,Malaysian East Coast,Central Malaysia
+Malaysian East Coast;South Thailand,Northern Malaysia,Central Malaysia,Southern Malaysia
+Central Malaysia;Northern Malaysia,Malaysian East Coast,Southern Malaysia
+Southern Malaysia;Central Malaysia,Malaysian East Coast,Singapore
+East Malaysia;Brunei,Kalimantan
+Singapore;Southern Malaysia
+Brunei;East Malaysia
+Sumatra;
+Java;
+Kalimantan;East Malaysia
+Bali;
+Sulawesi;
+Nusa Tenggara;East Timor
+Maluku;
+Papua;Papua New Guinea
+Papua New Guinea;Papua
+Southern Philippines;
+Central Philippines;
+Northern Philippines;
+Pyongan;Manchuria,Baekdu Mountains,Donghae Coast,Hwanghae
+Baekdu Mountains;Manchuria,Pyongan,Donghae Coast
+Donghae Coast;Far East,Manchuria,Baekdu Mountains,Pyongan,Hwanghae,Gangwon,Gyeonggi
+Hwanghae;Pyongan,Donghae Coast,Gyeonggi
+Gyeonggi;Hwanghae,Gangwon,Donghae Coast,Chungcheong
+Gangwon;Gyeonggi,Chungcheong,Gyeongsang,Donghae Coast
+Gyeongsang;Jeolla,Chungcheong,Gangwon
+Jeolla;Chungcheong,Gyeongsang
+Chungcheong;Gyeonggi,Jeolla,Gyeongsang,Gangwon
+Hokkaido;
+Tohoku;Kanto,Chubu
+Kanto;Chubu,Tohoku
+Chubu;Kanto,Tohoku,Kansai
+Kansai;Chuhoku,Chubu
+Chuhoku;Kansai
+Shikoku;
+Kyushu;
+Solomon Islands;
+New Caledonia;
+New Zealand;
+Fiji;
+Victoria;South Australia,New South Wales
+New South Wales;South Australia,Queensland,Victoria
+Queensland;Northern Territory,South Australia,New South Wales
+Northern Territory;Western Australia,South Australia,Queensland
+Western Australia;Northern Territory,South Australia
+South Australia;Western Australia,Northern Territory,Queensland,New South Wales,Victoria
+East Timor;Nusa Tenggara
+Madagascar;
+Falklands;
+Mongolia;Xinjiang,Gansu,Outer Mongolia,East Siberia,West Siberia
+Malta;

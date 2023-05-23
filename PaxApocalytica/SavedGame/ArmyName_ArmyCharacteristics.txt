@@ -1,0 +1,181 @@
+USA;USA Army 1;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+USA;USA Army 2;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+USA;USA Army 3;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+USA;USA Army 4;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+Canada;Canada Army 1;infantry1a,100;infantry1a,100;infantry1a,100;tank1a,200;tank1a,200;infantry2a,130;;;;;;;;;;;False
+Mexico;Mexico Army 1;infantry2g,100;infantry2g,100;infantry1g,80;tank1g,120;;;;;;;;;;;;;False
+Mexico;Mexico Army 2;infantry2g,100;infantry2g,100;tank1g,120;tank1g,120;;;;;;;;;;;;;False
+Panama;Panama Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Cuba;Cuba Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;tank1g,120;tank1g,120;tank1g,120;infantry1g,80;;;;;;;;;False
+Jamaica;Jamaica Army 1;infantry1g,80;infantry1g,80;;infantry1g,80;;;;;;;;;;;;;False
+UK;UK Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;tank1a,200;tank1a,200;infantry1a,130;;;;;;;;;False
+UK;UK Army 2;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;tank1a,200;infantry2a,130;;;;;;;;;;False
+UK;UK Army 3;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank2a,300;tank1a,200;infantry2a,130;;;;;;;;;;False
+Haiti;Haiti Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;tank1g,120;;;;;;;;;;;;False
+Dominican Republic;Dominican Republic Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+France;France Army 1;infantry2a,100;infantry2a,100;tank2a,300;infantry2a,130;tank2a,300;tank1a,200;tank1a,200;infantry2a,130;;;;;;;;;False
+France;France Army 2;infantry2a,100;infantry2a,100;tank2a,300;infantry2a,130;tank2a,300;tank1a,200;tank1a,200;infantry2a,130;;;;;;;;;False
+France;France Army 3;infantry2a,100;infantry2a,100;tank2a,300;infantry2a,130;tank2a,300;tank1a,200;tank1a,200;infantry2a,130;;;;;;;;;False
+Venezuela;Venezuela Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;False
+Colombia;Colombia Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;infantry2g,100;infantry1g,80;infantry2g,100;tank1g,120;;;;;;;;;False
+Barbados;Barbados Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Trinidad and Tobago;Trinidad and Tobago Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Ecuador;Ecuador Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Peru;Peru Army 1;infantry1g,80;infantry1g,80;;infantry1g,80;infantry1g,80;;;;;;;;;;;;False
+Bolivia;Bolivia Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Chile;Chile Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;False
+Argentina;Argentina Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;tank1g,120;tank1g,120;infantry1g,80;;;;;;;;;;False
+Paraguay;Paraguay Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Uruguay;Uruguay Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Brazil;Brazil Army 1;infantry1g,80;infantry1g,80;tank2g,150;infantry1g,80;tank2g,150;infantry1g,80;infantry1g,80;;;;;;;;;;False
+Suriname;Suriname Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Guyana;Guyana Army 1;infantry1g,80;;;infantry1g,80;;;;;;;;;;;;;False
+Cabo Verde;Cabo Verde Army 1;unmotorizedInfantry,40;;;;;;;;;;;;;;;;False
+West Sakhara;West Sakhara Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Mavritaniya;Mavritaniya Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Senegal;Senegal Army 1;infantry1g,80;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;False
+Gambia;Gambia Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Guinea-Bissau;Guinea-Bissau Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Guinea;Guinea Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Sierra Leone;Sierra Leone Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Liberia;Liberia Army 1;infantry1g,80;infantry1g,80;unmotorizedInfantry,40;;;;;;;;;;;;;;False
+Cote d'Ivoire;Cote d'Ivoire Army 1;infantry1g,80;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;False
+Gana;Gana Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Togo;Togo Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Benin;Benin Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Nigeria;Nigeria Army 1;infantry1g,80;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;False
+Cameroon;Cameroon Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Gabon;Gabon Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Equatorial Guinea;Equatorial Guinea Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Sao Tome;Sao Tome Army 1;infantry1g,80;;;;;;;;;;;;;;;;False
+Congo;Congo Army 1;infantry1g,80;infantry1g,80;infantry1g,80;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Democratic Republic of the Congo;Democratic Republic of the Congo Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Angola;Angola Army 1;infantry1g,80;infantry1g,80;tank1g,120;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;False
+Namibia;Namibia Army 1;infantry1g,80;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;False
+South African Republic;South African Republic Army 1;infantry2g,100;infantry2g,100;tank1g,120;infantry1g,80;tank1g,120;tank1g,120;;;;;;;;;;;False
+Lesotho;Lesotho Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Eswatini;Eswatini Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Botswana;Botswana Army 1;infantry1g,80;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;False
+Zimbabwe;Zimbabwe Army 1;infantry1g,80;infantry1g,80;tank1g,120;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Mozambique;Mozambique Army 1;infantry1g,80;infantry1g,80;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Malawi;Malawi Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;False
+Zambia;Zambia Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Tanzania;Tanzania Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;False
+Burundi;Burundi Army 1;infantry1g,80;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Rwanda;Rwanda Army 1;infantry1g,80;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Uganda;Uganda Army 1;infantry1g,80;infantry1g,80;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Kenya;Kenya Army 1;infantry1g,80;infantry1g,80;tank1g,120;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Somalia;Somalia Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Ethiopia;Ethiopia Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Djibouti;Djibouti Army 1;infantry1g,80;;tank1g,120;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Eritrea;Eritrea Army 1;infantry1g,80;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Sudan;Sudan Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;infantry1g,80;;;;;;;;;;;;False
+Central African Republic;Central African Republic Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Chad;Chad Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Niger;Niger Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;;;False
+Mali;Mali Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;;;False
+Algeria;Algeria Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Marocco;Marocco Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Tunisia;Tunisia Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Lybia;Lybia Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Egypt;Egypt Army 1;infantry1r,110;infantry1r,110;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;tank1r,200;;;;;;;;;;False
+Israel;Israel Army 1;infantry1a,100;infantry1a,100;tank1a,200;tank2a,300;;;;;;;;;;;;;False
+Palestine;Palestine Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Jordan;Jordan Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Saudi Arabia;Saudi Arabia Army 1;infantry2g,100;infantry2g,100;tank2g,150;infantry2g,100;;;;;;;;;;;;;False
+Yemen;Yemen Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Oman;Oman Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+United Arab Emirates;United Arab Emirates Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;;;False
+Qatar;Qatar Army 1;infantry1g,80;;tank1g,120;;;;;;;;;;;;;;False
+Bahrain;Bahrain Army 1;infantry1g,80;;;;;;;;;;;;;;;;False
+Kuwait;Kuwait Army 1;infantry1g,10;infantry1g,30;tank1g,30;infantry1g,20;;;;;;;;;;;;;False
+Iraq;Iraq Army 1;infantry2g,100;infantry2g,80;tank2g,150;infantry1g,80;tank2g,150;tank2g,150;;;;;;;;;;;False
+Syria;Syria Army 1;infantry1g,80;infantry1g,80;tank2g,150;infantry2g,100;;;;;;;;;;;;;False
+Lebanon;Lebanon Army 1;infantry1g,80;infantry1g,80;tank1g,120;;;;;;;;;;;;;;False
+Cyprus;Cyprus Army 1;infantry1a,100;;;;;;;;;;;;;;;;False
+Turkey;Turkey Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;False
+Turkey;Turkey Army 2;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;False
+Greece;Greece Army 1;infantry1a,100;infantry1a,100;tank1g,200;;;;;;;;;;;;;;False
+Albania;Albania Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+North Macedonia;North Macedonia Army 1;infantry1r,110;infantry1r,110;tank1r,200;;;;;;;;;;;;;;False
+Yugoslavia;Yugoslavia Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;False
+Croatia;Croatia Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Slovenia;Slovenia Army 1;infantry1r,110;infantry1r,110;tank1r,200;;;;;;;;;;;;;;False
+Italy;Italy Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;;;;;;;;;;;;False
+Italy;Italy Army 2;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;;;False
+Switzerland;Switzerland Army 1;infantry1a,100;infantry1a,100;tank2a,300;;;;;;;;;;;;;;False
+Spain;Spain Army 1;infantry1a,100;infantry2a,130;tank1g,120;infantry2a,130;tank2a,300;;;;;;;;;;;;False
+Spain;Spain Army 2;infantry1a,100;infantry2a,130;tank1g,120;infantry1a,100;tank1a,200;;;;;;;;;;;;False
+Portugal;Portugal Army 1;infantry1a,100;infantry2a,130;tank1g,120;;;;;;;;;;;;;;False
+Ireland;Ireland Army 1;infantry1a,100;infantry1a,100;tank1a,200;;;;;;;;;;;;;;False
+Denmark;Denmark Army 1;infantry2a,130;;tank1a,200;;;;;;;;;;;;;;False
+Norway;Norway Army 1;infantry2a,130;infantry2a,130;tank1a,200;;;;;;;;;;;;;;False
+Sweden;Sweden Army 1;infantry2a,130;infantry2a,130;tank1a,200;tank2a,300;;;;;;;;;;;;;False
+Finland;Finland Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Estonia;Estonia Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Latvia;Latvia Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Lithuania;Lithuania Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Poland;Poland Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;infantry1r,110;tank1r,200;;;;;;;;;;;False
+Germany;Germany Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;;;False
+Germany;Germany Army 2;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank2a,300;;;;;;;;;;;;False
+Germany;Germany Army 3;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;;;False
+Luxemburg;Luxemburg Army 1;infantry1a,100;tank1a,200;;;;;;;;;;;;;;;False
+Belgium;Belgium Army 1;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;;;;False
+Netherlands;Netherlands Army 1;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;;;;False
+Austria;Austria Army 1;infantry1a,100;tank1a,200;infantry1a,100;;;;;;;;;;;;;;False
+Czechoslovakia;Czechoslovakia Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Hungary;Hungary Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Romania;Romania Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Bulgaria;Bulgaria Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Moldavia;Moldavia Army 1;infantry1r,110;infantry1r,110;tank1r,200;;;;;;;;;;;;;;False
+Transnistria;Transnistria Army 1;infantry1r,110;tank1r,200;;;;;;;;;;;;;;;False
+Ukraine;Ukraine Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;infantry1r,110;;;;;;;;;;;;False
+Ukraine;Ukraine Army 2;infantry1r,110;infantry1r,110;tank1r,200;;;;;;;;;;;;;;False
+Belarus;Belarus Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Russia;Russia Army 1;infantry1r,110;infantry2r,120;tank1r,200;tank1r,200;infantry1r,110;tank2r,250;;;;;;;;;;;False
+Russia;Russia Army 2;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;infantry1r,110;;;;;;;;;;;;False
+China;China Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;infantry1r,110;infantry1r,110;;;;;;;;;;;False
+China;China Army 2;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;infantry1r,110;;;;;;;;;;;;False
+China;China Army 3;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;infantry1r,110;;;;;;;;;;;;False
+Taiwan;Taiwan Army 1;infantry1r,110;infantry1r,110;tank1r,200;;;;;;;;;;;;;;False
+Vietnam;Vietnam Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Cambodia;Cambodia Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Laos;Laos Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Thailand;Thailand Army 1;infantry1a,100;infantry1a,100;tank1a,200;;;;;;;;;;;;;;False
+Burma;Burma Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Bangladesh;Bangladesh Army 1;infantry1r,1100;infantry1r,110;tank1r,200;;;;;;;;;;;;;;False
+India;India Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;tank1r,200;;;;;;;;;;;;False
+India;India Army 2;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Sri Lanka;Sri Lanka Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Nepal;Nepal Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Bhutan;Bhutan Army 1;unmotorizedInfantry,40;;;;;;;;;;;;;;;;False
+Pakistan;Pakistan Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Afghanistan;Afghanistan Army 1;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;unmotorizedInfantry,40;;;;;;;;;;;False
+Tajikistan;Tajikistan Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Kyrgyzstan;Kyrgyzstan Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Uzbekistan;Uzbekistan Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Turkmenistan;Turkmenistan Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Kazakh ASSR;Kazakh ASSR Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;tank1r,200;;;;;;;;;;;;False
+Kazakh ASSR;Kazakh ASSR Army 2;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;tank1r,200;;;;;;;;;;;;False
+Iran;Iran Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;tank1g,120;;;;;;;;;;;;False
+Azerbaijan;Azerbaijan Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Armenia;Armenia Army 1;infantry1r,110;infantry1r,110;tank1r,200;;;;;;;;;;;;;;False
+Georgia;Georgia Army 1;infantry1r,110;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;;;False
+Malaysia;Malaysia Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,200;;;;;;;;;;;;;False
+Indonesia;Indonesia Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,200;;;;;;;;;;;;;False
+Indonesia;Indonesia Army 2;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,200;;;;;;;;;;;;;False
+Papua New Guinea;Papua New Guinea Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+Philippines;Philippines Army 1;infantry1g,80;;;;;;;;;;;;;;;;False
+North Korea;North Korea Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;False
+North Korea;North Korea Army 2;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;tank1r,200;tank1r,200;;;;;;;;;;;False
+South Korea;South Korea Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;;;;;;;;;;;;False
+South Korea;South Korea Army 2;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;;;;;;;;;;;;False
+Japan;Japan Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;;;;;;;;;;;;False
+Solomon Islands;Solomon Islands Army 1;infantry1g,80;infantry1g,80;;;;;;;;;;;;;;;False
+New Zealand;New Zealand Army 1;infantry1a,100;infantry1a,100;tank1a,200;;;;;;;;;;;;;;False
+Fiji;Fiji Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Australia;Australia Army 1;infantry1a,100;infantry1a,100;tank1a,200;infantry1a,100;tank1a,200;;;;;;;;;;;;False
+East Timor;East Timor Army 1;infantry1g,80;;;;;;;;;;;;;;;;False
+Madagascar;Madagascar Army 1;infantry1g,80;infantry1g,80;tank1g,120;infantry1g,80;;;;;;;;;;;;;False
+Mongolia;Mongolia Army 1;infantry1r,110;infantry1r,110;tank1r,200;infantry1r,110;;;;;;;;;;;;;False
+Malta;Malta Army 1;infantry1a,100;infantry1a,100;;;;;;;;;;;;;;;False

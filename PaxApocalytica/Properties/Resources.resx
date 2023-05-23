@@ -118,8 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Army_Name" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Army_Name.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  <data name="aluminiumImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\aluminiumImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ArmyName_ArmyCharacteristics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ArmyName_ArmyCharacteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="baseMapBmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\baseMapBmp.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,49 +130,82 @@
   <data name="bitmapRegions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bitmapRegions.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="coalImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\coalImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Color_Name" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Color_Name.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\FundmentalResources\Color_Name.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="copperImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\copperImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CountryName_Characteristics" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CountryName_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Countryname_\CountryName_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="CountryName_MilitaryResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CountryName_MilitaryResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Countryname_\CountryName_MilitaryResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="CountryName_SimpleResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CountryName_SimpleResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Countryname_\CountryName_SimpleResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_SimpleResources_Trade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Countryname_\CountryName_SimpleResources _Trade.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="gasImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\gasImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="goldImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\goldImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grainImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\grainImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="livestockImagejpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\livestockImagejpg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Name_Airfield" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_Airfield.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_Airfield.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Name_ArmyName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Name_\Name_ArmyName.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Characteristics" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_MilitaryFactory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_MilitaryFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_MilitaryFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Neighbours" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_Neighbours.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_Neighbours.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Occupant" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_Occupant.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_Occupant.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Owner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_Owner.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_Owner.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Points" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_Points.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_Points.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Port" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_Port.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_Port.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_SimpleFactory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Name_SimpleFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+    <value>..\Name_\Name_SimpleFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="oilImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\oilImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pact_Countryname" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pact_Countryname.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
+  <data name="SteelImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SteelImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="String1" xml:space="preserve">
     <value />
+  </data>
+  <data name="uraniumImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uraniumImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

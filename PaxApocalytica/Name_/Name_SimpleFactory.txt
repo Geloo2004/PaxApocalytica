@@ -1,0 +1,460 @@
+Alaska;Gold;2;4
+Hawaii;Random
+Burkina-Faso;Random
+Northern Territories;Uranium;2;3
+West Coast Pacific;Random
+Prairie Provinces;Random
+Central Canada;Copper;3;3
+Atlantic Region;Uranium;3;3
+Pacific;Gold;6;4
+Mountain;Uranium;3;4
+West North Central;Gas;5;3
+West South Central;Gas;4;5
+East North Central;Random
+East South Central;Random
+New England;Random
+Mid-Atlantic;Coal;4;3
+South Atlantic;Steel;4;5
+Noroeste;Oil;3;3
+Noreste;Coal;2;4
+Occidente;Random
+Oriente;Random
+Centronorte;Uranium;3;2
+Centrosur;Random
+Sureste;Random
+Suroeste;Steel;3;2
+Guatemala;Random
+Belize;Random
+Gonduras;Random
+Salvador;Random
+Nicaragua;Random
+Costa Rica;Random
+Panama;Copper;2;2
+Jamaica;Aluminium;2;3
+West Cuba;Random
+Central Cuba;Random
+East Cuba;Random
+Bahamas;Random
+Puerto Rico;Random
+British Territories In the North Atlantic Ocean;Random
+Haiti;Aluminium;2;3
+Dominican Republic;Random
+Saint Kitts and Nevis;Random
+Antigua and Barbuda;Random
+Guadeloupe and Martinique;Random
+Dominica;Random
+Saint Lucia;Random
+Saint Vincent and the Grenadines;Random
+Barbados;Random
+Grenada;Random
+Trinidad and Tobago;Random
+East Venezuela;Random
+Caracas;Oil;2;2
+West Venezuela;Random
+Region Caribe;Oil;3;4
+Region Pacifica;Random
+Region Andina;Random
+Region Llanos Orientales;Random
+Region Amazonia;Random
+Ecuador Costa;Oil;1;3
+Ecuador Sierra;Random
+Ecuador Oriente;Random
+Galapagos Islands;Random
+Peru Coast;Random
+Peru Andes;Uranium;2;1
+Peru Amazonia;Oil;2;3
+Bolivia;Random
+North Chile;Steel;3;4
+Central Chile;Random
+South Chile;Coal;3;3
+Patagonia;Oil;1;2
+Pampas;Coal;2;2
+Mesopotamia;Random
+Cuyo;Random
+Andean Northwest;Oil;1;1
+Paraguay;Random
+Uruguay;Random
+South Brazil;Random
+Southeast Brazil;Aluminium;2;3
+Central-West Brazil;Steel;3;3
+Northeast Brazil;Copper;2;3
+North Brazil;Oil;3;4
+French guiana;Aluminium;4;4
+Suriname;Random
+Guyana;Aluminium;1;1
+Cabo Verde;Random
+West Sakhara;Random
+Mavritaniya;Random
+Senegal;Random
+Gambia;Random
+Guinea-Bissau;Random
+Guinea;Random
+Sierra Leone;Random
+Liberia;Random
+Cote d'Ivoire;Gold;4;4
+Gana;Random
+Togo;Aluminium;1;2
+Benin;Random
+South West Nigeria;Random
+South Nigeria;Oil;2;2
+South East Nigeria;Random
+North Central Nigeria;Random
+North West Nigeria;Random
+North East Nigeria;Random
+North Cameroon;Aluminium;1;2
+Central Cameroon;Random
+West Cameroon;Random
+South Cameroon;Random
+Gabon;Oil;2;2
+Equatorial Guinea;Random
+Sao Tome;Random
+Congo;Steel;1;2
+Democratic Republic of the Congo;Random
+Angola;Oil;1;2
+Luanda;Random
+Namibia;Gas;1;1
+Transvaal;Random
+Cape;Copper;2;3
+Free State;Random
+KwaZulu Natal;Copper;3;3
+Lesotho;Random
+Eswatini;Random
+Botswana;Random
+Zimbabwe;Random
+Mozambique;Steel;2;2
+Malawi;Random
+Zambia;Copper;1;1
+Tanzania;Random
+Burundi;Random
+Rwanda;Random
+Uganda;Random
+Kenya;Random
+Somalia;Random
+Somali;Random
+Oromiya;Random
+South Ethiopia;Random
+North Ethiopia;Random
+Djibouti;Random
+Eritrea;Random
+Northern Sudan;Random
+Eastern Sudan;Random
+Central Sudan;Random
+Kurdufan;Random
+Darfur;Random
+South Sudan;Random
+Central African Republic;Random
+Chad;Random
+Niger;Random
+Mali;Aluminium;2;2
+Algeria;Uranium;2;3
+Marocco;Random
+Tunisia;Steel;2;2
+Lybia;Oil;1;2
+Lower Egypt;Random
+Western Desert;Oil;2;3
+Middle Egypt;Random
+Upper Egypt;Random
+Red Sea Coast;Random
+Sinai;Random
+Israel;Random
+Palestine;Random
+Jordan;Random
+North Saudi Arabia;Random
+West Saudi Arabia;Random
+South Saudi Arabia;Random
+Central Saudi Arabia;Random
+East Saudi Arabia;Oil;3;4
+Yemen;Random
+Oman;Oil;3;2
+United Arab Emirates;Oil;5;1
+Qatar;Random
+Bahrain;Random
+Kuwait;Random
+Southern Iraq;Random
+Middle Euphartes;Oil;5;5
+Central Iraq;Random
+Nothern Iraq;Random
+East Syria;Random
+Aleppo;Random
+South Syria;Random
+Coastal Syria;Random
+Lebanon;Random
+Cyprus;Random
+Mediterranean Region;Random
+Southeast Anatolia Region;Random
+Central East Anatolia Region;Random
+Northeast Anatolia Region;Random
+East Black Sea Region;Random
+Central Anatolia Region;Random
+West Black Sea Region;Coal;4;3
+West Anatolia Region;Random
+Aegean Region;Random
+East Marmara Region;Random
+West Marmara Region;Random
+Istanbul Region;Random
+Aegean Isles;Random
+Kentriki Ellada;Aluminium;2;3
+Attica;Random
+Voreia Ellada;Steel;2;2
+Albania;Random
+North Macedonia;Copper;2;3
+Kosovo;Random
+Montenegro;Random
+Bosnia;Aluminium;3;4
+Serbia;Random
+Vojvodina;Random
+Croatia;Random
+Slovenia;Random
+Northeast Italy;Gas;5;2
+San-Marino;Random
+Central Italy;Random
+Vatican;Random
+South Italy;Random
+Sardinia and Sicily;Uranium;3;4
+Northwest Italy;Oil;4;3
+Switzerland;Random
+Monaco;Random
+Auvergne-Rhone-Alpes;Random
+Provence-Alpes-Cote d'Azur;Aluminium;3;5
+Corsica;Random
+Occitanie;Random
+Nouvelle-Aquitaine;Random
+Pays de la Loire;Random
+Centre-Val de Loire;Random
+Bourgogne-Franche-Comte;Random
+Grand-Est;Random
+Hauts-de-France;Random
+Ile-de-France;Random
+Normandy;Random
+Brittany;Random
+Andorra;Random
+Northwest Spain;Coal;5;4
+Northeast Spain;Steel;4;4
+East Spain;Random
+Central Spain;Aluminium;3;4
+Madrid;Random
+South Spain;Uranium;4;2
+Canary Islands;Random
+Gibraltar;Random
+Ceuta;Random
+Continental Portugal;Random
+Azores;Random
+Madeira;Random
+Ireland;Uranium;4;3
+North Ireland;Random
+Scotland;Oil;5;4
+Northeast England;Random
+Yorkshire;Random
+Northwest England;Random
+Wales;Coal;6;6
+Southwest England;Random
+West Midlands of England;Coal;6;6
+East Midlands of England;Steel;4;3
+East of England;Steel;4;2
+Southeast England;Steel;5;5
+London;Steel;6;8
+Iceland;Random
+Greenland;Random
+Foroe Islands;Random
+Denmark;Random
+Norway;Oil;5;4
+North Sweden;Uranium;3;3
+South Sweden;Random
+East Sweden;Steel;4;4
+Aland;Random
+Mainland Finland;Steel;3;4
+Estonia;Random
+Latvia;Random
+Lithuania;Random
+Warmia-Mazuria;Random
+Podlaskie;Random
+Lesser Poland;Random
+Mazovia;Random
+Silezia;Random
+Greater Poland;Random
+Pomerania;Random
+Mecklenburg-Vorpommern;Random
+Schleswig-Holstein;Random
+Hamburg;Random
+Niedersachsen;Random
+Nordhein-Westfalen;Coal;4;5
+Hessen;Random
+Thuringen;Random
+Sachsen-Anhalt;Random
+Brandenburg;Random
+Berlin;Random
+Sachsen;Random
+Bayern;Random
+Baden-Wurttemberg;Random
+Rheinland-Pfalz;Uranium;3;4
+Saarland;Steel;6;5
+Luxemburg;Steel;8;10
+Wallonia;Random
+Flanders;Random
+Brussels;Random
+West Netherlands;Random
+South Netherlands;Random
+East Netherlands;Random
+North Netherlands;Gas;3;3
+West Austria;Random
+South Austria;Random
+East Austria;Random
+Bohemia;Steel;5;4
+Moravia;Coal;5;6
+Slovakia;Steel;4;4
+Transdanubia;Gas;3;3
+Central Hungary;Random
+Great Plain and North;Random
+Northwest Romania;Random
+Southwest Romania;Uranium;3;2
+South Romania;Gas;4;4
+East Romania;Oil;3;5
+Nothern and Eastern Bulgaria;Random
+Southern and Western Bulgaria;Random
+Moldavia;Random
+Transnistria;Random
+Southern Ukraine;Steel;5;6
+Crimea;Random
+Eastern Ukraine;Coal;6;6
+Central Ukraine;Random
+Kiev;Random
+Western Ukraine;Random
+Belarus;Random
+Minsk;Random
+Kaliningrad;Random
+Northwest Russia;Aluminium;4;7
+North Russia;Steel;4;4
+Central Russia;Random
+Moscow;Random
+Central Black-Earth;Grain;5;8
+North Caucasus;Oil;5;8
+Volga;Steel;6;8
+Volga-Vyatka;Oil;4;7
+Ural;Steel;8;8
+West Siberia;Oil;5;6
+East Siberia;Coal;4;6
+Far East;Uranium;4;3
+Manchuria;Steel;4;5
+Outer Mongolia;Livestock;1;6
+Hebei;Coal;4;6
+Beijing;Random
+Shanxi;Random
+Shaanxi;Copper;6;6
+Ningxia;Random
+Gansu;Steel;5;5
+Xinjiang;Oil;5;4
+Qinghai;Random
+Tibet;Steel;4;3
+Sichuan;Random
+Yunnan;Uranium;3;4
+Guizhou;Random
+Chongqing;Random
+Hubei;Random
+Henan;Random
+Shandong;Uranium;4;4
+Jiangsu;Coal;3;5
+Anhui;Random
+Jiangxi;Random
+Zhejiang;Random
+Fujian;Random
+Guang dong;Random
+Hong Kong;Random
+Hainan;Random
+Guangxi;Random
+Hunan;Random
+Taiwan;Random
+North Vietnam;Random
+Central Vietnam;Random
+South Vietnam;Random
+Cambodia;Random
+Laos;Random
+Isan;Random
+East Thailand;Random
+Central Thailand;Random
+South Thailand;Random
+North Thailand;Random
+Burma;Uranium;1;1
+Bangladesh;Oil;6;2
+North Eastern India;Oil;4;3
+Eastern India;Coal;5;3
+Central India;Copper;4;6
+Northern India;Random
+Western India;Uranium;3;5
+South India;Oil;5;3
+Sri Lanka;Random
+Nepal;Random
+Bhutan;Random
+Sindh;Random
+Balochistan;Random
+Punjab;Random
+North Pakistan;Random
+Afghanistan;Random
+Tajikistan;Uranium;2;2
+Kyrgyzstan;Random
+Kazakh Desert;Random
+Tyan Shan;Random
+Central Highlands;Uranium;4;4
+North Kazakhstan;Steel;3;4
+Mugodzhar Hills;Random
+Turanian Lowlands;Random
+Uzbekistan;Gas;3;2
+Turkmenistan;Gas;2;2
+Mashhad;Uranium;1;2
+Isfahan;Oil;2;5
+Tehran;Random
+Kermanshah;Oil;3;3
+Tabriz;Oil;3;4
+Azerbaijan;Oil;5;6
+Armenia;Random
+Georgia;Random
+Northern Malaysia;Random
+Malaysian East Coast;Random
+Central Malaysia;Random
+Southern Malaysia;Random
+East Malaysia;Oil;4;3
+Singapore;Random
+Brunei;Gas;4;2
+Sumatra;Oil;3;4
+Java;Random
+Kalimantan;Random
+Bali;Random
+Sulawesi;Random
+Nusa Tenggara;Random
+Maluku;Random
+Papua;Oil;2;3
+Papua New Guinea;Gold;3;2
+Southern Philippines;Random
+Central Philippines;Random
+Northern Philippines;Copper;3;3
+Pyongan;Random
+Baekdu Mountains;Random
+Donghae Coast;Random
+Hwanghae;Random
+Gyeonggi;Random
+Gangwon;Random
+Gyeongsang;Random
+Jeolla;Random
+Chungcheong;Random
+Hokkaido;Random
+Tohoku;Copper;6;2
+Kanto;Uranium;5;3
+Chubu;Random
+Kansai;Random
+Chuhoku;Random
+Shikoku;Random
+Kyushu;Coal;7;2
+Solomon Islands;Copper;3;2
+New Caledonia;Random
+New Zealand;Random
+Fiji;Random
+Victoria;Uranium;2;3
+New South Wales;Oil;3;3
+Queensland;Random
+Northern Territory;Uranium;2;3
+Western Australia;Gold;3;4
+South Australia;Steel;3;2
+East Timor;Random
+Madagascar;Aluminium;3;4
+Falklands;Random
+Mongolia;Livestock;2;6
+Malta;Random

@@ -18,11 +18,12 @@ using PaxApocalytica.Military;
 
 namespace PaxApocalytica
 {
-    public partial class PaxApocalyticaGame : Form
+    public partial class PaxApocalypticaGame : Form
     {
         static byte month = 12;
         static int year = 1991;
         static bool countryIsChosen = false;
+        static string chosenCountry = "";
 
         Bitmap baseBitmapIndexed = PaxApocalytica.Properties.Resources.baseMapBmp; //bmp мало памяти
         Bitmap baseBitmap;      //png много памяти
@@ -39,7 +40,7 @@ namespace PaxApocalytica
         static Color white = Color.White;
 
 
-        public static Dictionary<string, List<Point>> Dictionary_NamesPoints;
+        public static Dictionary<string, Point[]> Dictionary_NamesPoints;
         public static Dictionary<Color, string> Dictionary_ColorName;
         public static Dictionary<string, string[]> Dictionary_NameNeighbours;
         public static Dictionary<string, int> Dictionary_NamePort;
@@ -50,12 +51,18 @@ namespace PaxApocalytica
          *  nukesCount
          *  player/ai
          */
-        public static Dictionary<string,ProvinceCharacteristics> Dictionary_NameCharacteristics;
+        public static Dictionary<string, ProvinceCharacteristics> Dictionary_NameCharacteristics;
+
+        public static Dictionary<string, List<string>> Dictionary_NameArmynames;
+        public static Dictionary<string, Army> Dictionary_ArmynameArmycharacteristics;
 
         public static Dictionary<string, string> Dictionary_NameOwner;
         public static Dictionary<string, string> Dictionary_NameOccupant;
         public static Dictionary<string, CountryCharacteristics> Dictionary_CountrynameCharacteristics;
         public static Dictionary<string, int[]> Dictionary_CountrynameSimpleResources;
+        public static Dictionary<string, int[]> Dictionary_CountrynameSimpleResources_Trade;
+        public static Dictionary<string, int> Dictionary_CountrynameSimpleResources_Trade_ReduceTrade;
+
         public static Dictionary<string, int[]> Dictionary_CountrynameMilitaryResources;
         public static Dictionary<string, Airfield> Dictionary_NameAirfield;
         public static Dictionary<string, SimpleFactory> Dictionary_NameSFactory;
@@ -65,7 +72,7 @@ namespace PaxApocalytica
 
         //Dictionary<string, string> Dictionary_NameController;     //  ai/player
 
-        public PaxApocalyticaGame()
+        public PaxApocalypticaGame()
         {
             baseBitmap = CreateNonIndexedBitmap(baseBitmapIndexed);
             baseBitmapIndexed.Dispose();
@@ -89,47 +96,68 @@ namespace PaxApocalytica
             map = baseBitmap.Clone(rect, 0);
             mapBox.Image = map;
 
-            provinceName.Hide();
+            resourcesManagerBttn.Width = splitterVertical.Panel2.Width;
 
+            provinceName.Hide();
             playerCountry.Text = "Choose your country";
             cash.Hide();
             manpower.Hide();
             provinceName.Hide();
             date.Hide();
+            resourcesManagerBttn.Hide();
 
+            Dictionary_CountrynameSimpleResources_Trade_ReduceTrade = new Dictionary<string, int>();
 
             FileReader.ReadFile_NameOwner();
             FileReader.ReadFile_NameOccupant();
             FileReader.ReadFile_CountrynameCharacterstics();
             FileReader.ReadFile_CountrynameMilResources();
             FileReader.ReadFile_CountrynameSimpleResources();
+            FileReader.ReadFile_CountrynameSimpleResources_Trade();
             FileReader.ReadFile_NameAirfield();
             FileReader.ReadFile_NameSimpleFactory();
             FileReader.ReadFile_NameMilitaryFactory();
             FileReader.ReadFile_NameCharacteristics();
+            FileReader.ReadFile_NameArmynames();
+            FileReader.ReadFile_ArmynameArmycharacteristics();
+
             //не меняются
             FileReader.ReadFile_ColorName();
             FileReader.ReadFile_NamePort();
             FileReader.ReadFile_NameNeighbours();
             FileReader.ReadFile_NamesPoints();
 
-            foreach(var country in Dictionary_CountrynameCharacteristics.Keys) 
-            {
-                Dictionary_CanBuildUnit.Add(country, new bool[27]);
-            }
 
-            if(Form1.path == null)
+
+            if (Form1.path == null)
             {
                 StartCalcualtor.CalculateStartSResources();
                 StartCalcualtor.CalculateStartMResources();
                 StartCalcualtor.CalculateStartManpower();
                 StartCalcualtor.CalculateStartCash();
             }
-            Calculator.RecalculateMaxImport();
-            Calculator.RecalcualteManpower(); 
+            Calculator.RecalculateTradeSlots();
+            Calculator.RecalcualteManpower();
             Calculator.RecalcualteCash();
             Calculator.RecalculateIsFunctioning();
-            Calculator.RecalculateCanBuildUnit();
+
+
+            foreach (var armyName in Dictionary_ArmynameArmycharacteristics.Keys)
+            {
+                if (Dictionary_ArmynameArmycharacteristics[armyName].CheckAllDead())
+                {
+                    Dictionary_ArmynameArmycharacteristics.Remove(armyName);
+                }
+            }
+
+
+            Dictionary_CanBuildUnit = new Dictionary<string, bool[]>();
+            foreach (var country in Dictionary_CountrynameCharacteristics.Keys)
+            {
+                Dictionary_CanBuildUnit.Add(country, new bool[27]);
+                Calculator.RecalculateCanBuildUnit(country);
+            }
+
             DrawStartMap();
             UpdateMap();
         }
@@ -184,6 +212,7 @@ namespace PaxApocalytica
             ResizeRectangle();
             ResizeLabelsAndButtons();
             saveChoice.Width = splitterVertical.Panel2.Width - 14;
+            resourcesManagerBttn.Width = splitterVertical.Panel2.Width;
             UpdateMap();
         }
 
@@ -350,7 +379,8 @@ namespace PaxApocalytica
                     if (!countryIsChosen)
                     {
                         playerCountry.Show();
-                        playerCountry.Text = Dictionary_NameOwner[Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)]];
+                        chosenCountry = Dictionary_NameOwner[Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)]];
+                        playerCountry.Text = chosenCountry;
                         saveChoice.Text = "I want to play as this country";
                     }
                 }
@@ -360,6 +390,8 @@ namespace PaxApocalytica
                     if (!countryIsChosen)
                     {
                         playerCountry.Hide();
+                        playerCountry.Text = "Choose your country";
+                        chosenCountry = "";
                         saveChoice.Text = "I want to play as ...";
                     }
                 }
@@ -477,13 +509,17 @@ namespace PaxApocalytica
 
         private void saveChoice_Click(object sender, EventArgs e)
         {
-            countryIsChosen = true;
-            saveChoice.Hide();
-            saveChoice.Dispose();
-            cash.Show();
-            manpower.Show();
-            date.Show();
-            UpdatePlayerData();
+            if (chosenCountry != "")
+            {
+                countryIsChosen = true;
+                saveChoice.Hide();
+                saveChoice.Dispose();
+                cash.Show();
+                manpower.Show();
+                date.Show();
+                UpdatePlayerData();
+                resourcesManagerBttn.Show();
+            }
         }
 
         private void UpdatePlayerData()
@@ -502,6 +538,15 @@ namespace PaxApocalytica
             if (month == 9) { date.Text = "September " + year; }
             if (month == 10) { date.Text = "October " + year; }
             if (month == 11) { date.Text = "November " + year; }
+        }
+
+        private void resourcesManagerBttn_Click(object sender, EventArgs e)
+        {
+            if (countryIsChosen) 
+            {
+                Resource_Management rM = new Resource_Management(playerCountry.Text);
+                rM.Show();
+            }
         }
     }
 }

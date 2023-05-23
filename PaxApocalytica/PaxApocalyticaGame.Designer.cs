@@ -1,6 +1,6 @@
 ﻿namespace PaxApocalytica
 {
-    partial class PaxApocalyticaGame
+    partial class PaxApocalypticaGame
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             splitterVertical = new SplitContainer();
             mapBox = new PictureBox();
+            resourcesManagerBttn = new Button();
+            date = new Label();
             saveChoice = new Button();
             manpower = new Label();
             playerCountry = new Label();
             cash = new Label();
             provinceName = new Label();
             folderBrowserDialog1 = new FolderBrowserDialog();
-            date = new Label();
             ((System.ComponentModel.ISupportInitialize)splitterVertical).BeginInit();
             splitterVertical.Panel1.SuspendLayout();
             splitterVertical.Panel2.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // splitterVertical.Panel2
             // 
+            splitterVertical.Panel2.Controls.Add(resourcesManagerBttn);
             splitterVertical.Panel2.Controls.Add(date);
             splitterVertical.Panel2.Controls.Add(saveChoice);
             splitterVertical.Panel2.Controls.Add(manpower);
@@ -77,6 +79,27 @@
             mapBox.TabIndex = 0;
             mapBox.TabStop = false;
             mapBox.MouseClick += mapBox_MouseClick;
+            // 
+            // resourcesManagerBttn
+            // 
+            resourcesManagerBttn.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            resourcesManagerBttn.Location = new Point(7, 123);
+            resourcesManagerBttn.Name = "resourcesManagerBttn";
+            resourcesManagerBttn.Size = new Size(350, 47);
+            resourcesManagerBttn.TabIndex = 6;
+            resourcesManagerBttn.Text = "Resource management";
+            resourcesManagerBttn.UseVisualStyleBackColor = true;
+            resourcesManagerBttn.Click += resourcesManagerBttn_Click;
+            // 
+            // date
+            // 
+            date.AutoSize = true;
+            date.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            date.Location = new Point(3, 84);
+            date.Name = "date";
+            date.Size = new Size(53, 21);
+            date.TabIndex = 5;
+            date.Text = "label1";
             // 
             // saveChoice
             // 
@@ -131,23 +154,13 @@
             provinceName.TabIndex = 0;
             provinceName.Text = "provinceName";
             // 
-            // date
-            // 
-            date.AutoSize = true;
-            date.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            date.Location = new Point(3, 84);
-            date.Name = "date";
-            date.Size = new Size(53, 21);
-            date.TabIndex = 5;
-            date.Text = "label1";
-            // 
-            // PaxApocalyticaGame
+            // PaxApocalypticaGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
             Controls.Add(splitterVertical);
-            Name = "PaxApocalyticaGame";
+            Name = "PaxApocalypticaGame";
             Text = "PaxApocalyticaGame";
             FormClosing += PaxApocalyticaGame_FormClosing;
             splitterVertical.Panel1.ResumeLayout(false);
@@ -170,5 +183,6 @@
         private Label manpower;
         private Button saveChoice;
         private Label date;
+        private Button resourcesManagerBttn;
     }
 }

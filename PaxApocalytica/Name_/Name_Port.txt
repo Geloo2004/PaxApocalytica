@@ -1,0 +1,289 @@
+Alaska;1
+Hawaii;1
+Northern Territories;1
+West Coast Pacific;1
+Prairie Provinces;1
+Central Canada;1
+Atlantic Region;1
+Georgia;1
+Pacific;10
+West South Central;1
+East South Central;1
+New England;1
+Mid-Atlantic;10
+South Atlantic;10
+Noroeste;1
+Noreste;1
+Occidente;1
+Oriente;1
+Sureste;1
+Suroeste;1
+Guatemala;1
+Belize;1
+Gonduras;1
+Salvador;1
+Nicaragua;1
+Costa Rica;1
+Panama;10
+Jamaica;1
+West Cuba;1
+Central Cuba;1
+East Cuba;1
+Bahamas;1
+Puerto Rico;1
+British Territories In the North Atlantic Ocean;1
+Haiti;1
+Dominican Republic;1
+Saint Kitts and Nevis;1
+Antigua and Barbuda;1
+Guadeloupe and Martinique;1
+Dominica;1
+Saint Lucia;1
+Saint Vincent and the Grenadines;1
+Barbados;1
+Grenada;1
+Trinidad and Tobago;1
+East Venezuela;1
+Caracas;1
+West Venezuela;1
+Region Caribe;1
+Region Pacifica;1
+Ecuador Costa;1
+Galapagos Islands;1
+Peru Coast;1
+North Chile;1
+Central Chile;1
+South Chile;1
+Patagonia;1
+Pampas;1
+Uruguay;1
+South Brazil;1
+Southeast Brazil;1
+Northeast Brazil;1
+French guiana;1
+Suriname;1
+Guyana;1
+Cabo Verde;1
+West Sakhara;1
+Mavritaniya;1
+Senegal;1
+Gambia;1
+Guinea-Bissau;1
+Guinea;1
+Sierra Leone;1
+Liberia;1
+Cote d'Ivoire;1
+Gana;1
+Togo;1
+Benin;1
+South West Nigeria;1
+South Nigeria;1
+West Cameroon;1
+North Brazil;1
+South Cameroon;1
+Gabon;1
+Equatorial Guinea;1
+Sao Tome;1
+Congo;1
+Democratic Republic of the Congo;1
+Angola;1
+Luanda;5
+Namibia;1
+Cape;1
+KwaZulu Natal;1
+Mozambique;1
+Tanzania;1
+Kenya;5
+Somalia;1
+Djibouti;2
+Eritrea;1
+Northern Sudan;1
+Algeria;1
+Marocco;1
+Tunisia;1
+Lybia;1
+Lower Egypt;10
+Red Sea Coast;1
+Sinai;1
+Israel;1
+Palestine;1
+North Saudi Arabia;1
+West Saudi Arabia;1
+South Saudi Arabia;1
+East Saudi Arabia;1
+Yemen;1
+Oman;5
+United Arab Emirates;10
+Qatar;1
+Bahrain;1
+Kuwait;1
+Southern Iraq;1
+Coastal Syria;1
+Lebanon;1
+Cyprus;1
+Mediterranean Region;1
+East Black Sea Region;1
+West Black Sea Region;1
+Aegean Region;1
+East Marmara Region;1
+West Marmara Region;1
+Istanbul Region;10
+Aegean Isles;1
+Kentriki Ellada;1
+Attica;5
+Voreia Ellada;1
+Albania;1
+Montenegro;1
+Bosnia;1
+Croatia;1
+Slovenia;1
+Northeast Italy;1
+Central Italy;1
+South Italy;1
+Sardinia and Sicily;1
+Northwest Italy;1
+Monaco;1
+Provence-Alpes-Cote d'Azur;1
+Corsica;1
+Occitanie;1
+Nouvelle-Aquitaine;1
+Pays de la Loire;1
+Hauts-de-France;1
+Normandy;1
+Brittany;1
+Northwest Spain;1
+Northeast Spain;1
+East Spain;1
+South Spain;5
+Canary Islands;1
+Gibraltar;5
+Ceuta;5
+Continental Portugal;1
+Azores;1
+Madeira;1
+Ireland;1
+North Ireland;1
+Scotland;1
+Northeast England;1
+Yorkshire;1
+Northwest England;1
+Wales;1
+Southwest England;1
+East of England;1
+Southeast England;1
+London;10
+Iceland;1
+Greenland;1
+Foroe Islands;1
+Denmark;1
+Norway;1
+North Sweden;1
+South Sweden;1
+East Sweden;1
+Aland;1
+Mainland Finland;1
+Estonia;1
+Latvia;1
+Lithuania;1
+Pomerania;1
+Mecklenburg-Vorpommern;1
+Schleswig-Holstein;1
+Hamburg;10
+Niedersachsen;1
+Sachsen-Anhalt;1
+Flanders;1
+West Netherlands;15
+East Netherlands;1
+North Netherlands;1
+East Romania;1
+Nothern and Eastern Bulgaria;1
+Southern Ukraine;1
+Crimea;5
+Eastern Ukraine;1
+Kaliningrad;1
+Northwest Russia;5
+North Russia;5
+North Caucasus;5
+Far East;5
+Manchuria;1
+Hebei;10
+Shandong;1
+Jiangsu;10
+Zhejiang;10
+Fujian;1
+Guang dong;1
+Hong Kong;15
+Hainan;1
+Guangxi;1
+Taiwan;5
+North Vietnam;1
+Central Vietnam;1
+South Vietnam;1
+Cambodia;1
+East Thailand;1
+Central Thailand;1
+South Thailand;1
+Burma;1
+Bangladesh;10
+North Eastern India;1
+Eastern India;1
+Central India;1
+Northern India;1
+Western India;10
+South India;1
+Sri Lanka;10
+Sindh;1
+Balochistan;1
+Mashhad;1
+Isfahan;1
+Kermanshah;1
+Northern Malaysia;1
+Malaysian East Coast;1
+Central Malaysia;1
+Southern Malaysia;1
+East Malaysia;1
+Singapore;15
+Brunei;1
+Sumatra;1
+Java;1
+Kalimantan;1
+Bali;1
+Sulawesi;1
+Nusa Tenggara;1
+Maluku;1
+Papua;1
+Papua New Guinea;1
+Southern Philippines;1
+Central Philippines;1
+Northern Philippines;1
+Pyongan;1
+Baekdu Mountains;1
+Donghae Coast;1
+Hwanghae;1
+Gyeonggi;1
+Gangwon;1
+Gyeongsang;1
+Jeolla;1
+Chungcheong;1
+Hokkaido;1
+Tohoku;1
+Kanto;5
+Chubu;1
+Kansai;1
+Chuhoku;1
+Shikoku;1
+Kyushu;1
+Solomon Islands;1
+New Caledonia;1
+New Zealand;1
+Fiji;1
+Victoria;5
+New South Wales;1
+Queensland;1
+Northern Territory;1
+Western Australia;1
+South Australia;1
+East Timor;1
+Madagascar;1
+Falklands;1
+Malta;1

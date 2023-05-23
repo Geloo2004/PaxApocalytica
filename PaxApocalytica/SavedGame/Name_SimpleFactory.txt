@@ -1,8 +1,8 @@
 Alaska;Gold;2;4
-Hawaii;Grain;2;1
-Burkina-Faso;Aluminium;1;1
+Hawaii;Gold;2;1
+Burkina-Faso;Grain;1;1
 Northern Territories;Uranium;2;3
-West Coast Pacific;Gold;1;1
+West Coast Pacific;Copper;2;1
 Prairie Provinces;Grain;1;1
 Central Canada;Copper;3;3
 Atlantic Region;Uranium;3;3
@@ -10,322 +10,322 @@ Pacific;Gold;6;4
 Mountain;Uranium;3;4
 West North Central;Gas;5;3
 West South Central;Gas;4;5
-East North Central;Coal;2;1
-East South Central;Grain;2;1
-New England;Livestock;2;1
+East North Central;Aluminium;2;1
+East South Central;Copper;2;1
+New England;Steel;2;1
 Mid-Atlantic;Coal;4;3
 South Atlantic;Steel;4;5
 Noroeste;Oil;3;3
 Noreste;Coal;2;4
-Occidente;Grain;1;1
+Occidente;Grain;2;1
 Oriente;Grain;2;1
 Centronorte;Uranium;3;2
-Centrosur;Coal;1;1
-Sureste;Grain;2;1
+Centrosur;Livestock;2;1
+Sureste;Steel;1;1
 Suroeste;Steel;3;2
-Guatemala;Livestock;1;1
-Belize;Copper;2;1
-Gonduras;Aluminium;1;1
-Salvador;Coal;1;1
-Nicaragua;Aluminium;1;1
+Guatemala;Copper;2;1
+Belize;Steel;2;1
+Gonduras;Grain;2;1
+Salvador;Copper;1;1
+Nicaragua;Grain;2;1
 Costa Rica;Grain;1;1
 Panama;Copper;2;2
 Jamaica;Aluminium;2;3
-West Cuba;Aluminium;1;1
-Central Cuba;Coal;2;1
-East Cuba;Grain;1;1
-Bahamas;Livestock;1;1
-Puerto Rico;Livestock;2;1
-British Territories In the North Atlantic Ocean;Copper;1;1
+West Cuba;Grain;1;1
+Central Cuba;Copper;2;1
+East Cuba;Aluminium;2;1
+Bahamas;Copper;1;1
+Puerto Rico;Livestock;1;1
+British Territories In the North Atlantic Ocean;Aluminium;2;1
 Haiti;Aluminium;2;3
-Dominican Republic;Grain;1;1
-Saint Kitts and Nevis;Oil;1;1
-Antigua and Barbuda;Oil;2;1
-Guadeloupe and Martinique;Grain;2;1
-Dominica;Copper;2;1
-Saint Lucia;Coal;1;1
-Saint Vincent and the Grenadines;Livestock;1;1
-Barbados;Copper;1;1
+Dominican Republic;Gold;1;1
+Saint Kitts and Nevis;Grain;1;1
+Antigua and Barbuda;Livestock;1;1
+Guadeloupe and Martinique;Steel;1;1
+Dominica;Livestock;1;1
+Saint Lucia;Steel;1;1
+Saint Vincent and the Grenadines;Livestock;2;1
+Barbados;Aluminium;2;1
 Grenada;Grain;1;1
-Trinidad and Tobago;Gold;1;1
-East Venezuela;Livestock;2;1
+Trinidad and Tobago;Aluminium;1;1
+East Venezuela;Copper;1;1
 Caracas;Oil;2;2
-West Venezuela;Steel;2;1
+West Venezuela;Copper;1;1
 Region Caribe;Oil;3;4
-Region Pacifica;Copper;1;1
-Region Andina;Grain;1;1
-Region Llanos Orientales;Grain;2;1
-Region Amazonia;Steel;2;1
+Region Pacifica;Steel;2;1
+Region Andina;Livestock;2;1
+Region Llanos Orientales;Copper;2;1
+Region Amazonia;Grain;1;1
 Ecuador Costa;Oil;1;3
-Ecuador Sierra;Livestock;1;1
-Ecuador Oriente;Steel;1;1
-Galapagos Islands;Copper;1;1
-Peru Coast;Livestock;1;1
+Ecuador Sierra;Steel;2;1
+Ecuador Oriente;Copper;1;1
+Galapagos Islands;Coal;2;1
+Peru Coast;Copper;1;1
 Peru Andes;Uranium;2;1
 Peru Amazonia;Oil;2;3
-Bolivia;Grain;1;1
+Bolivia;Grain;2;1
 North Chile;Steel;3;4
-Central Chile;Aluminium;2;1
+Central Chile;Copper;1;1
 South Chile;Coal;3;3
 Patagonia;Oil;1;2
 Pampas;Coal;2;2
-Mesopotamia;Copper;1;1
-Cuyo;Livestock;1;1
+Mesopotamia;Grain;1;1
+Cuyo;Livestock;2;1
 Andean Northwest;Oil;1;1
 Paraguay;Copper;1;1
-Uruguay;Aluminium;2;1
-South Brazil;Aluminium;1;1
+Uruguay;Livestock;2;1
+South Brazil;Coal;1;1
 Southeast Brazil;Aluminium;2;3
 Central-West Brazil;Steel;3;3
 Northeast Brazil;Copper;2;3
 North Brazil;Oil;3;4
 French guiana;Aluminium;4;4
-Suriname;Grain;2;1
+Suriname;Copper;1;1
 Guyana;Aluminium;1;1
-Cabo Verde;Oil;1;1
-West Sakhara;Livestock;1;1
-Mavritaniya;Grain;1;1
-Senegal;Grain;1;1
-Gambia;Coal;1;1
-Guinea-Bissau;Aluminium;1;1
-Guinea;Grain;1;1
-Sierra Leone;Grain;2;1
-Liberia;Copper;2;1
+Cabo Verde;Livestock;1;1
+West Sakhara;Grain;2;1
+Mavritaniya;Livestock;2;1
+Senegal;Steel;2;1
+Gambia;Steel;2;1
+Guinea-Bissau;Aluminium;2;1
+Guinea;Grain;2;1
+Sierra Leone;Aluminium;2;1
+Liberia;Grain;2;1
 Cote d'Ivoire;Gold;4;4
-Gana;Grain;2;1
+Gana;Grain;1;1
 Togo;Aluminium;1;2
-Benin;Copper;1;1
-South West Nigeria;Grain;1;1
+Benin;Grain;1;1
+South West Nigeria;Copper;1;1
 South Nigeria;Oil;2;2
-South East Nigeria;Livestock;1;1
-North Central Nigeria;Grain;1;1
-North West Nigeria;Grain;1;1
+South East Nigeria;Oil;2;1
+North Central Nigeria;Gold;1;1
+North West Nigeria;Livestock;1;1
 North East Nigeria;Grain;2;1
 North Cameroon;Aluminium;1;2
-Central Cameroon;Livestock;1;1
-West Cameroon;Steel;1;1
-South Cameroon;Copper;1;1
+Central Cameroon;Grain;2;1
+West Cameroon;Grain;2;1
+South Cameroon;Gold;2;1
 Gabon;Oil;2;2
-Equatorial Guinea;Aluminium;1;1
-Sao Tome;Steel;1;1
+Equatorial Guinea;Livestock;1;1
+Sao Tome;Livestock;2;1
 Congo;Steel;1;2
-Democratic Republic of the Congo;Coal;1;1
+Democratic Republic of the Congo;Grain;2;1
 Angola;Oil;1;2
-Luanda;Grain;1;1
+Luanda;Aluminium;2;1
 Namibia;Gas;1;1
-Transvaal;Aluminium;1;1
+Transvaal;Copper;1;1
 Cape;Copper;2;3
-Free State;Aluminium;1;1
+Free State;Livestock;1;1
 KwaZulu Natal;Copper;3;3
-Lesotho;Steel;2;1
-Eswatini;Steel;1;1
-Botswana;Gold;1;1
-Zimbabwe;Aluminium;1;1
+Lesotho;Livestock;1;1
+Eswatini;Copper;2;1
+Botswana;Livestock;1;1
+Zimbabwe;Grain;2;1
 Mozambique;Steel;2;2
-Malawi;Steel;2;1
+Malawi;Grain;2;1
 Zambia;Copper;1;1
-Tanzania;Coal;2;1
-Burundi;Aluminium;2;1
-Rwanda;Grain;2;1
+Tanzania;Grain;1;1
+Burundi;Grain;1;1
+Rwanda;Livestock;2;1
 Uganda;Grain;2;1
-Kenya;Copper;2;1
-Somalia;Steel;1;1
-Somali;Grain;1;1
-Oromiya;Coal;1;1
-South Ethiopia;Coal;2;1
-North Ethiopia;Steel;2;1
-Djibouti;Copper;1;1
-Eritrea;Aluminium;2;1
-Northern Sudan;Grain;2;1
+Kenya;Aluminium;1;1
+Somalia;Grain;2;1
+Somali;Copper;1;1
+Oromiya;Grain;1;1
+South Ethiopia;Grain;2;1
+North Ethiopia;Copper;2;1
+Djibouti;Grain;2;1
+Eritrea;Aluminium;1;1
+Northern Sudan;Grain;1;1
 Eastern Sudan;Copper;1;1
-Central Sudan;Grain;1;1
-Kurdufan;Aluminium;1;1
-Darfur;Grain;1;1
-South Sudan;Copper;1;1
-Central African Republic;Grain;1;1
-Chad;Gold;2;1
-Niger;Copper;1;1
+Central Sudan;Copper;1;1
+Kurdufan;Grain;1;1
+Darfur;Coal;1;1
+South Sudan;Livestock;1;1
+Central African Republic;Livestock;1;1
+Chad;Grain;1;1
+Niger;Aluminium;2;1
 Mali;Aluminium;2;2
 Algeria;Uranium;2;3
-Marocco;Steel;1;1
+Marocco;Copper;1;1
 Tunisia;Steel;2;2
 Lybia;Oil;1;2
-Lower Egypt;Grain;1;1
+Lower Egypt;Gold;1;1
 Western Desert;Oil;2;3
-Middle Egypt;Livestock;1;1
-Upper Egypt;Livestock;1;1
-Red Sea Coast;Steel;1;1
-Sinai;Copper;1;1
-Israel;Grain;1;1
+Middle Egypt;Grain;1;1
+Upper Egypt;Grain;2;1
+Red Sea Coast;Grain;1;1
+Sinai;Grain;1;1
+Israel;Aluminium;1;1
 Palestine;Grain;2;1
-Jordan;Grain;2;1
-North Saudi Arabia;Copper;2;1
+Jordan;Aluminium;2;1
+North Saudi Arabia;Oil;2;1
 West Saudi Arabia;Grain;2;1
-South Saudi Arabia;Steel;2;1
-Central Saudi Arabia;Grain;2;1
+South Saudi Arabia;Aluminium;1;1
+Central Saudi Arabia;Grain;1;1
 East Saudi Arabia;Oil;3;4
-Yemen;Coal;1;1
+Yemen;Aluminium;2;1
 Oman;Oil;3;2
 United Arab Emirates;Oil;5;1
-Qatar;Steel;1;1
-Bahrain;Coal;2;1
-Kuwait;Livestock;1;1
+Qatar;Copper;2;1
+Bahrain;Oil;2;1
+Kuwait;Aluminium;2;1
 Southern Iraq;Grain;1;1
 Middle Euphartes;Oil;5;5
-Central Iraq;Grain;2;1
-Nothern Iraq;Copper;2;1
-East Syria;Grain;1;1
-Aleppo;Steel;1;1
-South Syria;Oil;1;1
-Coastal Syria;Copper;1;1
-Lebanon;Livestock;1;1
-Cyprus;Coal;1;1
-Mediterranean Region;Copper;2;1
-Southeast Anatolia Region;Copper;1;1
+Central Iraq;Steel;2;1
+Nothern Iraq;Grain;2;1
+East Syria;Livestock;2;1
+Aleppo;Steel;2;1
+South Syria;Copper;2;1
+Coastal Syria;Livestock;2;1
+Lebanon;Livestock;2;1
+Cyprus;Grain;1;1
+Mediterranean Region;Livestock;1;1
+Southeast Anatolia Region;Livestock;2;1
 Central East Anatolia Region;Grain;2;1
-Northeast Anatolia Region;Steel;1;1
-East Black Sea Region;Aluminium;1;1
-Central Anatolia Region;Copper;2;1
+Northeast Anatolia Region;Copper;2;1
+East Black Sea Region;Grain;1;1
+Central Anatolia Region;Gold;2;1
 West Black Sea Region;Coal;4;3
-West Anatolia Region;Coal;2;1
-Aegean Region;Copper;1;1
-East Marmara Region;Copper;2;1
-West Marmara Region;Aluminium;1;1
-Istanbul Region;Livestock;2;1
-Aegean Isles;Grain;1;1
+West Anatolia Region;Steel;1;1
+Aegean Region;Coal;2;1
+East Marmara Region;Livestock;2;1
+West Marmara Region;Steel;1;1
+Istanbul Region;Copper;2;1
+Aegean Isles;Copper;2;1
 Kentriki Ellada;Aluminium;2;3
-Attica;Grain;1;1
+Attica;Coal;2;1
 Voreia Ellada;Steel;2;2
-Albania;Gold;1;1
+Albania;Grain;1;1
 North Macedonia;Copper;2;3
-Kosovo;Grain;1;1
-Montenegro;Copper;1;1
+Kosovo;Grain;2;1
+Montenegro;Coal;1;1
 Bosnia;Aluminium;3;4
-Serbia;Grain;2;1
-Vojvodina;Grain;2;1
-Croatia;Steel;1;1
-Slovenia;Steel;2;1
+Serbia;Copper;2;1
+Vojvodina;Aluminium;2;1
+Croatia;Livestock;1;1
+Slovenia;Coal;1;1
 Northeast Italy;Gas;5;2
-San-Marino;Gold;1;1
-Central Italy;Aluminium;2;1
-Vatican;Steel;1;1
-South Italy;Gold;1;1
+San-Marino;Grain;2;1
+Central Italy;Grain;2;1
+Vatican;Steel;2;1
+South Italy;Grain;2;1
 Sardinia and Sicily;Uranium;3;4
 Northwest Italy;Oil;4;3
-Switzerland;Oil;1;1
+Switzerland;Coal;1;1
 Monaco;Grain;1;1
-Auvergne-Rhone-Alpes;Livestock;1;1
+Auvergne-Rhone-Alpes;Grain;1;1
 Provence-Alpes-Cote d'Azur;Aluminium;3;5
-Corsica;Steel;2;1
-Occitanie;Oil;1;1
-Nouvelle-Aquitaine;Aluminium;1;1
-Pays de la Loire;Copper;1;1
-Centre-Val de Loire;Grain;2;1
-Bourgogne-Franche-Comte;Livestock;2;1
-Grand-Est;Livestock;2;1
-Hauts-de-France;Livestock;1;1
-Ile-de-France;Coal;2;1
-Normandy;Grain;2;1
-Brittany;Gold;1;1
-Andorra;Grain;2;1
+Corsica;Oil;1;1
+Occitanie;Grain;1;1
+Nouvelle-Aquitaine;Coal;1;1
+Pays de la Loire;Aluminium;2;1
+Centre-Val de Loire;Coal;1;1
+Bourgogne-Franche-Comte;Aluminium;1;1
+Grand-Est;Aluminium;2;1
+Hauts-de-France;Grain;1;1
+Ile-de-France;Grain;2;1
+Normandy;Coal;2;1
+Brittany;Gold;2;1
+Andorra;Livestock;1;1
 Northwest Spain;Coal;5;4
 Northeast Spain;Steel;4;4
-East Spain;Grain;1;1
+East Spain;Aluminium;2;1
 Central Spain;Aluminium;3;4
-Madrid;Livestock;2;1
+Madrid;Oil;1;1
 South Spain;Uranium;4;2
 Canary Islands;Grain;2;1
-Gibraltar;Copper;1;1
-Ceuta;Livestock;2;1
-Continental Portugal;Copper;1;1
-Azores;Grain;1;1
-Madeira;Copper;1;1
+Gibraltar;Grain;1;1
+Ceuta;Steel;1;1
+Continental Portugal;Livestock;2;1
+Azores;Coal;1;1
+Madeira;Aluminium;2;1
 Ireland;Uranium;4;3
-North Ireland;Grain;2;1
+North Ireland;Coal;1;1
 Scotland;Oil;5;4
-Northeast England;Grain;2;1
-Yorkshire;Oil;1;1
-Northwest England;Livestock;1;1
+Northeast England;Aluminium;2;1
+Yorkshire;Grain;1;1
+Northwest England;Gold;1;1
 Wales;Coal;6;6
-Southwest England;Livestock;1;1
+Southwest England;Steel;2;1
 West Midlands of England;Coal;6;6
 East Midlands of England;Steel;4;3
 East of England;Steel;4;2
 Southeast England;Steel;5;5
 London;Steel;6;8
-Iceland;Oil;1;1
-Greenland;Livestock;1;1
-Foroe Islands;Grain;2;1
-Denmark;Gold;1;1
+Iceland;Livestock;1;1
+Greenland;Copper;2;1
+Foroe Islands;Coal;1;1
+Denmark;Grain;2;1
 Norway;Oil;5;4
 North Sweden;Uranium;3;3
-South Sweden;Grain;1;1
+South Sweden;Aluminium;2;1
 East Sweden;Steel;4;4
 Aland;Grain;1;1
 Mainland Finland;Steel;3;4
-Estonia;Gold;1;1
-Latvia;Grain;1;1
-Lithuania;Steel;1;1
-Warmia-Mazuria;Oil;1;1
-Podlaskie;Grain;2;1
-Lesser Poland;Livestock;1;1
+Estonia;Coal;1;1
+Latvia;Coal;2;1
+Lithuania;Copper;1;1
+Warmia-Mazuria;Copper;1;1
+Podlaskie;Coal;2;1
+Lesser Poland;Gold;2;1
 Mazovia;Steel;1;1
 Silezia;Livestock;1;1
-Greater Poland;Coal;1;1
-Pomerania;Copper;2;1
-Mecklenburg-Vorpommern;Aluminium;1;1
-Schleswig-Holstein;Steel;1;1
-Hamburg;Grain;2;1
-Niedersachsen;Copper;2;1
+Greater Poland;Grain;2;1
+Pomerania;Aluminium;1;1
+Mecklenburg-Vorpommern;Copper;2;1
+Schleswig-Holstein;Livestock;2;1
+Hamburg;Aluminium;2;1
+Niedersachsen;Grain;2;1
 Nordhein-Westfalen;Coal;4;5
-Hessen;Steel;2;1
-Thuringen;Gold;1;1
-Sachsen-Anhalt;Copper;1;1
+Hessen;Aluminium;1;1
+Thuringen;Gold;2;1
+Sachsen-Anhalt;Copper;2;1
 Brandenburg;Copper;1;1
-Berlin;Coal;1;1
-Sachsen;Copper;1;1
-Bayern;Steel;1;1
+Berlin;Livestock;2;1
+Sachsen;Livestock;2;1
+Bayern;Aluminium;1;1
 Baden-Wurttemberg;Grain;1;1
 Rheinland-Pfalz;Uranium;3;4
 Saarland;Steel;6;5
 Luxemburg;Steel;8;10
-Wallonia;Grain;1;1
-Flanders;Coal;2;1
-Brussels;Copper;2;1
-West Netherlands;Grain;2;1
-South Netherlands;Gold;1;1
-East Netherlands;Grain;1;1
+Wallonia;Livestock;2;1
+Flanders;Grain;2;1
+Brussels;Aluminium;2;1
+West Netherlands;Aluminium;2;1
+South Netherlands;Copper;2;1
+East Netherlands;Livestock;2;1
 North Netherlands;Gas;3;3
-West Austria;Aluminium;2;1
-South Austria;Copper;2;1
-East Austria;Grain;1;1
+West Austria;Livestock;2;1
+South Austria;Grain;1;1
+East Austria;Grain;2;1
 Bohemia;Steel;5;4
 Moravia;Coal;5;6
 Slovakia;Steel;4;4
 Transdanubia;Gas;3;3
-Central Hungary;Grain;1;1
-Great Plain and North;Aluminium;2;1
-Northwest Romania;Livestock;2;1
+Central Hungary;Copper;1;1
+Great Plain and North;Steel;1;1
+Northwest Romania;Grain;2;1
 Southwest Romania;Uranium;3;2
 South Romania;Gas;4;4
 East Romania;Oil;3;5
-Nothern and Eastern Bulgaria;Livestock;2;1
-Southern and Western Bulgaria;Steel;1;1
+Nothern and Eastern Bulgaria;Coal;1;1
+Southern and Western Bulgaria;Aluminium;1;1
 Moldavia;Grain;1;1
-Transnistria;Copper;2;1
+Transnistria;Grain;2;1
 Southern Ukraine;Steel;5;6
-Crimea;Grain;1;1
+Crimea;Livestock;2;1
 Eastern Ukraine;Coal;6;6
-Central Ukraine;Steel;2;1
-Kiev;Grain;2;1
-Western Ukraine;Aluminium;2;1
-Belarus;Aluminium;2;1
-Minsk;Livestock;1;1
-Kaliningrad;Grain;2;1
+Central Ukraine;Copper;2;1
+Kiev;Grain;1;1
+Western Ukraine;Livestock;2;1
+Belarus;Aluminium;1;1
+Minsk;Livestock;2;1
+Kaliningrad;Aluminium;2;1
 Northwest Russia;Aluminium;4;7
 North Russia;Steel;4;4
-Central Russia;Copper;2;1
-Moscow;Aluminium;1;1
+Central Russia;Coal;1;1
+Moscow;Steel;1;1
 Central Black-Earth;Grain;5;8
 North Caucasus;Oil;5;8
 Volga;Steel;6;8
@@ -337,124 +337,124 @@ Far East;Uranium;4;3
 Manchuria;Steel;4;5
 Outer Mongolia;Livestock;1;6
 Hebei;Coal;4;6
-Beijing;Grain;2;1
-Shanxi;Coal;2;1
+Beijing;Livestock;1;1
+Shanxi;Copper;1;1
 Shaanxi;Copper;6;6
-Ningxia;Copper;1;1
-Gansu;Copper;1;1
+Ningxia;Grain;1;1
+Gansu;Steel;5;5
 Xinjiang;Oil;5;4
-Qinghai;Grain;2;1
-Tibet;Grain;2;1
-Sichuan;Grain;1;1
+Qinghai;Livestock;1;1
+Tibet;Steel;4;3
+Sichuan;Livestock;2;1
 Yunnan;Uranium;3;4
 Guizhou;Grain;2;1
-Chongqing;Grain;1;1
-Hubei;Livestock;2;1
-Henan;Copper;1;1
+Chongqing;Oil;2;1
+Hubei;Copper;2;1
+Henan;Coal;2;1
 Shandong;Uranium;4;4
 Jiangsu;Coal;3;5
-Anhui;Livestock;2;1
-Jiangxi;Steel;2;1
-Zhejiang;Steel;1;1
-Fujian;Grain;1;1
-Guang dong;Grain;2;1
-Hong Kong;Copper;2;1
-Hainan;Aluminium;2;1
-Guangxi;Livestock;1;1
-Hunan;Livestock;2;1
+Anhui;Grain;1;1
+Jiangxi;Gold;1;1
+Zhejiang;Gold;2;1
+Fujian;Grain;2;1
+Guang dong;Coal;2;1
+Hong Kong;Livestock;2;1
+Hainan;Oil;2;1
+Guangxi;Grain;2;1
+Hunan;Coal;1;1
 Taiwan;Copper;1;1
-North Vietnam;Livestock;2;1
-Central Vietnam;Oil;1;1
-South Vietnam;Steel;1;1
-Cambodia;Coal;1;1
-Laos;Coal;1;1
-Isan;Grain;1;1
-East Thailand;Grain;1;1
-Central Thailand;Coal;1;1
+North Vietnam;Grain;1;1
+Central Vietnam;Coal;2;1
+South Vietnam;Coal;2;1
+Cambodia;Gold;2;1
+Laos;Copper;2;1
+Isan;Coal;1;1
+East Thailand;Copper;2;1
+Central Thailand;Copper;1;1
 South Thailand;Grain;1;1
-North Thailand;Aluminium;2;1
+North Thailand;Coal;2;1
 Burma;Uranium;1;1
 Bangladesh;Oil;6;2
 North Eastern India;Oil;4;3
 Eastern India;Coal;5;3
 Central India;Copper;4;6
-Northern India;Grain;1;1
+Northern India;Grain;2;1
 Western India;Uranium;3;5
 South India;Oil;5;3
-Sri Lanka;Steel;2;1
-Nepal;Copper;2;1
-Bhutan;Copper;2;1
-Sindh;Grain;1;1
-Balochistan;Copper;2;1
-Punjab;Copper;2;1
-North Pakistan;Steel;1;1
-Afghanistan;Aluminium;1;1
+Sri Lanka;Grain;1;1
+Nepal;Copper;1;1
+Bhutan;Grain;2;1
+Sindh;Oil;1;1
+Balochistan;Coal;1;1
+Punjab;Oil;1;1
+North Pakistan;Aluminium;1;1
+Afghanistan;Copper;2;1
 Tajikistan;Uranium;2;2
 Kyrgyzstan;Steel;1;1
-Kazakh Desert;Grain;2;1
+Kazakh Desert;Aluminium;2;1
 Tyan Shan;Grain;2;1
 Central Highlands;Uranium;4;4
 North Kazakhstan;Steel;3;4
-Mugodzhar Hills;Aluminium;1;1
+Mugodzhar Hills;Coal;2;1
 Turanian Lowlands;Grain;1;1
 Uzbekistan;Gas;3;2
 Turkmenistan;Gas;2;2
 Mashhad;Uranium;1;2
 Isfahan;Oil;2;5
-Tehran;Aluminium;2;1
+Tehran;Grain;2;1
 Kermanshah;Oil;3;3
 Tabriz;Oil;3;4
 Azerbaijan;Oil;5;6
-Armenia;Grain;2;1
-Georgia;Aluminium;1;1
-Northern Malaysia;Aluminium;1;1
-Malaysian East Coast;Coal;1;1
-Central Malaysia;Coal;2;1
-Southern Malaysia;Coal;2;1
+Armenia;Coal;1;1
+Georgia;Grain;2;1
+Northern Malaysia;Gold;2;1
+Malaysian East Coast;Gold;2;1
+Central Malaysia;Copper;2;1
+Southern Malaysia;Grain;2;1
 East Malaysia;Oil;4;3
-Singapore;Livestock;2;1
+Singapore;Copper;1;1
 Brunei;Gas;4;2
 Sumatra;Oil;3;4
-Java;Grain;1;1
+Java;Grain;2;1
 Kalimantan;Grain;1;1
-Bali;Grain;2;1
-Sulawesi;Oil;2;1
-Nusa Tenggara;Steel;1;1
+Bali;Aluminium;1;1
+Sulawesi;Aluminium;1;1
+Nusa Tenggara;Grain;1;1
 Maluku;Grain;2;1
 Papua;Oil;2;3
 Papua New Guinea;Gold;3;2
-Southern Philippines;Copper;2;1
-Central Philippines;Livestock;1;1
+Southern Philippines;Aluminium;1;1
+Central Philippines;Coal;2;1
 Northern Philippines;Copper;3;3
-Pyongan;Grain;1;1
-Baekdu Mountains;Livestock;2;1
-Donghae Coast;Livestock;1;1
+Pyongan;Grain;2;1
+Baekdu Mountains;Steel;2;1
+Donghae Coast;Copper;1;1
 Hwanghae;Livestock;2;1
-Gyeonggi;Aluminium;2;1
-Gangwon;Livestock;2;1
-Gyeongsang;Aluminium;2;1
-Jeolla;Livestock;2;1
-Chungcheong;Aluminium;2;1
-Hokkaido;Grain;1;1
+Gyeonggi;Aluminium;1;1
+Gangwon;Gold;2;1
+Gyeongsang;Copper;1;1
+Jeolla;Steel;1;1
+Chungcheong;Grain;2;1
+Hokkaido;Grain;2;1
 Tohoku;Copper;6;2
 Kanto;Uranium;5;3
 Chubu;Steel;1;1
-Kansai;Steel;2;1
-Chuhoku;Aluminium;1;1
-Shikoku;Livestock;2;1
+Kansai;Grain;1;1
+Chuhoku;Copper;2;1
+Shikoku;Steel;1;1
 Kyushu;Coal;7;2
 Solomon Islands;Copper;3;2
-New Caledonia;Steel;2;1
-New Zealand;Grain;1;1
-Fiji;Coal;2;1
+New Caledonia;Copper;2;1
+New Zealand;Coal;1;1
+Fiji;Grain;1;1
 Victoria;Uranium;2;3
 New South Wales;Oil;3;3
-Queensland;Copper;2;1
+Queensland;Steel;1;1
 Northern Territory;Uranium;2;3
 Western Australia;Gold;3;4
 South Australia;Steel;3;2
-East Timor;Livestock;2;1
+East Timor;Aluminium;2;1
 Madagascar;Aluminium;3;4
-Falklands;Oil;2;1
+Falklands;Coal;1;1
 Mongolia;Livestock;2;6
-Malta;Aluminium;1;1
+Malta;Grain;2;1

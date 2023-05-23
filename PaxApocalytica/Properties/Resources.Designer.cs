@@ -61,11 +61,25 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        public static string Army_Name {
+        public static System.Drawing.Bitmap aluminiumImage {
             get {
-                return ResourceManager.GetString("Army_Name", resourceCulture);
+                object obj = ResourceManager.GetObject("aluminiumImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на USA;USA Army 1;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+        ///USA;USA Army 2;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+        ///USA;USA Army 3;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+        ///USA;USA Army 4;infantry1a,100;infantry1a,100;infantry2a,130;tank1a,200;tank1a,200;tank2a,300;infantry2a,130;;;;;;;;;;False
+        ///Canada;Canada Ar [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string ArmyName_ArmyCharacteristics {
+            get {
+                return ResourceManager.GetString("ArmyName_ArmyCharacteristics", resourceCulture);
             }
         }
         
@@ -85,6 +99,16 @@ namespace PaxApocalytica.Properties {
         public static System.Drawing.Bitmap bitmapRegions {
             get {
                 object obj = ResourceManager.GetObject("bitmapRegions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap coalImage {
+            get {
+                object obj = ResourceManager.GetObject("coalImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -118,6 +142,16 @@ namespace PaxApocalytica.Properties {
         public static string Color_Name {
             get {
                 return ResourceManager.GetString("Color_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap copperImage {
+            get {
+                object obj = ResourceManager.GetObject("copperImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -188,6 +222,72 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada;0;0;0;0;0;0;0;0;0;0
+        ///USA;0;0;0;0;0;0;0;0;0;0
+        ///Singapore;0;0;0;0;0;0;0;0;0;0
+        ///Burkina-Faso;0;0;0;0;0;0;0;0;0;0
+        ///Mexico;0;0;0;0;0;0;0;0;0;0
+        ///Guatemala;0;0;0;0;0;0;0;0;0;0
+        ///Belize;0;0;0;0;0;0;0;0;0;0
+        ///Gonduras;0;0;0;0;0;0;0;0;0;0
+        ///Salvador;0;0;0;0;0;0;0;0;0;0
+        ///Nicaragua;0;0;0;0;0;0;0;0;0;0
+        ///Costa Rica;0;0;0;0;0;0;0;0;0;0
+        ///Panama;0;0;0;0;0;0;0;0;0;0
+        ///Jamaica;0;0;0;0;0;0;0;0;0;0
+        ///Cuba;0;0;0;0;0;0;0;0;0;0
+        ///Bahamas;0;0;0;0;0;0;0;0;0;0
+        ///Puerto Rico;0;0;0;0;0;0;0;0;0;0
+        ///UK;0;0;0;0;0;0;0;0;0;0
+        ///Haiti;0;0;0;0;0 [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_SimpleResources_Trade {
+            get {
+                return ResourceManager.GetString("CountryName_SimpleResources_Trade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap gasImage {
+            get {
+                object obj = ResourceManager.GetObject("gasImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap goldImage {
+            get {
+                object obj = ResourceManager.GetObject("goldImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap grainImage {
+            get {
+                object obj = ResourceManager.GetObject("grainImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap livestockImagejpg {
+            get {
+                object obj = ResourceManager.GetObject("livestockImagejpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Hawaii;2;;
         ///Pacific;5;;;;;
         ///New England;5;;;;;
@@ -221,6 +321,45 @@ namespace PaxApocalytica.Properties {
         public static string Name_Airfield {
             get {
                 return ResourceManager.GetString("Name_Airfield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Alaska;USA Army 1
+        ///Hawaii;
+        ///Burkina-Faso;
+        ///Northern Territories;
+        ///West Coast Pacific;
+        ///Prairie Provinces;
+        ///Central Canada;Canada Army 1
+        ///Atlantic Region;
+        ///Pacific;USA Army 2
+        ///Mountain;
+        ///West North Central;
+        ///West South Central;
+        ///East North Central;
+        ///East South Central;
+        ///New England;USA Army 3
+        ///Mid-Atlantic;
+        ///South Atlantic;USA Army 4
+        ///Noroeste;Mexico Army 2
+        ///Noreste;
+        ///Occidente;
+        ///Oriente;
+        ///Centronorte;
+        ///Centrosur;Mexico Army 1
+        ///Sureste;
+        ///Suroeste;
+        ///Guatemala;
+        ///Belize;
+        ///Gonduras;
+        ///Salvador;
+        ///Nicaragua;
+        ///Costa [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string Name_ArmyName {
+            get {
+                return ResourceManager.GetString("Name_ArmyName", resourceCulture);
             }
         }
         
@@ -501,6 +640,16 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap oilImage {
+            get {
+                object obj = ResourceManager.GetObject("oilImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на NATO;Germany,UK,USA,Canada,Spain,Portugal,Denmark,France,Greece,Turkey,Iceland,Italy,Luxemburg,Norway
         ///CSTO;
         ///FPDA;Australia,UK,Malaysia,New Zealand,Singapore
@@ -517,11 +666,31 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SteelImage {
+            get {
+                object obj = ResourceManager.GetObject("SteelImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
         public static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap uraniumImage {
+            get {
+                object obj = ResourceManager.GetObject("uraniumImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
