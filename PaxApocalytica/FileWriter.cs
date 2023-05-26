@@ -3,6 +3,7 @@ using PaxApocalytica.Military;
 using PaxApocalytica.Properties;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -26,20 +27,75 @@ namespace PaxApocalytica
 
         public static void SaveEverything(string basePath) //almost everything
         {
-            WriteFile_CountrynameCharacterstics(basePath); 
+            WriteFile_CountrynameCharacterstics(basePath);
             WriteFile_CountrynameSimpleResources(basePath);
             WriteFile_CountrynameMilresources(basePath);
             WriteFile_NameOwner(basePath);
             WriteFile_NameOccupant(basePath);
             WriteFile_NameSimpleFactory(basePath);
-            WriteFile_NameMilitaryFactory(basePath); 
+            WriteFile_NameMilitaryFactory(basePath);
             WriteFile_NameAirfield(basePath);
             WriteFile_NameArmyname(basePath);
             WriteFile_ArmynameArmycharacteristics(basePath);
-            WriteFile_NameCharacteristics(basePath); 
-            WriteFile_CountrynameSimpleResources_Trade(basePath);
+            WriteFile_NameCharacteristics(basePath);
+            WriteFile_CountrynameSimpleResources_Trade(basePath); 
+            
+            
+            WriteFile_CreationeQueue_Army(basePath); 
+            WriteFile_UpgradeQueue_SFactory(basePath); 
+            WriteFile_UpgradeQueue_MFactory(basePath);
         }
 
+        public static void WriteFile_UpgradeQueue_SFactory(string basePath)
+        {
+            string path = basePath + "UpgradeQueue_SFactory.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path)) 
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Keys)
+                {
+                    string[] substrings = line.Split(",");
+                    int turnsTillBuilding = Convert.ToInt32(substrings[0]);
+                    string province = substrings[1];
+                    outputFile.WriteLine(turnsTillBuilding +","+ province + ";" + PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].ProducedResourceName + ";" +
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].TechnologyLevel + ";" +
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].ExtensionLevel);
+                }
+            }
+        }
+        public static void WriteFile_UpgradeQueue_MFactory(string basePath)
+        {
+            string path = basePath + "UpgradeQueue_MFactory.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Keys)
+                {
+                    string[] substrings = line.Split(",");
+                    int turnsTillBuilding = Convert.ToInt32(substrings[0]);
+                    string province = substrings[1];
+                    outputFile.WriteLine(turnsTillBuilding + "," + province + ";" + PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].ProducedResourceName + ";" +
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].TechnologyLevel + ";" +
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].ExtensionLevel);
+                }
+            }
+        }
+
+        public static void WriteFile_CreationeQueue_Army(string basePath)
+        {
+            string path = basePath + "CreationQueue_Army.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_CreationQueue_Army.Keys)
+                {
+                    string[] substrings = line.Split(",");
+                    int turnsTillBuilding = Convert.ToInt32(substrings[0]);
+                    string province = substrings[1];
+                    outputFile.WriteLine(turnsTillBuilding + "," + province+";" + PaxApocalypticaGame.Dictionary_CreationQueue_Army[line]);
+                }
+            }
+        }
         public static void WriteFile_ArmynameArmycharacteristics(string basePath)
         {
             string path = basePath + "ArmyName_ArmyCharacteristics.txt";
@@ -239,7 +295,6 @@ namespace PaxApocalytica
                 }
             }
         }
-
         public static void WriteFile_NameCharacteristics(string basePath)
         {
             string path = basePath + "Name_Characteristics.txt";
@@ -263,7 +318,7 @@ namespace PaxApocalytica
             {
                 foreach (var province in PaxApocalypticaGame.Dictionary_NameSFactory.Keys)
                 {
-                    outputFile.WriteLine(province + ";" + PaxApocalypticaGame.Dictionary_NameSFactory[province].ProducedRecourceName + ";" +
+                    outputFile.WriteLine(province + ";" + PaxApocalypticaGame.Dictionary_NameSFactory[province].ProducedResourceName + ";" +
                         PaxApocalypticaGame.Dictionary_NameSFactory[province].TechnologyLevel + ";" +
                         PaxApocalypticaGame.Dictionary_NameSFactory[province].ExtensionLevel);
                 }

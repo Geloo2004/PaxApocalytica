@@ -25,10 +25,22 @@ namespace PaxApocalytica
         static bool countryIsChosen = false;
         static string chosenCountry = "";
 
+        public static bool deployingArmy = false;
+        public static string deployingArmyName;
+
+        public static bool movingArmy = false;
+        public static string movingArmyName;
+        public static string armyStartProv;
+
+        static bool sendingInterceptors = false;
+        static bool sendingBombers = false;
+
+        private static Form1 mainMenu;
+
         Bitmap baseBitmapIndexed = PaxApocalytica.Properties.Resources.baseMapBmp; //bmp мало памяти
-        Bitmap baseBitmap;      //png много памяти
+        public static Bitmap baseBitmap;      //png много памяти
         Bitmap map;
-        Bitmap baseBitmapRegions = PaxApocalytica.Properties.Resources.bitmapRegions;
+        public static Bitmap baseBitmapRegions = PaxApocalytica.Properties.Resources.bitmapRegions;
 
         static Rectangle rect = new Rectangle(0, 0, 1, 1);
 
@@ -48,14 +60,18 @@ namespace PaxApocalytica
         /*  allies
          *  rivals
          *  enemies
-         *  nukesCount
          *  player/ai
          */
-        public static Dictionary<string, ProvinceCharacteristics> Dictionary_NameCharacteristics;
+        public static Dictionary<string, SimpleFactory> Dictionary_UpgradeQueue_SFactory;
+        public static Dictionary<string, MilitaryFactory> Dictionary_UpgradeQueue_MFactory;
+        public static Dictionary<string, string> Dictionary_CreationQueue_Army;
 
+
+
+        public static Dictionary<string, ProvinceCharacteristics> Dictionary_NameCharacteristics;
         public static Dictionary<string, List<string>> Dictionary_NameArmynames;
         public static Dictionary<string, Army> Dictionary_ArmynameArmycharacteristics;
-
+        public static Dictionary<string, List<string>> Dictionary_AIAgentProvinces;
         public static Dictionary<string, string> Dictionary_NameOwner;
         public static Dictionary<string, string> Dictionary_NameOccupant;
         public static Dictionary<string, CountryCharacteristics> Dictionary_CountrynameCharacteristics;
@@ -72,8 +88,9 @@ namespace PaxApocalytica
 
         //Dictionary<string, string> Dictionary_NameController;     //  ai/player
 
-        public PaxApocalypticaGame()
+        public PaxApocalypticaGame(Form1 MainMenuForm)
         {
+            mainMenu = MainMenuForm;
             baseBitmap = CreateNonIndexedBitmap(baseBitmapIndexed);
             baseBitmapIndexed.Dispose();
 
@@ -96,17 +113,46 @@ namespace PaxApocalytica
             map = baseBitmap.Clone(rect, 0);
             mapBox.Image = map;
 
-            resourcesManagerBttn.Width = splitterVertical.Panel2.Width;
-
             provinceName.Hide();
             playerCountry.Text = "Choose your country";
             cash.Hide();
-            manpower.Hide();
             provinceName.Hide();
             date.Hide();
             resourcesManagerBttn.Hide();
+            increaseEL.Hide();
+            increaseTL.Hide();
+            decreaseEL.Hide();
+            decreaseTL.Hide();
+            extensionLevelLabel.Hide();
+            technologicalLevelLabel.Hide();
+            simpleResourcePBox.Hide();
+            militaryManagementBttn.Hide();
+            educationEffortTrack.Hide();
+            educationLevelBar.Hide();
+            educationEffortLabel.Hide();
+            educationLevelLabel.Hide();
+            increaseEL_MF.Hide();
+            increaseTL_MF.Hide();
+            decreaseEL_MF.Hide();
+            decreaseTL_MF.Hide();
+            militaryResourceTBox.Hide();
+            extensionLevelLabel_MF.Hide();
+            technologicalLevelLabel_MF.Hide();
+            buildMilFactoryBttn.Hide();
+
+            plane1.Hide();
+            plane2.Hide();
+            plane3.Hide();
+            plane4.Hide();
+            plane5.Hide();
+
+            splitterVertical.Panel2MinSize = splitterVertical.Panel2.Width;
 
             Dictionary_CountrynameSimpleResources_Trade_ReduceTrade = new Dictionary<string, int>();
+
+            Dictionary_UpgradeQueue_SFactory = new Dictionary<string, SimpleFactory>();
+            Dictionary_UpgradeQueue_MFactory = new Dictionary<string, MilitaryFactory>();
+            Dictionary_CreationQueue_Army = new Dictionary<string, string>();
 
             FileReader.ReadFile_NameOwner();
             FileReader.ReadFile_NameOccupant();
@@ -135,6 +181,7 @@ namespace PaxApocalytica
                 StartCalcualtor.CalculateStartMResources();
                 StartCalcualtor.CalculateStartManpower();
                 StartCalcualtor.CalculateStartCash();
+                StartCalcualtor.GenerateRandomPlanes();
             }
             Calculator.RecalculateTradeSlots();
             Calculator.RecalcualteManpower();
@@ -212,21 +259,19 @@ namespace PaxApocalytica
             ResizeRectangle();
             ResizeLabelsAndButtons();
             saveChoice.Width = splitterVertical.Panel2.Width - 14;
-            resourcesManagerBttn.Width = splitterVertical.Panel2.Width;
+            resourcesManagerBttn.Width = splitterVertical.Panel2.Width - 3;
+            militaryManagementBttn.Width = splitterVertical.Panel2.Width - 3;
             UpdateMap();
         }
-
         private void splitterVertical_SplitterMoved(object sender, SplitterEventArgs e)
         {
 
         } //ничего не делает
-
         //resizы
         private void ResizeLabelsAndButtons()
         {
-            provinceName.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 189);
+            provinceName.Location = new Point(splitterVertical.Location.X + 3, splitterVertical.Location.Y + 229);
         }
-
         private void ResizeRectangle()
         {
             rect.Width = mapBox.Width;
@@ -248,14 +293,9 @@ namespace PaxApocalytica
             {
                 this.Height = 480;
             }
-
-            if (!this.Visible)
-            {
-                splitterVertical.SplitterDistance = (this.Width - 360);
-            }
         }
 
-        private void FloodFill(Bitmap bmp, Point pt, Color targetColor, Color replacementColor)
+        public void FloodFill(Bitmap bmp, Point pt, Color targetColor, Color replacementColor)
         {
             targetColor = bmp.GetPixel(pt.X, pt.Y);
             if (targetColor.ToArgb().Equals(replacementColor.ToArgb()))
@@ -366,27 +406,232 @@ namespace PaxApocalytica
                     baseBitmap.GetPixel(x, y) != borderGray &&
                     baseBitmap.GetPixel(x, y) != otherBorderGray)
                 {
-                    if (countryIsChosen)
+                    if (movingArmy)
                     {
-                        provinceName.Show();
-                        provinceName.Text = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
-                    }
+                        string clickedProvinceName = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
 
-                    if (Dictionary_NamePort.Keys.Contains(provinceName.Text))
-                    {
-                    }
+                        //добавить проверку на союзников, врагов
 
-                    if (!countryIsChosen)
+
+                        //startbattle
+                        // if won {move}
+
+                        if (Dictionary_NameNeighbours[armyStartProv].Contains(clickedProvinceName))     //тыкнутая пров-я сосед?
+                        {
+                            Dictionary_NameArmynames[clickedProvinceName].Add(movingArmyName);
+                            Dictionary_NameArmynames[armyStartProv].Remove(movingArmyName);
+                            Dictionary_ArmynameArmycharacteristics[movingArmyName].IsMoved = true;
+                            movingArmy = false;
+                            movingArmyName = null;
+
+                            foreach (var point in Dictionary_NamesPoints[armyStartProv])
+                            {
+                                FloodFill(baseBitmap, point, Color.White, Dictionary_CountrynameCharacteristics[Dictionary_NameOwner[armyStartProv]].Color);
+                            }
+                            armyStartProv = null;
+                        }
+                        else if (Dictionary_NamePort.ContainsKey(armyStartProv))        //здесь порт?
+                        {
+                            if (Dictionary_NamePort.ContainsKey(clickedProvinceName))       //тыкнутая порт?
+                            {
+                                Dictionary_NameArmynames[clickedProvinceName].Add(movingArmyName);
+                                Dictionary_NameArmynames[armyStartProv].Remove(movingArmyName);
+                                Dictionary_ArmynameArmycharacteristics[movingArmyName].IsMoved = true;
+                                movingArmy = false;
+                                movingArmyName = null;
+
+                                foreach (var point in Dictionary_NamesPoints[armyStartProv])
+                                {
+                                    FloodFill(baseBitmap, point, Color.White, Dictionary_CountrynameCharacteristics[Dictionary_NameOwner[armyStartProv]].Color);
+                                }
+                                armyStartProv = null;
+                            }
+                        }
+                        else if (Dictionary_NameAirfield.ContainsKey(armyStartProv))    //есть аэродром здесь?
+                        {
+                            if (Calculator.CheckOnlyVDV(movingArmyName))        // вдв
+                            {
+                                Dictionary_NameArmynames[clickedProvinceName].Add(movingArmyName);
+                                Dictionary_NameArmynames[armyStartProv].Remove(movingArmyName);
+                                Dictionary_ArmynameArmycharacteristics[movingArmyName].IsMoved = true;
+                                movingArmy = false;
+                                movingArmyName = null;
+
+                                foreach (var point in Dictionary_NamesPoints[armyStartProv])
+                                {
+                                    FloodFill(baseBitmap, point, Color.White, Dictionary_CountrynameCharacteristics[Dictionary_NameOwner[armyStartProv]].Color);
+                                }
+                                armyStartProv = null;
+                            }
+                            else if (Dictionary_NameAirfield.ContainsKey(clickedProvinceName))      //есть аэродром там? (не вдв)
+                            {
+                                Dictionary_NameArmynames[clickedProvinceName].Add(movingArmyName);
+                                Dictionary_NameArmynames[armyStartProv].Remove(movingArmyName);
+                                Dictionary_ArmynameArmycharacteristics[movingArmyName].IsMoved = true;
+                                movingArmy = false;
+                                movingArmyName = null;
+
+                                foreach (var point in Dictionary_NamesPoints[armyStartProv])
+                                {
+                                    FloodFill(baseBitmap, point, Color.White, Dictionary_CountrynameCharacteristics[Dictionary_NameOwner[armyStartProv]].Color);
+                                }
+                                armyStartProv = null;
+                            }
+                        }
+                    }
+                    else if (deployingArmy)
                     {
-                        playerCountry.Show();
-                        chosenCountry = Dictionary_NameOwner[Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)]];
-                        playerCountry.Text = chosenCountry;
-                        saveChoice.Text = "I want to play as this country";
+                        string clickedProvinceName = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
+
+                        if (Dictionary_NameOwner[clickedProvinceName] == playerCountry.Text)
+                        {
+                            Dictionary_CreationQueue_Army.Add(1 + "," + clickedProvinceName, deployingArmyName);
+                            deployingArmy = false;
+                        }
+                    }
+                    else
+                    {
+                        if (countryIsChosen)
+                        {
+                            provinceName.Show();
+                            provinceName.Text = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
+                            date.Text = Convert.ToString(Dictionary_NameCharacteristics[provinceName.Text].Manpower);
+
+                            educationLevelBar.Value = Dictionary_NameCharacteristics[provinceName.Text].Eductaion;
+                            educationLevelLabel.Text = Convert.ToString(educationLevelBar.Value);
+
+                            if (Dictionary_NameAirfield.ContainsKey(provinceName.Text))
+                            {
+                                plane1.Show();
+                                plane2.Show();
+
+                                if (Dictionary_NameAirfield[provinceName.Text].Planes[0] == null) { plane1.Text = "Add plane"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.fighterA) { plane1.Text = "NATO Fighter"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.fighterR) { plane1.Text = "Sov. Fighter"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.fighterG) { plane1.Text = "Generic Fighter"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.strikeAircraftA) { plane1.Text = "NATO Strike Aircraft"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.strikeAircraftR) { plane1.Text = "Sov. Strike Aircraft"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.strikeAircraftG) { plane1.Text = "Generic trike Aircraf"; }
+                                else { throw new ArgumentException(); }
+
+                                if (Dictionary_NameAirfield[provinceName.Text].Planes[1] == null) { plane2.Text = "Add plane"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.fighterA) { plane2.Text = "NATO Fighter"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.fighterR) { plane2.Text = "Sov. Fighter"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.fighterG) { plane2.Text = "Generic Fighter"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.strikeAircraftA) { plane2.Text = "NATO Strike Aircraft"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.strikeAircraftR) { plane2.Text = "Sov. Strike Aircraft"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.strikeAircraftG) { plane2.Text = "Generic trike Aircraf"; }
+                                else { throw new ArgumentException(); }
+
+
+
+                                if ((Dictionary_NameAirfield[provinceName.Text].Planes.Length == 5))
+                                {
+                                    plane3.Show();
+                                    plane4.Show();
+                                    plane5.Show();
+
+                                    if (Dictionary_NameAirfield[provinceName.Text].Planes[2] == null) { plane3.Text = "Add plane"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.fighterA) { plane3.Text = "NATO Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.fighterR) { plane3.Text = "Sov. Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.fighterG) { plane3.Text = "Generic Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.strikeAircraftA) { plane3.Text = "NATO Strike Aircraft"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.strikeAircraftR) { plane3.Text = "Sov. Strike Aircraft"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.strikeAircraftG) { plane3.Text = "Generic trike Aircraf"; }
+                                    else { throw new ArgumentException(); }
+
+                                    if (Dictionary_NameAirfield[provinceName.Text].Planes[3] == null) { plane4.Text = "Add plane"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.fighterA) { plane4.Text = "NATO Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.fighterR) { plane4.Text = "Sov. Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.fighterG) { plane4.Text = "Generic Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.strikeAircraftA) { plane4.Text = "NATO Strike Aircraft"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.strikeAircraftR) { plane4.Text = "Sov. Strike Aircraft"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.strikeAircraftG) { plane4.Text = "Generic trike Aircraf"; }
+                                    else { throw new ArgumentException(); }
+
+
+                                    if (Dictionary_NameAirfield[provinceName.Text].Planes[4] == null) { plane5.Text = "Add plane"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.fighterA) { plane5.Text = "NATO Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.fighterR) { plane5.Text = "Sov. Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.fighterG) { plane5.Text = "Generic Fighter"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.strikeAircraftA) { plane5.Text = "NATO Strike Aircraft"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.strikeAircraftR) { plane5.Text = "Sov. Strike Aircraft"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.strikeAircraftG) { plane5.Text = "Generic trike Aircraf"; }
+                                    else { throw new ArgumentException(); }
+                                }
+                                else
+                                {
+                                    plane4.Hide();
+                                    plane5.Hide();
+                                }
+
+                                if (Dictionary_NameOwner[provinceName.Text] != playerCountry.Text)
+                                {
+
+                                    plane1.Enabled = false;
+                                    plane2.Enabled = false;
+                                    plane3.Enabled = false;
+                                    plane4.Enabled = false;
+                                    plane5.Enabled = false;
+                                }
+                                else if (!Calculator.CanSendAirRaids(playerCountry.Text))
+                                {
+                                    plane1.Enabled = false;
+                                    plane2.Enabled = false;
+                                    plane3.Enabled = false;
+                                    plane4.Enabled = false;
+                                    plane5.Enabled = false;
+                                }
+                                else
+                                {
+                                    plane1.Enabled = true;
+                                    plane2.Enabled = true;
+                                    plane3.Enabled = true;
+                                    plane4.Enabled = true;
+                                    plane5.Enabled = true;
+                                }
+                            }
+                            else
+                            {
+                                plane1.Hide();
+                                plane2.Hide();
+                                plane3.Hide();
+                                plane4.Hide();
+                                plane5.Hide();
+                            }
+
+                            UpdateSFactoryInterface();
+                            UpdateMFactoryInterface();
+                        }
+                        else
+                        {
+                            playerCountry.Show();
+                            chosenCountry = Dictionary_NameOwner[Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)]];
+                            playerCountry.Text = chosenCountry;
+                            saveChoice.Text = "I want to play as this country";
+                        }
                     }
                 }
                 else
                 {
+                    simpleResourcePBox.Hide();
                     provinceName.Hide();
+                    increaseEL.Hide();
+                    increaseTL.Hide();
+                    decreaseEL.Hide();
+                    decreaseTL.Hide();
+                    extensionLevelLabel.Hide();
+                    technologicalLevelLabel.Hide();
+                    educationEffortTrack.Hide();
+                    educationLevelBar.Hide();
+                    educationEffortLabel.Hide();
+                    educationLevelLabel.Hide();
+                    increaseEL_MF.Hide();
+                    increaseTL_MF.Hide();
+                    decreaseEL_MF.Hide();
+                    decreaseTL_MF.Hide();
+                    militaryResourceTBox.Hide();
+                    buildMilFactoryBttn.Hide();
                     if (!countryIsChosen)
                     {
                         playerCountry.Hide();
@@ -396,44 +641,7 @@ namespace PaxApocalytica
                     }
                 }
 
-            }/*
-            else if (e.Button == MouseButtons.XButton1)
-            {
-                if (baseBitmap.GetPixel(x, y) != black &&
-                    baseBitmap.GetPixel(x, y) != water &&
-                    baseBitmap.GetPixel(x, y) != fakeBlack &&
-                    baseBitmap.GetPixel(x, y) != white &&
-                    baseBitmap.GetPixel(x, y) != borderGray &&
-                    baseBitmap.GetPixel(x, y) != otherBorderGray)
-                {
-                    
-                    PaintItBack(new List<string>() { button1.Text });
-                    PaintItBack(Dictionary_NameNeighbours[button1.Text]);
-                    button1.Text = Dictionary_ColorName[baseBitmapRegions.GetPixel(x,y)];
-                    PaintAdded1(new List<string>() { button1.Text });
-                    PaintAdded(Dictionary_NameNeighbours[button1.Text]);
-                }
             }
-            else if (e.Button == MouseButtons.XButton2)
-            {
-                string path = @"C:\Users\Comrade Thursday\Documents\TXT1.txt";
-                using (StreamWriter outputFile = new StreamWriter(path))
-                {
-                    foreach (var name in Dictionary_NameNeighbours.Keys)
-                    {
-                        outputFile.Write(name + ";");
-                        if (Dictionary_NameNeighbours[name].Count > 0)
-                        {
-                            for (int i = 0; i < Dictionary_NameNeighbours[name].Count - 1; i++)
-                            {
-                                outputFile.Write(Dictionary_NameNeighbours[name][i] + ",");
-                            }
-                            outputFile.WriteLine(Dictionary_NameNeighbours[name][Dictionary_NameNeighbours[name].Count - 1]);
-                        }
-                        else outputFile.WriteLine();
-                    }
-                }
-            }*/
             UpdateMap();
         }
 
@@ -457,7 +665,6 @@ namespace PaxApocalytica
                 }
             }
         }
-
         public void PaintItBack(List<string> neighbours)
         {
             foreach (var name in neighbours)
@@ -469,19 +676,7 @@ namespace PaxApocalytica
                 }
             }
         }
-        /*
-        public string ConvertUnitNameToString(UnitName.Name name)
-        {
-            if (name == UnitName.Name.fighterG) { return "Generic fighter"; }
-            if (name == UnitName.Name.fighterA) { return "Western fighter"; }
-            if (name == UnitName.Name.fighterR) { return "Soviet fighter"; }
-            if (name == UnitName.Name.strikeAircraftA) { return "American strike aircraft"; }
-            if (name == UnitName.Name.strikeAircraftR) { return "Soviet strike aircraft"; }
-            if (name == UnitName.Name.strikeAircraftG) { return "Generic strike aircraft"; }
 
-            throw new ArgumentException();
-        }
-        */
         private void PaxApocalyticaGame_FormClosing(object sender, FormClosingEventArgs e)
         {
             folderBrowserDialog1.ShowDialog();
@@ -490,6 +685,7 @@ namespace PaxApocalytica
             {
                 FileWriter.SaveEverything(savePath);
             }
+            mainMenu.Close();
         }
 
         private void DrawStartMap()
@@ -515,17 +711,18 @@ namespace PaxApocalytica
                 saveChoice.Hide();
                 saveChoice.Dispose();
                 cash.Show();
-                manpower.Show();
                 date.Show();
                 UpdatePlayerData();
                 resourcesManagerBttn.Show();
+                militaryManagementBttn.Show();
             }
         }
 
-        private void UpdatePlayerData()
+        public void UpdatePlayerData()
         {
-            manpower.Text = "Manpower: " + Dictionary_CountrynameCharacteristics[playerCountry.Text].Manpower;
             cash.Text = "Cash: " + Dictionary_CountrynameCharacteristics[playerCountry.Text].Cash;
+
+            /*
             if (month == 12) { date.Text = "December " + year; }
             if (month == 1) { date.Text = "January " + year; }
             if (month == 2) { date.Text = "February " + year; }
@@ -537,16 +734,415 @@ namespace PaxApocalytica
             if (month == 8) { date.Text = "August " + year; }
             if (month == 9) { date.Text = "September " + year; }
             if (month == 10) { date.Text = "October " + year; }
-            if (month == 11) { date.Text = "November " + year; }
+            if (month == 11) { date.Text = "November " + year; }*/
         }
 
         private void resourcesManagerBttn_Click(object sender, EventArgs e)
         {
-            if (countryIsChosen) 
+            if (countryIsChosen)
             {
                 Resource_Management rM = new Resource_Management(playerCountry.Text);
                 rM.Show();
             }
+        }
+
+        private void militaryManagement_Click(object sender, EventArgs e)
+        {
+            if (countryIsChosen)
+            {
+                Military_management mM = new Military_management(playerCountry.Text, this);
+                mM.Show();
+            }
+        }
+
+        public void UpdateSFactoryInterface()
+        {
+            simpleResourcePBox.Show();
+
+
+            if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Steel) { simpleResourcePBox.Image = Resources.SteelImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Gold) { simpleResourcePBox.Image = Resources.goldImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Oil) { simpleResourcePBox.Image = Resources.oilImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Copper) { simpleResourcePBox.Image = Resources.copperImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Coal) { simpleResourcePBox.Image = Resources.coalImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Uranium) { simpleResourcePBox.Image = Resources.uraniumImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Aluminium) { simpleResourcePBox.Image = Resources.aluminiumImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Gas) { simpleResourcePBox.Image = Resources.gasImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Grain) { simpleResourcePBox.Image = Resources.grainImage; }
+            else if (Dictionary_NameSFactory[provinceName.Text].ProducedResourceName == SimpleResources.Names.Livestock) { simpleResourcePBox.Image = Resources.livestockImagejpg; }
+            else { throw new ArgumentException(); }
+
+            if (!Calculator.CheckBuildingSomething(provinceName.Text) && Dictionary_NameOwner[provinceName.Text] == playerCountry.Text)
+            {
+                increaseEL.Show();
+                increaseTL.Show();
+                decreaseEL.Show();
+                decreaseTL.Show();
+                educationEffortTrack.Show();
+                educationEffortLabel.Show();
+                educationEffortTrack.Value = Dictionary_NameCharacteristics[provinceName.Text].EductaionEffort;
+                educationEffortLabel.Text = Convert.ToString(educationEffortTrack.Value);
+
+                int euc = Dictionary_NameSFactory[provinceName.Text].CalculateEUpgradeCost(Dictionary_NameCharacteristics[provinceName.Text].Eductaion);
+                int tuc = Dictionary_NameSFactory[provinceName.Text].CalculateTUpgradeCost(Dictionary_NameCharacteristics[provinceName.Text].Eductaion);
+
+                if (Dictionary_NameSFactory[provinceName.Text].ExtensionLevel == 10)
+                {
+                    decreaseEL.Enabled = true;
+                    increaseEL.Enabled = false;
+                    increaseEL.Text = "Max EL";
+                }
+                else
+                {
+                    decreaseEL.Enabled = true;
+                    if (Dictionary_NameSFactory[provinceName.Text].ExtensionLevel == 1) { decreaseEL.Enabled = false; }
+                    if (Dictionary_CountrynameCharacteristics[playerCountry.Text].Cash >= euc)
+                    {
+                        increaseEL.Enabled = true;
+                        increaseEL.Text = Convert.ToString(euc);
+                    }
+                    else
+                    {
+                        increaseEL.Enabled = false;
+                        increaseEL.Text = Convert.ToString(euc);
+                    }
+                }
+
+                if (Dictionary_NameSFactory[provinceName.Text].TechnologyLevel == 10)
+                {
+                    increaseTL.Enabled = false;
+                    increaseTL.Text = "Max TL";
+                }
+                else if (Dictionary_NameSFactory[provinceName.Text].TechnologyLevel == 1) { decreaseTL.Enabled = false; }
+                else
+                {
+                    if (Dictionary_CountrynameCharacteristics[playerCountry.Text].Cash >= tuc)
+                    {
+                        increaseTL.Enabled = true;
+                        increaseTL.Text = Convert.ToString(tuc);
+                    }
+                    else
+                    {
+                        increaseTL.Enabled = false;
+                        increaseTL.Text = Convert.ToString(tuc);
+                    }
+                }
+
+            }
+            else
+            {
+                educationEffortLabel.Hide();
+                educationEffortTrack.Hide();
+                increaseEL.Hide();
+                increaseTL.Hide();
+                decreaseEL.Hide();
+                decreaseTL.Hide();
+            }
+            educationLevelBar.Show();
+            educationLevelLabel.Show();
+            extensionLevelLabel.Text = "E. D. " + Dictionary_NameSFactory[provinceName.Text].ExtensionLevel;
+            technologicalLevelLabel.Text = "T. D. " + Dictionary_NameSFactory[provinceName.Text].TechnologyLevel;
+            extensionLevelLabel.Show();
+            technologicalLevelLabel.Show();
+        }
+        public void UpdateMFactoryInterface()
+        {
+            if (Dictionary_NameMFactory[provinceName.Text] != null)
+            {
+                buildMilFactoryBttn.Hide();
+                militaryResourceTBox.Show();
+
+                if (Dictionary_NameMFactory[provinceName.Text].IsFunctioning)
+                {
+                    if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.Weaponry) { militaryResourceTBox.Text = "Weaponry"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T72B) { militaryResourceTBox.Text = "T-72B"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T90A) { militaryResourceTBox.Text = "T-90A"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T90M) { militaryResourceTBox.Text = "T-90M"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T14) { militaryResourceTBox.Text = "T-14"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.BMP2) { militaryResourceTBox.Text = "BMP-2"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.BMP3) { militaryResourceTBox.Text = "BMP-3"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.BMD1) { militaryResourceTBox.Text = "BMD-1"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.BMD2) { militaryResourceTBox.Text = "BMD-2"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.FighterR) { militaryResourceTBox.Text = "Sov. Fighter"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.StrikeAircraftR) { militaryResourceTBox.Text = "Sov. Strike Aircraft"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.M1) { militaryResourceTBox.Text = "M1"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.M1A1) { militaryResourceTBox.Text = "M1A1"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.M1A2) { militaryResourceTBox.Text = "M1A2"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.M1A2C) { militaryResourceTBox.Text = "M1A2C"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.M3A1) { militaryResourceTBox.Text = "M3A1"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.M3A3) { militaryResourceTBox.Text = "M3A3"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.FighterA) { militaryResourceTBox.Text = "NATO Fighter"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.StrikeAircraftA) { militaryResourceTBox.Text = "NATO Strike Aircraft"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T55) { militaryResourceTBox.Text = "T-55"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T55M) { militaryResourceTBox.Text = "T-55M"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T72A) { militaryResourceTBox.Text = "T-72A"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.T72M) { militaryResourceTBox.Text = "T-72M"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.BMP1) { militaryResourceTBox.Text = "BMP-1"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.BMP23) { militaryResourceTBox.Text = "BMP-23"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.FighterG) { militaryResourceTBox.Text = "Generic Fighter"; }
+                    else if (Dictionary_NameMFactory[provinceName.Text].ProducedResourceName == MilitaryResources.Names.StrikeAircraftG) { militaryResourceTBox.Text = "Generic Strike Aircraft"; }
+                    else { throw new ArgumentException(); }
+                }
+                else { militaryResourceTBox.Text = "Not functioning"; }
+
+
+                if (!Calculator.CheckBuildingSomething(provinceName.Text) && Dictionary_NameOwner[provinceName.Text] == playerCountry.Text)
+                {
+                    increaseEL_MF.Show();
+                    increaseTL_MF.Show();
+                    decreaseEL_MF.Show();
+                    decreaseTL_MF.Show();
+
+
+                    int euc = Dictionary_NameMFactory[provinceName.Text].CalculateEUpgradeCost(Dictionary_NameCharacteristics[provinceName.Text].Eductaion);
+                    int tuc = Dictionary_NameMFactory[provinceName.Text].CalculateTUpgradeCost(Dictionary_NameCharacteristics[provinceName.Text].Eductaion);
+
+                    if (Dictionary_NameMFactory[provinceName.Text].ExtensionLevel == 10)
+                    {
+                        decreaseEL_MF.Enabled = true;
+                        increaseEL_MF.Enabled = false;
+                        increaseEL_MF.Text = "Max EL";
+                    }
+                    else if (Dictionary_NameMFactory[provinceName.Text].TechnologyLevel == 1) { decreaseEL_MF.Enabled = false; }
+                    else
+                    {
+                        decreaseEL_MF.Enabled = true;
+                        if (Dictionary_CountrynameCharacteristics[playerCountry.Text].Cash >= euc)
+                        {
+                            increaseEL_MF.Enabled = true;
+                            increaseEL_MF.Text = Convert.ToString(euc);
+                        }
+                        else
+                        {
+                            increaseEL_MF.Enabled = false;
+                            increaseEL_MF.Text = Convert.ToString(euc);
+                        }
+                    }
+
+                    if (Dictionary_NameMFactory[provinceName.Text].TechnologyLevel == 10)
+                    {
+                        increaseTL_MF.Enabled = false;
+                        increaseTL_MF.Text = "Max TL";
+                    }
+                    else if (Dictionary_NameMFactory[provinceName.Text].TechnologyLevel == 1) { decreaseTL_MF.Enabled = false; }
+                    else
+                    {
+                        if (Dictionary_CountrynameCharacteristics[playerCountry.Text].Cash >= tuc)
+                        {
+                            increaseTL_MF.Enabled = true;
+                            increaseTL_MF.Text = Convert.ToString(tuc);
+                        }
+                        else
+                        {
+                            increaseTL_MF.Enabled = false;
+                            increaseTL_MF.Text = Convert.ToString(tuc);
+                        }
+                    }
+                }
+                else
+                {
+                    increaseEL_MF.Hide();
+                    increaseTL_MF.Hide();
+                    decreaseEL_MF.Hide();
+                    decreaseTL_MF.Hide();
+                }
+                extensionLevelLabel_MF.Text = "E. D. " + Dictionary_NameSFactory[provinceName.Text].ExtensionLevel;
+                technologicalLevelLabel_MF.Text = "T. D. " + Dictionary_NameSFactory[provinceName.Text].TechnologyLevel;
+                extensionLevelLabel_MF.Show();
+                technologicalLevelLabel_MF.Show();
+            }
+            else
+            {
+                increaseEL_MF.Hide();
+                increaseTL_MF.Hide();
+                decreaseEL_MF.Hide();
+                decreaseTL_MF.Hide();
+                extensionLevelLabel_MF.Hide();
+                technologicalLevelLabel_MF.Hide();
+                militaryResourceTBox.Hide();
+
+                if (Dictionary_NameOwner[provinceName.Text] == playerCountry.Text)
+                {
+                    buildMilFactoryBttn.Show();
+                    if (Calculator.CheckBuildingSomething(provinceName.Text))
+                    {
+                        buildMilFactoryBttn.Enabled = false;
+                    }
+                    else
+                    {
+                        buildMilFactoryBttn.Enabled = true;
+                    }
+                }
+                else
+                {
+                    buildMilFactoryBttn.Hide();
+                }
+            }
+        }
+
+
+        private void educationEffortTrack_Scroll(object sender, EventArgs e)
+        {
+            Dictionary_NameCharacteristics[provinceName.Text].EductaionEffort = (byte)educationEffortTrack.Value;
+            educationEffortLabel.Text = Convert.ToString(educationEffortTrack.Value);
+        }
+
+        private void decreaseEL_Click(object sender, EventArgs e)
+        {
+            Dictionary_NameSFactory[provinceName.Text].EDegrade();
+            UpdateSFactoryInterface();
+        }
+        private void increaseEL_Click(object sender, EventArgs e)
+        {
+            Dictionary_UpgradeQueue_SFactory.Add(6 + "," + provinceName.Text,
+                new SimpleFactory(Dictionary_NameSFactory[provinceName.Text].ProducedResourceName,
+                (byte)(Dictionary_NameSFactory[provinceName.Text].ExtensionLevel + 1),
+                Dictionary_NameSFactory[provinceName.Text].TechnologyLevel));
+
+            increaseEL.Hide();
+            increaseTL.Hide();
+            decreaseEL.Hide();
+            decreaseTL.Hide();
+            increaseEL_MF.Hide();
+            increaseTL_MF.Hide();
+            decreaseEL_MF.Hide();
+            decreaseTL_MF.Hide();
+        }
+
+        private void decreaseTL_Click(object sender, EventArgs e)
+        {
+            Dictionary_NameSFactory[provinceName.Text].TDegrade();
+            UpdateSFactoryInterface();
+        }
+
+        private void increaseTL_Click(object sender, EventArgs e)
+        {
+            Dictionary_UpgradeQueue_SFactory.Add(6 + "," + provinceName.Text,
+                new SimpleFactory(Dictionary_NameSFactory[provinceName.Text].ProducedResourceName,
+                Dictionary_NameSFactory[provinceName.Text].ExtensionLevel,
+                (byte)(Dictionary_NameSFactory[provinceName.Text].TechnologyLevel + 1)));
+
+            increaseEL.Hide();
+            increaseTL.Hide();
+            decreaseEL.Hide();
+            decreaseTL.Hide();
+            increaseEL_MF.Hide();
+            increaseTL_MF.Hide();
+            decreaseEL_MF.Hide();
+            decreaseTL_MF.Hide();
+        }
+
+        private void buildMilFactoryBttn_Click(object sender, EventArgs e)
+        {
+            Dictionary_UpgradeQueue_MFactory.Add(12 + "," + provinceName.Text, new MilitaryFactory(MilitaryResources.Names.Weaponry, 1, 1, Dictionary_CountrynameCharacteristics[playerCountry.Text].TechGroup));
+            buildMilFactoryBttn.Enabled = false;
+        }
+
+
+        private void militaryResourceTBox_Click(object sender, EventArgs e)
+        {
+            if (!Calculator.CheckBuildingSomething(provinceName.Text))
+            {
+                Choose_production cpf = new Choose_production(provinceName.Text);
+                cpf.Show();
+            }
+        }
+
+        private void splitterVertical_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void plane1_Click(object sender, EventArgs e)
+        {
+            if (plane1.Text.Contains("Fighter"))
+            {
+                sendingInterceptors = true;
+            }
+            else if (plane1.Text.Contains("Strike"))
+            {
+                sendingBombers = true;
+            }
+            else if (plane1.Text.Contains("Add"))
+            {
+                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                ap.Show();
+                plane1.Enabled = false;
+            }
+            else { throw new ArgumentException(); }
+        }
+        private void plane2_Click(object sender, EventArgs e)
+        {
+            if (plane2.Text.Contains("Fighter"))
+            {
+                sendingInterceptors = true;
+            }
+            else if (plane2.Text.Contains("Strike"))
+            {
+                sendingBombers = true;
+            }
+            else if (plane2.Text.Contains("Add"))
+            {
+                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                ap.Show();
+                plane2.Enabled = false;
+            }
+            else { throw new ArgumentException(); }
+        }
+        private void plane3_Click(object sender, EventArgs e)
+        {
+            if (plane3.Text.Contains("Fighter"))
+            {
+                sendingInterceptors = true;
+            }
+            else if (plane3.Text.Contains("Strike"))
+            {
+                sendingBombers = true;
+            }
+            else if (plane3.Text.Contains("Add"))
+            {
+                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                ap.Show();
+                plane3.Enabled = false;
+            }
+            else { throw new ArgumentException(); }
+
+        }
+        private void plane4_Click(object sender, EventArgs e)
+        {
+            if (plane4.Text.Contains("Fighter"))
+            {
+                sendingInterceptors = true;
+            }
+            else if (plane4.Text.Contains("Strike"))
+            {
+                sendingBombers = true;
+            }
+            else if (plane4.Text.Contains("Add"))
+            {
+                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                ap.Show();
+                plane1.Enabled = false;
+            }
+            else { throw new ArgumentException(); }
+        }
+        private void plane5_Click(object sender, EventArgs e)
+        {
+            if (plane5.Text.Contains("Fighter"))
+            {
+                sendingInterceptors = true;
+            }
+            else if (plane5.Text.Contains("Strike"))
+            {
+                sendingBombers = true;
+            }
+            else if (plane5.Text.Contains("Add"))
+            {
+                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                ap.Show();
+                plane1.Enabled = false;
+            }
+            else { throw new ArgumentException(); }
         }
     }
 }

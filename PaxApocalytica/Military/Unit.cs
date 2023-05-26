@@ -27,13 +27,6 @@ namespace PaxApocalytica.Military
 
         public Unit(UnitName.Name name)
         {
-            if  (  name == UnitName.Name.fighterA
-                || name == UnitName.Name.fighterR 
-                || name == UnitName.Name.fighterG
-                || name == UnitName.Name.strikeAircraftA
-                || name == UnitName.Name.strikeAircraftG
-                || name == UnitName.Name.strikeAircraftR) 
-            { throw new ArgumentException(); }
             Name = name;
             HP = Units.unitsCharacteristics[name].HP;
             MaxHP = Units.unitsCharacteristics[name].HP;
@@ -197,7 +190,8 @@ namespace PaxApocalytica.Military
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)(10 * (HP / MaxHP));
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][8] += (int)(50 * (HP / MaxHP));
             }               //26
-            //PaxApocalyticaGame.Dictionary_CountrynameMilitaryResources[owner][]
+
+            Calculator.RandomManpowerIncrease(owner, (int)(10000 * HP / MaxHP));
         }
     }
 

@@ -14,7 +14,7 @@ Jamaica;0,29,128;Generic;0;0;2
 Cuba;64,128,128;Generic;0;0;2
 Bahamas;74,230,0;Generic;0;0;2
 Puerto Rico;151,236,189;Generic;0;0;2
-UK;196,0,5;Generic;0;0;4
+UK;196,0,5;NATO;0;0;4
 Haiti;255,111,183;Generic;0;0;2
 Dominican Republic;232,116,0;Generic;0;0;2
 Saint Kitts and Nevis;198,198,140;Generic;0;0;2
