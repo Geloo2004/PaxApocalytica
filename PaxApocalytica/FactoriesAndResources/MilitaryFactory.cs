@@ -213,7 +213,7 @@ namespace PaxApocalytica.FactoriesAndResources
         }
         // 90 - 5 * (10 - techLevel) ----- формула расчета минимально необходимого образования для пр-ва
 
-        public bool IsTDegradePossible(byte educationLevel) //edLev - ур образования в провинции
+        public bool IsTDegradePossible() //edLev - ур образования в провинции
         {
             if (TechnologyLevel > 1)
             {

@@ -30,6 +30,7 @@
         {
             splitterVertical = new SplitContainer();
             mapBox = new PictureBox();
+            diplomacyMenuBttn = new Button();
             plane5 = new Button();
             plane4 = new Button();
             plane3 = new Button();
@@ -62,6 +63,7 @@
             playerCountry = new Label();
             cash = new Label();
             folderBrowserDialog1 = new FolderBrowserDialog();
+            mapmode = new Button();
             ((System.ComponentModel.ISupportInitialize)splitterVertical).BeginInit();
             splitterVertical.Panel1.SuspendLayout();
             splitterVertical.Panel2.SuspendLayout();
@@ -81,11 +83,13 @@
             // 
             // splitterVertical.Panel1
             // 
+            splitterVertical.Panel1.Controls.Add(mapmode);
             splitterVertical.Panel1.Controls.Add(mapBox);
             // 
             // splitterVertical.Panel2
             // 
             splitterVertical.Panel2.AutoScroll = true;
+            splitterVertical.Panel2.Controls.Add(diplomacyMenuBttn);
             splitterVertical.Panel2.Controls.Add(plane5);
             splitterVertical.Panel2.Controls.Add(plane4);
             splitterVertical.Panel2.Controls.Add(plane3);
@@ -133,9 +137,20 @@
             mapBox.TabStop = false;
             mapBox.MouseClick += mapBox_MouseClick;
             // 
+            // diplomacyMenuBttn
+            // 
+            diplomacyMenuBttn.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            diplomacyMenuBttn.Location = new Point(3, 287);
+            diplomacyMenuBttn.Name = "diplomacyMenuBttn";
+            diplomacyMenuBttn.Size = new Size(341, 47);
+            diplomacyMenuBttn.TabIndex = 34;
+            diplomacyMenuBttn.Text = "Diplomacy";
+            diplomacyMenuBttn.UseVisualStyleBackColor = true;
+            diplomacyMenuBttn.Click += diplomacyMenuBttn_Click;
+            // 
             // plane5
             // 
-            plane5.Location = new Point(106, 618);
+            plane5.Location = new Point(106, 687);
             plane5.Name = "plane5";
             plane5.Size = new Size(97, 46);
             plane5.TabIndex = 33;
@@ -145,7 +160,7 @@
             // 
             // plane4
             // 
-            plane4.Location = new Point(3, 618);
+            plane4.Location = new Point(3, 687);
             plane4.Name = "plane4";
             plane4.Size = new Size(97, 46);
             plane4.TabIndex = 32;
@@ -155,7 +170,7 @@
             // 
             // plane3
             // 
-            plane3.Location = new Point(209, 566);
+            plane3.Location = new Point(209, 635);
             plane3.Name = "plane3";
             plane3.Size = new Size(97, 46);
             plane3.TabIndex = 31;
@@ -165,7 +180,7 @@
             // 
             // plane2
             // 
-            plane2.Location = new Point(106, 566);
+            plane2.Location = new Point(106, 635);
             plane2.Name = "plane2";
             plane2.Size = new Size(97, 46);
             plane2.TabIndex = 30;
@@ -175,7 +190,7 @@
             // 
             // plane1
             // 
-            plane1.Location = new Point(3, 566);
+            plane1.Location = new Point(3, 635);
             plane1.Name = "plane1";
             plane1.Size = new Size(97, 46);
             plane1.TabIndex = 29;
@@ -186,7 +201,7 @@
             // buildMilFactoryBttn
             // 
             buildMilFactoryBttn.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            buildMilFactoryBttn.Location = new Point(3, 494);
+            buildMilFactoryBttn.Location = new Point(3, 563);
             buildMilFactoryBttn.Name = "buildMilFactoryBttn";
             buildMilFactoryBttn.Size = new Size(341, 66);
             buildMilFactoryBttn.TabIndex = 28;
@@ -199,7 +214,7 @@
             // 
             educationLevelLabel.AutoSize = true;
             educationLevelLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            educationLevelLabel.Location = new Point(244, 347);
+            educationLevelLabel.Location = new Point(244, 416);
             educationLevelLabel.Name = "educationLevelLabel";
             educationLevelLabel.Size = new Size(53, 21);
             educationLevelLabel.TabIndex = 27;
@@ -209,7 +224,7 @@
             // 
             educationEffortLabel.AutoSize = true;
             educationEffortLabel.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            educationEffortLabel.Location = new Point(244, 284);
+            educationEffortLabel.Location = new Point(244, 356);
             educationEffortLabel.Name = "educationEffortLabel";
             educationEffortLabel.Size = new Size(53, 21);
             educationEffortLabel.TabIndex = 26;
@@ -218,7 +233,7 @@
             // educationEffortTrack
             // 
             educationEffortTrack.LargeChange = 1;
-            educationEffortTrack.Location = new Point(3, 284);
+            educationEffortTrack.Location = new Point(3, 356);
             educationEffortTrack.Maximum = 100;
             educationEffortTrack.Minimum = 1;
             educationEffortTrack.Name = "educationEffortTrack";
@@ -229,7 +244,7 @@
             // 
             // educationLevelBar
             // 
-            educationLevelBar.Location = new Point(3, 347);
+            educationLevelBar.Location = new Point(3, 416);
             educationLevelBar.Name = "educationLevelBar";
             educationLevelBar.Size = new Size(235, 23);
             educationLevelBar.Step = 100;
@@ -238,7 +253,7 @@
             // militaryResourceTBox
             // 
             militaryResourceTBox.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            militaryResourceTBox.Location = new Point(3, 494);
+            militaryResourceTBox.Location = new Point(3, 563);
             militaryResourceTBox.Multiline = true;
             militaryResourceTBox.Name = "militaryResourceTBox";
             militaryResourceTBox.Size = new Size(64, 64);
@@ -247,45 +262,49 @@
             // 
             // increaseTL_MF
             // 
-            increaseTL_MF.Location = new Point(249, 537);
+            increaseTL_MF.Location = new Point(249, 606);
             increaseTL_MF.Name = "increaseTL_MF";
             increaseTL_MF.Size = new Size(95, 23);
             increaseTL_MF.TabIndex = 22;
             increaseTL_MF.Text = "Increase";
             increaseTL_MF.UseVisualStyleBackColor = true;
+            increaseTL_MF.Click += increaseTL_MF_Click;
             // 
             // decreaseTL_MF
             // 
-            decreaseTL_MF.Location = new Point(143, 537);
+            decreaseTL_MF.Location = new Point(143, 606);
             decreaseTL_MF.Name = "decreaseTL_MF";
             decreaseTL_MF.Size = new Size(95, 23);
             decreaseTL_MF.TabIndex = 21;
             decreaseTL_MF.Text = "Decrease";
             decreaseTL_MF.UseVisualStyleBackColor = true;
+            decreaseTL_MF.Click += decreaseTL_MF_Click;
             // 
             // increaseEL_MF
             // 
-            increaseEL_MF.Location = new Point(249, 496);
+            increaseEL_MF.Location = new Point(249, 565);
             increaseEL_MF.Name = "increaseEL_MF";
             increaseEL_MF.Size = new Size(95, 23);
             increaseEL_MF.TabIndex = 20;
             increaseEL_MF.Text = "Increase";
             increaseEL_MF.UseVisualStyleBackColor = true;
+            increaseEL_MF.Click += increaseEL_MF_Click;
             // 
             // decreaseEL_MF
             // 
-            decreaseEL_MF.Location = new Point(143, 496);
+            decreaseEL_MF.Location = new Point(143, 565);
             decreaseEL_MF.Name = "decreaseEL_MF";
             decreaseEL_MF.Size = new Size(95, 23);
             decreaseEL_MF.TabIndex = 19;
             decreaseEL_MF.Text = "Decrease";
             decreaseEL_MF.UseVisualStyleBackColor = true;
+            decreaseEL_MF.Click += decreaseEL_MF_Click;
             // 
             // technologicalLevelLabel_MF
             // 
             technologicalLevelLabel_MF.AutoSize = true;
             technologicalLevelLabel_MF.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            technologicalLevelLabel_MF.Location = new Point(76, 535);
+            technologicalLevelLabel_MF.Location = new Point(76, 604);
             technologicalLevelLabel_MF.Name = "technologicalLevelLabel_MF";
             technologicalLevelLabel_MF.Size = new Size(61, 23);
             technologicalLevelLabel_MF.TabIndex = 18;
@@ -295,7 +314,7 @@
             // 
             extensionLevelLabel_MF.AutoSize = true;
             extensionLevelLabel_MF.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            extensionLevelLabel_MF.Location = new Point(76, 494);
+            extensionLevelLabel_MF.Location = new Point(76, 563);
             extensionLevelLabel_MF.Name = "extensionLevelLabel_MF";
             extensionLevelLabel_MF.Size = new Size(61, 23);
             extensionLevelLabel_MF.TabIndex = 17;
@@ -303,6 +322,7 @@
             // 
             // provinceName
             // 
+            provinceName.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             provinceName.Location = new Point(3, 235);
             provinceName.Multiline = true;
             provinceName.Name = "provinceName";
@@ -312,7 +332,7 @@
             // 
             // increaseTL
             // 
-            increaseTL.Location = new Point(249, 440);
+            increaseTL.Location = new Point(249, 509);
             increaseTL.Name = "increaseTL";
             increaseTL.Size = new Size(95, 23);
             increaseTL.TabIndex = 14;
@@ -322,7 +342,7 @@
             // 
             // decreaseTL
             // 
-            decreaseTL.Location = new Point(143, 440);
+            decreaseTL.Location = new Point(143, 509);
             decreaseTL.Name = "decreaseTL";
             decreaseTL.Size = new Size(95, 23);
             decreaseTL.TabIndex = 13;
@@ -332,7 +352,7 @@
             // 
             // increaseEL
             // 
-            increaseEL.Location = new Point(249, 399);
+            increaseEL.Location = new Point(249, 468);
             increaseEL.Name = "increaseEL";
             increaseEL.Size = new Size(95, 23);
             increaseEL.TabIndex = 12;
@@ -342,7 +362,7 @@
             // 
             // decreaseEL
             // 
-            decreaseEL.Location = new Point(143, 399);
+            decreaseEL.Location = new Point(143, 468);
             decreaseEL.Name = "decreaseEL";
             decreaseEL.Size = new Size(95, 23);
             decreaseEL.TabIndex = 11;
@@ -354,7 +374,7 @@
             // 
             technologicalLevelLabel.AutoSize = true;
             technologicalLevelLabel.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            technologicalLevelLabel.Location = new Point(76, 438);
+            technologicalLevelLabel.Location = new Point(76, 507);
             technologicalLevelLabel.Name = "technologicalLevelLabel";
             technologicalLevelLabel.Size = new Size(61, 23);
             technologicalLevelLabel.TabIndex = 10;
@@ -364,7 +384,7 @@
             // 
             extensionLevelLabel.AutoSize = true;
             extensionLevelLabel.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            extensionLevelLabel.Location = new Point(76, 397);
+            extensionLevelLabel.Location = new Point(76, 466);
             extensionLevelLabel.Name = "extensionLevelLabel";
             extensionLevelLabel.Size = new Size(61, 23);
             extensionLevelLabel.TabIndex = 9;
@@ -372,7 +392,7 @@
             // 
             // simpleResourcePBox
             // 
-            simpleResourcePBox.Location = new Point(3, 397);
+            simpleResourcePBox.Location = new Point(3, 466);
             simpleResourcePBox.Name = "simpleResourcePBox";
             simpleResourcePBox.Size = new Size(64, 64);
             simpleResourcePBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -444,6 +464,17 @@
             cash.TabIndex = 1;
             cash.Text = "label1";
             // 
+            // mapmode
+            // 
+            mapmode.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mapmode.Location = new Point(3, 3);
+            mapmode.Name = "mapmode";
+            mapmode.Size = new Size(40, 40);
+            mapmode.TabIndex = 1;
+            mapmode.Text = "1";
+            mapmode.UseVisualStyleBackColor = true;
+            mapmode.Click += mapmode_Click;
+            // 
             // PaxApocalypticaGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -495,10 +526,12 @@
         private Label extensionLevelLabel_MF;
         private Label educationLevelLabel;
         private Button buildMilFactoryBttn;
-        private Button plane5;
-        private Button plane4;
-        private Button plane3;
-        private Button plane2;
-        private Button plane1;
+        public Button plane5;
+        public Button plane4;
+        public Button plane3;
+        public Button plane2;
+        public Button plane1;
+        private Button diplomacyMenuBttn;
+        private Button mapmode;
     }
 }

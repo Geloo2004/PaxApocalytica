@@ -2,6 +2,7 @@
 using PaxApocalytica.Properties;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,323 @@ namespace PaxApocalytica
 {
     public static class FileReader
     {
+        public static void ReadFile_TruceSides() 
+        {
+            PaxApocalypticaGame.Dictionary_CountrynameFriends = new Dictionary<string, List<string>>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "TruceSides.txt");
+            }
+            else
+            {
+                lines = Resources.TruceSides.Split("\r\n");
+            }
+            foreach (var line in lines)
+            {
+
+            }
+        }
+        
+        public static void ReadFile_NameInterceptors() 
+        {
+            PaxApocalypticaGame.Dictionary_CountrynameFriends = new Dictionary<string, List<string>>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "NameInterceptors.txt");
+            }
+            else
+            {
+                lines = Resources.NameInterceptors.Split("\r\n");
+            }
+            foreach (var line in lines)
+            {
+
+            }
+        }
+        public static void ReadFile_PactCountrynames() 
+        {
+            PaxApocalypticaGame.Dictionary_PactCountrynames = new Dictionary<string, List<string>>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "Pact_Countryname.txt");
+            }
+            else
+            {
+                lines = Resources.Pact_Countryname.Split("\r\n");
+            }
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                string[] subsublines = sublines[1].Split(",");
+
+                PaxApocalypticaGame.Dictionary_PactCountrynames.Add(sublines[0], new List<string>());
+                foreach (var subsubline in subsublines)
+                {
+                    if (subsubline != "")
+                    {
+                        PaxApocalypticaGame.Dictionary_PactCountrynames[sublines[0]].Add(subsubline);
+                    }
+                }
+            }
+
+        }
+        public static void ReadFile_CountrynameFriends()
+        {
+            PaxApocalypticaGame.Dictionary_CountrynameFriends = new Dictionary<string, List<string>>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "CountryName_Friends.txt");
+            }
+            else
+            {
+                lines = Resources.CountryName_Friends.Split("\r\n");
+            }
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                string[] subsublines = sublines[1].Split(",");
+
+                PaxApocalypticaGame.Dictionary_CountrynameFriends.Add(sublines[0], new List<string>());
+                foreach(var subsubline in subsublines) 
+                {
+                    PaxApocalypticaGame.Dictionary_CountrynameFriends[sublines[0]].Add(subsubline);
+                }
+            }
+        }
+        public static void ReadFile_CountrynameAllies()
+        {
+            PaxApocalypticaGame.Dictionary_CountrynameAllies = new Dictionary<string, List<string>>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "CountryName_Allies.txt");
+            }
+            else
+            {
+                lines = Resources.CountryName_Allies.Split("\r\n");
+            }
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                string[] subsublines = sublines[1].Split(",");
+
+                PaxApocalypticaGame.Dictionary_CountrynameAllies.Add(sublines[0], new List<string>());
+                foreach (var subsubline in subsublines)
+                {
+                    PaxApocalypticaGame.Dictionary_CountrynameAllies[sublines[0]].Add(subsubline);
+                }
+            }
+
+            /* Проверка того, что страны существуют 
+            foreach (var country in PaxApocalypticaGame.Dictionary_CountrynameAllies.Keys)
+            {
+                if (PaxApocalypticaGame.Dictionary_CountrynameCharacteristics.ContainsKey(country))
+                {
+                    foreach (var country1 in PaxApocalypticaGame.Dictionary_CountrynameAllies[country])
+                    {
+                        if (country1 != "")
+                        {
+                            if (PaxApocalypticaGame.Dictionary_CountrynameCharacteristics.ContainsKey(country1))
+                            {
+
+                            }
+                            else { throw new ArgumentException(); }
+                        }
+                    }
+                }
+                else { throw new ArgumentException(); }
+            }*/
+        }
+        public static void ReadFile_CountrynameRivals()
+        {
+            PaxApocalypticaGame.Dictionary_CountrynameRivals = new Dictionary<string, List<string>>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "CountryName_Rivals.txt");
+            }
+            else
+            {
+                lines = Resources.CountryName_Rivals.Split("\r\n");
+            }
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                string[] subsublines = sublines[1].Split(",");
+
+                PaxApocalypticaGame.Dictionary_CountrynameRivals.Add(sublines[0], new List<string>());
+                foreach (var subsubline in subsublines)
+                {
+                    PaxApocalypticaGame.Dictionary_CountrynameRivals[sublines[0]].Add(subsubline);
+                }
+            }
+        }
+        public static void ReadFile_WarSides()
+        {
+            PaxApocalypticaGame.Dictionary_WarSides = new Dictionary<List<string>, List<string>>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "WarSides.txt");
+            }
+            else
+            {
+                lines = Resources.WarSides.Split("\r\n");
+            }
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                string[] side0 = sublines[0].Split(",");
+                string[] side1 = sublines[1].Split(",");
+                PaxApocalypticaGame.Dictionary_WarSides.Add(side0.ToList(), side1.ToList());
+            }
+            /*
+            foreach(var key in PaxApocalypticaGame.Dictionary_WarSides.Keys) 
+            {
+                foreach(var country in key) 
+                {
+                    if (PaxApocalypticaGame.Dictionary_CountrynameCharacteristics.ContainsKey(country))
+                    {
+
+                    }
+                    else { throw new ArgumentException(); }
+                }
+                foreach (var country in PaxApocalypticaGame.Dictionary_WarSides[key])
+                {
+                    if (PaxApocalypticaGame.Dictionary_CountrynameCharacteristics.ContainsKey(country))
+                    {
+
+                    }
+                    else { throw new ArgumentException(); }
+                }
+            }*/
+        }
+
+        public static void ReadFile_CreationQueue_Army()
+        {
+            PaxApocalypticaGame.Dictionary_CreationQueue_Army = new Dictionary<string, string>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "CreationQueue_Army.txt");
+            }
+            else
+            {
+                lines = Resources.CreationQueue_Army.Split("\r\n");
+            }
+
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                PaxApocalypticaGame.Dictionary_CreationQueue_Army.Add(sublines[0], sublines[1]);              
+            }
+        }
+        public static void ReadFile_UpgradeQueue_SFactory() 
+        {
+            PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory = new Dictionary<string, SimpleFactory>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "UpgradeQueue_SFactory.txt");
+            }
+            else
+            {
+                lines = Resources.UpgradeQueue_SFactory.Split("\r\n");
+            }
+
+            foreach(var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+
+                if (sublines[1] ==      "Oil") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Oil, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Gold") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Gold, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Steel") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Steel, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Aluminium") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Aluminium, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Gas") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Gas, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Copper") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Copper, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Livestock") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Livestock, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Coal") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Coal, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Uranium") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Uranium, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else if (sublines[1] == "Grain") { PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Add(sublines[0], new SimpleFactory(SimpleResources.Names.Grain, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]))); }
+                else { throw new ArgumentException(); }
+            }
+        }
+        public static void ReadFile_UpgradeQueue_MFactory() 
+        {
+            PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory = new Dictionary<string, MilitaryFactory>();
+            string[] lines;
+            if (Form1.path != null)
+            {
+                lines = File.ReadAllLines(Form1.path + "UpgradeQueue_MFactory.txt");
+            }
+            else
+            {
+                lines = Resources.UpgradeQueue_MFactory.Split("\r\n");
+            }
+
+            foreach (var line in lines)
+            {
+                if (line == "") { break; }
+                string[] sublines = line.Split(";");
+                MilitaryFactoryType.Type mft;
+
+                if (sublines[4] == "NATO") 
+                {
+                    mft = MilitaryFactoryType.Type.NATO;
+                }
+                else if(sublines[4] == "Soviet")
+                {
+                    mft = MilitaryFactoryType.Type.Soviet;
+                }
+                else if (sublines[4] == "Generic")
+                {
+                    mft = MilitaryFactoryType.Type.Generic;
+                }
+                else { throw new ArgumentException(); }
+
+
+                if (sublines[1] == "Weaponry") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.Weaponry, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T72B") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T72B, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T90A") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T90A, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T90M") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T90M, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T14") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T14, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "BMP2") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.BMP2, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "BMP3") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.BMP3, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "BMD1") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.BMD1, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "BMD2") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.BMD2, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "FighterR") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.FighterR, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "StrikeAircraftR") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.StrikeAircraftR, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "M1") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.M1, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "M1A1") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.M1A1, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "M1A2") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.M1A2, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "M1A2C") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.M1A2C, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "M3A1") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.M3A1, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "M3A3") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.M3A3, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "FighterA") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.FighterA, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "StrikeAircraftA") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.StrikeAircraftA, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T55") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T55, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T55M") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T55M, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T72A") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T72A, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "T72M") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.T72M, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "BMP1") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.BMP1, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "BMP23") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.BMP23, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "FighterG") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.FighterG, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else if (sublines[1] == "StrikeAircraftG") { PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Add(sublines[0], new MilitaryFactory(MilitaryResources.Names.StrikeAircraftG, Convert.ToByte(sublines[2]), Convert.ToByte(sublines[3]), mft)); }
+                else { throw new ArgumentException(); }
+            }
+        }
+
         public static void ReadFile_NameArmynames()
         {
             PaxApocalypticaGame.Dictionary_NameArmynames = new Dictionary<string, List<string>>();

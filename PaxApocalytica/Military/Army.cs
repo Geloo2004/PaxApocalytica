@@ -8,7 +8,7 @@ namespace PaxApocalytica.Military
 {
     public class Army
     {
-        public bool IsMoved 
+        public bool IsMoved
         {
             get;
             set;
@@ -32,7 +32,7 @@ namespace PaxApocalytica.Military
             this.IsMoved = isMoved;
         }
 
-        public void AddUnit(Unit unit,int index)
+        public void AddUnit(Unit unit, int index)
         {
             this.Units[index] = unit;
         }
@@ -42,11 +42,11 @@ namespace PaxApocalytica.Military
             this.Units[index] = null;
         }
 
-        public bool CheckAllDead() 
+        public bool CheckAllDead()
         {
-            foreach(var unit in Units) 
+            foreach (var unit in Units)
             {
-                if (unit != null) 
+                if (unit != null)
                 {
                     return false;
                 }

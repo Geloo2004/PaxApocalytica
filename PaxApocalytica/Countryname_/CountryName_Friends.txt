@@ -1,0 +1,221 @@
+Canada;USA,UK,Australia
+USA;UK,France,South Korea,Taiwan,Philippines,Australia,Panama,United Arab Emirates,Saudi Arabia,Germany,Turkey,Italy,Israel,Vatican,Japan
+Singapore;
+Burkina-Faso;
+Mexico;Spain,Colombia,Vatican
+Guatemala;
+Belize;
+Gonduras;
+Salvador;
+Nicaragua;
+Costa Rica;Vatican
+Panama;USA,Vatican
+Jamaica;
+Cuba;Kazakh ASSR,China,USSR,Vatican
+Bahamas;
+Puerto Rico;
+UK;USA,France,Germany,Turkey,Italy,Spain,Portugal,South African Republic
+Haiti;
+Dominican Republic;Vatican
+Saint Kitts and Nevis;
+Antigua and Barbuda;
+France;USA,Germany,UK,Spain,Portugal,Italy,Turkey,Vatican
+Dominica;Vatican
+Saint Lucia;
+Saint Vincent and the Grenadines;
+Barbados;
+Grenada;
+Trinidad and Tobago;
+Venezuela;Vatican
+Colombia;Vatican
+Ecuador;Vatican
+Peru;Vatican
+Bolivia;Vatican
+Chile;Vatican
+Argentina;Vatican
+Paraguay;Vatican
+Uruguay;Vatican
+Brazil;Portugal,Vatican
+Suriname;
+Guyana;
+Cabo Verde;
+West Sakhara;
+Mavritaniya;
+Senegal;
+Gambia;
+Guinea-Bissau;
+Guinea;
+Sierra Leone;
+Liberia;
+Cote d'Ivoire;
+Gana;
+Togo;
+Benin;
+Nigeria;
+Cameroon;
+Gabon;
+Equatorial Guinea;
+Sao Tome;
+Congo;
+Democratic Republic of the Congo;
+Angola;
+Namibia;
+South African Republic;UK
+Lesotho;
+Eswatini;
+Botswana;
+Zimbabwe;
+Mozambique;
+Malawi;
+Zambia;
+Tanzania;
+Burundi;
+Rwanda;
+Uganda;
+Kenya;
+Somalia;
+Ethiopia;Portugal
+Djibouti;
+Eritrea;
+Sudan;
+Central African Republic;
+Chad;
+Niger;
+Mali;
+Algeria;
+Marocco;
+Tunisia;
+Lybia;
+Egypt;USSR,Russia,Syria
+Israel;USA
+Palestine;
+Jordan;
+Saudi Arabia;USA
+Yemen;
+Oman;
+United Arab Emirates;
+Qatar;
+Bahrain;
+Kuwait;
+Iraq;
+Syria;Egypt
+Lebanon;
+Cyprus;
+Turkey;USA,Azerbaijan,France,UK,Germany,Italy
+Greece;
+Albania;USSR
+North Macedonia;
+Yugoslavia;USSR,China,Hungary,Romania,Kazakh ASSR
+Croatia;Slovenia
+Slovenia;Croatia
+Italy;
+San-Marino;Italy,Vatican
+Vatican;Spain,Portugal,Mexico,Venezuela,Colombia,Italy,San-Marino,Argentina,Malta,Ecuador,Brazil,USA,Philippines,Poland,Hungary,Romania,East Timor,Paraguay,Uruguay,Andorra,Monaco,Croatia,Ireland,Cabo Verde,Lithuania,Finland,Estonia,Latvia,Peru,Sao Tome,Slovenia,Bolivia,Slovakia,Panama,Haiti,Dominican Republic,Cuba,Costa Rica,France,Chile,Angola
+Switzerland;
+Monaco;Vatican,France
+Andorra;Vatican,Spain
+Spain;
+Portugal;Spain,Brazil
+Ireland;Vatican,UK
+Iceland;Norway,Denmark,Sweden
+Denmark;Norway,Iceland,Sweden
+Norway;Denmark,Sweden,Iceland,Finland
+Sweden;Denmark,Norway,Iceland,Finland
+Finland;Vatican,Norway,Estonia,Sweden
+Estonia;Vatican,Finland
+Latvia;Vatican,Lithuania
+Lithuania;Vatican,Latvia
+Poland;Vatican,Hungary
+Germany;France,UK,USA,Spain,Austria,Switzerland,Luxemburg,Turkey,Russia
+Luxemburg;Germany,France,Belgium,USA,UK,Spain,Portugal,Netherlands
+Belgium;Netherlands,Germany,France,UK,USA
+Netherlands;Belgium,Germany,France,UK,USA
+Austria;Germany,Russia,France,Switzerland
+Czechoslovakia;USSR,Kazakh ASSR
+Hungary;Poland
+Romania;Moldavia
+Bulgaria;
+Moldavia;Romania
+Transnistria;Russia,USSR,Kazakh ASSR
+Ukraine;Russia,Belarus,Kazakhstan
+Belarus;Russia,Ukraine,Kazakhstan
+Russia;Ukraine,Belarus,Kazakhstan,Egypt
+China;Russia,Vietnam,North Korea
+Taiwan;USA,South Korea,Japan
+Vietnam;
+Cambodia;
+Laos;
+Thailand;
+Burma;
+Bangladesh;
+India;
+Sri Lanka;
+Nepal;
+Bhutan;
+Pakistan;Afghanistan
+Afghanistan;Pakistan
+Tajikistan;Russia,Kazakhstan,USSR,Kazakh ASSR
+Kyrgyzstan;Russia,Kazakhstan,USSR,Kazakh ASSR
+Kazakh ASSR;Cuba,Czechoslovakia
+Uzbekistan;Russia,Kazakhstan,USSR,Kazakh ASSR
+Turkmenistan;Russia,Kazakhstan,USSR,Kazakh ASSR
+Iran;Syria
+Azerbaijan;Turkey
+Armenia;Russia
+Georgia;
+Malaysia;
+Indonesia;
+Papua New Guinea;
+Philippines;USA,Vatican
+North Korea;China
+South Korea;USA,Japan,Taiwan
+Japan;South Korea,USA,Taiwan
+Solomon Islands;
+New Zealand;
+Fiji;
+Australia;UK,USA
+East Timor;Vatican
+Madagascar;
+Mongolia;Russia
+Malta;Vatican
+Slovakia;
+Czechia;
+USSR;Cuba,Tajikistan,Kyrgyzstan,Uzbekistan,Turkmenistan
+Zapadoslavia;Great Moravia
+Byzantium;
+Sparta;
+Great Macedonia;
+Transcaucasia;
+United Arab Republic;
+Gran Colombia;Mexico,Spain
+Turkic Union;
+Scandinavia;
+Intermarium;Great Moravia
+Sich;
+Roman Empire;
+Great Germania;UK
+Prussia;Germany,Great Germania,Francia,France
+Great Moravia;Zapadoslavia
+Mongol Empire;
+Korea;
+Abyssinia;
+Holy Roman Empire;France,UK,Belgium,Poland
+The Papal State;Spain,Portugal,Mexico,Venezuela,Colombia,Italy,San-Marino,Argentina,Malta,Ecuador,Brazil,USA,Philippines,Poland,Hungary,Romania,East Timor,Paraguay,Uruguay,Andorra,Monaco,Croatia,Ireland,Cabo Verde,Lithuania,Finland,Estonia,Latvia,Peru,Sao Tome,Slovenia,Bolivia,Slovakia,Panama,Haiti,Dominican Republic,Cuba,Costa Rica,France,Chile,Angola
+Francia;Germany,
+Great Britain;
+Iberia;
+Baltia;Finland,Poland
+Polish-Lithuanian Commonwealth;
+Union of Socialist Balkan Republics;USSR,Kazakh ASSR
+Ruthenia;Poland,Lithuania
+Cossackia;
+Bosnia;
+Serbia;
+Turkestan;
+Tatarstan;
+Far Eastern Autonomy;
+Ural;
+Novgorod;
+State of Siberia;
+Tsaritsyn;Byzantium
+Kazakhstan;Russia,Ukraine,Belarus

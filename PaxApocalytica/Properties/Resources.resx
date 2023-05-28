@@ -139,17 +139,29 @@
   <data name="copperImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\copperImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CountryName_Allies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Countryname_\CountryName_Allies.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="CountryName_Characteristics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Countryname_\CountryName_Characteristics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
+  <data name="CountryName_Friends" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Countryname_\CountryName_Friends.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="CountryName_MilitaryResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Countryname_\CountryName_MilitaryResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CountryName_Rivals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Countryname_\CountryName_Rivals.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="CountryName_SimpleResources" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Countryname_\CountryName_SimpleResources.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="CountryName_SimpleResources_Trade" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Countryname_\CountryName_SimpleResources _Trade.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="CreationQueue_Army" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Queues\CreationQueue_Army.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="gasImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\gasImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +172,14 @@
   <data name="grainImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\grainImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="JolyFox___Red_Army_Is_The_Strongest__TNO_Fan_made___128_kbps_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\JolyFox - Red Army Is The Strongest (TNO Fan-made) (128 kbps).wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="livestockImagejpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\livestockImagejpg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NameInterceptors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\NameInterceptors.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
   <data name="Name_Airfield" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Name_\Name_Airfield.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
@@ -199,13 +217,28 @@
   <data name="Pact_Countryname" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pact_Countryname.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
+  <data name="shooting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\shooting.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="SteelImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SteelImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="String1" xml:space="preserve">
     <value />
   </data>
+  <data name="TruceSides" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TruceSides.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="UpgradeQueue_MFactory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Queues\UpgradeQueue_MFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="UpgradeQueue_SFactory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Queues\UpgradeQueue_SFactory.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="uraniumImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\uraniumImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarSides" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\WarSides.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
 </root>

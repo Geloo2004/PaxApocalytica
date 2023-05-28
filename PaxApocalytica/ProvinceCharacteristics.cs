@@ -24,6 +24,7 @@ namespace PaxApocalytica
             if (EductaionEffort > 100) { EductaionEffort = 100; }
             if (EductaionEffort < 1) { EductaionEffort = 1; }
             this.Manpower = mp;
+
         }
 
         public int GetTaxes() 

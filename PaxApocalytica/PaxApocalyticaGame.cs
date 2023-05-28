@@ -15,6 +15,7 @@ using System.IO;
 using System.Drawing.Drawing2D;
 using PaxApocalytica.FactoriesAndResources;
 using PaxApocalytica.Military;
+using System.Media;
 
 namespace PaxApocalytica
 {
@@ -33,6 +34,9 @@ namespace PaxApocalytica
         public static string armyStartProv;
 
         static bool sendingInterceptors = false;
+        static string fighterName;
+
+        static string bomberName;
         static bool sendingBombers = false;
 
         private static Form1 mainMenu;
@@ -52,6 +56,13 @@ namespace PaxApocalytica
         static Color white = Color.White;
 
 
+
+        public static Dictionary<string, int[]> AI_SimpleResources;
+
+
+
+
+
         public static Dictionary<string, Point[]> Dictionary_NamesPoints;
         public static Dictionary<Color, string> Dictionary_ColorName;
         public static Dictionary<string, string[]> Dictionary_NameNeighbours;
@@ -62,11 +73,20 @@ namespace PaxApocalytica
          *  enemies
          *  player/ai
          */
+
+        public static List<string> ExistingCountriesList;
         public static Dictionary<string, SimpleFactory> Dictionary_UpgradeQueue_SFactory;
         public static Dictionary<string, MilitaryFactory> Dictionary_UpgradeQueue_MFactory;
         public static Dictionary<string, string> Dictionary_CreationQueue_Army;
+        public static Dictionary<string, List<string>> Dictionary_PactCountrynames;
+        public static Dictionary<string, List<string>> Dictionary_NameInterceptors;
+        public static Dictionary<string, List<string>> Dictionary_CountrynameFriends;
+        public static Dictionary<string, List<string>> Dictionary_CountrynameAllies;
+        public static Dictionary<List<string>, List<string>> Dictionary_WarSides;
+        public static Dictionary<string, List<string>> Dictionary_CountrynameRivals;
 
-
+        public static SoundPlayer spShooting;
+        public static SoundPlayer spRedArmy;
 
         public static Dictionary<string, ProvinceCharacteristics> Dictionary_NameCharacteristics;
         public static Dictionary<string, List<string>> Dictionary_NameArmynames;
@@ -139,6 +159,7 @@ namespace PaxApocalytica
             extensionLevelLabel_MF.Hide();
             technologicalLevelLabel_MF.Hide();
             buildMilFactoryBttn.Hide();
+            diplomacyMenuBttn.Hide();
 
             plane1.Hide();
             plane2.Hide();
@@ -146,13 +167,13 @@ namespace PaxApocalytica
             plane4.Hide();
             plane5.Hide();
 
+            //spShooting = new SoundPlayer(Resources.shooting);
+
             splitterVertical.Panel2MinSize = splitterVertical.Panel2.Width;
 
             Dictionary_CountrynameSimpleResources_Trade_ReduceTrade = new Dictionary<string, int>();
 
-            Dictionary_UpgradeQueue_SFactory = new Dictionary<string, SimpleFactory>();
-            Dictionary_UpgradeQueue_MFactory = new Dictionary<string, MilitaryFactory>();
-            Dictionary_CreationQueue_Army = new Dictionary<string, string>();
+            Dictionary_NameInterceptors = new Dictionary<string, List<string>>();
 
             FileReader.ReadFile_NameOwner();
             FileReader.ReadFile_NameOccupant();
@@ -166,6 +187,16 @@ namespace PaxApocalytica
             FileReader.ReadFile_NameCharacteristics();
             FileReader.ReadFile_NameArmynames();
             FileReader.ReadFile_ArmynameArmycharacteristics();
+            FileReader.ReadFile_CreationQueue_Army();
+            FileReader.ReadFile_UpgradeQueue_MFactory();
+            FileReader.ReadFile_UpgradeQueue_SFactory();
+            FileReader.ReadFile_CountrynameFriends();
+            FileReader.ReadFile_CountrynameAllies();
+            FileReader.ReadFile_WarSides();
+            FileReader.ReadFile_CountrynameRivals();
+            FileReader.ReadFile_PactCountrynames();
+
+
 
             //не меняются
             FileReader.ReadFile_ColorName();
@@ -183,6 +214,7 @@ namespace PaxApocalytica
                 StartCalcualtor.CalculateStartCash();
                 StartCalcualtor.GenerateRandomPlanes();
             }
+            Calculator.RecalculateExistingCountries();
             Calculator.RecalculateTradeSlots();
             Calculator.RecalcualteManpower();
             Calculator.RecalcualteCash();
@@ -204,7 +236,8 @@ namespace PaxApocalytica
                 Dictionary_CanBuildUnit.Add(country, new bool[27]);
                 Calculator.RecalculateCanBuildUnit(country);
             }
-
+            //spRedArmy = new SoundPlayer(Resources.JolyFox___Red_Army_Is_The_Strongest__TNO_Fan_made___128_kbps_);
+            //spRedArmy.Play();
             DrawStartMap();
             UpdateMap();
         }
@@ -258,9 +291,6 @@ namespace PaxApocalytica
             ResizeMapBox();
             ResizeRectangle();
             ResizeLabelsAndButtons();
-            saveChoice.Width = splitterVertical.Panel2.Width - 14;
-            resourcesManagerBttn.Width = splitterVertical.Panel2.Width - 3;
-            militaryManagementBttn.Width = splitterVertical.Panel2.Width - 3;
             UpdateMap();
         }
         private void splitterVertical_SplitterMoved(object sender, SplitterEventArgs e)
@@ -361,6 +391,7 @@ namespace PaxApocalytica
 
         private void mapBox_MouseClick(object sender, MouseEventArgs e)
         {
+            // spShooting.Play();
             int x = e.X + rect.X;
             int y = e.Y + rect.Y;
             while (x >= 8192)
@@ -406,9 +437,11 @@ namespace PaxApocalytica
                     baseBitmap.GetPixel(x, y) != borderGray &&
                     baseBitmap.GetPixel(x, y) != otherBorderGray)
                 {
+                    if(mapmode.Text == "2") { ShowMapmode2(); }
+
+                    string clickedProvinceName = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
                     if (movingArmy)
                     {
-                        string clickedProvinceName = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
 
                         //добавить проверку на союзников, врагов
 
@@ -481,7 +514,6 @@ namespace PaxApocalytica
                     }
                     else if (deployingArmy)
                     {
-                        string clickedProvinceName = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
 
                         if (Dictionary_NameOwner[clickedProvinceName] == playerCountry.Text)
                         {
@@ -489,12 +521,33 @@ namespace PaxApocalytica
                             deployingArmy = false;
                         }
                     }
+                    else if (sendingBombers)
+                    {
+                        if(Calculator.CheckAtWar(playerCountry.Text, Dictionary_NameOccupant[clickedProvinceName])) 
+                        {
+                            bool destroyed = false;
+                            Calculator.BombingProvince(clickedProvinceName, bomberName, ref destroyed);
+                            if (destroyed)
+                            {
+                                if (plane1.Text == bomberName) { plane1.Text = "Add Plane"; }
+                                else if (plane2.Text == bomberName) { plane2.Text = "Add Plane"; }
+                                else if (plane3.Text == bomberName) { plane3.Text = "Add Plane"; }
+                                else if (plane4.Text == bomberName) { plane4.Text = "Add Plane"; }
+                                else if (plane5.Text == bomberName) { plane5.Text = "Add Plane"; }
+                            }
+                        }
+                        //enemies
+                    }
+                    else if (sendingInterceptors)
+                    {
+                        //allies , yourself
+                    }
                     else
                     {
                         if (countryIsChosen)
                         {
                             provinceName.Show();
-                            provinceName.Text = Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)];
+                            provinceName.Text = clickedProvinceName;
                             date.Text = Convert.ToString(Dictionary_NameCharacteristics[provinceName.Text].Manpower);
 
                             educationLevelBar.Value = Dictionary_NameCharacteristics[provinceName.Text].Eductaion;
@@ -511,7 +564,7 @@ namespace PaxApocalytica
                                 else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.fighterG) { plane1.Text = "Generic Fighter"; }
                                 else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.strikeAircraftA) { plane1.Text = "NATO Strike Aircraft"; }
                                 else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.strikeAircraftR) { plane1.Text = "Sov. Strike Aircraft"; }
-                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.strikeAircraftG) { plane1.Text = "Generic trike Aircraf"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[0].Name == UnitName.Name.strikeAircraftG) { plane1.Text = "Generic Strike Aircraft"; }
                                 else { throw new ArgumentException(); }
 
                                 if (Dictionary_NameAirfield[provinceName.Text].Planes[1] == null) { plane2.Text = "Add plane"; }
@@ -520,7 +573,7 @@ namespace PaxApocalytica
                                 else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.fighterG) { plane2.Text = "Generic Fighter"; }
                                 else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.strikeAircraftA) { plane2.Text = "NATO Strike Aircraft"; }
                                 else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.strikeAircraftR) { plane2.Text = "Sov. Strike Aircraft"; }
-                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.strikeAircraftG) { plane2.Text = "Generic trike Aircraf"; }
+                                else if (Dictionary_NameAirfield[provinceName.Text].Planes[1].Name == UnitName.Name.strikeAircraftG) { plane2.Text = "Generic Strike Aircraft"; }
                                 else { throw new ArgumentException(); }
 
 
@@ -537,7 +590,7 @@ namespace PaxApocalytica
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.fighterG) { plane3.Text = "Generic Fighter"; }
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.strikeAircraftA) { plane3.Text = "NATO Strike Aircraft"; }
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.strikeAircraftR) { plane3.Text = "Sov. Strike Aircraft"; }
-                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.strikeAircraftG) { plane3.Text = "Generic trike Aircraf"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[2].Name == UnitName.Name.strikeAircraftG) { plane3.Text = "Generic Strike Aircraft"; }
                                     else { throw new ArgumentException(); }
 
                                     if (Dictionary_NameAirfield[provinceName.Text].Planes[3] == null) { plane4.Text = "Add plane"; }
@@ -546,7 +599,7 @@ namespace PaxApocalytica
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.fighterG) { plane4.Text = "Generic Fighter"; }
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.strikeAircraftA) { plane4.Text = "NATO Strike Aircraft"; }
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.strikeAircraftR) { plane4.Text = "Sov. Strike Aircraft"; }
-                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.strikeAircraftG) { plane4.Text = "Generic trike Aircraf"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[3].Name == UnitName.Name.strikeAircraftG) { plane4.Text = "Generic Strike Aircraft"; }
                                     else { throw new ArgumentException(); }
 
 
@@ -556,7 +609,7 @@ namespace PaxApocalytica
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.fighterG) { plane5.Text = "Generic Fighter"; }
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.strikeAircraftA) { plane5.Text = "NATO Strike Aircraft"; }
                                     else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.strikeAircraftR) { plane5.Text = "Sov. Strike Aircraft"; }
-                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.strikeAircraftG) { plane5.Text = "Generic trike Aircraf"; }
+                                    else if (Dictionary_NameAirfield[provinceName.Text].Planes[4].Name == UnitName.Name.strikeAircraftG) { plane5.Text = "Generic Strike Aircraft"; }
                                     else { throw new ArgumentException(); }
                                 }
                                 else
@@ -606,7 +659,7 @@ namespace PaxApocalytica
                         else
                         {
                             playerCountry.Show();
-                            chosenCountry = Dictionary_NameOwner[Dictionary_ColorName[baseBitmapRegions.GetPixel(x, y)]];
+                            chosenCountry = Dictionary_NameOwner[clickedProvinceName];
                             playerCountry.Text = chosenCountry;
                             saveChoice.Text = "I want to play as this country";
                         }
@@ -711,10 +764,10 @@ namespace PaxApocalytica
                 saveChoice.Hide();
                 saveChoice.Dispose();
                 cash.Show();
-                date.Show();
                 UpdatePlayerData();
                 resourcesManagerBttn.Show();
                 militaryManagementBttn.Show();
+                diplomacyMenuBttn.Show();
             }
         }
 
@@ -987,53 +1040,11 @@ namespace PaxApocalytica
             educationEffortLabel.Text = Convert.ToString(educationEffortTrack.Value);
         }
 
-        private void decreaseEL_Click(object sender, EventArgs e)
-        {
-            Dictionary_NameSFactory[provinceName.Text].EDegrade();
-            UpdateSFactoryInterface();
-        }
-        private void increaseEL_Click(object sender, EventArgs e)
-        {
-            Dictionary_UpgradeQueue_SFactory.Add(6 + "," + provinceName.Text,
-                new SimpleFactory(Dictionary_NameSFactory[provinceName.Text].ProducedResourceName,
-                (byte)(Dictionary_NameSFactory[provinceName.Text].ExtensionLevel + 1),
-                Dictionary_NameSFactory[provinceName.Text].TechnologyLevel));
-
-            increaseEL.Hide();
-            increaseTL.Hide();
-            decreaseEL.Hide();
-            decreaseTL.Hide();
-            increaseEL_MF.Hide();
-            increaseTL_MF.Hide();
-            decreaseEL_MF.Hide();
-            decreaseTL_MF.Hide();
-        }
-
-        private void decreaseTL_Click(object sender, EventArgs e)
-        {
-            Dictionary_NameSFactory[provinceName.Text].TDegrade();
-            UpdateSFactoryInterface();
-        }
-
-        private void increaseTL_Click(object sender, EventArgs e)
-        {
-            Dictionary_UpgradeQueue_SFactory.Add(6 + "," + provinceName.Text,
-                new SimpleFactory(Dictionary_NameSFactory[provinceName.Text].ProducedResourceName,
-                Dictionary_NameSFactory[provinceName.Text].ExtensionLevel,
-                (byte)(Dictionary_NameSFactory[provinceName.Text].TechnologyLevel + 1)));
-
-            increaseEL.Hide();
-            increaseTL.Hide();
-            decreaseEL.Hide();
-            decreaseTL.Hide();
-            increaseEL_MF.Hide();
-            increaseTL_MF.Hide();
-            decreaseEL_MF.Hide();
-            decreaseTL_MF.Hide();
-        }
 
         private void buildMilFactoryBttn_Click(object sender, EventArgs e)
         {
+            Dictionary_CountrynameCharacteristics[playerCountry.Text].Cash -= 10000;
+            UpdatePlayerData();
             Dictionary_UpgradeQueue_MFactory.Add(12 + "," + provinceName.Text, new MilitaryFactory(MilitaryResources.Names.Weaponry, 1, 1, Dictionary_CountrynameCharacteristics[playerCountry.Text].TechGroup));
             buildMilFactoryBttn.Enabled = false;
         }
@@ -1057,17 +1068,19 @@ namespace PaxApocalytica
         {
             if (plane1.Text.Contains("Fighter"))
             {
-                sendingInterceptors = true;
+                sendingInterceptors = true; if (plane1.Text.StartsWith("Generic")) { fighterName = "Generic Fighter"; }
+                else { fighterName = "NATO Fighter"; }
             }
             else if (plane1.Text.Contains("Strike"))
             {
                 sendingBombers = true;
+                if (plane1.Text.StartsWith("Generic")) { bomberName = "Generic Strike Aircraft"; }
+                else { bomberName = "NATO Strike Aircraft"; }
             }
             else if (plane1.Text.Contains("Add"))
             {
-                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                Add_Plane ap = new Add_Plane(playerCountry.Text, provinceName.Text, plane1);
                 ap.Show();
-                plane1.Enabled = false;
             }
             else { throw new ArgumentException(); }
         }
@@ -1075,17 +1088,20 @@ namespace PaxApocalytica
         {
             if (plane2.Text.Contains("Fighter"))
             {
-                sendingInterceptors = true;
+                sendingInterceptors = true; 
+                if (plane2.Text.StartsWith("Generic")) { fighterName = "Generic Fighter"; }
+                else { fighterName = "NATO Fighter"; }
             }
             else if (plane2.Text.Contains("Strike"))
             {
                 sendingBombers = true;
+                if (plane2.Text.StartsWith("Generic")) { bomberName = "Generic Strike Aircraft"; }
+                else { bomberName = "NATO Strike Aircraft"; }
             }
             else if (plane2.Text.Contains("Add"))
             {
-                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                Add_Plane ap = new Add_Plane(playerCountry.Text, provinceName.Text, plane2);
                 ap.Show();
-                plane2.Enabled = false;
             }
             else { throw new ArgumentException(); }
         }
@@ -1093,17 +1109,19 @@ namespace PaxApocalytica
         {
             if (plane3.Text.Contains("Fighter"))
             {
-                sendingInterceptors = true;
+                sendingInterceptors = true; if (plane3.Text.StartsWith("Generic")) { fighterName = "Generic Fighter"; }
+                else { fighterName = "NATO Fighter"; }
             }
             else if (plane3.Text.Contains("Strike"))
             {
                 sendingBombers = true;
+                if (plane3.Text.StartsWith("Generic")) { bomberName = "Generic Strike Aircraft"; }
+                else { bomberName = "NATO Strike Aircraft"; }
             }
             else if (plane3.Text.Contains("Add"))
             {
-                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                Add_Plane ap = new Add_Plane(playerCountry.Text, provinceName.Text, plane3);
                 ap.Show();
-                plane3.Enabled = false;
             }
             else { throw new ArgumentException(); }
 
@@ -1112,17 +1130,19 @@ namespace PaxApocalytica
         {
             if (plane4.Text.Contains("Fighter"))
             {
-                sendingInterceptors = true;
+                sendingInterceptors = true; if (plane4.Text.StartsWith("Generic")) { fighterName = "Generic Fighter"; }
+                else { fighterName = "NATO Fighter"; }
             }
             else if (plane4.Text.Contains("Strike"))
             {
                 sendingBombers = true;
+                if (plane4.Text.StartsWith("Generic")) { bomberName = "Generic Strike Aircraft"; }
+                else { bomberName = "NATO Strike Aircraft"; }
             }
             else if (plane4.Text.Contains("Add"))
             {
-                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                Add_Plane ap = new Add_Plane(playerCountry.Text, provinceName.Text, plane4);
                 ap.Show();
-                plane1.Enabled = false;
             }
             else { throw new ArgumentException(); }
         }
@@ -1130,19 +1150,211 @@ namespace PaxApocalytica
         {
             if (plane5.Text.Contains("Fighter"))
             {
-                sendingInterceptors = true;
+                sendingInterceptors = true; if (plane5.Text.StartsWith("Generic")) { fighterName = "Generic Fighter"; }
+                else { fighterName = "NATO Fighter"; }
             }
             else if (plane5.Text.Contains("Strike"))
             {
                 sendingBombers = true;
+                if (plane5.Text.StartsWith("Generic")) { bomberName = "Generic Strike Aircraft"; }
+                else { bomberName = "NATO Strike Aircraft"; }
             }
             else if (plane5.Text.Contains("Add"))
             {
-                Add_Plane ap = new Add_Plane(playerCountry.Text);
+                Add_Plane ap = new Add_Plane(playerCountry.Text, provinceName.Text, plane5);
                 ap.Show();
-                plane1.Enabled = false;
             }
             else { throw new ArgumentException(); }
+        }
+
+        private void decreaseEL_Click(object sender, EventArgs e)
+        {
+            Dictionary_NameSFactory[provinceName.Text].EDegrade();
+            UpdateSFactoryInterface();
+        }
+        private void increaseEL_Click(object sender, EventArgs e)
+        {
+            Dictionary_UpgradeQueue_SFactory.Add(6 + "," + provinceName.Text,
+                new SimpleFactory(Dictionary_NameSFactory[provinceName.Text].ProducedResourceName,
+                (byte)(Dictionary_NameSFactory[provinceName.Text].ExtensionLevel + 1),
+                Dictionary_NameSFactory[provinceName.Text].TechnologyLevel));
+
+            increaseEL.Hide();
+            increaseTL.Hide();
+            decreaseEL.Hide();
+            decreaseTL.Hide();
+            increaseEL_MF.Hide();
+            increaseTL_MF.Hide();
+            decreaseEL_MF.Hide();
+            decreaseTL_MF.Hide();
+        }
+        private void decreaseTL_Click(object sender, EventArgs e)
+        {
+            Dictionary_NameSFactory[provinceName.Text].TDegrade();
+            UpdateSFactoryInterface();
+        }
+        private void increaseTL_Click(object sender, EventArgs e)
+        {
+            Dictionary_UpgradeQueue_SFactory.Add(6 + "," + provinceName.Text,
+                new SimpleFactory(Dictionary_NameSFactory[provinceName.Text].ProducedResourceName,
+                Dictionary_NameSFactory[provinceName.Text].ExtensionLevel,
+                (byte)(Dictionary_NameSFactory[provinceName.Text].TechnologyLevel + 1)));
+
+            increaseEL.Hide();
+            increaseTL.Hide();
+            decreaseEL.Hide();
+            decreaseTL.Hide();
+            increaseEL_MF.Hide();
+            increaseTL_MF.Hide();
+            decreaseEL_MF.Hide();
+            decreaseTL_MF.Hide();
+        }
+
+        private void decreaseEL_MF_Click(object sender, EventArgs e)
+        {
+            Dictionary_NameMFactory[provinceName.Text].EDegrade();
+            UpdateSFactoryInterface();
+        }
+        private void increaseEL_MF_Click(object sender, EventArgs e)
+        {
+            Dictionary_UpgradeQueue_MFactory.Add(6 + "," + provinceName.Text,
+               new MilitaryFactory(Dictionary_NameMFactory[provinceName.Text].ProducedResourceName,
+              (byte)(Dictionary_NameMFactory[provinceName.Text].ExtensionLevel + 1),
+               Dictionary_NameSFactory[provinceName.Text].TechnologyLevel,
+               Dictionary_NameMFactory[provinceName.Text].FactoryType));
+        }
+        private void decreaseTL_MF_Click(object sender, EventArgs e)
+        {
+            Dictionary_NameMFactory[provinceName.Text].TDegrade();
+            UpdateSFactoryInterface();
+        }
+        private void increaseTL_MF_Click(object sender, EventArgs e)
+        {
+            Dictionary_UpgradeQueue_MFactory.Add(6 + "," + provinceName.Text,
+               new MilitaryFactory(Dictionary_NameMFactory[provinceName.Text].ProducedResourceName,
+               Dictionary_NameMFactory[provinceName.Text].ExtensionLevel,
+               (byte)(Dictionary_NameSFactory[provinceName.Text].TechnologyLevel + 1),
+               Dictionary_NameMFactory[provinceName.Text].FactoryType));
+
+            increaseEL.Hide();
+            increaseTL.Hide();
+            decreaseEL.Hide();
+            decreaseTL.Hide();
+            increaseEL_MF.Hide();
+            increaseTL_MF.Hide();
+            decreaseEL_MF.Hide();
+            decreaseTL_MF.Hide();
+        }
+
+        private void diplomacyMenuBttn_Click(object sender, EventArgs e)
+        {
+            if (countryIsChosen)
+            {
+                Diplomacy_Menu dm = new Diplomacy_Menu(playerCountry.Text);
+                dm.Show();
+            }
+        }
+
+        private void mapmode_Click(object sender, EventArgs e)
+        {
+            if (mapmode.Text == "1") { mapmode.Text = "2"; ShowMapmode2(); }
+            else { mapmode.Text = "1"; ShowMapmode1(); }
+        }
+
+        private void ShowMapmode1() //political
+        {
+            foreach(var province in Dictionary_NameOccupant.Keys) 
+            {
+                foreach(var point in Dictionary_NamesPoints[province]) 
+                {
+                    FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Dictionary_CountrynameCharacteristics[Dictionary_NameOccupant[province]].Color);
+                }
+            }
+        }
+
+        private void ShowMapmode2() //diplomatic
+        {
+            if (provinceName.Visible)
+            {
+                string country = Dictionary_NameOccupant[provinceName.Text];
+
+                List<string> allies = new List<string>();
+                List<string> rivals = new List<string>();
+                List<string> warEnemies = new List<string>();
+
+                foreach (var ally in Dictionary_CountrynameAllies[country])
+                {
+                    if (!allies.Contains(ally))
+                    {
+                        allies.Add(ally);
+                    }
+                }
+                foreach (var rival in Dictionary_CountrynameRivals[country])
+                {
+                    if (!rival.Contains(rival))
+                    {
+                        rivals.Add(rival);
+                    }
+                }
+                foreach (var existingCountry in ExistingCountriesList)
+                {
+                    if(existingCountry == country) { continue; }
+                    if (Calculator.CheckAtWar(country, existingCountry)) 
+                    {
+                        warEnemies.Add(existingCountry);
+                    }
+                }
+                foreach (var pact in Dictionary_PactCountrynames.Keys)
+                {
+                    if (Dictionary_PactCountrynames[pact].Contains(country))
+                    {
+                        foreach (var ally in Dictionary_PactCountrynames[pact])
+                        {
+                            if (!allies.Contains(ally) && ally != country)
+                            {
+                                allies.Add(ally);
+                            }
+                        }
+                    }
+                }
+
+                foreach (var province in Dictionary_NameOccupant.Keys)
+                {
+                    if (allies.Contains(Dictionary_NameOccupant[province]))
+                    {
+                        foreach (var point in Dictionary_NamesPoints[province])
+                        {
+                            FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Color.Blue);
+                        }
+                    }
+                    else if (rivals.Contains(Dictionary_NameOccupant[province])) {
+                        foreach (var point in Dictionary_NamesPoints[province])
+                        {
+                            FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Color.Yellow);
+                        }
+                    }
+                    else if (warEnemies.Contains(Dictionary_NameOccupant[province])) {
+                        foreach (var point in Dictionary_NamesPoints[province])
+                        {
+                            FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Color.FromArgb(6,6,6));
+                        }
+                    }
+                    else if(Dictionary_NameOccupant[province] == country) 
+                    {
+                        foreach (var point in Dictionary_NamesPoints[province])
+                        {
+                            FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Color.Green);
+                        }
+                    }
+                    else
+                    {
+                        foreach (var point in Dictionary_NamesPoints[province])
+                        {
+                            FloodFill(baseBitmap, point, baseBitmap.GetPixel(point.X, point.Y), Dictionary_CountrynameCharacteristics[Dictionary_NameOccupant[province]].Color);
+                        }
+                    }
+                }
+            }
         }
     }
 }

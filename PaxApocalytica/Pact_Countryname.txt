@@ -1,7 +1,8 @@
-NATO;Germany,UK,USA,Canada,Spain,Portugal,Denmark,France,Greece,Turkey,Iceland,Italy,Luxemburg,Norway
+NATO;Germany,UK,USA,Canada,Spain,Portugal,Denmark,France,Greece,Turkey,Iceland,Italy,Luxemburg,Norway,Belgium,Netherlands
 CSTO;
 FPDA;Australia,UK,Malaysia,New Zealand,Singapore
-TIAR;Argentina,Bahamas,Brazil,Guatemala,Gonduras,Colombia,Costa Rica,Dominican Republic,Panama,Paraguay,Peru,Salvador
+TIAR;Argentina,Bahamas,Brazil,Guatemala,Gonduras,Chile,Colombia,Costa Rica,Dominican Republic,Panama,Paraguay,Peru,Salvador,Haiti,Uruguay,Venezuela,Trinidad and Tobago,Bolivia,Ecuador,Mexico,Nicaragua
 Einheitspakt;
 East Asia Co-Prosperity Sphere;
 African Confederation;
+Warsaw Pact;

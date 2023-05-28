@@ -156,6 +156,49 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada;
+        ///USA;South Korea,Taiwan,Philippines,Panama,Japan
+        ///Singapore;
+        ///Burkina-Faso;
+        ///Mexico;
+        ///Guatemala;
+        ///Belize;
+        ///Gonduras;
+        ///Salvador;
+        ///Nicaragua;
+        ///Costa Rica;
+        ///Panama;USA
+        ///Jamaica;
+        ///Cuba;
+        ///Bahamas;
+        ///Puerto Rico;
+        ///UK;Portugal,Australia,New Zealand,Malaysia
+        ///Haiti;
+        ///Dominican Republic;
+        ///Saint Kitts and Nevis;
+        ///Antigua and Barbuda;
+        ///France;Monaco
+        ///Dominica;
+        ///Saint Lucia;
+        ///Saint Vincent and the Grenadines;
+        ///Barbados;
+        ///Grenada;
+        ///Trinidad and Tobago;
+        ///Venezuela;
+        ///Colombia;
+        ///Ecuador;
+        ///Peru;
+        ///Bolivia;
+        ///Chile;
+        ///Ar [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_Allies {
+            get {
+                return ResourceManager.GetString("CountryName_Allies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Canada;0,106,9;NATO;0;0;2
         ///USA;153,217,234;NATO;0;0;4
         ///Singapore;128,255,0;NATO;0;0;2
@@ -180,6 +223,34 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada;USA,UK,Australia
+        ///USA;UK,France,South Korea,Taiwan,Philippines,Australia,Panama,United Arab Emirates,Saudi Arabia,Germany,Turkey,Italy,Israel,Vatican,Japan
+        ///Singapore;
+        ///Burkina-Faso;
+        ///Mexico;Spain,Colombia,Vatican
+        ///Guatemala;
+        ///Belize;
+        ///Gonduras;
+        ///Salvador;
+        ///Nicaragua;
+        ///Costa Rica;Vatican
+        ///Panama;USA,Vatican
+        ///Jamaica;
+        ///Cuba;Kazakh ASSR,China,USSR,Vatican
+        ///Bahamas;
+        ///Puerto Rico;
+        ///UK;USA,France,Germany,Turkey,Italy,Spain,Portugal,South African Republic
+        ///Haiti;
+        ///Dominican Republic;Vatican
+        ///Saint Kitts an [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_Friends {
+            get {
+                return ResourceManager.GetString("CountryName_Friends", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Canada;100;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
         ///USA;750;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
         ///Singapore;30;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
@@ -192,6 +263,52 @@ namespace PaxApocalytica.Properties {
         public static string CountryName_MilitaryResources {
             get {
                 return ResourceManager.GetString("CountryName_MilitaryResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Canada;
+        ///USA;North Korea,China,Russia
+        ///Singapore;
+        ///Burkina-Faso;
+        ///Mexico;
+        ///Guatemala;
+        ///Belize;
+        ///Gonduras;
+        ///Salvador;
+        ///Nicaragua;
+        ///Costa Rica;
+        ///Panama;
+        ///Jamaica;
+        ///Cuba;
+        ///Bahamas;
+        ///Puerto Rico;
+        ///UK;France,Germany
+        ///Haiti;
+        ///Dominican Republic;
+        ///Saint Kitts and Nevis;
+        ///Antigua and Barbuda;
+        ///France;Germany,UK,Spain
+        ///Dominica;
+        ///Saint Lucia;
+        ///Saint Vincent and the Grenadines;
+        ///Barbados;
+        ///Grenada;
+        ///Trinidad and Tobago;
+        ///Venezuela;
+        ///Colombia;
+        ///Ecuador;
+        ///Peru;
+        ///Bolivia;
+        ///Chile;
+        ///Argentina;Brazil
+        ///Paraguay;
+        ///Uruguay;
+        /// [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string CountryName_Rivals {
+            get {
+                return ResourceManager.GetString("CountryName_Rivals", resourceCulture);
             }
         }
         
@@ -248,6 +365,15 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        public static string CreationQueue_Army {
+            get {
+                return ResourceManager.GetString("CreationQueue_Army", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap gasImage {
@@ -274,6 +400,15 @@ namespace PaxApocalytica.Properties {
             get {
                 object obj = ResourceManager.GetObject("grainImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream JolyFox___Red_Army_Is_The_Strongest__TNO_Fan_made___128_kbps_ {
+            get {
+                return ResourceManager.GetStream("JolyFox___Red_Army_Is_The_Strongest__TNO_Fan_made___128_kbps_", resourceCulture);
             }
         }
         
@@ -640,6 +775,43 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Hawaii;2;;
+        ///Pacific;5;;;;;
+        ///New England;5;;;;;
+        ///Mid-Atlantic;5;;;;;
+        ///South Atlantic;5;;;;;
+        ///Centrosur;2;;
+        ///West Cuba;2;;
+        ///Caracas;2;;
+        ///Pampas;2;;
+        ///Central-West Brazil;2;;
+        ///South West Nigeria;2;;
+        ///South Nigeria;2;;
+        ///Luanda;2;;
+        ///Cape;2;;
+        ///Kenya;5;;;;;
+        ///Marocco;2;;
+        ///Lower Egypt;5;;;;;
+        ///Israel;2;;
+        ///Central Saudi Arabia;2;;
+        ///United Arab Emirates;5;;;;;
+        ///Aleppo;2;;
+        ///West Anatolia Region;5;;;;;
+        ///Istanbul Region;5;;;;;
+        ///Attica;2;;
+        ///Serbia;2;;
+        ///Central Italy;2;;
+        ///Provence-Alpes-Cote d&apos;Azur;2;;
+        ///Ile-de-France;2;;
+        ///Ma [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string NameInterceptors {
+            get {
+                return ResourceManager.GetString("NameInterceptors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap oilImage {
@@ -650,18 +822,27 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на NATO;Germany,UK,USA,Canada,Spain,Portugal,Denmark,France,Greece,Turkey,Iceland,Italy,Luxemburg,Norway
+        ///   Ищет локализованную строку, похожую на NATO;Germany,UK,USA,Canada,Spain,Portugal,Denmark,France,Greece,Turkey,Iceland,Italy,Luxemburg,Norway,Belgium,Netherlands
         ///CSTO;
         ///FPDA;Australia,UK,Malaysia,New Zealand,Singapore
-        ///TIAR;Argentina,Bahamas,Brazil,Guatemala,Gonduras,Colombia,Costa Rica,Dominican Republic,Panama,Paraguay,Peru,Salvador
+        ///TIAR;Argentina,Bahamas,Brazil,Guatemala,Gonduras,Chile,Colombia,Costa Rica,Dominican Republic,Panama,Paraguay,Peru,Salvador,Haiti,Uruguay,Venezuela,Trinidad and Tobago,Bolivia,Ecuador,Mexico,Nicaragua
         ///Einheitspakt;
         ///East Asia Co-Prosperity Sphere;
         ///African Confederation;
-        ///.
+        ///Warsaw Pact;.
         /// </summary>
         public static string Pact_Countryname {
             get {
                 return ResourceManager.GetString("Pact_Countryname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream shooting {
+            get {
+                return ResourceManager.GetStream("shooting", resourceCulture);
             }
         }
         
@@ -685,12 +866,48 @@ namespace PaxApocalytica.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Moldavia;Transnistria,Russia.
+        /// </summary>
+        public static string TruceSides {
+            get {
+                return ResourceManager.GetString("TruceSides", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        public static string UpgradeQueue_MFactory {
+            get {
+                return ResourceManager.GetString("UpgradeQueue_MFactory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        public static string UpgradeQueue_SFactory {
+            get {
+                return ResourceManager.GetString("UpgradeQueue_SFactory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap uraniumImage {
             get {
                 object obj = ResourceManager.GetObject("uraniumImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Moldavia;Transnistria,Russia.
+        /// </summary>
+        public static string WarSides {
+            get {
+                return ResourceManager.GetString("WarSides", resourceCulture);
             }
         }
     }

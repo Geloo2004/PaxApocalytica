@@ -38,14 +38,123 @@ namespace PaxApocalytica
             WriteFile_NameArmyname(basePath);
             WriteFile_ArmynameArmycharacteristics(basePath);
             WriteFile_NameCharacteristics(basePath);
-            WriteFile_CountrynameSimpleResources_Trade(basePath); 
-            
-            
-            WriteFile_CreationeQueue_Army(basePath); 
+            WriteFile_CountrynameSimpleResources_Trade(basePath);
+            WriteFile_CreationQueue_Army(basePath); 
             WriteFile_UpgradeQueue_SFactory(basePath); 
             WriteFile_UpgradeQueue_MFactory(basePath);
+            WriteFile_NameInterceptor(basePath); 
+            WriteFile_CountryName_Friends(basePath);
+            WriteFile_CountryName_Rivals(basePath);
+            WriteFile_CountryName_Allies(basePath);
+            WriteFile_WarSides(basePath);
+            WriteFile_PactCountryname(basePath);
         }
 
+        public static void WriteFile_PactCountryname(string basePath) 
+        {
+            string path = basePath + "Pact_Countryname.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_PactCountrynames.Keys)
+                {
+                    outputFile.Write(line + ";");
+                    if (PaxApocalypticaGame.Dictionary_PactCountrynames[line].Count > 0) { outputFile.Write(PaxApocalypticaGame.Dictionary_PactCountrynames[line][0]); }
+                    for(int i =1;i< PaxApocalypticaGame.Dictionary_PactCountrynames[line].Count; i++) 
+                    {
+                        outputFile.Write(";"+PaxApocalypticaGame.Dictionary_PactCountrynames[line][i]);
+                    }
+                    outputFile.WriteLine();
+                }
+            }
+        }
+        public static void WriteFile_NameInterceptor(string basePath)
+        {
+            string path = basePath + "Name_Interceptors.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Keys)
+                {
+                    outputFile.WriteLine(line + ";" + PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].ProducedResourceName + ";" +
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].TechnologyLevel + ";" +
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].ExtensionLevel);
+                }
+            }
+        }
+        public static void WriteFile_CountryName_Friends(string basePath)
+        {
+            string path = basePath + "CountryName_Friends.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_CountrynameFriends.Keys)
+                {
+                    outputFile.Write(line+";");
+                    for(int i = 0;i< PaxApocalypticaGame.Dictionary_CountrynameFriends[line].Count-1; i++) 
+                    {
+                        outputFile.Write(PaxApocalypticaGame.Dictionary_CountrynameFriends[line][i] + ",");
+                    }
+                    outputFile.WriteLine(PaxApocalypticaGame.Dictionary_CountrynameFriends[line][PaxApocalypticaGame.Dictionary_CountrynameFriends[line].Count - 1]);
+                }
+            }
+        }
+        public static void WriteFile_CountryName_Rivals(string basePath)
+        {
+            string path = basePath + "CountryName_Rivals.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_CountrynameRivals.Keys)
+                {
+                    outputFile.Write(line + ";");
+                    for (int i = 0; i < PaxApocalypticaGame.Dictionary_CountrynameRivals[line].Count - 1; i++)
+                    {
+                        outputFile.Write(PaxApocalypticaGame.Dictionary_CountrynameRivals[line][i] + ",");
+                    }
+                    outputFile.WriteLine(PaxApocalypticaGame.Dictionary_CountrynameRivals[line][PaxApocalypticaGame.Dictionary_CountrynameRivals[line].Count - 1]);
+                }
+            }
+        }
+        public static void WriteFile_CountryName_Allies(string basePath)
+        {
+            string path = basePath + "CountryName_Allies.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_CountrynameAllies.Keys)
+                {
+                    outputFile.Write(line + ";");
+                    for (int i = 0; i < PaxApocalypticaGame.Dictionary_CountrynameAllies[line].Count - 1; i++)
+                    {
+                        outputFile.Write(PaxApocalypticaGame.Dictionary_CountrynameAllies[line][i] + ",");
+                    }
+                    outputFile.WriteLine(PaxApocalypticaGame.Dictionary_CountrynameAllies[line][PaxApocalypticaGame.Dictionary_CountrynameAllies[line].Count - 1]);
+                }
+            }
+        }
+        public static void WriteFile_WarSides(string basePath) 
+        {
+            string path = basePath + "WarSides.txt";
+
+            using (StreamWriter outputFile = new StreamWriter(path))
+            {
+                foreach (var line in PaxApocalypticaGame.Dictionary_WarSides.Keys)
+                {
+                    outputFile.Write(line[0]);
+                    for (int i =0;i<line.Count-1;i++) 
+                    {
+                        outputFile.Write("," + line[i] );
+                    }
+                    outputFile.Write(";");
+                    outputFile.Write(PaxApocalypticaGame.Dictionary_WarSides[line][0]);
+                    for (int i = 1; i < PaxApocalypticaGame.Dictionary_WarSides[line].Count; i++)
+                    {
+                        outputFile.Write("," + PaxApocalypticaGame.Dictionary_WarSides[line][i]);
+                    }
+                }
+            }
+        }
         public static void WriteFile_UpgradeQueue_SFactory(string basePath)
         {
             string path = basePath + "UpgradeQueue_SFactory.txt";
@@ -54,10 +163,7 @@ namespace PaxApocalytica
             {
                 foreach (var line in PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory.Keys)
                 {
-                    string[] substrings = line.Split(",");
-                    int turnsTillBuilding = Convert.ToInt32(substrings[0]);
-                    string province = substrings[1];
-                    outputFile.WriteLine(turnsTillBuilding +","+ province + ";" + PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].ProducedResourceName + ";" +
+                    outputFile.WriteLine(line + ";" + PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].ProducedResourceName + ";" +
                         PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].TechnologyLevel + ";" +
                         PaxApocalypticaGame.Dictionary_UpgradeQueue_SFactory[line].ExtensionLevel);
                 }
@@ -71,17 +177,14 @@ namespace PaxApocalytica
             {
                 foreach (var line in PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory.Keys)
                 {
-                    string[] substrings = line.Split(",");
-                    int turnsTillBuilding = Convert.ToInt32(substrings[0]);
-                    string province = substrings[1];
-                    outputFile.WriteLine(turnsTillBuilding + "," + province + ";" + PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].ProducedResourceName + ";" +
+                    outputFile.WriteLine(line + ";" + PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].ProducedResourceName + ";" +
                         PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].TechnologyLevel + ";" +
-                        PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].ExtensionLevel);
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].ExtensionLevel + ";" +
+                        PaxApocalypticaGame.Dictionary_UpgradeQueue_MFactory[line].FactoryType);
                 }
             }
         }
-
-        public static void WriteFile_CreationeQueue_Army(string basePath)
+        public static void WriteFile_CreationQueue_Army(string basePath)
         {
             string path = basePath + "CreationQueue_Army.txt";
 
@@ -89,10 +192,7 @@ namespace PaxApocalytica
             {
                 foreach (var line in PaxApocalypticaGame.Dictionary_CreationQueue_Army.Keys)
                 {
-                    string[] substrings = line.Split(",");
-                    int turnsTillBuilding = Convert.ToInt32(substrings[0]);
-                    string province = substrings[1];
-                    outputFile.WriteLine(turnsTillBuilding + "," + province+";" + PaxApocalypticaGame.Dictionary_CreationQueue_Army[line]);
+                    outputFile.WriteLine(line+";" + PaxApocalypticaGame.Dictionary_CreationQueue_Army[line]);
                 }
             }
         }

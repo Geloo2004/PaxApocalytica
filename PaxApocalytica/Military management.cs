@@ -141,12 +141,6 @@ namespace PaxApocalytica
             label25.Text = "BMP-23: " + PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[country][24];
         }
 
-
-        private void Military_management_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void ShowCanBuild()
         {
             button1.Enabled = PaxApocalypticaGame.Dictionary_CanBuildUnit[country][0];
@@ -171,12 +165,6 @@ namespace PaxApocalytica
 
             button8.Enabled = PaxApocalypticaGame.Dictionary_CanBuildUnit[country][25];
             button9.Enabled = PaxApocalypticaGame.Dictionary_CanBuildUnit[country][26];
-
-
-
-
-
-
         }
         private void HideCanBuild()
         {
@@ -211,6 +199,11 @@ namespace PaxApocalytica
                 else { deployReinforceBttn.Enabled = true; }
                 deployReinforceBttn.Text = "Move army";
                 location.Text = Calculator.FindArmyStartProv(armyName);
+
+                if (PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[country][0] <= Calculator.CalculateMovingCost(armyName))
+                {
+                    deployReinforceBttn.Enabled = false;
+                }
             }
             else if (Calculator.CheckArmyCreated(armyName))
             {

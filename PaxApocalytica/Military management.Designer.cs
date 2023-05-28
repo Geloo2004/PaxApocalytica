@@ -589,7 +589,6 @@
             Controls.Add(manpowerLabel);
             Name = "Military_management";
             Text = "Military_management";
-            Load += Military_management_Load;
             ((System.ComponentModel.ISupportInitialize)armyNumber).EndInit();
             ResumeLayout(false);
             PerformLayout();

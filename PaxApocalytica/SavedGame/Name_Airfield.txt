@@ -1,68 +1,68 @@
-Hawaii;2;fighterA;fighterA
-Pacific;5;fighterA;fighterA;fighterA;fighterA;
-New England;5;fighterA;fighterA;fighterA;fighterA;
-Mid-Atlantic;5;fighterA;fighterA;fighterA;fighterA;strikeAircraftA
-South Atlantic;5;fighterA;fighterA;fighterA;fighterA;strikeAircraftA
-Centrosur;2;strikeAircraftG;fighterG
+Hawaii;2;strikeAircraftA;fighterA
+Pacific;5;strikeAircraftA;strikeAircraftA;;;
+New England;5;fighterA;fighterA;fighterA;;
+Mid-Atlantic;5;strikeAircraftA;fighterA;;;
+South Atlantic;5;fighterA;fighterA;fighterA;;
+Centrosur;2;fighterG;fighterG
 West Cuba;2;fighterG;
-Caracas;2;fighterG;strikeAircraftG
-Pampas;2;fighterG;fighterG
+Caracas;2;fighterG;
+Pampas;2;fighterG;
 Central-West Brazil;2;fighterG;
-South West Nigeria;2;fighterG;strikeAircraftG
-South Nigeria;2;fighterG;fighterG
-Luanda;2;fighterG;fighterG
-Cape;2;fighterG;fighterG
-Kenya;5;fighterG;fighterG;fighterG;fighterG;fighterG
-Marocco;2;strikeAircraftG;
-Lower Egypt;5;fighterR;fighterR;strikeAircraftR;fighterR;
+South West Nigeria;2;fighterG;
+South Nigeria;2;;
+Luanda;2;fighterG;
+Cape;2;fighterG;
+Kenya;5;fighterG;fighterG;fighterG;fighterG;
+Marocco;2;fighterG;
+Lower Egypt;5;fighterR;fighterR;;;
 Israel;2;fighterA;strikeAircraftA
-Central Saudi Arabia;2;fighterA;fighterA
-United Arab Emirates;5;fighterA;fighterA;fighterA;fighterA;fighterA
+Central Saudi Arabia;2;fighterA;
+United Arab Emirates;5;strikeAircraftA;fighterA;;;
 Aleppo;2;fighterG;fighterG
-West Anatolia Region;5;fighterA;fighterA;fighterA;strikeAircraftA;fighterA
-Istanbul Region;5;fighterA;fighterA;fighterA;fighterA;
+West Anatolia Region;5;fighterA;fighterA;;;
+Istanbul Region;5;strikeAircraftA;;;;
 Attica;2;fighterA;
 Serbia;2;fighterR;fighterR
-Central Italy;2;fighterA;
+Central Italy;2;strikeAircraftA;fighterA
 Provence-Alpes-Cote d'Azur;2;fighterA;
-Ile-de-France;2;fighterA;fighterA
-Madrid;5;strikeAircraftA;fighterA;strikeAircraftA;fighterA;strikeAircraftA
-London;5;fighterA;strikeAircraftA;fighterA;fighterA;
+Ile-de-France;2;fighterA;
+Madrid;5;fighterA;;;;
+London;5;fighterA;;;;
 Mainland Finland;2;fighterR;
-Mazovia;5;fighterR;strikeAircraftR;fighterR;;
-Hamburg;5;fighterA;fighterA;fighterA;fighterA;fighterA
-Berlin;5;fighterA;fighterA;strikeAircraftA;;
-Luxemburg;5;strikeAircraftA;fighterA;strikeAircraftA;fighterA;fighterA
+Mazovia;5;fighterR;;;;
+Hamburg;5;fighterA;strikeAircraftA;fighterA;fighterA;
+Berlin;5;fighterA;fighterA;fighterA;fighterA;fighterA
+Luxemburg;5;fighterA;fighterA;fighterA;strikeAircraftA;fighterA
 Brussels;2;fighterA;fighterA
-West Netherlands;5;fighterA;fighterA;fighterA;fighterA;fighterA
-Bohemia;2;fighterR;strikeAircraftR
-Central Hungary;2;fighterR;fighterR
-Crimea;2;fighterR;fighterR
-Kiev;2;strikeAircraftR;fighterR
-Minsk;2;strikeAircraftR;
-Kaliningrad;2;fighterR;strikeAircraftR
+West Netherlands;5;fighterA;fighterA;fighterA;;
+Bohemia;2;fighterR;fighterR
+Central Hungary;2;fighterR;strikeAircraftR
+Crimea;2;;
+Kiev;2;fighterR;fighterR
+Minsk;2;fighterR;
+Kaliningrad;2;strikeAircraftR;
 Northwest Russia;2;fighterR;fighterR
-North Russia;2;fighterR;
-Moscow;5;fighterR;fighterR;fighterR;fighterR;
-North Caucasus;2;fighterR;fighterR
+North Russia;2;fighterR;fighterR
+Moscow;5;fighterR;strikeAircraftR;fighterR;;
+North Caucasus;2;;
 Far East;2;fighterR;fighterR
 Manchuria;2;fighterR;fighterR
-Beijing;5;fighterR;strikeAircraftR;fighterR;;
+Beijing;5;fighterR;strikeAircraftR;;;
 Ningxia;2;fighterR;strikeAircraftR
-Tibet;2;fighterR;fighterR
+Tibet;2;fighterR;
 Jiangsu;2;fighterR;fighterR
 Hong Kong;5;fighterA;fighterA;fighterA;fighterA;
-Taiwan;5;fighterA;fighterA;fighterA;fighterA;fighterA
-North Vietnam;2;fighterG;fighterG
-Central Thailand;2;strikeAircraftA;strikeAircraftA
+Taiwan;5;fighterA;fighterA;strikeAircraftA;;
+North Vietnam;2;strikeAircraftG;
+Central Thailand;2;fighterA;fighterA
 Bangladesh;2;fighterR;fighterR
-Western India;2;strikeAircraftR;fighterR
-Sindh;2;fighterR;fighterR
+Western India;2;fighterR;
+Sindh;2;strikeAircraftR;
 North Kazakhstan;2;fighterR;
-Tehran;2;fighterG;fighterG
-Pyongan;2;fighterR;fighterR
-Baekdu Mountains;2;strikeAircraftR;fighterR
-Hokkaido;2;fighterA;strikeAircraftA
-Kanto;5;fighterA;fighterA;strikeAircraftA;;
-Victoria;5;fighterA;fighterA;fighterA;strikeAircraftA;fighterA
-Falklands;2;fighterA;
+Tehran;2;fighterG;
+Pyongan;2;fighterR;
+Baekdu Mountains;2;fighterR;
+Hokkaido;2;fighterA;
+Kanto;5;strikeAircraftA;fighterA;fighterA;fighterA;fighterA
+Victoria;5;fighterA;fighterA;fighterA;;
+Falklands;2;fighterA;fighterA

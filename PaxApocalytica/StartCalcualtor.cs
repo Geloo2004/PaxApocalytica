@@ -1,10 +1,5 @@
 ﻿using PaxApocalytica.FactoriesAndResources;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PaxApocalytica
 {
@@ -122,7 +117,7 @@ namespace PaxApocalytica
                 for(int i =0; i < PaxApocalypticaGame.Dictionary_NameAirfield[name].Planes.Length; i++) 
                 {
                     int a = random.Next(0, 100);
-                    if(a>=0 && a < 75) 
+                    if(a>=0 && a < 50) 
                     {
                         if (PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[PaxApocalypticaGame.Dictionary_NameOwner[name]].TechGroup == MilitaryFactoryType.Type.Soviet)
                         {
@@ -138,7 +133,7 @@ namespace PaxApocalytica
                         }
                         else throw new ArgumentException();
                     }
-                    else if(a>=75 && a < 90) 
+                    else if(a>=50 && a < 60) 
                     {
                         if (PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[PaxApocalypticaGame.Dictionary_NameOwner[name]].TechGroup == MilitaryFactoryType.Type.Soviet)
                         {
@@ -163,6 +158,10 @@ namespace PaxApocalytica
         }
     }
 
+    internal static class MilitaryCalculator 
+    {
+        
+    }
     internal static class Calculator
     {
         public static int CalculateMaintanenceCost(string armyName)
@@ -439,27 +438,30 @@ namespace PaxApocalytica
             int moveCost = 0;
             foreach (var unit in PaxApocalypticaGame.Dictionary_ArmynameArmycharacteristics[armyName].Units)
             {
-                if (unit.Name == Military.UnitName.Name.unmotorizedInfantry) { }
-                else if (unit.Name == Military.UnitName.Name.infantry1r) { moveCost++; }
-                else if (unit.Name == Military.UnitName.Name.infantry2r) { moveCost++; }
-                else if (unit.Name == Military.UnitName.Name.infantry1a) { moveCost++; }
-                else if (unit.Name == Military.UnitName.Name.infantry2a) { moveCost++; }
-                else if (unit.Name == Military.UnitName.Name.infantry1g) { moveCost++; }
-                else if (unit.Name == Military.UnitName.Name.infantry2g) { moveCost++; }
-                else if (unit.Name == Military.UnitName.Name.tank1r) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank2r) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank3r) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank4r) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank1a) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank2a) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank3a) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank4a) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank1g) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank2g) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank3g) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.tank4g) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.vdv1) { moveCost += 2; }
-                else if (unit.Name == Military.UnitName.Name.vdv2) { moveCost += 2; }
+                if (unit != null)
+                {
+                    if (unit.Name == Military.UnitName.Name.unmotorizedInfantry) { }
+                    else if (unit.Name == Military.UnitName.Name.infantry1r) { moveCost++; }
+                    else if (unit.Name == Military.UnitName.Name.infantry2r) { moveCost++; }
+                    else if (unit.Name == Military.UnitName.Name.infantry1a) { moveCost++; }
+                    else if (unit.Name == Military.UnitName.Name.infantry2a) { moveCost++; }
+                    else if (unit.Name == Military.UnitName.Name.infantry1g) { moveCost++; }
+                    else if (unit.Name == Military.UnitName.Name.infantry2g) { moveCost++; }
+                    else if (unit.Name == Military.UnitName.Name.tank1r) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank2r) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank3r) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank4r) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank1a) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank2a) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank3a) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank4a) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank1g) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank2g) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank3g) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.tank4g) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.vdv1) { moveCost += 2; }
+                    else if (unit.Name == Military.UnitName.Name.vdv2) { moveCost += 2; }
+                }
             }
             return moveCost;
         }
@@ -550,8 +552,7 @@ namespace PaxApocalytica
         {
 
         }
-
-        public static void CheckTradeLimitExceed()
+        /*public static void CheckTradeLimitExceed()
         {
             foreach (var country in PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade.Keys)
             {
@@ -566,7 +567,7 @@ namespace PaxApocalytica
                     PaxApocalypticaGame.Dictionary_CountrynameSimpleResources_Trade_ReduceTrade.Add(country, sum - PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[country].MaxTradeSlots);
                 }
             }
-        }
+        }*/
         public static int CalculateTradeIncome(string country)
         {
             int sum = 0;
@@ -733,8 +734,8 @@ namespace PaxApocalytica
         {
             foreach(var unit in PaxApocalypticaGame.Dictionary_ArmynameArmycharacteristics[armyName].Units) 
             {
-                if(unit == null || unit.Name == Military.UnitName.Name.vdv1 || unit.Name == Military.UnitName.Name.vdv2) 
-                { }
+                if(unit == null) { }
+                else if( unit.Name == Military.UnitName.Name.vdv1 || unit.Name == Military.UnitName.Name.vdv2) { }               
                 else { return false; }
             }
             return true;
@@ -744,6 +745,338 @@ namespace PaxApocalytica
         {
             if (PaxApocalypticaGame.Dictionary_CountrynameSimpleResources[countryName][0] > 0) { return true; }
             return false;
+        }
+
+        public static bool AreInTheSameFaction(string countryName0, string countryName1) 
+        {
+            return false;
+        }
+
+        public static void RecalculateExistingCountries()
+        {
+            PaxApocalypticaGame.ExistingCountriesList = new List<string>();
+            foreach (var country in PaxApocalypticaGame.Dictionary_NameOwner.Values) 
+            {
+                if (!PaxApocalypticaGame.ExistingCountriesList.Contains(country))
+                {
+                    PaxApocalypticaGame.ExistingCountriesList.Add(country);
+                }
+            }
+        }
+
+        public static bool CheckAtWar(string country0, string country1) 
+        {
+            foreach(var side0 in PaxApocalypticaGame.Dictionary_WarSides.Keys) 
+            {
+                var side1 = PaxApocalypticaGame.Dictionary_WarSides[side0];
+                if (side0.Contains(country0)) 
+                {
+                    if (side1.Contains(country1))
+                    {
+                        return true;
+                    }
+                }
+                else if(side1.Contains(country0))
+                {
+                    if (side0.Contains(country1))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public static bool ShouldCountry0Attack(string country0, string country1) 
+        {
+            int leaders0 = 0;
+            int leaders1 = 0;
+
+            foreach(var ally in PaxApocalypticaGame.Dictionary_CountrynameAllies[country0]) 
+            {
+                if (PaxApocalypticaGame.Dictionary_CountrynameAllies[ally].Contains(country1)) { }
+                else
+                {
+                    leaders0 += PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[ally].MaxLeaders;
+                }
+            }
+
+            foreach (var ally in PaxApocalypticaGame.Dictionary_CountrynameAllies[country1])
+            {
+                leaders1 += PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[ally].MaxLeaders;
+            }
+
+            foreach (var pact in PaxApocalypticaGame.Dictionary_PactCountrynames.Keys)
+            {
+                if (PaxApocalypticaGame.Dictionary_PactCountrynames[pact].Contains(country1))
+                {
+                    foreach (var ally in PaxApocalypticaGame.Dictionary_PactCountrynames[pact])
+                    {
+                        leaders1 += PaxApocalypticaGame.Dictionary_CountrynameCharacteristics[ally].MaxLeaders;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public static int CalculateProvinceWorth(string name) 
+        {
+            int worth = 0;
+            worth += (int)PaxApocalypticaGame.Dictionary_NameSFactory[name].Production * 10 * (int)PaxApocalypticaGame.Dictionary_NameSFactory[name].BaseCost/1000;
+            if (PaxApocalypticaGame.Dictionary_NameMFactory[name] != null) { worth += (int)PaxApocalypticaGame.Dictionary_NameMFactory[name].Production * 30; }
+            if (PaxApocalypticaGame.Dictionary_NamePort.ContainsKey(name)) { worth += PaxApocalypticaGame.Dictionary_NamePort[name] * 10; }
+            if (PaxApocalypticaGame.Dictionary_NameAirfield.ContainsKey(name)) { worth += PaxApocalypticaGame.Dictionary_NameAirfield[name].Planes.Length * 10; }
+            return worth;
+        }
+        public static bool IsCountry0Winning(string country0, string country1) 
+        {
+            int armyCost0 = 0;
+            int armyCost1 = 0;
+            foreach (var armyName in PaxApocalypticaGame.Dictionary_ArmynameArmycharacteristics.Keys) 
+            {
+                if (armyName.StartsWith(country0)) 
+                {
+                    armyCost0 += CalculateMaintanenceCost(armyName);
+                }
+                else if(armyName.StartsWith(country1))
+                {
+                    armyCost1 += CalculateMaintanenceCost(armyName);
+                }
+            }
+
+            int unoccupoedProvinceWorth0 = 0;
+            int unoccupoedProvinceWorth1 = 0;
+            foreach(var  prov in PaxApocalypticaGame.Dictionary_NameOccupant.Keys) 
+            {
+                if (PaxApocalypticaGame.Dictionary_NameOwner[prov] == country0 && PaxApocalypticaGame.Dictionary_NameOccupant[prov] == country0) 
+                { unoccupoedProvinceWorth0 += CalculateProvinceWorth(prov); }
+                else if (PaxApocalypticaGame.Dictionary_NameOwner[prov] == country1 && PaxApocalypticaGame.Dictionary_NameOccupant[prov] == country1)
+                { unoccupoedProvinceWorth1 += CalculateProvinceWorth(prov); }
+            }
+
+            int occupoedProvinceWorth0 = 0;
+            int occupoedProvinceWorth1 = 0;
+            foreach (var prov in PaxApocalypticaGame.Dictionary_NameOccupant.Keys)
+            {
+                if (PaxApocalypticaGame.Dictionary_NameOwner[prov] == country1 && PaxApocalypticaGame.Dictionary_NameOccupant[prov] == country0)
+                { occupoedProvinceWorth0 += CalculateProvinceWorth(prov) * 2; }
+                else if (PaxApocalypticaGame.Dictionary_NameOwner[prov] == country0 && PaxApocalypticaGame.Dictionary_NameOccupant[prov] == country1)
+                { occupoedProvinceWorth1 += CalculateProvinceWorth(prov) * 2; }
+            }
+
+            return armyCost0 + unoccupoedProvinceWorth0 + occupoedProvinceWorth0 > armyCost1 + unoccupoedProvinceWorth1 + occupoedProvinceWorth1;
+        }
+
+        public static void BombingProvince(string provinceName, string bomberName, ref bool destroyed) 
+        {
+            bool bombed = false;
+            if (PaxApocalypticaGame.Dictionary_NameInterceptors.ContainsKey(provinceName))
+            {
+                foreach (var interceptor in PaxApocalypticaGame.Dictionary_NameInterceptors[provinceName])
+                {
+                    if (bombed) { break; }
+                    Random random = new Random();
+                    int a = random.Next(0, 100);
+                    if (interceptor.StartsWith("NATO") || interceptor.StartsWith("Sov."))
+                    {
+                        if (bomberName.StartsWith("Generic"))
+                        {
+                            if (a > 60)
+                            {
+                                {
+                                    bombed = true;
+                                    int b = random.Next(10000, 30000);
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population -= (ulong)b;
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower -= (uint)(b * (decimal)0.05);
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population = 0;
+                                    }
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower = 0;
+                                    }
+
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsEDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].EDegrade(); }
+                                    }
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsTDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].TDegrade(); }
+                                    }
+
+                                    if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName] != null)
+                                    {
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsEDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].EDegrade(); }
+                                        }
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsTDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].TDegrade(); }
+                                        }
+                                    }
+                                }
+                            }
+                            else { destroyed = true; }
+                        }
+                    }
+                    else if (interceptor.StartsWith("NATO") || interceptor.StartsWith("Sov."))
+                    {
+                        if (interceptor.StartsWith("NATO") || interceptor.StartsWith("Sov."))
+                        {
+                            if (a > 80)
+                            {
+                                {
+                                    bombed = true;
+                                    int b = random.Next(10000, 30000);
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population -= (ulong)b;
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower -= (uint)(b * (decimal)0.05);
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population = 0;
+                                    }
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower = 0;
+                                    }
+
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsEDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].EDegrade(); }
+                                    }
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsTDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].TDegrade(); }
+                                    }
+
+                                    if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName] != null)
+                                    {
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsEDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].EDegrade(); }
+                                        }
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsTDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].TDegrade(); }
+                                        }
+                                    }
+                                }
+                            }
+                            else { destroyed = true; }
+                        }
+                    }
+                    else if (interceptor.StartsWith("Generic"))
+                    {
+                        if (bomberName.StartsWith("Generic"))
+                        {
+                            if (a > 70)
+                            {
+                                {
+                                    bombed = true;
+                                    int b = random.Next(10000, 30000);
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population -= (ulong)b;
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower -= (uint)(b * (decimal)0.05);
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population = 0;
+                                    }
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower = 0;
+                                    }
+
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsEDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].EDegrade(); }
+                                    }
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsTDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].TDegrade(); }
+                                    }
+
+                                    if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName] != null)
+                                    {
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsEDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].EDegrade(); }
+                                        }
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsTDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].TDegrade(); }
+                                        }
+                                    }
+                                }
+                            }
+                            else { destroyed = true; }
+                        }
+                    }
+                    else if (interceptor.StartsWith("Generic"))
+                    {
+                        if (interceptor.StartsWith("NATO") || interceptor.StartsWith("Sov."))
+                        {
+                            if (a > 80)
+                            {
+                                {
+                                    bombed = true;
+                                    int b = random.Next(10000, 30000);
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population -= (ulong)b;
+                                    PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower -= (uint)(b * (decimal)0.05);
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Population = 0;
+                                    }
+                                    if (PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower <= 0)
+                                    {
+                                        PaxApocalypticaGame.Dictionary_NameCharacteristics[provinceName].Manpower = 0;
+                                    }
+
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsEDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].EDegrade(); }
+                                    }
+                                    b = random.Next(0, 100);
+                                    if (PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].IsTDegradePossible())
+                                    {
+                                        if (b <= 10) { PaxApocalypticaGame.Dictionary_NameSFactory[provinceName].TDegrade(); }
+                                    }
+
+                                    if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName] != null)
+                                    {
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsEDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].EDegrade(); }
+                                        }
+                                        b = random.Next(0, 100);
+                                        if (PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].IsTDegradePossible())
+                                        {
+                                            if (b <= 10) { PaxApocalypticaGame.Dictionary_NameMFactory[provinceName].TDegrade(); }
+                                        }
+                                    }
+                                }
+                            }
+                            else { destroyed = true; }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

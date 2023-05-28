@@ -6,6 +6,8 @@ namespace PaxApocalytica
         public Form1()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(341, 246);
+            this.MaximumSize = new Size(341, 246);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,8 +25,16 @@ namespace PaxApocalytica
         private void button2_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowDialog(this);
-            path = folderBrowserDialog1.SelectedPath+"\\";
-            button1.Text = "Continue";
+            if (path != null && path != "")
+            {
+                path = folderBrowserDialog1.SelectedPath + "\\";
+                button1.Text = "Continue";
+            }
+            else
+            {
+                path = null;
+                button1.Text = "Start";
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

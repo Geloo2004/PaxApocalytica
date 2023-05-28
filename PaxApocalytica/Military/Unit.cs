@@ -151,33 +151,33 @@ namespace PaxApocalytica.Military
             else if (Name == UnitName.Name.strikeAircraftA)
             {
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)(10 * (HP / MaxHP));
-                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][18] += (int)(10 * (HP / MaxHP));
+                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][18] += (int)(50 * (HP / MaxHP));
             }    //19
             else if (Name == UnitName.Name.strikeAircraftR)
             {
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)(10 * (HP / MaxHP));
-                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][10] += (int)(10 * (HP / MaxHP));
+                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][10] += (int)(50 * (HP / MaxHP));
             }    //20
             else if (Name == UnitName.Name.strikeAircraftG)
             {
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)(10 * (HP / MaxHP));
-                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][26] += (int)(10 * (HP / MaxHP));
+                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][26] += (int)(50 * (HP / MaxHP));
             }    //21
                                                                   //
             else if (Name == UnitName.Name.fighterA)
             {
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)(10 * (HP / MaxHP));
-                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][17] += (int)(10 * (HP / MaxHP));
+                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][17] += (int)(50 * (HP / MaxHP));
             }           //22
             else if (Name == UnitName.Name.fighterR)
             {
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)(10 * (HP / MaxHP));
-                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][9] += (int)(10 * (HP / MaxHP));
+                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][9] += (int)(50 * (HP / MaxHP));
             }           //23
             else if (Name == UnitName.Name.fighterG)
             {
                 PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][0] += (int)(10 * (HP / MaxHP));
-                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][56] += (int)(10 * (HP / MaxHP));
+                PaxApocalypticaGame.Dictionary_CountrynameMilitaryResources[owner][56] += (int)(50 * (HP / MaxHP));
             }           //24
                                                                   //
             else if (Name == UnitName.Name.vdv1)

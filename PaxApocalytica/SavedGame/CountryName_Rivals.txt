@@ -1,0 +1,221 @@
+Canada;
+USA;North Korea,China,Russia
+Singapore;
+Burkina-Faso;
+Mexico;
+Guatemala;
+Belize;
+Gonduras;
+Salvador;
+Nicaragua;
+Costa Rica;
+Panama;
+Jamaica;
+Cuba;
+Bahamas;
+Puerto Rico;
+UK;France,Germany
+Haiti;
+Dominican Republic;
+Saint Kitts and Nevis;
+Antigua and Barbuda;
+France;Germany,UK,Spain
+Dominica;
+Saint Lucia;
+Saint Vincent and the Grenadines;
+Barbados;
+Grenada;
+Trinidad and Tobago;
+Venezuela;
+Colombia;
+Ecuador;
+Peru;
+Bolivia;
+Chile;
+Argentina;Brazil
+Paraguay;
+Uruguay;
+Brazil;Argentina
+Suriname;
+Guyana;
+Cabo Verde;
+West Sakhara;
+Mavritaniya;
+Senegal;
+Gambia;
+Guinea-Bissau;
+Guinea;
+Sierra Leone;
+Liberia;
+Cote d'Ivoire;
+Gana;
+Togo;
+Benin;
+Nigeria;
+Cameroon;
+Gabon;
+Equatorial Guinea;
+Sao Tome;
+Congo;
+Democratic Republic of the Congo;
+Angola;
+Namibia;
+South African Republic;
+Lesotho;
+Eswatini;
+Botswana;
+Zimbabwe;
+Mozambique;
+Malawi;
+Zambia;
+Tanzania;
+Burundi;
+Rwanda;
+Uganda;
+Kenya;
+Somalia;Ethiopia
+Ethiopia;Somalia
+Djibouti;
+Eritrea;
+Sudan;
+Central African Republic;
+Chad;
+Niger;
+Mali;
+Algeria;
+Marocco;Spain
+Tunisia;
+Lybia;
+Egypt;Israel,Sudan
+Israel;Egypt,Saudi Arabia,Jordan,Syria,Lebanon
+Palestine;
+Jordan;Israel
+Saudi Arabia;United Arab Emirates
+Yemen;
+Oman;
+United Arab Emirates;Saudi Arabia
+Qatar;
+Bahrain;
+Kuwait;
+Iraq;Iran
+Syria;Israel
+Lebanon;Israel
+Cyprus;
+Turkey;Greece,Russia,Byzantium,Sparta
+Greece;Slovenia,North Macedonia,Bosnia,Serbia,Croatia,Serbia,Albania
+Albania;Slovenia,North Macedonia,Bosnia,Serbia,Croatia,Serbia,Greece
+North Macedonia;Slovenia,Yugoslavia,Bosnia,Serbia,Croatia
+Yugoslavia;Slovenia,North Macedonia,Bosnia,Serbia,Croatia
+Croatia;Slovenia,Yugoslavia,Bosnia,Serbia
+Slovenia;Croatia,Yugoslavia,Serbia,Bosnia
+Italy;France,Spain,Germany
+San-Marino;
+Vatican;
+Switzerland;
+Monaco;
+Andorra;
+Spain;France
+Portugal;
+Ireland;
+Iceland;
+Denmark;
+Norway;
+Sweden;
+Finland;Russia
+Estonia;Russia
+Latvia;Russia
+Lithuania;Belarus
+Poland;Russia,Belarus,Czechia
+Germany;France,UK
+Luxemburg;
+Belgium;
+Netherlands;
+Austria;
+Czechoslovakia;
+Hungary;
+Romania;Bulgaria,Turkey
+Bulgaria;Romania,Turkey
+Moldavia;Transnistria
+Transnistria;Moldavia
+Ukraine;
+Belarus;Poland,Lithuania
+Russia;Georgia,Finland,Poland,Turkey,Estonia,Lithuania,Latvia,Moldavia,Azerbaijan,Kazakh ASSR
+China;USA,Taiwan,India
+Taiwan;China
+Vietnam;
+Cambodia;
+Laos;
+Thailand;
+Burma;
+Bangladesh;
+India;China,Pakistan
+Sri Lanka;
+Nepal;
+Bhutan;
+Pakistan;India
+Afghanistan;
+Tajikistan;
+Kyrgyzstan;
+Kazakh ASSR;Russia
+Uzbekistan;
+Turkmenistan;
+Iran;Iraq
+Azerbaijan;
+Armenia;Azerbaijan,Georgia
+Georgia;Russia,Armenia
+Malaysia;
+Indonesia;
+Papua New Guinea;
+Philippines;
+North Korea;South Korea
+South Korea;North Korea
+Japan;North Korea
+Solomon Islands;
+New Zealand;
+Fiji;
+Australia;
+East Timor;
+Madagascar;
+Mongolia;
+Malta;
+Slovakia;
+Czechia;Poland
+USSR;USA,China
+Zapadoslavia;
+Byzantium;Turkey
+Sparta;Turkey
+Great Macedonia;Turkey,Greece
+Transcaucasia;Turkey,Iran
+United Arab Republic;
+Gran Colombia;
+Turkic Union;
+Scandinavia;
+Intermarium;Russia,USSR,Ukraine,Belarus
+Sich;
+Roman Empire;
+Great Germania;Spain,UK,Russia,USSR,Poland
+Prussia;Poland,Lithuania,Latvia,Estonia
+Great Moravia;Germany,Hungary,Austria
+Mongol Empire;USSR,China,USA
+Korea;Japan
+Abyssinia;
+Holy Roman Empire;
+The Papal State;
+Francia;
+Great Britain;
+Iberia;
+Baltia;
+Polish-Lithuanian Commonwealth;
+Union of Socialist Balkan Republics;
+Ruthenia;
+Cossackia;
+Bosnia;
+Serbia;
+Turkestan;
+Tatarstan;
+Far Eastern Autonomy;
+Ural;
+Novgorod;
+State of Siberia;
+Tsaritsyn;
+Kazakhstan;
