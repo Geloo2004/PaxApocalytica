@@ -63,6 +63,7 @@ namespace PaxApocalytica
             foreach (var country in PaxApocalypticaGame.ExistingCountriesList)
             {
                 if (country == "") { continue; }
+                if (country == PlayerCountry) { continue; }
                 if (PaxApocalypticaGame.Dictionary_CountrynameRivals[PlayerCountry].Contains(country)) { continue; }
                 else if (Calculator.CheckAtWar(country, PlayerCountry)) { continue; }
                 friendsListBox.Items.Add(country);
@@ -160,7 +161,22 @@ namespace PaxApocalytica
             rival_Index = rivalsListBox.SelectedIndex;
             if (rival_Index >= 0)
             {
+                string enemy = rivalsListBox.Items[rival_Index].ToString();
                 declareWarBttn.Enabled = true;
+                foreach (var pact in PaxApocalypticaGame.Dictionary_PactCountrynames.Keys)
+                    {
+                        if (PaxApocalypticaGame.Dictionary_PactCountrynames[pact].Contains(PlayerCountry))
+                        {
+                            foreach (var ally in PaxApocalypticaGame.Dictionary_PactCountrynames[pact])
+                            {
+                                if (ally == enemy)
+                                {
+                                    declareWarBttn.Enabled = false;
+                                }
+                            }
+                        }
+                    }
+                
             }
             else
             {
@@ -177,7 +193,7 @@ namespace PaxApocalytica
             warEnemy_Index = warEnemies.SelectedIndex;
             if (warEnemy_Index >= 0)
             {
-                offerPeace.Enabled = true;
+                offerPeace.Enabled = true; 
             }
             else
             {
