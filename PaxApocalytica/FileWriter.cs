@@ -152,6 +152,7 @@ namespace PaxApocalytica
                     {
                         outputFile.Write("," + PaxApocalypticaGame.Dictionary_WarSides[line][i]);
                     }
+                    outputFile.WriteLine();
                 }
             }
         }

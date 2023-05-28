@@ -25,7 +25,7 @@ namespace PaxApocalytica
         private void button2_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowDialog(this);
-            if (path != null && path != "")
+            if (folderBrowserDialog1.SelectedPath != null && folderBrowserDialog1.SelectedPath != "")
             {
                 path = folderBrowserDialog1.SelectedPath + "\\";
                 button1.Text = "Continue";

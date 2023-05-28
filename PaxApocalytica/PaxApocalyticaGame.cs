@@ -190,12 +190,13 @@ namespace PaxApocalytica
             FileReader.ReadFile_CreationQueue_Army();
             FileReader.ReadFile_UpgradeQueue_MFactory();
             FileReader.ReadFile_UpgradeQueue_SFactory();
+
             FileReader.ReadFile_CountrynameFriends();
             FileReader.ReadFile_CountrynameAllies();
             FileReader.ReadFile_WarSides();
             FileReader.ReadFile_CountrynameRivals();
-            FileReader.ReadFile_PactCountrynames();
 
+            FileReader.ReadFile_PactCountrynames();
 
 
             //не меняются
